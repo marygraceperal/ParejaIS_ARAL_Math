@@ -120,64 +120,9 @@
             border-radius: 0 6px 6px 0;
         }
 
-        /* Passcode Section */
-        .passcode-wrapper {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #f1f5f9;
-            border: 1px dashed var(--secondary-color);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .passcode-wrapper h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        .passcode-box {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .passcode-box input {
-            padding: 8px 12px;
-            font-size: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            outline: none;
-            text-align: center;
-            width: 160px;
-        }
-
-        .passcode-box button {
-            padding: 8px 16px;
-            font-size: 1rem;
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .passcode-box button:hover {
-            background-color: var(--primary-color);
-        }
-
-        .error-msg {
-            color: #dc2626;
-            font-size: 0.9rem;
-            margin-top: 8px;
-            display: none;
-        }
-
-        /* Teacher Answer Key (Hidden by default) */
+        /* Teacher Answer Key */
         .teacher-key {
-            display: none;
-            margin-top: 20px;
+            margin-top: 30px;
             background: #f0fdf4;
             border: 1px solid #bbf7d0;
             padding: 20px;
@@ -198,9 +143,6 @@
             .container {
                 box-shadow: none;
                 border: none;
-            }
-            .passcode-wrapper {
-                display: none;
             }
         }
     </style>
@@ -306,17 +248,7 @@
         </blockquote>
     </section>
 
-    <div class="passcode-wrapper" id="passcodeWrapper">
-        <h3>🔒 Teacher Answer Key</h3>
-        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">Enter the Passcode (Pattern: Term-Unit-SubUnit):</p>
-        <div class="passcode-box">
-            <input type="password" id="passcodeInput" placeholder="e.g. 01011.1">
-            <button onclick="unlockAnswerKey()">Unlock</button>
-        </div>
-        <div class="error-msg" id="errorMsg">Incorrect passcode. Please try again.</div>
-    </div>
-
-    <div class="teacher-key" id="teacherKey">
+    <div class="teacher-key">
         <h2>💡 Teacher Answer Key</h2>
         <p><strong>Part 1:</strong> 1) +1500, 2) -250, 3) -500, 4) +12, 5) -850, 6) 0</p>
         <p><strong>Part 3A:</strong> 1) &lt;, 2) &lt;, 3) &gt;, 4) &gt;</p>
@@ -324,23 +256,6 @@
         <p><strong>Part 4 Key Concept:</strong> Wednesday had the <em>greater loss</em> (magnitude/absolute value of 850), but Wednesday's financial state is the <em>smaller integer</em> (-850 &lt; -500) because it is further to the left on the number line.</p>
     </div>
 </div>
-
-<script>
-    function unlockAnswerKey() {
-        const correctPasscode = "01011.1";
-        const userPasscode = document.getElementById("passcodeInput").value.trim();
-        const teacherKeyDiv = document.getElementById("teacherKey");
-        const passcodeWrapper = document.getElementById("passcodeWrapper");
-        const errorMsg = document.getElementById("errorMsg");
-
-        if (userPasscode === correctPasscode) {
-            teacherKeyDiv.style.display = "block";
-            passcodeWrapper.style.display = "none";
-        } else {
-            errorMsg.style.display = "block";
-        }
-    }
-</script>
 
 </body>
 </html>
