@@ -226,6 +226,24 @@
     color: var(--text-muted);
   }
 
+  .activity-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--primary-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .activity-link:hover {
+    background-color: #dbeafe;
+    text-decoration: underline;
+  }
+
   @media (max-width: 640px) {
     body {
       padding: 1rem 0.5rem;
@@ -278,11 +296,19 @@
           <div id="content-t1-u1" class="tab-content">
             <h3 class="unit-title">Unit 1: Integers & Rules of Signs</h3>
             <div class="subtopic-grid">
+              
+              <!-- Subtopic 1.1 Updated with Activity Link -->
               <div class="subtopic-card">
                 <span class="subtopic-code">1.1</span>
-                <div class="subtopic-name">Understanding Signed Numbers</div>
+                <div class="subtopic-name">
+                  <a href="understanding-signed-numbers.html" target="_blank" style="color: inherit; text-decoration: none;">Understanding Signed Numbers</a>
+                </div>
                 <div class="subtopic-desc">The Real Number Line, direct applications (above/below sea level, profit/loss), and comparing/ordering integers.</div>
+                <a href="understanding-signed-numbers.html" target="_blank" class="activity-link">
+                  📝 Launch Activity &rarr;
+                </a>
               </div>
+
               <div class="subtopic-card">
                 <span class="subtopic-code">1.2</span>
                 <div class="subtopic-name">Addition of Integers</div>
