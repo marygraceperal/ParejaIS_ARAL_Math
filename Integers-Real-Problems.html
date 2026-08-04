@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson: Real-World Signed Number Problems</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid #10b981;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.5rem;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson: Real-World Signed Number Problems</h1>
+    <p>Learn to translate multi-step real-life scenarios into signed number mathematical expressions and solve them step by step.</p>
+  </header>
+
+  <!-- Section 1 -->
+  <section>
+    <h2>1. Translating Keywords to Integer Signs</h2>
+    <p>Real-world word problems often use specific context words to indicate positive and negative operations:</p>
+    
+    <div class="rule-box">
+      <ul>
+        <li><strong>Positive (+) Keywords:</strong> Deposit, gain, rise, above sea level, elevation, profit, credit.</li>
+        <li><strong>Negative (−) Keywords:</strong> Withdrawal, loss, drop, below sea level, depth, debt, fee, penalty.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2>2. Scenario 1: Bank Account Balances</h2>
+    <p>Financial transactions are classic examples of multi-step signed number calculations.</p>
+    
+    <div class="step-box">
+      <p><strong>Problem:</strong> Maria starts with a bank balance of &#8369;1,200. Over the week, she makes a withdrawal of &#8369;450, a deposit of &#8369;800, and incurs two equal service fees of &#8369;50 each. What is her final balance?</p>
+      
+      <p><strong>Step-by-Step Solution:</strong></p>
+      <ol>
+        <li><strong>Identify each term:</strong> Initial balance = <code>+1200</code>, Withdrawal = <code>−450</code>, Deposit = <code>+800</code>, Two fees = <code>2 × (−50) = −100</code></li>
+        <li><strong>Set up the expression:</strong> <code>1200 + (−450) + 800 + (−100)</code></li>
+        <li><strong>Combine positives & negatives:</strong> 
+          <br>Positives: <code>1200 + 800 = 2000</code>
+          <br>Negatives: <code>(−450) + (−100) = −550</code>
+        </li>
+        <li><strong>Calculate final balance:</strong> <code>2000 + (−550) = 1450</code></li>
+      </ol>
+      <p><strong>Final Answer:</strong> Maria's final bank balance is <strong>&#8369;1,450</strong>.</p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2>3. Scenario 2: Multi-Step Temperature Shifts</h2>
+    <p>Tracking temperature changes over time involves adding signed values and finding differences.</p>
+    
+    <div class="step-box">
+      <p><strong>Problem:</strong> At midnight, the temperature in a high-altitude town was −3°C. By 6:00 AM, it dropped by 5°C. Over the next 6 hours, it rose by 12°C. Finally, a cold front caused it to drop by 8°C by evening. What was the final evening temperature?</p>
+      
+      <p><strong>Step-by-Step Solution:</strong></p>
+      <ol>
+        <li><strong>Identify each change:</strong> Start = <code>−3</code>, Drop = <code>−5</code>, Rise = <code>+12</code>, Drop = <code>−8</code></li>
+        <li><strong>Set up the expression:</strong> <code>(−3) + (−5) + 12 + (−8)</code></li>
+        <li><strong>Evaluate left to right:</strong>
+          <br><code>(−3) + (−5) = −8</code>
+          <br><code>(−8) + 12 = +4</code>
+          <br><code>4 + (−8) = −4</code>
+        </li>
+      </ol>
+      <p><strong>Final Answer:</strong> The final evening temperature was <strong>−4°C</strong>.</p>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2>4. Scenario 3: Elevation & Depth Changes</h2>
+    <p>Calculating overall elevation change when moving above and below sea level.</p>
+    
+    <div class="step-box">
+      <p><strong>Problem:</strong> A researcher on a mountain is at an elevation of +150 meters. She hikes down 220 meters into a valley floor, then descends another 30 meters into an underground cavern. What is her final elevation relative to sea level?</p>
+      
+      <p><strong>Step-by-Step Solution:</strong></p>
+      <ol>
+        <li><strong>Identify each position/change:</strong> Start = <code>+150</code>, Descent 1 = <code>−220</code>, Descent 2 = <code>−30</code></li>
+        <li><strong>Set up the expression:</strong> <code>150 + (−220) + (−30)</code></li>
+        <li><strong>Calculate:</strong> 
+          <br><code>150 + (−220) = −70</code>
+          <br><code>(−70) + (−30) = −100</code>
+        </li>
+      </ol>
+      <p><strong>Final Answer:</strong> Her final elevation is <strong>−100 meters</strong> (100 meters below sea level).</p>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="quiz-box">
+    <h2>💡 Quick Self-Check Quiz</h2>
+    <ol>
+      <li>
+        <strong>Solve:</strong> An elevator starts on the 10th floor (+10), goes down 6 floors, goes down another 8 floors, and then moves up 3 floors. What floor is it on now?<br>
+        <span class="answer">Answer: 1st floor (Calculation: 10 + (−6) + (−8) + 3 = 1)</span>
+      </li>
+      <li>
+        <strong>Solve:</strong> A store lost &#8369;1,500 on Monday (−1500), gained &#8369;4,000 on Tuesday (+4000), and lost &#8369;800 on Wednesday (−800). What was the net overall change?<br>
+        <span class="answer">Answer: +&#8369;1,700 profit (Calculation: −1500 + 4000 + (−800) = +1700)</span>
+      </li>
+    </ol>
+  </section>
+
+</div>
+
+</body>
+</html>
