@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson: Understanding Signed Numbers</title>
+  <!-- MathJax Script for LaTeX rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .number-line {
+      background: var(--primary-bg);
+      border: 1px dashed var(--primary-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.5rem;
+    }
+
+    .quiz-box ol {
+      margin-left: 1.25rem;
+    }
+
+    .quiz-box li {
+      margin-bottom: 1rem;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.25rem;
+      }
+      header h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson: Understanding Signed Numbers</h1>
+    <p>Welcome! In this lesson, you will learn what signed numbers are, how they work on a number line, how to compare them, and where we see them in everyday life.</p>
+  </header>
+
+  <!-- Section 1 -->
+  <section>
+    <h2>1. What Are Signed Numbers?</h2>
+    <p>A <strong>signed number</strong> is simply a number that has a positive ($+$) or negative ($-$) sign attached to it to show direction or position relative to <strong>zero</strong>.</p>
+    <ul>
+      <li><strong>Positive Numbers ($> 0$):</strong> Numbers greater than zero. They can be written with a plus sign ($+5$) or without any sign ($5$).</li>
+      <li><strong>Negative Numbers ($< 0$):</strong> Numbers less than zero. They <strong>must</strong> always have a minus sign ($-5$).</li>
+      <li><strong>Zero ($0$):</strong> The origin! Zero is neither positive nor negative—it serves as the neutral reference point.</li>
+    </ul>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2>2. The Real Number Line</h2>
+    <p>Imagine walking along a straight path:</p>
+    
+    <div class="number-line">
+      Negative Direction (−) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Positive Direction (+)<br>
+      &lt;-----------------------|-----------------------&gt;<br>
+      -5 &nbsp; -4 &nbsp; -3 &nbsp; -2 &nbsp; -1 &nbsp;&nbsp; 0 &nbsp; +1 &nbsp; +2 &nbsp; +3 &nbsp; +4 &nbsp; +5
+    </div>
+
+    <ul>
+      <li>Moving to the <strong>RIGHT</strong> means values are increasing (getting larger).</li>
+      <li>Moving to the <strong>LEFT</strong> means values are decreasing (getting smaller).</li>
+    </ul>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2>3. Real-World Applications</h2>
+    <p>We use signed numbers every day to describe opposite directions, gains, and losses:</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Real-World Scenario</th>
+          <th>Positive ($+$)</th>
+          <th>Negative ($-$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Elevation</strong></td>
+          <td>Above sea level ($+100 \text{ m}$)</td>
+          <td>Below sea level ($-100 \text{ m}$)</td>
+        </tr>
+        <tr>
+          <td><strong>Finance</strong></td>
+          <td>Profit / Deposit ($+\text{₱}500$)</td>
+          <td>Loss / Withdrawal ($-\text{₱}500$)</td>
+        </tr>
+        <tr>
+          <td><strong>Temperature</strong></td>
+          <td>Above zero ($+15^\circ\text{C}$)</td>
+          <td>Below zero ($-5^\circ\text{C}$)</td>
+        </tr>
+        <tr>
+          <td><strong>Scorekeeping</strong></td>
+          <td>Points gained ($+10$)</td>
+          <td>Points lost or penalty ($-10$)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2>4. Comparing and Ordering Integers</h2>
+    <p>When comparing two signed numbers, remember: <strong>the number further to the right on the number line is always greater.</strong></p>
+    <ul>
+      <li><strong>Rule 1:</strong> Any positive number is greater than any negative number.<br>
+        <em>Example:</em> $3 > -100$
+      </li>
+      <li><strong>Rule 2:</strong> Zero is greater than any negative number, but less than any positive number.<br>
+        <em>Example:</em> $0 > -5$
+      </li>
+      <li><strong>Rule 3:</strong> For two negative numbers, the one closer to zero is greater.<br>
+        <em>Example:</em> $-2 > -8$ <em>(Because $-2$ is further to the right on the number line than $-8$)</em>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 5 -->
+  <section>
+    <h2>5. Absolute Value: Distance from Zero</h2>
+    <p>The <strong>absolute value</strong> of a number is its distance from zero on the number line, regardless of direction. Because distance is never negative, absolute value is always positive (or zero).</p>
+    <ul>
+      <li>Symbol: Two vertical bars $|x|$</li>
+      <li>$|5| = 5$</li>
+      <li>$|-5| = 5$</li>
+    </ul>
+  </section>
+
+  <!-- Section 6: Quiz -->
+  <section class="quiz-box">
+    <h2>💡 Quick Self-Check Quiz</h2>
+    <p>Try answering these to test your understanding:</p>
+    <ol>
+      <li>
+        <strong>Which number is larger:</strong> $-12$ or $-3$?  
+        <br><span class="answer">Answer: $-3$ (It is closer to zero / further to the right).</span>
+      </li>
+      <li>
+        <strong>Translate to a signed number:</strong> A bank withdrawal of $\text{₱}250$.  
+        <br><span class="answer">Answer: $-\text{₱}250$</span>
+      </li>
+      <li>
+        <strong>Evaluate:</strong> $|-15|$  
+        <br><span class="answer">Answer: $15$</span>
+      </li>
+    </ol>
+  </section>
+
+</div>
+
+</body>
+</html>
