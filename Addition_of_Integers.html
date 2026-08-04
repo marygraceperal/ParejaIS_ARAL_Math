@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activity Sheet: Addition of Integers</title>
+  <title>Lesson: Addition of Integers</title>
   <style>
     :root {
       --primary: #1e3a8a;
@@ -15,6 +15,8 @@
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
       --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --pos-tile: #22c55e;
+      --neg-tile: #ef4444;
     }
 
     * {
@@ -41,72 +43,21 @@
       box-shadow: var(--shadow);
     }
 
-    /* Passcode Lock Container */
-    .lock-screen {
-      background: var(--primary-bg);
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .lock-screen h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .passcode-box {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .passcode-box input[type="password"] {
-      width: 200px;
-      padding: 0.5rem;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-size: 1rem;
-      text-align: center;
-    }
-
-    .passcode-box button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .passcode-box button:hover {
-      background: var(--primary-light);
-    }
-
-    .error-msg {
-      color: #ef4444;
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-      display: none;
-    }
-
-    /* Activity Content initially hidden */
-    #activity-content {
-      display: none;
-    }
-
     header {
       border-bottom: 2px solid var(--border-color);
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     header h1 {
       color: var(--primary);
-      font-size: 2rem;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
     }
 
     section {
@@ -115,221 +66,223 @@
 
     h2 {
       color: var(--primary);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
       border-bottom: 2px solid var(--primary-bg);
       padding-bottom: 0.3rem;
     }
 
-    ol {
-      margin-left: 1.5rem;
-    }
-
-    li {
+    p {
       margin-bottom: 1rem;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .tile-demo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
       margin: 1rem 0;
-    }
-
-    th, td {
-      border: 1px solid var(--border-color);
-      padding: 0.75rem;
-      text-align: left;
-    }
-
-    th {
-      background-color: var(--primary-bg);
-      color: var(--primary);
-    }
-
-    input[type="text"] {
-      width: 100%;
-      padding: 0.4rem;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    details {
       background: #f1f5f9;
       padding: 1rem;
       border-radius: 8px;
-      border-left: 4px solid #10b981;
-      margin-top: 1.5rem;
-      cursor: pointer;
     }
 
-    summary {
+    .tile {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      color: white;
       font-weight: bold;
-      color: #047857;
+      font-size: 1.1rem;
     }
 
-    .answer-key {
-      margin-top: 0.75rem;
-      padding-left: 1.25rem;
+    .tile.pos {
+      background-color: var(--pos-tile);
+    }
+
+    .tile.neg {
+      background-color: var(--neg-tile);
+    }
+
+    .zero-pair {
+      border: 2px dashed #94a3b8;
+      padding: 0.25rem;
+      border-radius: 8px;
+      display: inline-flex;
+      gap: 0.25rem;
+      background: #ffffff;
+    }
+
+    .number-line {
+      background: var(--primary-bg);
+      border: 1px dashed var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      overflow-x: auto;
+      margin: 1.25rem 0;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid #10b981;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.5rem;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
     }
 
     @media (max-width: 600px) {
-      .container { padding: 1.25rem; }
-      .passcode-box { flex-direction: column; }
-      .passcode-box input[type="password"] { width: 100%; }
+      .container {
+        padding: 1.25rem;
+      }
+      header h1 {
+        font-size: 1.75rem;
+      }
     }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <header>
+    <h1>Lesson: Addition of Integers</h1>
+    <p>Learn how to add integers using visual tools like algebra tiles and number lines, and master the core rules for combining same-sign and different-sign numbers.</p>
+  </header>
 
-  <!-- Lock Screen Area -->
-  <div class="lock-screen" id="lock-screen">
-    <h3>🔒 Activity Locked</h3>
-    <p>Please enter the passcode to access this activity sheet.</p>
-    <div class="passcode-box">
-      <input type="password" id="passcode-input" placeholder="Enter Passcode">
-      <button onclick="checkPasscode()">Unlock</button>
-    </div>
-    <p class="error-msg" id="error-msg">Incorrect Passcode. Please try again.</p>
-  </div>
+  <!-- Section 1 -->
+  <section>
+    <h2>1. Visualizing with Algebra Tiles</h2>
+    <p>Algebra tiles help us visualize integer operations using positive and negative counters:</p>
+    <ul>
+      <li><span class="tile pos">+</span> represents positive 1 (+1).</li>
+      <li><span class="tile neg">−</span> represents negative 1 (-1).</li>
+    </ul>
 
-  <!-- Protected Activity Content -->
-  <div id="activity-content">
-    <header>
-      <h1>📝 Activity Sheet: Addition of Integers</h1>
-      <p>Complete the tasks below to demonstrate your mastery of integer addition.</p>
-    </header>
-
-    <!-- Part 1 -->
-    <section>
-      <h2>Part 1: Same-Sign & Different-Sign Computations (6 Points)</h2>
-      <p>Find the sum for each equation.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Problem</th>
-            <th>Your Answer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>(-9) + (-7)</td>
-            <td><input type="text" placeholder="Type answer..."></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>15 + (-8)</td>
-            <td><input type="text" placeholder="Type answer..."></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>(-12) + 20</td>
-            <td><input type="text" placeholder="Type answer..."></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>(-18) + 6</td>
-            <td><input type="text" placeholder="Type answer..."></td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>24 + (+11)</td>
-            <td><input type="text" placeholder="Type answer..."></td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>(-35) + (-15)</td>
-            <td><input type="text" placeholder="Type answer..."></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- Part 2 -->
-    <section>
-      <h2>Part 2: Number Line Movements (4 Points)</h2>
-      <ol>
-        <li>
-          Start at <strong>-4</strong> on the number line and move <strong>7 units to the right</strong>.  
-          <br>What integer do you land on? <input type="text" style="width: 150px; margin-top: 0.5rem;" placeholder="Answer">
-        </li>
-        <li>
-          Start at <strong>+3</strong> on the number line and move <strong>8 units to the left</strong>.  
-          <br>What integer do you land on? <input type="text" style="width: 150px; margin-top: 0.5rem;" placeholder="Answer">
-        </li>
-      </ol>
-    </section>
-
-    <!-- Part 3 -->
-    <section>
-      <h2>Part 3: Real-World Applications (5 Points)</h2>
-      <ol>
-        <li>
-          <strong>Sari-Sari Store Ledger:</strong> Maria earned &#8369;150 in profits in the morning (+150). In the afternoon, she bought restocking supplies worth &#8369;85 (-85). What is her net total for the day?
-          <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write number & currency">
-        </li>
-        <li>
-          <strong>Temperature Drop:</strong> At 6:00 PM, the temperature was -2°C. By midnight, it dropped by another 4°C (-4°C). What is the temperature at midnight?
-          <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write integer & unit">
-        </li>
-      </ol>
-    </section>
-
-    <!-- Interactive Answer Key -->
-    <details>
-      <summary>🔍 Click Here to Reveal Answer Key & Solutions</summary>
-      <div class="answer-key">
-        <p><strong>Part 1:</strong></p>
-        <ul>
-          <li>1) <strong>-16</strong> (Same sign: 9 + 7 = 16, keep negative)</li>
-          <li>2) <strong>+7</strong> or <strong>7</strong> (Different signs: 15 - 8 = 7, copy positive)</li>
-          <li>3) <strong>+8</strong> or <strong>8</strong> (Different signs: 20 - 12 = 8, copy positive)</li>
-          <li>4) <strong>-12</strong> (Different signs: 18 - 6 = 12, copy negative)</li>
-          <li>5) <strong>+35</strong> or <strong>35</strong> (Same sign: 24 + 11 = 35)</li>
-          <li>6) <strong>-50</strong> (Same sign: 35 + 15 = 50, keep negative)</li>
-        </ul>
-        <p style="margin-top:0.5rem;"><strong>Part 2:</strong></p>
-        <ul>
-          <li>1) <strong>+3</strong> or <strong>3</strong></li>
-          <li>2) <strong>-5</strong></li>
-        </ul>
-        <p style="margin-top:0.5rem;"><strong>Part 3:</strong></p>
-        <ul>
-          <li>1) <strong>+&#8369;65</strong> (or &#8369;65 profit)</li>
-          <li>2) <strong>-6°C</strong></li>
-        </ul>
+    <p>When one positive tile cancels out one negative tile, they form a <strong>Zero Pair</strong>:</p>
+    <div class="tile-demo">
+      <div class="zero-pair">
+        <span class="tile pos">+</span>
+        <span class="tile neg">−</span>
       </div>
-    </details>
-  </div>
+      <span>= 0 (Zero Pair)</span>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2>2. Visualizing on a Number Line</h2>
+    <p>To add on a number line, start at the first number and move based on the second number:</p>
+    <ul>
+      <li>Move <strong>RIGHT</strong> to add a positive number.</li>
+      <li>Move <strong>LEFT</strong> to add a negative number.</li>
+    </ul>
+
+    <div class="number-line">
+      Example: Add (-2) + 5<br><br>
+      Start at -2 &nbsp;&rarr;&nbsp; Move 5 units RIGHT &nbsp;&rarr;&nbsp; Land on +3<br>
+      &lt;---|---|---|---|---|---|---|---|---|---&gt;<br>
+      -4 &nbsp; -3 &nbsp; -2 &nbsp; -1 &nbsp;&nbsp; 0 &nbsp; +1 &nbsp; +2 &nbsp; +3 &nbsp; +4 &nbsp; +5
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2>3. Rule 1: Adding Integers with the SAME Sign</h2>
+    <div class="rule-box">
+      <strong>Core Rule:</strong> Add their absolute values (ignore the signs) and <strong>keep the common sign</strong>.
+    </div>
+
+    <ul>
+      <li><strong>Positive + Positive = Positive:</strong><br>
+        (+4) + (+3) = +7
+      </li>
+      <li><strong>Negative + Negative = Negative:</strong><br>
+        (-5) + (-2) = -7<br>
+        <em>Visualized:</em> 5 negative tiles combined with 2 negative tiles give 7 negative tiles.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2>4. Rule 2: Adding Integers with DIFFERENT Signs</h2>
+    <div class="rule-box">
+      <strong>Core Rule:</strong> <strong>Subtract</strong> the smaller absolute value from the larger absolute value, and <strong>copy the sign of the number with the larger absolute value</strong>.
+    </div>
+
+    <p><strong>Example A: Add (-8) + 5</strong></p>
+    <ol>
+      <li>Compare absolute values: |-8| = 8 and |5| = 5.</li>
+      <li>Subtract: 8 − 5 = 3.</li>
+      <li>Copy the sign: -8 has the larger absolute value, so the answer is negative.</li>
+      <li><strong>Result:</strong> (-8) + 5 = <strong>-3</strong></li>
+    </ol>
+
+    <p><strong>Example B: Add 9 + (-4)</strong></p>
+    <ol>
+      <li>Compare absolute values: |9| = 9 and |-4| = 4.</li>
+      <li>Subtract: 9 − 4 = 5.</li>
+      <li>Copy the sign: 9 has the larger absolute value, so the answer is positive.</li>
+      <li><strong>Result:</strong> 9 + (-4) = <strong>+5</strong></li>
+    </ol>
+  </section>
+
+  <!-- Section 5 -->
+  <section>
+    <h2>5. Real-World Applications</h2>
+    <ul>
+      <li><strong>Store Transactions:</strong> Earning &#8369;100 (+100) and then spending &#8369;30 (-30) leaves you with a balance of &#8369;70 (+70).</li>
+      <li><strong>Temperature Shifts:</strong> A temperature of -3°C that rises by 5°C reaches +2°C.</li>
+    </ul>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="quiz-box">
+    <h2>💡 Quick Self-Check Quiz</h2>
+    <ol>
+      <li>
+        <strong>Solve:</strong> (-6) + (-4)<br>
+        <span class="answer">Answer: -10 (Same sign: add 6 + 4, keep negative).</span>
+      </li>
+      <li>
+        <strong>Solve:</strong> 12 + (-7)<br>
+        <span class="answer">Answer: +5 (Different signs: 12 − 7 = 5, copy positive sign).</span>
+      </li>
+      <li>
+        <strong>Solve:</strong> (-15) + 8<br>
+        <span class="answer">Answer: -7 (Different signs: 15 − 8 = 7, copy negative sign).</span>
+      </li>
+    </ol>
+  </section>
 
 </div>
-
-<script>
-  function checkPasscode() {
-    const input = document.getElementById("passcode-input").value;
-    const lockScreen = document.getElementById("lock-screen");
-    const activityContent = document.getElementById("activity-content");
-    const errorMsg = document.getElementById("error-msg");
-
-    if (input === "01011.2") {
-      lockScreen.style.display = "none";
-      activityContent.style.display = "block";
-    } else {
-      errorMsg.style.display = "block";
-    }
-  }
-
-  // Allow pressing "Enter" key to submit passcode
-  document.getElementById("passcode-input").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-      checkPasscode();
-    }
-  });
-</script>
 
 </body>
 </html>
