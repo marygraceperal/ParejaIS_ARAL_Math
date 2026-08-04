@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Sheet: Multiplication & Division of Signed Numbers</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    ol {
+      margin-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.4rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    /* Protected Answer Key Box */
+    .answer-key-box {
+      background: #f1f5f9;
+      border-radius: 8px;
+      border-left: 4px solid #10b981;
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+    }
+
+    .answer-key-header {
+      font-weight: bold;
+      color: #047857;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .passcode-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .passcode-form input[type="password"] {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      width: 180px;
+    }
+
+    .passcode-form button {
+      background: #047857;
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .passcode-form button:hover {
+      background: #065f46;
+    }
+
+    .error-msg {
+      color: #ef4444;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .answer-content {
+      display: none;
+      margin-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .answer-content ul {
+      margin-left: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      .passcode-form { flex-direction: column; }
+      .passcode-form input[type="password"] { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>📝 Activity Sheet: Multiplication & Division of Signed Numbers</h1>
+    <p>Complete the exercises applying sign rules, repeated multiplication, and word problem applications.</p>
+  </header>
+
+  <!-- Part 1 -->
+  <section>
+    <h2>Part 1: Basic Operations (6 Points)</h2>
+    <p>Find the product or quotient for each expression below.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Problem</th>
+          <th>Your Answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>(-9) × (-6)</td>
+          <td><input type="text" placeholder="Type answer..."></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>12 × (-5)</td>
+          <td><input type="text" placeholder="Type answer..."></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>(-48) ÷ (-8)</td>
+          <td><input type="text" placeholder="Type answer..."></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>(-63) ÷ 7</td>
+          <td><input type="text" placeholder="Type answer..."></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>0 ÷ (-15)</td>
+          <td><input type="text" placeholder="Type answer..."></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>(-25) ÷ 0</td>
+          <td><input type="text" placeholder="Type answer..."></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Part 2 -->
+  <section>
+    <h2>Part 2: Repeated Multiplication (4 Points)</h2>
+    <ol>
+      <li>
+        Solve: <strong>(−2) × (−3) × (−4) × 2</strong>
+        <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Your Answer">
+      </li>
+      <li>
+        Solve: <strong>(−1) × (−5) × (−2) × (−1) × (−3)</strong>
+        <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Your Answer">
+      </li>
+    </ol>
+  </section>
+
+  <!-- Part 3 -->
+  <section>
+    <h2>Part 3: Word Problems & Applications (5 Points)</h2>
+    <ol>
+      <li>
+        <strong>Submarine Descent:</strong> A submarine descends into the ocean at a rate of 12 meters per minute (-12 m/min). What is its total change in depth after 6 minutes?
+        <br><input type="text" style="width: 280px; margin-top: 0.5rem;" placeholder="Write calculation & answer">
+      </li>
+      <li>
+        <strong>Business Loss Sharing:</strong> A small partnership accumulated a total net loss of &#8369;12,000 (-12,000) over 4 months. If the loss was divided equally among 3 partners, how much loss did each partner absorb?
+        <br><input type="text" style="width: 280px; margin-top: 0.5rem;" placeholder="Write calculation & answer">
+      </li>
+    </ol>
+  </section>
+
+  <!-- Passcode Protected Answer Key -->
+  <div class="answer-key-box">
+    <div class="answer-key-header">
+      🔒 <span>Reveal Answer Key & Solutions</span>
+    </div>
+
+    <!-- Passcode Input Form -->
+    <div class="passcode-form" id="passcode-form-container">
+      <input type="password" id="ans-passcode" placeholder="Enter Passcode">
+      <button onclick="unlockAnswerKey()">Unlock Solutions</button>
+    </div>
+    <p class="error-msg" id="ans-error-msg">Incorrect Passcode. Try again.</p>
+
+    <!-- Hidden Solutions -->
+    <div class="answer-content" id="answer-key-content">
+      <p><strong>Part 1:</strong></p>
+      <ul>
+        <li>1) <strong>+54</strong> or <strong>54</strong> (Same signs = positive)</li>
+        <li>2) <strong>-60</strong> (Different signs = negative)</li>
+        <li>3) <strong>+6</strong> or <strong>6</strong> (Same signs = positive)</li>
+        <li>4) <strong>-9</strong> (Different signs = negative)</li>
+        <li>5) <strong>0</strong> (Zero divided by any non-zero integer is zero)</li>
+        <li>6) <strong>Undefined</strong> (Division by zero is undefined)</li>
+      </ul>
+      <p style="margin-top:0.5rem;"><strong>Part 2:</strong></p>
+      <ul>
+        <li>1) <strong>-48</strong> (3 negative factors = odd count = negative)</li>
+        <li>2) <strong>-30</strong> (5 negative factors = odd count = negative)</li>
+      </ul>
+      <p style="margin-top:0.5rem;"><strong>Part 3:</strong></p>
+      <ul>
+        <li>1) <strong>-72 meters</strong> (Calculation: (-12) × 6 = -72)</li>
+        <li>2) <strong>-&#8369;4,000</strong> or <strong>&#8369;4,000 loss each</strong> (Calculation: (-12,000) ÷ 3 = -4,000)</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function unlockAnswerKey() {
+    const input = document.getElementById("ans-passcode").value;
+    const formContainer = document.getElementById("passcode-form-container");
+    const answerContent = document.getElementById("answer-key-content");
+    const errorMsg = document.getElementById("ans-error-msg");
+
+    if (input === "01011.4") {
+      formContainer.style.display = "none";
+      errorMsg.style.display = "none";
+      answerContent.style.display = "block";
+    } else {
+      errorMsg.style.display = "block";
+    }
+  }
+
+  document.getElementById("ans-passcode").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      unlockAnswerKey();
+    }
+  });
+</script>
+
+</body>
+</html>
