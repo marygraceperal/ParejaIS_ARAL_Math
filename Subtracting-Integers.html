@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Sheet: Subtraction of Integers</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    ol {
+      margin-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.4rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    /* Protected Answer Key Box */
+    .answer-key-box {
+      background: #f1f5f9;
+      border-radius: 8px;
+      border-left: 4px solid #10b981;
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+    }
+
+    .answer-key-header {
+      font-weight: bold;
+      color: #047857;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .passcode-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .passcode-form input[type="password"] {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      width: 180px;
+    }
+
+    .passcode-form button {
+      background: #047857;
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .passcode-form button:hover {
+      background: #065f46;
+    }
+
+    .error-msg {
+      color: #ef4444;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .answer-content {
+      display: none;
+      margin-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .answer-content ul {
+      margin-left: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      .passcode-form { flex-direction: column; }
+      .passcode-form input[type="password"] { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>📝 Activity Sheet: Subtraction of Integers</h1>
+    <p>Complete the tasks below using Keep-Change-Change (KCC) and double negative concepts.</p>
+  </header>
+
+  <!-- Part 1 -->
+  <section>
+    <h2>Part 1: KCC Transformation & Computations (6 Points)</h2>
+    <p>Rewrite each subtraction problem into an addition problem using KCC, then find the final answer.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Subtraction Problem</th>
+          <th>Addition Form (KCC)</th>
+          <th>Final Answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>8 − 15</td>
+          <td><input type="text" placeholder="e.g., 8 + (-15)"></td>
+          <td><input type="text" placeholder="Answer"></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>(-12) − 9</td>
+          <td><input type="text" placeholder="e.g., (-12) + (-9)"></td>
+          <td><input type="text" placeholder="Answer"></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>(-20) − (-14)</td>
+          <td><input type="text" placeholder="e.g., (-20) + 14"></td>
+          <td><input type="text" placeholder="Answer"></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Part 2 -->
+  <section>
+    <h2>Part 2: Double Negatives & Quick Computations (4 Points)</h2>
+    <ol>
+      <li>
+        Solve: <strong>15 − (−7)</strong>
+        <br><input type="text" style="width: 200px; margin-top: 0.5rem;" placeholder="Your Answer">
+      </li>
+      <li>
+        Solve: <strong>(−25) − (−25)</strong>
+        <br><input type="text" style="width: 200px; margin-top: 0.5rem;" placeholder="Your Answer">
+      </li>
+    </ol>
+  </section>
+
+  <!-- Part 3 -->
+  <section>
+    <h2>Part 3: Real-World Applications (5 Points)</h2>
+    <ol>
+      <li>
+        <strong>Temperature Difference:</strong> The temperature inside a freezer is -8°C. Outside in the room, it is 24°C. What is the temperature difference between the room and the freezer? (Subtract freezer temp from room temp).
+        <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write calculation & answer">
+      </li>
+      <li>
+        <strong>Elevation Shift:</strong> A diver is at -15 meters below sea level. A bird flies at +10 meters above sea level. How many meters apart are the bird and the diver?
+        <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write calculation & answer">
+      </li>
+    </ol>
+  </section>
+
+  <!-- Passcode Protected Answer Key -->
+  <div class="answer-key-box">
+    <div class="answer-key-header">
+      🔒 <span>Reveal Answer Key & Solutions</span>
+    </div>
+
+    <!-- Passcode Input Form -->
+    <div class="passcode-form" id="passcode-form-container">
+      <input type="password" id="ans-passcode" placeholder="Enter Passcode">
+      <button onclick="unlockAnswerKey()">Unlock Solutions</button>
+    </div>
+    <p class="error-msg" id="ans-error-msg">Incorrect Passcode. Try again.</p>
+
+    <!-- Hidden Solutions -->
+    <div class="answer-content" id="answer-key-content">
+      <p><strong>Part 1:</strong></p>
+      <ul>
+        <li>1) KCC: <strong>8 + (-15)</strong> | Answer: <strong>-7</strong></li>
+        <li>2) KCC: <strong>(-12) + (-9)</strong> | Answer: <strong>-21</strong></li>
+        <li>3) KCC: <strong>(-20) + 14</strong> | Answer: <strong>-6</strong></li>
+      </ul>
+      <p style="margin-top:0.5rem;"><strong>Part 2:</strong></p>
+      <ul>
+        <li>1) <strong>+22</strong> or <strong>22</strong> (Double negative becomes 15 + 7)</li>
+        <li>2) <strong>0</strong> (Double negative becomes -25 + 25 = 0)</li>
+      </ul>
+      <p style="margin-top:0.5rem;"><strong>Part 3:</strong></p>
+      <ul>
+        <li>1) <strong>32°C</strong> (Calculation: 24 - (-8) = 24 + 8 = 32°C)</li>
+        <li>2) <strong>25 meters</strong> (Calculation: 10 - (-15) = 10 + 15 = 25m)</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function unlockAnswerKey() {
+    const input = document.getElementById("ans-passcode").value;
+    const formContainer = document.getElementById("passcode-form-container");
+    const answerContent = document.getElementById("answer-key-content");
+    const errorMsg = document.getElementById("ans-error-msg");
+
+    if (input === "01011.3") {
+      formContainer.style.display = "none";
+      errorMsg.style.display = "none";
+      answerContent.style.display = "block";
+    } else {
+      errorMsg.style.display = "block";
+    }
+  }
+
+  document.getElementById("ans-passcode").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      unlockAnswerKey();
+    }
+  });
+</script>
+
+</body>
+</html>
