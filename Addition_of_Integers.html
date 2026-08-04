@@ -15,8 +15,6 @@
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
       --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --pos-tile: #22c55e;
-      --neg-tile: #ef4444;
     }
 
     * {
@@ -43,22 +41,61 @@
       box-shadow: var(--shadow);
     }
 
-    /* Student Info Block */
-    .student-info {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 1rem;
+    /* Passcode Lock Container */
+    .lock-screen {
       background: var(--primary-bg);
-      padding: 1.25rem;
-      border-radius: 8px;
       border: 1px solid var(--border-color);
-      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
 
-    .info-field {
-      border-bottom: 1px dashed var(--primary-light);
-      padding-bottom: 0.25rem;
-      font-weight: 500;
+    .lock-screen h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .passcode-box {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .passcode-box input[type="password"] {
+      width: 200px;
+      padding: 0.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .passcode-box button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .passcode-box button:hover {
+      background: var(--primary-light);
+    }
+
+    .error-msg {
+      color: #ef4444;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    /* Activity Content initially hidden */
+    #activity-content {
+      display: none;
     }
 
     header {
@@ -92,7 +129,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Input & Table Design */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -118,7 +154,6 @@
       font-size: 1rem;
     }
 
-    /* Interactive Answer Key */
     details {
       background: #f1f5f9;
       padding: 1rem;
@@ -140,131 +175,161 @@
 
     @media (max-width: 600px) {
       .container { padding: 1.25rem; }
-      .student-info { grid-template-columns: 1fr; }
+      .passcode-box { flex-direction: column; }
+      .passcode-box input[type="password"] { width: 100%; }
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  
-  <!-- Student Header Block -->
-  <div class="student-info">
-    <div class="info-field">Name: _________________________________</div>
-    <div class="info-field">Date: ______________</div>
-    <div class="info-field">Grade & Section: _______________________</div>
-    <div class="info-field">Score: _____ / 15</div>
+
+  <!-- Lock Screen Area -->
+  <div class="lock-screen" id="lock-screen">
+    <h3>🔒 Activity Locked</h3>
+    <p>Please enter the passcode to access this activity sheet.</p>
+    <div class="passcode-box">
+      <input type="password" id="passcode-input" placeholder="Enter Passcode">
+      <button onclick="checkPasscode()">Unlock</button>
+    </div>
+    <p class="error-msg" id="error-msg">Incorrect Passcode. Please try again.</p>
   </div>
 
-  <header>
-    <h1>📝 Activity Sheet: Addition of Integers</h1>
-    <p>Complete the tasks below to demonstrate your mastery of integer addition.</p>
-  </header>
+  <!-- Protected Activity Content -->
+  <div id="activity-content">
+    <header>
+      <h1>📝 Activity Sheet: Addition of Integers</h1>
+      <p>Complete the tasks below to demonstrate your mastery of integer addition.</p>
+    </header>
 
-  <!-- Part 1 -->
-  <section>
-    <h2>Part 1: Same-Sign & Different-Sign Computations (6 Points)</h2>
-    <p>Find the sum for each equation.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Problem</th>
-          <th>Your Answer</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>(-9) + (-7)</td>
-          <td><input type="text" placeholder="Type answer..."></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>15 + (-8)</td>
-          <td><input type="text" placeholder="Type answer..."></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>(-12) + 20</td>
-          <td><input type="text" placeholder="Type answer..."></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>(-18) + 6</td>
-          <td><input type="text" placeholder="Type answer..."></td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>24 + (+11)</td>
-          <td><input type="text" placeholder="Type answer..."></td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>(-35) + (-15)</td>
-          <td><input type="text" placeholder="Type answer..."></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <!-- Part 1 -->
+    <section>
+      <h2>Part 1: Same-Sign & Different-Sign Computations (6 Points)</h2>
+      <p>Find the sum for each equation.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Problem</th>
+            <th>Your Answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>(-9) + (-7)</td>
+            <td><input type="text" placeholder="Type answer..."></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>15 + (-8)</td>
+            <td><input type="text" placeholder="Type answer..."></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>(-12) + 20</td>
+            <td><input type="text" placeholder="Type answer..."></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>(-18) + 6</td>
+            <td><input type="text" placeholder="Type answer..."></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>24 + (+11)</td>
+            <td><input type="text" placeholder="Type answer..."></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>(-35) + (-15)</td>
+            <td><input type="text" placeholder="Type answer..."></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-  <!-- Part 2 -->
-  <section>
-    <h2>Part 2: Number Line Movements (4 Points)</h2>
-    <ol>
-      <li>
-        Start at <strong>-4</strong> on the number line and move <strong>7 units to the right</strong>.  
-        <br>What integer do you land on? <input type="text" style="width: 150px; margin-top: 0.5rem;" placeholder="Answer">
-      </li>
-      <li>
-        Start at <strong>+3</strong> on the number line and move <strong>8 units to the left</strong>.  
-        <br>What integer do you land on? <input type="text" style="width: 150px; margin-top: 0.5rem;" placeholder="Answer">
-      </li>
-    </ol>
-  </section>
+    <!-- Part 2 -->
+    <section>
+      <h2>Part 2: Number Line Movements (4 Points)</h2>
+      <ol>
+        <li>
+          Start at <strong>-4</strong> on the number line and move <strong>7 units to the right</strong>.  
+          <br>What integer do you land on? <input type="text" style="width: 150px; margin-top: 0.5rem;" placeholder="Answer">
+        </li>
+        <li>
+          Start at <strong>+3</strong> on the number line and move <strong>8 units to the left</strong>.  
+          <br>What integer do you land on? <input type="text" style="width: 150px; margin-top: 0.5rem;" placeholder="Answer">
+        </li>
+      </ol>
+    </section>
 
-  <!-- Part 3 -->
-  <section>
-    <h2>Part 3: Real-World Applications (5 Points)</h2>
-    <ol>
-      <li>
-        <strong>Sari-Sari Store Ledger:</strong> Maria earned &#8369;150 in profits in the morning (+150). In the afternoon, she bought restocking supplies worth &#8369;85 (-85). What is her net total for the day?
-        <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write number & currency">
-      </li>
-      <li>
-        <strong>Temperature Drop:</strong> At 6:00 PM, the temperature was -2°C. By midnight, it dropped by another 4°C (-4°C). What is the temperature at midnight?
-        <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write integer & unit">
-      </li>
-    </ol>
-  </section>
+    <!-- Part 3 -->
+    <section>
+      <h2>Part 3: Real-World Applications (5 Points)</h2>
+      <ol>
+        <li>
+          <strong>Sari-Sari Store Ledger:</strong> Maria earned &#8369;150 in profits in the morning (+150). In the afternoon, she bought restocking supplies worth &#8369;85 (-85). What is her net total for the day?
+          <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write number & currency">
+        </li>
+        <li>
+          <strong>Temperature Drop:</strong> At 6:00 PM, the temperature was -2°C. By midnight, it dropped by another 4°C (-4°C). What is the temperature at midnight?
+          <br><input type="text" style="width: 250px; margin-top: 0.5rem;" placeholder="Write integer & unit">
+        </li>
+      </ol>
+    </section>
 
-  <!-- Interactive Answer Key for Review -->
-  <details>
-    <summary>🔍 Click Here to Reveal Answer Key & Solutions</summary>
-    <div class="answer-key">
-      <p><strong>Part 1:</strong></p>
-      <ul>
-        <li>1) <strong>-16</strong> (Same sign: 9 + 7 = 16, keep negative)</li>
-        <li>2) <strong>+7</strong> or <strong>7</strong> (Different signs: 15 - 8 = 7, copy positive)</li>
-        <li>3) <strong>+8</strong> or <strong>8</strong> (Different signs: 20 - 12 = 8, copy positive)</li>
-        <li>4) <strong>-12</strong> (Different signs: 18 - 6 = 12, copy negative)</li>
-        <li>5) <strong>+35</strong> or <strong>35</strong> (Same sign: 24 + 11 = 35)</li>
-        <li>6) <strong>-50</strong> (Same sign: 35 + 15 = 50, keep negative)</li>
-      </ul>
-      <p style="margin-top:0.5rem;"><strong>Part 2:</strong></p>
-      <ul>
-        <li>1) <strong>+3</strong> or <strong>3</strong></li>
-        <li>2) <strong>-5</strong></li>
-      </ul>
-      <p style="margin-top:0.5rem;"><strong>Part 3:</strong></p>
-      <ul>
-        <li>1) <strong>+&#8369;65</strong> (or &#8369;65 profit)</li>
-        <li>2) <strong>-6°C</strong></li>
-      </ul>
-    </div>
-  </details>
+    <!-- Interactive Answer Key -->
+    <details>
+      <summary>🔍 Click Here to Reveal Answer Key & Solutions</summary>
+      <div class="answer-key">
+        <p><strong>Part 1:</strong></p>
+        <ul>
+          <li>1) <strong>-16</strong> (Same sign: 9 + 7 = 16, keep negative)</li>
+          <li>2) <strong>+7</strong> or <strong>7</strong> (Different signs: 15 - 8 = 7, copy positive)</li>
+          <li>3) <strong>+8</strong> or <strong>8</strong> (Different signs: 20 - 12 = 8, copy positive)</li>
+          <li>4) <strong>-12</strong> (Different signs: 18 - 6 = 12, copy negative)</li>
+          <li>5) <strong>+35</strong> or <strong>35</strong> (Same sign: 24 + 11 = 35)</li>
+          <li>6) <strong>-50</strong> (Same sign: 35 + 15 = 50, keep negative)</li>
+        </ul>
+        <p style="margin-top:0.5rem;"><strong>Part 2:</strong></p>
+        <ul>
+          <li>1) <strong>+3</strong> or <strong>3</strong></li>
+          <li>2) <strong>-5</strong></li>
+        </ul>
+        <p style="margin-top:0.5rem;"><strong>Part 3:</strong></p>
+        <ul>
+          <li>1) <strong>+&#8369;65</strong> (or &#8369;65 profit)</li>
+          <li>2) <strong>-6°C</strong></li>
+        </ul>
+      </div>
+    </details>
+  </div>
 
 </div>
+
+<script>
+  function checkPasscode() {
+    const input = document.getElementById("passcode-input").value;
+    const lockScreen = document.getElementById("lock-screen");
+    const activityContent = document.getElementById("activity-content");
+    const errorMsg = document.getElementById("error-msg");
+
+    if (input === "01011.2") {
+      lockScreen.style.display = "none";
+      activityContent.style.display = "block";
+    } else {
+      errorMsg.style.display = "block";
+    }
+  }
+
+  // Allow pressing "Enter" key to submit passcode
+  document.getElementById("passcode-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      checkPasscode();
+    }
+  });
+</script>
 
 </body>
 </html>
