@@ -174,9 +174,9 @@
             display: none;
         }
 
-        /* Teacher Answer Key (Hidden by default) */
+        /* Teacher Answer Key - HIDDEN BY DEFAULT */
         .teacher-key {
-            display: none;
+            display: none !important;
             margin-top: 20px;
             background: #f0fdf4;
             border: 1px solid #bbf7d0;
@@ -306,6 +306,7 @@
         </blockquote>
     </section>
 
+    <!-- Passcode Section (Shows by Default) -->
     <div class="passcode-wrapper" id="passcodeWrapper">
         <h3>🔒 Teacher Answer Key</h3>
         <div class="passcode-box">
@@ -315,6 +316,7 @@
         <div class="error-msg" id="errorMsg">Incorrect passcode. Please try again.</div>
     </div>
 
+    <!-- Teacher Answer Key (Hidden until unlocked) -->
     <div class="teacher-key" id="teacherKey">
         <h2>💡 Teacher Answer Key</h2>
         <p><strong>Part 1:</strong> 1) +1500, 2) -250, 3) -500, 4) +12, 5) -850, 6) 0</p>
@@ -333,7 +335,7 @@
         const errorMsg = document.getElementById("errorMsg");
 
         if (userPasscode === correctPasscode) {
-            teacherKeyDiv.style.display = "block";
+            teacherKeyDiv.style.setProperty('display', 'block', 'important');
             passcodeWrapper.style.display = "none";
         } else {
             errorMsg.style.display = "block";
