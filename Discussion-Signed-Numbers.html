@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discussion Sheet - Unit 1.1: Understanding Signed Numbers</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --primary-bg: #eff6ff;
+    --accent: #0284c7;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.6; padding: 2rem 1rem; }
+  
+  .container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
+
+  header {
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tag { font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+  h1 { font-size: 1.8rem; color: var(--primary); margin-top: 0.2rem; }
+  
+  .section-title {
+    font-size: 1.2rem;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary-bg);
+    padding-bottom: 0.4rem;
+    margin: 1.5rem 0 0.8rem 0;
+  }
+
+  .concept-box {
+    background: var(--primary-bg);
+    border-left: 4px solid var(--primary);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+
+  th, td {
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  th { background: var(--primary); color: white; }
+
+  .warning-box {
+    background: #fffbe0;
+    border-left: 4px solid #d97706;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+
+  .print-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .container { box-shadow: none; border: none; max-width: 100%; }
+    .print-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="tag">DepEd ARAL Math Program &bull; Student Discussion Sheet</div>
+    <h1>Unit 1.1: Understanding Signed Numbers</h1>
+  </header>
+
+  <!-- Section 1 -->
+  <h2 class="section-title">1. Key Concepts & Definitions</h2>
+  <div class="concept-box">
+    <ul>
+      <li><strong>Positive Numbers:</strong> Values greater than zero ($+1, +2, +5$). If no sign is written, the number is positive.</li>
+      <li><strong>Negative Numbers:</strong> Values less than zero ($-1, -2, -5$). Always written with a negative sign ($-$).</li>
+      <li><strong>Zero ($0$):</strong> The neutral origin point on a number line. It is neither positive nor negative.</li>
+    </ul>
+  </div>
+
+  <!-- Section 2 -->
+  <h2 class="section-title">2. Real-World Applications</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Context</th>
+        <th>Positive Representation (+)</th>
+        <th>Negative Representation (-)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Money & Finance</strong></td>
+        <td>Earning or depositing (e.g., $+₱500$)</td>
+        <td>Debt or spending (e.g., $-₱500$)</td>
+      </tr>
+      <tr>
+        <td><strong>Elevation</strong></td>
+        <td>Above sea level (e.g., $+100\text{m}$)</td>
+        <td>Below sea level (e.g., $-50\text{m}$)</td>
+      </tr>
+      <tr>
+        <td><strong>Temperature</strong></td>
+        <td>Above $0^\circ\text{C}$ (e.g., $+32^\circ\text{C}$)</td>
+        <td>Below $0^\circ\text{C}$ (e.g., $-5^\circ\text{C}$)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Section 3 -->
+  <h2 class="section-title">3. Comparing & Ordering Signed Numbers</h2>
+  <div class="concept-box">
+    <p><strong>Golden Rule:</strong> On a horizontal number line, the number further to the <strong>RIGHT</strong> is always <strong>GREATER</strong>.</p>
+  </div>
+
+  <ul>
+    <li>Any positive number is greater than zero and any negative number ($5 > -100$).</li>
+    <li>Zero is greater than any negative number ($0 > -8$).</li>
+    <li>When comparing two negative numbers, the one closer to zero is greater ($-3 > -9$).</li>
+  </ul>
+
+  <!-- Section 4 -->
+  <h2 class="section-title">4. Common Misconception Alert</h2>
+  <div class="warning-box">
+    <strong>⚠️ Watch Out!</strong><br>
+    Students often think $-10$ is larger than $-2$ because $10$ is larger than $2$.<br>
+    <em>Correction:</em> Think of debt! Having a debt of $₱2$ ($-2$) is better/higher than having a debt of $₱10$ ($-10$). Therefore, <strong>$-2 > -10$</strong>.
+  </div>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</div>
+
+</body>
+</html>
