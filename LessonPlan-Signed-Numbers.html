@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARAL Math Lesson Plan - Unit 1.1: Understanding Signed Numbers</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --primary-bg: #eff6ff;
+    --accent: #0284c7;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
+
+  header {
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .program-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin: 0.2rem 0;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+    background: var(--primary-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .meta-item span {
+    font-weight: bold;
+    color: var(--primary);
+  }
+
+  .objectives-sec {
+    background: #f1f5f9;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--primary);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  }
+
+  .objectives-sec h3 {
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .objectives-sec ul {
+    list-style-type: square;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  /* ILAW Section Styling */
+  .ilaw-card {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ilaw-header {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .ilaw-letter {
+    background: white;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.1rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ilaw-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .ilaw-body {
+    padding: 1.2rem;
+    background: var(--card-bg);
+  }
+
+  .ilaw-body h4 {
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin: 0.8rem 0 0.3rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ilaw-body h4:first-child {
+    margin-top: 0;
+  }
+
+  .ilaw-body ul, .ilaw-body ol {
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .box-example {
+    background: #fffbe0;
+    border: 1px dashed #d97706;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+  }
+
+  .print-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .container { box-shadow: none; border: none; max-width: 100%; }
+    .print-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="program-tag">DepEd ARAL Math Intervention Program &bull; Key Stage 3</div>
+    <h1>ILAW Lesson Plan: Understanding Signed Numbers</h1>
+  </header>
+
+  <div class="meta-grid">
+    <div class="meta-item"><span>Grade Level:</span> Key Stage 3 (Grades 7–10)</div>
+    <div class="meta-item"><span>Quarter/Unit:</span> Term 1 &bull; Unit 1.1</div>
+    <div class="meta-item"><span>Duration:</span> 60 minutes</div>
+    <div class="meta-item"><span>Learning Area:</span> ARAL Mathematics</div>
+  </div>
+
+  <div class="objectives-sec">
+    <h3>Learning Objectives (DepEd Competencies)</h3>
+    <ul>
+      <li><strong>Cognitive:</strong> Identify, compare, and order positive integers, negative integers, and zero on the real number line.</li>
+      <li><strong>Affective:</strong> Express confidence in connecting negative numbers to real-world financial and environmental situations.</li>
+      <li><strong>Psychomotor:</strong> Plot real-world values correctly on a vertical and horizontal number line.</li>
+    </ul>
+  </div>
+
+  <!-- I - INTRODUCE -->
+  <div class="ilaw-card">
+    <div class="ilaw-header">
+      <div class="ilaw-letter">I</div>
+      <div class="ilaw-title">INTRODUCE (Hook, Drill & Objectives) &bull; 10 Mins</div>
+    </div>
+    <div class="ilaw-body">
+      <h4>1. Drill / Review Activity</h4>
+      <ul>
+        <li>Quick warm-up on natural numbers and zero using simple counting cards.</li>
+        <li>Ask students: <em>"What is the lowest possible number you can think of?"</em></li>
+      </ul>
+
+      <h4>2. Motivational Hook (Real-World Context)</h4>
+      <ul>
+        <li>Present two opposite scenarios on the board:
+          <ul>
+            <li><strong>Scenario A:</strong> Earning ₱500 profit in a sari-sari store.</li>
+            <li><strong>Scenario B:</strong> Having a debt of ₱500 at the store.</li>
+          </ul>
+        </li>
+        <li>Ask: <em>"How can we represent these two opposite financial situations using mathematics?"</em></li>
+      </ul>
+
+      <h4>3. Unpacking Objectives</h4>
+      <p>State clearly that today's goal is to understand numbers below zero (signed numbers) and plot them on a number line.</p>
+    </div>
+  </div>
+
+  <!-- L - LEARN -->
+  <div class="ilaw-card">
+    <div class="ilaw-header">
+      <div class="ilaw-letter">L</div>
+      <div class="ilaw-title">LEARN (Direct Instruction & Concept Development) &bull; 20 Mins</div>
+    </div>
+    <div class="ilaw-body">
+      <h4>1. Core Concept Exploration</h4>
+      <ul>
+        <li><strong>Signed Numbers:</strong> Explain that signed numbers consist of positive numbers (+), negative numbers (-), and zero (which is neutral).</li>
+        <li><strong>The Real Number Line:</strong> Draw a horizontal number line.
+          <ul>
+            <li>Zero is the origin/anchor point.</li>
+            <li>Positive integers sit to the <strong>RIGHT</strong> of zero.</li>
+            <li>Negative integers sit to the <strong>LEFT</strong> of zero.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="box-example">
+        <strong>Teacher Key Demonstration:</strong><br>
+        Show vertical contexts: Above sea level (+100m) vs. Below sea level (-50m).<br>
+        Emphasize: As you move to the right (or up), value <strong>increases</strong>. As you move to the left (or down), value <strong>decreases</strong> (e.g., -5 is smaller than -2).
+      </div>
+
+      <h4>2. Guided Examples</h4>
+      <ol>
+        <li>Compare -8 and 3: Since 3 is to the right of -8 on the number line, <strong>3 > -8</strong>.</li>
+        <li>Compare -10 and -2: Since -2 is closer to 0 (further right), <strong>-2 > -10</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- A - APPLY -->
+  <div class="ilaw-card">
+    <div class="ilaw-header">
+      <div class="ilaw-letter">A</div>
+      <div class="ilaw-title">APPLY (Guided & Independent Practice) &bull; 20 Mins</div>
+    </div>
+    <div class="ilaw-body">
+      <h4>1. Pair-Share Activity (Guided Practice)</h4>
+      <p>Distribute mini-number line boards. Have pairs plot and translate these real-world phrases into signed integers:</p>
+      <ul>
+        <li>a 12-degree drop in temperature (-12)</li>
+        <li>a deposit of ₱1,500 (+1500)</li>
+        <li>50 meters below sea level (-50)</li>
+      </ul>
+
+      <h4>2. Independent Activity (Individual Work)</h4>
+      <p>Task students to arrange the following sets of integers in ascending order (least to greatest):</p>
+      <ul>
+        <li>Set A: {-4, 0, 7, -9, 2} &rightarrow; <em>Answer: {-9, -4, 0, 2, 7}</em></li>
+        <li>Set B: {-15, -3, -20, 1, -1} &rightarrow; <em>Answer: {-20, -15, -3, -1, 1}</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- W - WRAP-UP -->
+  <div class="ilaw-card">
+    <div class="ilaw-header">
+      <div class="ilaw-letter">W</div>
+      <div class="ilaw-title">WRAP-UP (Generalization & Formative Assessment) &bull; 10 Mins</div>
+    </div>
+    <div class="ilaw-body">
+      <h4>1. Student Generalization</h4>
+      <p>Ask 2-3 learners to complete these sentences:</p>
+      <ul>
+        <li><em>"Numbers to the left of zero are always..."</em></li>
+        <li><em>"Between two negative numbers, the one closer to zero is..."</em></li>
+      </ul>
+
+      <h4>2. Formative Assessment (Exit Ticket)</h4>
+      <p>Write the correct symbol (&lt;, &gt;, or =) on a 1/4 sheet of paper:</p>
+      <ol>
+        <li>-7 ____ -2</li>
+        <li>0 ____ -5</li>
+        <li>+12 ____ -12</li>
+      </ol>
+    </div>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</div>
+
+</body>
+</html>
