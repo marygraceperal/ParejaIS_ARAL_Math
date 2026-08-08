@@ -3,222 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARAL Math Key Stage 3 Curriculum Syllabus - Dashboard</title>
+<title>ARAL Math Key Stage 3 Curriculum Syllabus</title>
 <style>
   :root {
     --primary: #1e3a8a;
     --primary-light: #3b82f6;
     --primary-bg: #eff6ff;
     --accent: #0284c7;
-    --text-dark: #0f172a;
+    --text-dark: #1e293b;
     --text-muted: #64748b;
-    --bg-main: #f1f5f9;
+    --bg-main: #f8fafc;
     --card-bg: #ffffff;
-    --border-color: #cbd5e1;
-    --border-light: #e2e8f0;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --border-color: #e2e8f0;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.6; }
-
-  /* DASHBOARD LAYOUT */
-  .dashboard-container {
-    display: flex;
-    min-height: 100vh;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
-  /* SIDEBAR NAVIGATION */
-  .sidebar {
-    width: 280px;
-    background: #0f172a;
-    color: #f8fafc;
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    flex-shrink: 0;
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 2rem 1rem;
   }
 
-  .sidebar-brand {
-    padding: 0.5rem;
-    border-bottom: 1px solid #334155;
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
-  .sidebar-brand h2 { font-size: 1.25rem; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; }
-  .sidebar-brand span { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
-
-  .sidebar-menu { display: flex; flex-direction: column; gap: 0.4rem; list-style: none; }
-  .sidebar-menu-title { font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 700; padding: 0.5rem 0.75rem 0.2rem 0.75rem; }
-
-  .sidebar-nav-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background: transparent;
-    color: #cbd5e1;
-    border: none;
-    border-radius: var(--radius-sm);
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .sidebar-nav-btn:hover { background: #1e293b; color: #ffffff; }
-  .sidebar-nav-btn.active { background: var(--primary-light); color: #ffffff; box-shadow: var(--shadow-sm); }
-
-  .sidebar-user {
-    margin-top: auto;
-    padding: 1rem;
-    background: #1e293b;
-    border-radius: var(--radius-md);
-    border: 1px solid #334155;
-  }
-
-  .sidebar-user-title { font-size: 0.75rem; color: #94a3b8; }
-  .sidebar-user-name { font-size: 0.95rem; font-weight: 700; color: #ffffff; }
-
-  /* MAIN WORKSPACE */
-  .main-content {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;
-  }
-
-  /* TOP DASHBOARD HEADER */
   header {
     background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
     color: white;
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    margin-bottom: 1.5rem;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
     box-shadow: var(--shadow);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
   }
 
-  header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
-  header p { font-size: 0.95rem; opacity: 0.95; }
-  
-  .author-badge {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    backdrop-filter: blur(5px);
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
   }
 
-  /* STATS METRICS GRID */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+  header p {
+    font-size: 1.05rem;
+    opacity: 0.9;
   }
 
-  .stat-card {
-    background: var(--card-bg);
-    padding: 1.25rem;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .stat-card .label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); }
-  .stat-card .value { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
-  .stat-card .sub { font-size: 0.8rem; color: #16a34a; font-weight: 600; }
-
-  /* OVERVIEW & AI DECLARATION BOXES */
-  .overview-box {
-    background: var(--primary-bg);
-    border-left: 4px solid var(--primary);
-    padding: 1.25rem;
-    border-radius: var(--radius-sm);
-    margin-bottom: 1.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .overview-box h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.4rem; }
-  .overview-box p { font-size: 0.92rem; color: var(--text-dark); margin-bottom: 0.5rem; }
-
-  .ai-declaration-box {
-    background: #fffbebf8;
-    border: 1px solid #fef08a;
-    border-left: 4px solid #eab308;
-    padding: 0.9rem 1.1rem;
-    border-radius: var(--radius-sm);
+  .declaration-badge {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-left: 4px solid #60a5fa;
+    border-radius: 4px;
     font-size: 0.85rem;
-    color: #713f12;
-    margin-top: 0.8rem;
   }
 
-  /* TERM SECTIONS & DASHBOARD PANELS */
   .term-section {
     background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
     margin-bottom: 2.5rem;
     overflow: hidden;
     box-shadow: var(--shadow);
-    display: none;
   }
 
-  .term-section.active { display: block; animation: fadeIn 0.3s ease; }
+  .term-header {
+    background: var(--primary);
+    color: white;
+    padding: 1.25rem 1.5rem;
+  }
 
-  .term-header { background: var(--primary); color: white; padding: 1.25rem 1.5rem; }
-  .term-header h2 { font-size: 1.4rem; font-weight: 600; }
-  .term-header p { font-size: 0.95rem; opacity: 0.85; margin-top: 0.25rem; font-style: italic; }
-  .term-body { padding: 1.5rem; }
+  .term-header h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
 
-  /* UNIT TAB STYLING */
-  .tab-container { display: flex; flex-direction: column; }
-  .tab-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; border-bottom: 2px solid var(--border-light); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+  .term-header p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-top: 0.25rem;
+    font-style: italic;
+  }
+
+  .term-body {
+    padding: 1.5rem;
+  }
+
+  .tab-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 
   .tab-nav label {
     padding: 0.6rem 1.2rem;
     background: #f1f5f9;
     color: var(--text-muted);
-    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border-radius: 6px 6px 0 0;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.2s ease;
   }
 
-  .tab-nav label:hover { background: var(--primary-bg); color: var(--primary); }
+  .tab-nav label:hover {
+    background: var(--primary-bg);
+    color: var(--primary);
+  }
 
-  .tab-content { display: none; animation: fadeIn 0.3s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
 
-  input[type="radio"].tab-toggle { display: none; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-  /* Active Tab States */
+  input[type="radio"].tab-toggle {
+    display: none;
+  }
+
   #t1-u1:checked ~ .tab-nav label[for="t1-u1"],
   #t1-u2:checked ~ .tab-nav label[for="t1-u2"],
   #t1-u3:checked ~ .tab-nav label[for="t1-u3"],
   #t2-u4:checked ~ .tab-nav label[for="t2-u4"],
   #t2-u5:checked ~ .tab-nav label[for="t2-u5"],
-  #t3-u8:checked ~ .tab-nav label[for="t3-u8"] {
+  #t2-u6:checked ~ .tab-nav label[for="t2-u6"],
+  #t2-u7:checked ~ .tab-nav label[for="t2-u7"],
+  #t3-u8:checked ~ .tab-nav label[for="t3-u8"],
+  #t3-u9:checked ~ .tab-nav label[for="t3-u9"],
+  #t3-u10:checked ~ .tab-nav label[for="t3-u10"],
+  #t3-u11:checked ~ .tab-nav label[for="t3-u11"],
+  #t3-u12:checked ~ .tab-nav label[for="t3-u12"],
+  #t3-u13:checked ~ .tab-nav label[for="t3-u13"] {
     background: var(--card-bg);
     color: var(--primary);
-    border-color: var(--border-color);
+    border: 1px solid var(--border-color);
     border-bottom: 2px solid var(--card-bg);
     margin-bottom: -2px;
   }
@@ -228,506 +167,340 @@
   #t1-u3:checked ~ .tab-contents #content-t1-u3,
   #t2-u4:checked ~ .tab-contents #content-t2-u4,
   #t2-u5:checked ~ .tab-contents #content-t2-u5,
-  #t3-u8:checked ~ .tab-contents #content-t3-u8 { display: block; }
+  #t2-u6:checked ~ .tab-contents #content-t2-u6,
+  #t2-u7:checked ~ .tab-contents #content-t2-u7,
+  #t3-u8:checked ~ .tab-contents #content-t3-u8,
+  #t3-u9:checked ~ .tab-contents #content-t3-u9,
+  #t3-u10:checked ~ .tab-contents #content-t3-u10,
+  #t3-u11:checked ~ .tab-contents #content-t3-u11,
+  #t3-u12:checked ~ .tab-contents #content-t3-u12,
+  #t3-u13:checked ~ .tab-contents #content-t3-u13 {
+    display: block;
+  }
 
-  .unit-title { font-size: 1.2rem; color: var(--primary); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-light); }
+  .unit-title {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
 
-  /* SUBTOPIC DASHBOARD CARDS */
-  .subtopic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; }
+  .subtopic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+  }
 
   .subtopic-card {
     background: #f8fafc;
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
 
-  .subtopic-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); background: #ffffff; border-color: var(--primary-light); }
-
-  .subtopic-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
-  .subtopic-code { display: inline-block; background: var(--primary-bg); color: var(--primary); font-weight: 700; font-size: 0.8rem; padding: 0.2rem 0.6rem; border-radius: var(--radius-sm); }
+  .subtopic-code {
+    display: inline-block;
+    background: var(--primary-bg);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+  }
 
   .subtopic-name {
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-weight: 600;
     margin-bottom: 0.4rem;
   }
 
   .subtopic-name a {
     color: var(--primary);
     text-decoration: underline;
-    transition: color 0.2s ease;
   }
 
-  .subtopic-name a:hover {
-    color: var(--primary-light);
+  .subtopic-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
   }
 
-  .subtopic-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
-
-  /* RESOURCE LINKS & BUTTONS */
-  .resource-buttons {
-    display: flex;
-    flex-wrap: wrap;
+  /* Resource Button Group */
+  .resource-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0.4rem;
-    margin-top: 0.5rem;
-    padding-top: 0.8rem;
-    border-top: 1px dashed var(--border-color);
+    margin-top: auto;
   }
 
-  .res-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.78rem;
+  .btn-resource {
+    font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.35rem 0.65rem;
-    border-radius: 5px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    text-align: center;
     text-decoration: none;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-dark);
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
   }
 
-  .btn-lp { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-  .btn-lp:hover { background: #dcfce7; }
+  .btn-resource:hover {
+    background: var(--primary-bg);
+    color: var(--primary);
+    border-color: var(--primary-light);
+  }
 
-  .btn-pres { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
-  .btn-pres:hover { background: #dbeafe; }
+  .btn-pdf {
+    grid-column: span 2;
+    background: #fef2f2;
+    color: #991b1b;
+    border-color: #fecaca;
+  }
 
-  .btn-act { background: #faf5ff; color: #6b21a8; border: 1px solid #e9d5ff; }
-  .btn-act:hover { background: #f3e8ff; }
+  .btn-pdf:hover {
+    background: #fee2e2;
+    color: #7f1d1d;
+  }
 
-  .btn-print { background: #fff7ed; color: #c2410c; border: 1px solid #ffedd5; }
-  .btn-print:hover { background: #ffedd5; }
-
-  /* ANIMATED SLIDE PRESENTATION MODAL */
-  .slide-modal {
+  /* Presentation Modal Styles */
+  .modal-overlay {
     display: none;
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(15, 23, 42, 0.92);
-    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.9);
+    z-index: 1000;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(4px);
   }
 
-  .slide-modal.active { display: flex; }
-
-  .slide-container {
-    background: #ffffff;
-    width: 90%;
-    max-width: 900px;
-    height: 520px;
-    border-radius: var(--radius-lg);
-    position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  .modal-overlay.active {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
   }
 
   .slide-stage {
-    flex: 1;
-    padding: 3rem 2.5rem;
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
   }
 
-  .slide {
-    display: none;
-    width: 100%;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease-out;
+  .slide-content {
+    animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .slide.active-slide {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    animation: slideInAnim 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
   }
 
-  @keyframes slideInAnim {
-    from { opacity: 0; transform: translateY(20px) scale(0.98); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+  .slide-title {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
   }
 
-  .slide h3 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.3rem; }
-  .slide p { font-size: 1.1rem; color: #334155; margin-bottom: 1rem; line-height: 1.6; }
-  .slide ul { margin-left: 1.5rem; font-size: 1.05rem; color: #334155; }
-  .slide li { margin-bottom: 0.6rem; }
+  .slide-body {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+  }
 
-  .slide-nav {
-    background: #f1f5f9;
-    padding: 1rem 1.5rem;
+  .slide-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
   }
 
-  .slide-btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: background 0.2s ease;
+    color: var(--text-muted);
   }
 
-  .slide-btn:hover { background: var(--primary-light); }
-  .close-modal-btn { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #64748b; z-index: 10; }
-  .close-modal-btn:hover { color: #0f172a; }
-
-  .author-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px dashed var(--border-color); text-align: center; font-size: 0.85rem; color: #94a3b8; }
-
-  /* RESPONSIVE DESIGN */
-  @media (max-width: 900px) {
-    .dashboard-container { flex-direction: column; }
-    .sidebar { width: 100%; padding: 1rem; }
-    .sidebar-menu { flex-direction: row; overflow-x: auto; padding-bottom: 0.5rem; }
-    .main-content { padding: 1rem; }
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
   }
 
   @media print {
-    body { background: white; color: black; }
-    .sidebar, .resource-buttons, .slide-modal, .stats-grid { display: none !important; }
-    .main-content { padding: 0; }
-    .term-section { display: block !important; border: none; box-shadow: none; margin-bottom: 1rem; }
+    .tab-nav, .btn-resource, .modal-overlay { display: none !important; }
     .tab-content { display: block !important; }
+    .term-section { break-inside: avoid; }
   }
 </style>
 </head>
 <body>
 
-<div class="dashboard-container">
-  
-  <!-- SIDEBAR NAVIGATION -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h2>ARAL Math Portal</h2>
-      <span>Key Stage 3 Syllabus</span>
+<div class="container">
+  <header>
+    <h1>ARAL Math Program - Key Stage 3 Syllabus</h1>
+    <p>DepEd Academic Recovery and Accessible Learning (RA 12028) &bull; 3-Term Subtopic Framework</p>
+    <div class="declaration-badge">
+      <strong>Author & Curriculum Developer:</strong> Mary Grace M. Peral<br>
+      <strong>AI Collaboration Statement:</strong> Designed and structured in collaboration with Gemini AI to fulfill DepEd Key Stage 3 Mathematics benchmarks.
     </div>
+  </header>
 
-    <div class="sidebar-menu-title">Curriculum Terms</div>
-    <ul class="sidebar-menu">
-      <li>
-        <button class="sidebar-nav-btn active" id="nav-term1" onclick="switchTermTab(1)">
-          <span>📘</span> Term 1: Foundations
-        </button>
-      </li>
-      <li>
-        <button class="sidebar-nav-btn" id="nav-term2" onclick="switchTermTab(2)">
-          <span>📐</span> Term 2: Equations
-        </button>
-      </li>
-      <li>
-        <button class="sidebar-nav-btn" id="nav-term3" onclick="switchTermTab(3)">
-          <span>📊</span> Term 3: Advanced
-        </button>
-      </li>
-    </ul>
-
-    <div class="sidebar-user">
-      <div class="sidebar-user-title">Author / Lead Instructor</div>
-      <div class="sidebar-user-name">Mary Grace M. Peral</div>
+  <!-- TERM 1 -->
+  <section class="term-section">
+    <div class="term-header">
+      <h2>Term 1: Number Systems & Algebraic Foundations</h2>
+      <p>Focus: Mastering signed numbers, order of operations, and the transition from arithmetic to algebra.</p>
     </div>
-  </aside>
+    <div class="term-body">
+      <div class="tab-container">
+        <input type="radio" name="term1-tabs" id="t1-u1" class="tab-toggle" checked>
+        <input type="radio" name="term1-tabs" id="t1-u2" class="tab-toggle">
+        <input type="radio" name="term1-tabs" id="t1-u3" class="tab-toggle">
 
-  <!-- MAIN WORKSPACE CONTENT -->
-  <main class="main-content">
-    
-    <header>
-      <div>
-        <h1>ARAL Math Program - Key Stage 3 Syllabus</h1>
-        <p>DepEd Academic Recovery and Accessible Learning (RA 12028) &bull; 3-Term Subtopic Framework</p>
-      </div>
-      <div class="author-badge">Author: Mary Grace M. Peral</div>
-    </header>
+        <div class="tab-nav">
+          <label for="t1-u1">Unit 1: Integers & Rules of Signs</label>
+          <label for="t1-u2">Unit 2: Properties of Real Numbers</label>
+          <label for="t1-u3">Unit 3: Absolute Value & GEMDAS</label>
+        </div>
 
-    <!-- METRICS & OVERVIEW STATS -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="label">Curriculum Scope</span>
-        <span class="value">3 Terms</span>
-        <span class="sub">Key Stage 3 Standard</span>
-      </div>
-      <div class="stat-card">
-        <span class="label">Local Context</span>
-        <span class="value">PHP (₱)</span>
-        <span class="sub">Contextualized Problems</span>
-      </div>
-      <div class="stat-card">
-        <span class="label">Legal Framework</span>
-        <span class="value">RA 12028</span>
-        <span class="sub">Academic Recovery</span>
-      </div>
-    </div>
-
-    <div class="overview-box">
-      <h2>📌 Curriculum Overview & Context</h2>
-      <p>All real-world scenarios, monetary applications, and problem sets are localized using the <strong>Philippine Peso (₱)</strong> context to ensure maximum clarity and relevance for learners.</p>
-      
-      <div class="ai-declaration-box">
-        <strong>🤖 AI Assistance Declaration:</strong> This curriculum design, instructional structure, and interactive slide presentations were designed and developed with AI-assisted instructional technology tools by <strong>Mary Grace M. Peral</strong> for academic enhancement and instructional delivery.
-      </div>
-    </div>
-
-    <!-- TERM 1 -->
-    <section id="term1-section" class="term-section active">
-      <div class="term-header">
-        <h2>Term 1: Number Systems & Algebraic Foundations</h2>
-        <p>Focus: Mastering signed numbers, order of operations, and the transition from arithmetic to algebra.</p>
-      </div>
-      <div class="term-body">
-        <div class="tab-container">
-          <input type="radio" name="term1-tabs" id="t1-u1" class="tab-toggle" checked>
-          <input type="radio" name="term1-tabs" id="t1-u2" class="tab-toggle">
-          <input type="radio" name="term1-tabs" id="t1-u3" class="tab-toggle">
-
-          <div class="tab-nav">
-            <label for="t1-u1">Unit 1: Integers & Rules of Signs</label>
-            <label for="t1-u2">Unit 2: Properties of Real Numbers</label>
-            <label for="t1-u3">Unit 3: Absolute Value & GEMDAS</label>
-          </div>
-
-          <div class="tab-contents">
-            <!-- Unit 1 -->
-            <div id="content-t1-u1" class="tab-content">
-              <h3 class="unit-title">Unit 1: Integers & Rules of Signs</h3>
-              <div class="subtopic-grid">
-                
-                <div class="subtopic-card">
-                  <div>
-                    <div class="subtopic-header">
-                      <span class="subtopic-code">1.1</span>
-                    </div>
-                    <div class="subtopic-name">
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Signed-Numbers.html" target="_blank">Understanding Signed Numbers</a>
-                    </div>
-                    <div class="subtopic-desc">The Real Number Line, direct applications (above/below sea level, profit/loss in ₱), and comparing/ordering integers.</div>
+        <div class="tab-contents">
+          <!-- Unit 1 -->
+          <div id="content-t1-u1" class="tab-content">
+            <h3 class="unit-title">Unit 1: Integers & Rules of Signs</h3>
+            <div class="subtopic-grid">
+              
+              <div class="subtopic-card">
+                <div>
+                  <span class="subtopic-code">1.1</span>
+                  <div class="subtopic-name">
+                    <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Signed-Numbers.html" target="_blank">Understanding Signed Numbers</a>
                   </div>
-                  <div class="resource-buttons">
-                    <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/LessonPlan-Signed-Numbers.html" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                    <button onclick="openPresentation('Understanding Signed Numbers', ['Slide 1: Introduction to Signed Numbers<p>Positive numbers represent gains (+₱500 profit), while negative numbers represent losses (-₱200 debt).</p>', 'Slide 2: Number Line Navigation<p>Zero acts as the reference point. Numbers increase moving right and decrease moving left.</p>', 'Slide 3: Practical Application<p>Evaluating temperature changes, elevation above/below sea level, and financial balances in ₱.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
-                    <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Understanding_Signed_Numbers.html" target="_blank" class="res-btn btn-act">📝 Activity</a>
-                    <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
-                  </div>
+                  <div class="subtopic-desc">Real number line concepts, direct applications (profit/loss), and ordering integers.</div>
                 </div>
-
-                <div class="subtopic-card">
-                  <div>
-                    <div class="subtopic-header">
-                      <span class="subtopic-code">1.2</span>
-                    </div>
-                    <div class="subtopic-name">
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Addition-of-Integers.html" target="_blank">Addition of Integers</a>
-                    </div>
-                    <div class="subtopic-desc">Visualizing with algebra tiles/number lines, combining same-sign integers, and applying absolute value rules.</div>
-                  </div>
-                  <div class="resource-buttons">
-                    <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/LessonPlan-Addition-Integers.html" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                    <button onclick="openPresentation('Addition of Integers', ['Slide 1: Same Sign Addition<p>Add absolute values and keep the common sign. Example: (-5) + (-3) = -8.</p>', 'Slide 2: Different Sign Addition<p>Subtract smaller absolute value from larger, taking the sign of the larger absolute value.</p>', 'Slide 3: Interactive Example<p>₱100 income (+100) plus ₱40 expense (-40) = ₱60 net (+60).</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
-                    <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Adding-Integers.html" target="_blank" class="res-btn btn-act">📝 Activity</a>
-                    <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
-                  </div>
+                <div class="resource-group">
+                  <a href="#" class="btn-resource">📄 Lesson Plan</a>
+                  <button class="btn-resource" onclick="openPresentation('Understanding Signed Numbers', ['Concept: Integers on the Number Line', 'Key Rule: Positive to the right, Negative to the left', 'Real World: Elevation, Temperature, and Financial Balance'])">📊 Presentation</button>
+                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Understanding_Signed_Numbers.html" target="_blank" class="btn-resource">📝 Activity</a>
+                  <button class="btn-resource btn-pdf" onclick="window.print()">🖨️ Save / Print PDF</button>
                 </div>
-
-                <div class="subtopic-card">
-                  <div>
-                    <div class="subtopic-header">
-                      <span class="subtopic-code">1.3</span>
-                    </div>
-                    <div class="subtopic-name">
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtraction-of-Integers.html" target="_blank">Subtraction of Integers</a>
-                    </div>
-                    <div class="subtopic-desc">The "Add the Opposite" (KCC: Keep-Change-Change) principle and resolving double negatives.</div>
-                  </div>
-                  <div class="resource-buttons">
-                    <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                    <button onclick="openPresentation('Subtraction of Integers', ['Slide 1: KCC Rule<p>Keep the first number, Change subtraction to addition, Change sign of second number.</p>', 'Slide 2: Double Negatives<p>Subtracting a negative turns into adding a positive: 5 - (-3) = 5 + 3 = 8.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
-                    <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtracting-Integers.html" target="_blank" class="res-btn btn-act">📝 Activity</a>
-                    <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
-                  </div>
-                </div>
-
               </div>
-            </div>
 
-            <!-- Unit 2 -->
-            <div id="content-t1-u2" class="tab-content">
-              <h3 class="unit-title">Unit 2: Properties of Real Numbers</h3>
-              <div class="subtopic-grid">
-
-                <div class="subtopic-card">
-                  <div>
-                    <div class="subtopic-header">
-                      <span class="subtopic-code">2.1</span>
-                    </div>
-                    <div class="subtopic-name">
-                      <a href="#" target="_blank">Commutative & Associative Properties</a>
-                    </div>
-                    <div class="subtopic-desc">Rearranging and regrouping addition and multiplication terms to simplify mental calculations.</div>
+              <div class="subtopic-card">
+                <div>
+                  <span class="subtopic-code">1.2</span>
+                  <div class="subtopic-name">
+                    <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Addition-of-Integers.html" target="_blank">Addition of Integers</a>
                   </div>
-                  <div class="resource-buttons">
-                    <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                    <button onclick="openPresentation('Commutative & Associative Properties', ['Slide 1: Commutative Property<p>a + b = b + a | Order does not change the total sum or product.</p>', 'Slide 2: Associative Property<p>(a + b) + c = a + (b + c) | Grouping does not alter results.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
-                    <a href="#" target="_blank" class="res-btn btn-act">📝 Activity</a>
-                    <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
-                  </div>
+                  <div class="subtopic-desc">Combining same-sign and different-sign integers using visual models and absolute value rules.</div>
                 </div>
-
-              </div>
-            </div>
-
-            <!-- Unit 3 -->
-            <div id="content-t1-u3" class="tab-content">
-              <h3 class="unit-title">Unit 3: Absolute Value, Exponents & GEMDAS</h3>
-              <div class="subtopic-grid">
-
-                <div class="subtopic-card">
-                  <div>
-                    <div class="subtopic-header">
-                      <span class="subtopic-code">3.1</span>
-                    </div>
-                    <div class="subtopic-name">
-                      <a href="#" target="_blank">Absolute Value Concepts</a>
-                    </div>
-                    <div class="subtopic-desc">Defining absolute value as distance from zero on a number line and evaluating |x|.</div>
-                  </div>
-                  <div class="resource-buttons">
-                    <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                    <button onclick="openPresentation('Absolute Value Concepts', ['Slide 1: Distance Concept<p>Absolute value measures distance from 0; distance is always non-negative: |-7| = 7.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
-                    <a href="#" target="_blank" class="res-btn btn-act">📝 Activity</a>
-                    <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
-                  </div>
+                <div class="resource-group">
+                  <a href="#" class="btn-resource">📄 Lesson Plan</a>
+                  <button class="btn-resource" onclick="openPresentation('Addition of Integers', ['Rule 1: Same Signs - Add absolute values and keep sign', 'Rule 2: Different Signs - Subtract smaller absolute value from larger, take sign of larger absolute value', 'Interactive Example: (-5) + (+8) = +3'])">📊 Presentation</button>
+                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Adding-Integers.html" target="_blank" class="btn-resource">📝 Activity</a>
+                  <button class="btn-resource btn-pdf" onclick="window.print()">🖨️ Save / Print PDF</button>
                 </div>
-
               </div>
+
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- TERM 2 -->
-    <section id="term2-section" class="term-section">
-      <div class="term-header">
-        <h2>Term 2: Equations, Inequalities & Polynomials</h2>
-        <p>Focus: Translating real-world situations into math language, solving linear equations, and operating on polynomials.</p>
-      </div>
-      <div class="term-body">
-        <p style="color: var(--text-muted); font-style: italic;">Term 2 units and subtopics are active in this dashboard view.</p>
-      </div>
-    </section>
-
-    <!-- TERM 3 -->
-    <section id="term3-section" class="term-section">
-      <div class="term-header">
-        <h2>Term 3: Geometry, Measurement & Data</h2>
-        <p>Focus: Spatial reasoning, geometric modeling, statistics, and localized data analysis.</p>
-      </div>
-      <div class="term-body">
-        <p style="color: var(--text-muted); font-style: italic;">Term 3 units and subtopics are active in this dashboard view.</p>
-      </div>
-    </section>
-
-    <footer class="author-footer">
-      Designed for DepEd ARAL Program &bull; Academic Recovery and Accessible Learning (RA 12028) &bull; Author: Mary Grace M. Peral
-    </footer>
-
-  </main>
+    </div>
+  </section>
 </div>
 
-<!-- ANIMATED SLIDE PRESENTATION MODAL -->
-<div id="slideModal" class="slide-modal">
-  <div class="slide-container">
-    <button class="close-modal-btn" onclick="closePresentation()">&times;</button>
-    
-    <div class="slide-stage" id="slideStage">
-      <!-- Dynamic slides render here -->
+<!-- Animated Presentation Modal -->
+<div id="presModal" class="modal-overlay">
+  <div class="slide-stage">
+    <span class="modal-close" onclick="closePresentation()">&times;</span>
+    <div class="slide-content">
+      <h2 id="slideTitle" class="slide-title">Slide Title</h2>
+      <p id="slideBody" class="slide-body">Slide content goes here...</p>
     </div>
-
-    <div class="slide-nav">
-      <button class="slide-btn" onclick="prevSlide()">❮ Previous</button>
-      <span id="slideCounter" style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">Slide 1</span>
-      <button class="slide-btn" onclick="nextSlide()">Next ❯</button>
+    <div class="slide-controls">
+      <button class="btn-resource" onclick="prevSlide()">&leftarrow; Previous</button>
+      <span id="slideCounter" style="font-size: 0.85rem; color: var(--text-muted);">Slide 1 of 3</span>
+      <button class="btn-resource" onclick="nextSlide()">Next &rightarrow;</button>
     </div>
   </div>
 </div>
+
+<footer>
+  <p><strong>ARAL Math Program Key Stage 3 Syllabus</strong></p>
+  <p>Author & Lead Instructor: <strong>Mary Grace M. Peral</strong> &bull; Prepared in Collaboration with AI</p>
+  <p>&copy; 2026 DepEd Key Stage 3 Curriculum Recovery Framework</p>
+</footer>
 
 <script>
   let currentSlides = [];
   let currentSlideIndex = 0;
 
-  function switchTermTab(termNum) {
-    // Hide all sections
-    document.querySelectorAll('.term-section').forEach(sec => sec.classList.remove('active'));
-    // Remove active state from sidebar links
-    document.querySelectorAll('.sidebar-nav-btn').forEach(btn => btn.classList.remove('active'));
-
-    // Show active section & highlight nav button
-    document.getElementById('term' + termNum + '-section').classList.add('active');
-    document.getElementById('nav-term' + termNum).classList.add('active');
-  }
-
-  function openPresentation(title, slidesArray) {
-    currentSlides = slidesArray;
+  function openPresentation(topic, slideDeck) {
+    currentSlides = slideDeck.map((text, i) => ({ title: `${topic} - Part ${i + 1}`, text }));
     currentSlideIndex = 0;
-    
-    const stage = document.getElementById('slideStage');
-    stage.innerHTML = '';
-
-    slidesArray.forEach((content, index) => {
-      const slideDiv = document.createElement('div');
-      slideDiv.className = 'slide' + (index === 0 ? ' active-slide' : '');
-      slideDiv.innerHTML = `<h3>${title}</h3>` + content;
-      stage.appendChild(slideDiv);
-    });
-
-    updateSlideCounter();
-    document.getElementById('slideModal').classList.add('active');
+    updateSlide();
+    document.getElementById('presModal').classList.add('active');
   }
 
   function closePresentation() {
-    document.getElementById('slideModal').classList.remove('active');
+    document.getElementById('presModal').classList.remove('active');
   }
 
-  function updateSlideCounter() {
-    document.getElementById('slideCounter').innerText = `Slide ${currentSlideIndex + 1} of ${currentSlides.length}`;
+  function updateSlide() {
+    const slide = currentSlides[currentSlideIndex];
+    const content = document.querySelector('.slide-content');
+    content.style.animation = 'none';
+    content.offsetHeight; // trigger reflow
+    content.style.animation = 'slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+    
+    document.getElementById('slideTitle').textContent = slide.title;
+    document.getElementById('slideBody').textContent = slide.text;
+    document.getElementById('slideCounter').textContent = `Slide ${currentSlideIndex + 1} of ${currentSlides.length}`;
   }
 
   function nextSlide() {
     if (currentSlideIndex < currentSlides.length - 1) {
-      const slides = document.querySelectorAll('.slide');
-      slides[currentSlideIndex].classList.remove('active-slide');
       currentSlideIndex++;
-      slides[currentSlideIndex].classList.add('active-slide');
-      updateSlideCounter();
+      updateSlide();
     }
   }
 
   function prevSlide() {
     if (currentSlideIndex > 0) {
-      const slides = document.querySelectorAll('.slide');
-      slides[currentSlideIndex].classList.remove('active-slide');
       currentSlideIndex--;
-      slides[currentSlideIndex].classList.add('active-slide');
-      updateSlideCounter();
+      updateSlide();
     }
   }
+
+  // Keyboard navigation for presentation slides
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('presModal').classList.contains('active')) return;
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'Escape') closePresentation();
+  });
 </script>
 
 </body>
