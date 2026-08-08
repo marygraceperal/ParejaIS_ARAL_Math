@@ -22,6 +22,7 @@
   body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.6; padding: 2rem 1rem; }
   .container { max-width: 1000px; margin: 0 auto; }
 
+  /* HEADER */
   header {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -53,20 +54,54 @@
     border-left: 4px solid var(--primary);
     padding: 1rem 1.25rem;
     border-radius: 6px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .overview-box h2 { font-size: 1rem; color: var(--primary); margin-bottom: 0.2rem; }
   .overview-box p { font-size: 0.9rem; color: var(--text-dark); }
 
-  .unit-title {
-    font-size: 1.3rem;
-    color: var(--primary);
-    margin: 2rem 0 1rem 0;
-    padding-bottom: 0.4rem;
+  /* TERM TABS */
+  .tabs-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
     border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
   }
 
+  .tab-btn {
+    background: #e2e8f0;
+    color: var(--text-muted);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .tab-btn:hover { background: #cbd5e1; color: var(--text-dark); }
+
+  .tab-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* TERM CONTENT SECTIONS */
+  .term-content { display: none; }
+  .term-content.active { display: block; }
+
+  .unit-title {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  /* GRID & CARDS */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -153,7 +188,8 @@
 
   @media print {
     body { background: white; padding: 0; }
-    .print-main-btn { display: none !important; }
+    .tabs-container, .print-main-btn { display: none !important; }
+    .term-content { display: block !important; page-break-after: always; }
     .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
   }
 </style>
@@ -175,38 +211,91 @@
     <p>All real-world scenarios, monetary applications, and problem sets are localized using the <strong>Philippine Peso (₱)</strong> context to ensure maximum clarity and relevance for learners.</p>
   </div>
 
-  <!-- UNIT 1 -->
-  <h2 class="unit-title">Unit 1: Integers & Signed Numbers</h2>
-  <div class="grid">
-    
-    <!-- Subtopic 1.1 -->
-    <div class="card">
-      <div class="card-header">
-        <span class="unit-badge">Unit 1.1</span>
-        <div class="card-title">Understanding Signed Numbers</div>
-      </div>
-      <div class="resource-links">
-        <a href="LessonPlan-Signed-Numbers.html" class="resource-btn btn-lp">📚 Lesson Plan (ILAW Format)</a>
-        <a href="Signed-Numbers.html" class="resource-btn btn-pres">🖥️ Presentation (Teacher Slides)</a>
-        <a href="Discussion-Signed-Numbers.html" class="resource-btn btn-disc">📄 Discussion Sheet (Student Notes)</a>
-        <a href="Understanding_Signed_Numbers.html" class="resource-btn btn-act">📝 Activity Sheet (Student Worksheet)</a>
-      </div>
-    </div>
+  <!-- TERM NAVIGATION TABS -->
+  <div class="tabs-container">
+    <button class="tab-btn active" onclick="switchTerm(1)">Term 1</button>
+    <button class="tab-btn" onclick="switchTerm(2)">Term 2</button>
+    <button class="tab-btn" onclick="switchTerm(3)">Term 3</button>
+  </div>
 
-    <!-- Subtopic 1.2 -->
-    <div class="card">
-      <div class="card-header">
-        <span class="unit-badge">Unit 1.2</span>
-        <div class="card-title">Addition of Integers</div>
+  <!-- TERM 1 CONTENT -->
+  <div id="term1" class="term-content active">
+    <h2 class="unit-title">Term 1: Integers & Rational Numbers</h2>
+    <div class="grid">
+      
+      <!-- Subtopic 1.1 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="unit-badge">Unit 1.1</span>
+          <div class="card-title">Understanding Signed Numbers</div>
+        </div>
+        <div class="resource-links">
+          <a href="LessonPlan-Signed-Numbers.html" class="resource-btn btn-lp">📚 Lesson Plan (ILAW Format)</a>
+          <a href="Signed-Numbers.html" class="resource-btn btn-pres">🖥️ Presentation (Teacher Slides)</a>
+          <a href="Discussion-Signed-Numbers.html" class="resource-btn btn-disc">📄 Discussion Sheet (Student Notes)</a>
+          <a href="Understanding_Signed_Numbers.html" class="resource-btn btn-act">📝 Activity Sheet (Student Worksheet)</a>
+        </div>
       </div>
-      <div class="resource-links">
-        <a href="LessonPlan-Addition-Integers.html" class="resource-btn btn-lp">📚 Lesson Plan (ILAW Format)</a>
-        <a href="Addition-of-Integers.html" class="resource-btn btn-pres">🖥️ Presentation (Teacher Slides)</a>
-        <a href="Discussion-Addition-Integers.html" class="resource-btn btn-disc">📄 Discussion Sheet (Student Notes)</a>
-        <a href="Adding-Integers.html" class="resource-btn btn-act">📝 Activity Sheet (Student Worksheet)</a>
-      </div>
-    </div>
 
+      <!-- Subtopic 1.2 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="unit-badge">Unit 1.2</span>
+          <div class="card-title">Addition of Integers</div>
+        </div>
+        <div class="resource-links">
+          <a href="LessonPlan-Addition-Integers.html" class="resource-btn btn-lp">📚 Lesson Plan (ILAW Format)</a>
+          <a href="Addition-of-Integers.html" class="resource-btn btn-pres">🖥️ Presentation (Teacher Slides)</a>
+          <a href="Discussion-Addition-Integers.html" class="resource-btn btn-disc">📄 Discussion Sheet (Student Notes)</a>
+          <a href="Adding-Integers.html" class="resource-btn btn-act">📝 Activity Sheet (Student Worksheet)</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TERM 2 CONTENT -->
+  <div id="term2" class="term-content">
+    <h2 class="unit-title">Term 2: Algebraic Expressions & Equations</h2>
+    <div class="grid">
+      
+      <!-- Subtopic 2.1 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="unit-badge">Unit 2.1</span>
+          <div class="card-title">Algebraic Expressions & Evaluation</div>
+        </div>
+        <div class="resource-links">
+          <a href="LessonPlan-Algebraic-Expressions.html" class="resource-btn btn-lp">📚 Lesson Plan (ILAW Format)</a>
+          <a href="Algebraic-Expressions.html" class="resource-btn btn-pres">🖥️ Presentation (Teacher Slides)</a>
+          <a href="Discussion-Algebraic-Expressions.html" class="resource-btn btn-disc">📄 Discussion Sheet (Student Notes)</a>
+          <a href="Activity-Algebraic-Expressions.html" class="resource-btn btn-act">📝 Activity Sheet (Student Worksheet)</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TERM 3 CONTENT -->
+  <div id="term3" class="term-content">
+    <h2 class="unit-title">Term 3: Geometry & Measurement</h2>
+    <div class="grid">
+      
+      <!-- Subtopic 3.1 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="unit-badge">Unit 3.1</span>
+          <div class="card-title">Perimeter, Area & Real-World Geometry</div>
+        </div>
+        <div class="resource-links">
+          <a href="LessonPlan-Geometry-Basics.html" class="resource-btn btn-lp">📚 Lesson Plan (ILAW Format)</a>
+          <a href="Geometry-Basics.html" class="resource-btn btn-pres">🖥️ Presentation (Teacher Slides)</a>
+          <a href="Discussion-Geometry-Basics.html" class="resource-btn btn-disc">📄 Discussion Sheet (Student Notes)</a>
+          <a href="Activity-Geometry-Basics.html" class="resource-btn btn-act">📝 Activity Sheet (Student Worksheet)</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <footer class="author-footer">
@@ -215,6 +304,24 @@
   </footer>
 
 </div>
+
+<script>
+  function switchTerm(termNum) {
+    // Hide all term contents
+    document.querySelectorAll('.term-content').forEach(content => {
+      content.classList.remove('active');
+    });
+
+    // Deactivate all tab buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // Activate selected term and tab
+    document.getElementById('term' + termNum).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
