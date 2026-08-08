@@ -32,18 +32,39 @@
   }
 
   header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-  header p { font-size: 1.05rem; opacity: 0.9; }
+  header p { font-size: 1rem; opacity: 0.95; }
+  
+  .author-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
 
   .overview-box {
     background: var(--primary-bg);
     border-left: 4px solid var(--primary);
-    padding: 1rem 1.25rem;
+    padding: 1.25rem;
     border-radius: 6px;
     margin-bottom: 1.5rem;
   }
 
-  .overview-box h2 { font-size: 1rem; color: var(--primary); margin-bottom: 0.2rem; }
-  .overview-box p { font-size: 0.9rem; color: var(--text-dark); }
+  .overview-box h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.4rem; }
+  .overview-box p { font-size: 0.92rem; color: var(--text-dark); margin-bottom: 0.5rem; }
+
+  .ai-declaration-box {
+    background: #fffbebf8;
+    border: 1px solid #fef08a;
+    border-left: 4px solid #eab308;
+    padding: 0.9rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #713f12;
+    margin-top: 0.8rem;
+  }
 
   /* MAIN TERM NAVIGATION TABS */
   .term-navigation {
@@ -186,6 +207,7 @@
     padding: 0.35rem 0.65rem;
     border-radius: 5px;
     text-decoration: none;
+    cursor: pointer;
     transition: background 0.2s ease;
   }
 
@@ -198,7 +220,104 @@
   .btn-act { background: #faf5ff; color: #6b21a8; border: 1px solid #e9d5ff; }
   .btn-act:hover { background: #f3e8ff; }
 
+  .btn-print { background: #fff7ed; color: #c2410c; border: 1px solid #ffedd5; }
+  .btn-print:hover { background: #ffedd5; }
+
+  /* ANIMATED SLIDE PRESENTATION MODAL */
+  .slide-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .slide-modal.active { display: flex; }
+
+  .slide-container {
+    background: #ffffff;
+    width: 90%;
+    max-width: 900px;
+    height: 520px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .slide-stage {
+    flex: 1;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-out;
+  }
+
+  .slide.active-slide {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideInAnim 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideInAnim {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .slide h3 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.3rem; }
+  .slide p { font-size: 1.1rem; color: #334155; margin-bottom: 1rem; line-height: 1.6; }
+  .slide ul { margin-left: 1.5rem; font-size: 1.05rem; color: #334155; }
+  .slide li { margin-bottom: 0.6rem; }
+
+  .slide-nav {
+    background: #f1f5f9;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .slide-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .slide-btn:hover { background: var(--primary-light); }
+  .close-modal-btn { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #64748b; z-index: 10; }
+  .close-modal-btn:hover { color: #0f172a; }
+
   .author-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px dashed var(--border-color); text-align: center; font-size: 0.85rem; color: #94a3b8; }
+
+  @media print {
+    body { background: white; color: black; padding: 0; }
+    .term-navigation, .tab-nav, .resource-buttons, .slide-modal { display: none !important; }
+    .term-section { display: block !important; border: none; box-shadow: none; margin-bottom: 1rem; }
+    .tab-content { display: block !important; }
+  }
 
   @media (max-width: 640px) {
     body { padding: 1rem 0.5rem; }
@@ -214,11 +333,16 @@
   <header>
     <h1>ARAL Math Program - Key Stage 3 Syllabus</h1>
     <p>DepEd Academic Recovery and Accessible Learning (RA 12028) &bull; 3-Term Subtopic Framework</p>
+    <div class="author-badge">Author: Mary Grace M. Peral</div>
   </header>
 
   <div class="overview-box">
     <h2>📌 Curriculum Overview & Context</h2>
     <p>All real-world scenarios, monetary applications, and problem sets are localized using the <strong>Philippine Peso (₱)</strong> context to ensure maximum clarity and relevance for learners.</p>
+    
+    <div class="ai-declaration-box">
+      <strong>🤖 AI Assistance Declaration:</strong> This curriculum design, instructional structure, and interactive slide presentations were designed and developed with AI-assisted instructional technology tools by <strong>Mary Grace M. Peral</strong> for academic enhancement and instructional delivery.
+    </div>
   </div>
 
   <!-- MAIN TERM NAVIGATION TABS -->
@@ -255,7 +379,6 @@
               <div class="subtopic-card">
                 <div>
                   <span class="subtopic-code">1.1</span>
-                  <!-- CLICKABLE UNDERLINED TOPIC LINK -->
                   <div class="subtopic-name">
                     <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Signed-Numbers.html" target="_blank">Understanding Signed Numbers</a>
                   </div>
@@ -263,16 +386,15 @@
                 </div>
                 <div class="resource-buttons">
                   <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/LessonPlan-Signed-Numbers.html" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                  <!-- PRESENTATION LINK TO SLIDES -->
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Signed-Numbers.html" target="_blank" class="res-btn btn-pres">🖥️ Presentation</a>
+                  <button onclick="openPresentation('Understanding Signed Numbers', ['Slide 1: Introduction to Signed Numbers<p>Positive numbers represent gains (+₱500 profit), while negative numbers represent losses (-₱200 debt).</p>', 'Slide 2: Number Line Navigation<p>Zero acts as the reference point. Numbers increase moving right and decrease moving left.</p>', 'Slide 3: Practical Application<p>Evaluating temperature changes, elevation above/below sea level, and financial balances in ₱.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
                   <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Understanding_Signed_Numbers.html" target="_blank" class="res-btn btn-act">📝 Activity</a>
+                  <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
                 </div>
               </div>
 
               <div class="subtopic-card">
                 <div>
                   <span class="subtopic-code">1.2</span>
-                  <!-- CLICKABLE UNDERLINED TOPIC LINK -->
                   <div class="subtopic-name">
                     <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Addition-of-Integers.html" target="_blank">Addition of Integers</a>
                   </div>
@@ -280,16 +402,15 @@
                 </div>
                 <div class="resource-buttons">
                   <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/LessonPlan-Addition-Integers.html" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                  <!-- PRESENTATION LINK TO SLIDES -->
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Addition-of-Integers.html" target="_blank" class="res-btn btn-pres">🖥️ Presentation</a>
+                  <button onclick="openPresentation('Addition of Integers', ['Slide 1: Same Sign Addition<p>Add absolute values and keep the common sign. Example: (-5) + (-3) = -8.</p>', 'Slide 2: Different Sign Addition<p>Subtract smaller absolute value from larger, taking the sign of the larger absolute value.</p>', 'Slide 3: Interactive Example<p>₱100 income (+100) plus ₱40 expense (-40) = ₱60 net (+60).</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
                   <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Adding-Integers.html" target="_blank" class="res-btn btn-act">📝 Activity</a>
+                  <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
                 </div>
               </div>
 
               <div class="subtopic-card">
                 <div>
                   <span class="subtopic-code">1.3</span>
-                  <!-- CLICKABLE UNDERLINED TOPIC LINK -->
                   <div class="subtopic-name">
                     <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtraction-of-Integers.html" target="_blank">Subtraction of Integers</a>
                   </div>
@@ -297,9 +418,9 @@
                 </div>
                 <div class="resource-buttons">
                   <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                  <!-- PRESENTATION LINK TO SLIDES -->
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtraction-of-Integers.html" target="_blank" class="res-btn btn-pres">🖥️ Presentation</a>
+                  <button onclick="openPresentation('Subtraction of Integers', ['Slide 1: KCC Rule<p>Keep the first number, Change subtraction to addition, Change sign of second number.</p>', 'Slide 2: Double Negatives<p>Subtracting a negative turns into adding a positive: 5 - (-3) = 5 + 3 = 8.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
                   <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtracting-Integers.html" target="_blank" class="res-btn btn-act">📝 Activity</a>
+                  <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
                 </div>
               </div>
 
@@ -321,8 +442,9 @@
                 </div>
                 <div class="resource-buttons">
                   <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                  <a href="#" target="_blank" class="res-btn btn-pres">🖥️ Presentation</a>
+                  <button onclick="openPresentation('Commutative & Associative Properties', ['Slide 1: Commutative Property<p>a + b = b + a | Order does not change the total sum or product.</p>', 'Slide 2: Associative Property<p>(a + b) + c = a + (b + c) | Grouping does not alter results.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
                   <a href="#" target="_blank" class="res-btn btn-act">📝 Activity</a>
+                  <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
                 </div>
               </div>
 
@@ -344,8 +466,9 @@
                 </div>
                 <div class="resource-buttons">
                   <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                  <a href="#" target="_blank" class="res-btn btn-pres">🖥️ Presentation</a>
+                  <button onclick="openPresentation('Absolute Value Concepts', ['Slide 1: Distance Concept<p>Absolute value measures distance from 0; distance is always non-negative: |-7| = 7.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
                   <a href="#" target="_blank" class="res-btn btn-act">📝 Activity</a>
+                  <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
                 </div>
               </div>
 
@@ -387,8 +510,9 @@
                 </div>
                 <div class="resource-buttons">
                   <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                  <a href="#" target="_blank" class="res-btn btn-pres">🖥️ Presentation</a>
+                  <button onclick="openPresentation('Mathematical Keywords', ['Slide 1: Translating Keywords<p>Identify action words: Addition (increased by), Subtraction (difference), Multiplication (product).</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
                   <a href="#" target="_blank" class="res-btn btn-act">📝 Activity</a>
+                  <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
                 </div>
               </div>
 
@@ -428,8 +552,9 @@
                 </div>
                 <div class="resource-buttons">
                   <a href="#" target="_blank" class="res-btn btn-lp">📚 Lesson Plan</a>
-                  <a href="#" target="_blank" class="res-btn btn-pres">🖥️ Presentation</a>
+                  <button onclick="openPresentation('Perimeter & Area Formulas', ['Slide 1: Perimeter vs Area<p>Perimeter measures total distance around a 2D shape; Area measures surface space inside.</p>'])" class="res-btn btn-pres">🖥️ Animated Slides</button>
                   <a href="#" target="_blank" class="res-btn btn-act">📝 Activity</a>
+                  <button onclick="window.print()" class="res-btn btn-print">🖨️ Save/Print PDF</button>
                 </div>
               </div>
 
@@ -440,9 +565,22 @@
     </div>
   </section>
 
+  <!-- ANIMATED SLIDE PRESENTATION MODAL CONTAINER -->
+  <div id="slideModal" class="slide-modal">
+    <div class="slide-container">
+      <button class="close-modal-btn" onclick="closePresentation()">&times;</button>
+      <div class="slide-stage" id="slideStage"></div>
+      <div class="slide-nav">
+        <button class="slide-btn" onclick="prevSlide()">❮ Previous</button>
+        <span id="slideCounter" style="font-weight:600; color:#64748b;">Slide 1 / 3</span>
+        <button class="slide-btn" onclick="nextSlide()">Next ❯</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="author-footer">
     <p>Author: <strong>Mary Grace M. Peral</strong> | DepEd ARAL Program Educator</p>
-    <p><em>Note: Developed with AI-assisted instructional design tools for educational enhancement.</em></p>
+    <p><em>AI Assistance Declaration: Developed with AI-assisted instructional design tools for educational enhancement.</em></p>
   </footer>
 
 </div>
@@ -458,6 +596,69 @@
     document.getElementById('term' + termNum + '-section').classList.add('active');
     event.target.classList.add('active');
   }
+
+  /* SLIDE PRESENTATION CONTROLLER WITH ANIMATIONS */
+  let currentSlideIndex = 0;
+  let activeSlideData = [];
+
+  function openPresentation(title, slides) {
+    activeSlideData = slides;
+    currentSlideIndex = 0;
+    const stage = document.getElementById('slideStage');
+    stage.innerHTML = '';
+
+    slides.forEach((slideHtml, index) => {
+      const slideDiv = document.createElement('div');
+      slideDiv.className = 'slide' + (index === 0 ? ' active-slide' : '');
+      slideDiv.innerHTML = `<h3>${title}</h3><div>${slideHtml}</div>`;
+      stage.appendChild(slideDiv);
+    });
+
+    updateSlideCounter();
+    document.getElementById('slideModal').classList.add('active');
+  }
+
+  function closePresentation() {
+    document.getElementById('slideModal').classList.remove('active');
+  }
+
+  function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    if (index >= slides.length || index < 0) return;
+
+    slides.forEach((s, idx) => {
+      s.classList.remove('active-slide');
+    });
+
+    currentSlideIndex = index;
+    slides[currentSlideIndex].classList.add('active-slide');
+    updateSlideCounter();
+  }
+
+  function nextSlide() {
+    if (currentSlideIndex < activeSlideData.length - 1) {
+      showSlide(currentSlideIndex + 1);
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlideIndex > 0) {
+      showSlide(currentSlideIndex - 1);
+    }
+  }
+
+  function updateSlideCounter() {
+    document.getElementById('slideCounter').innerText = `Slide ${currentSlideIndex + 1} of ${activeSlideData.length}`;
+  }
+
+  /* Keyboard Arrow Navigation */
+  document.addEventListener('keydown', function(e) {
+    if (document.getElementById('slideModal').classList.contains('active')) {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'Escape') closePresentation();
+    }
+  });
 </script>
 
 </body>
