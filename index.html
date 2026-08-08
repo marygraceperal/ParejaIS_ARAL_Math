@@ -1,919 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARAL Math Key Stage 3 Curriculum Syllabus</title>
-<style>
-  :root {
-    --primary: #1e3a8a;
-    --primary-light: #3b82f6;
-    --primary-bg: #eff6ff;
-    --accent: #0284c7;
-    --text-dark: #1e293b;
-    --text-muted: #64748b;
-    --bg-main: #f8fafc;
-    --card-bg: #ffffff;
-    --border-color: #e2e8f0;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  body {
-    background-color: var(--bg-main);
-    color: var(--text-dark);
-    line-height: 1.6;
-    padding: 2rem 1rem;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
-    color: white;
-    padding: 2.5rem 2rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    box-shadow: var(--shadow);
-  }
-
-  header h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.5px;
-  }
-
-  header p {
-    font-size: 1.05rem;
-    opacity: 0.9;
-  }
-
-  .term-section {
-    background: var(--card-bg);
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 2.5rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-
-  .term-header {
-    background: var(--primary);
-    color: white;
-    padding: 1.25rem 1.5rem;
-  }
-
-  .term-header h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-
-  .term-header p {
-    font-size: 0.95rem;
-    opacity: 0.85;
-    margin-top: 0.25rem;
-    font-style: italic;
-  }
-
-  .term-body {
-    padding: 1.5rem;
-  }
-
-  /* CSS Tab Styling */
-  .tab-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .tab-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .tab-nav label {
-    padding: 0.6rem 1.2rem;
-    background: #f1f5f9;
-    color: var(--text-muted);
-    border-radius: 6px 6px 0 0;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-    border-bottom: none;
-  }
-
-  .tab-nav label:hover {
-    background: var(--primary-bg);
-    color: var(--primary);
-  }
-
-  .tab-content {
-    display: none;
-    animation: fadeIn 0.3s ease;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Hidden Radio Inputs for Tab Switching */
-  input[type="radio"].tab-toggle {
-    display: none;
-  }
-
-  /* Active Tab States */
-  #t1-u1:checked ~ .tab-nav label[for="t1-u1"],
-  #t1-u2:checked ~ .tab-nav label[for="t1-u2"],
-  #t1-u3:checked ~ .tab-nav label[for="t1-u3"],
-  #t2-u4:checked ~ .tab-nav label[for="t2-u4"],
-  #t2-u5:checked ~ .tab-nav label[for="t2-u5"],
-  #t2-u6:checked ~ .tab-nav label[for="t2-u6"],
-  #t2-u7:checked ~ .tab-nav label[for="t2-u7"],
-  #t3-u8:checked ~ .tab-nav label[for="t3-u8"],
-  #t3-u9:checked ~ .tab-nav label[for="t3-u9"],
-  #t3-u10:checked ~ .tab-nav label[for="t3-u10"],
-  #t3-u11:checked ~ .tab-nav label[for="t3-u11"],
-  #t3-u12:checked ~ .tab-nav label[for="t3-u12"],
-  #t3-u13:checked ~ .tab-nav label[for="t3-u13"] {
-    background: var(--card-bg);
-    color: var(--primary);
-    border-color: var(--border-color);
-    border-bottom: 2px solid var(--card-bg);
-    margin-bottom: -2px;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.03);
-  }
-
-  #t1-u1:checked ~ .tab-contents #content-t1-u1,
-  #t1-u2:checked ~ .tab-contents #content-t1-u2,
-  #t1-u3:checked ~ .tab-contents #content-t1-u3,
-  #t2-u4:checked ~ .tab-contents #content-t2-u4,
-  #t2-u5:checked ~ .tab-contents #content-t2-u5,
-  #t2-u6:checked ~ .tab-contents #content-t2-u6,
-  #t2-u7:checked ~ .tab-contents #content-t2-u7,
-  #t3-u8:checked ~ .tab-contents #content-t3-u8,
-  #t3-u9:checked ~ .tab-contents #content-t3-u9,
-  #t3-u10:checked ~ .tab-contents #content-t3-u10,
-  #t3-u11:checked ~ .tab-contents #content-t3-u11,
-  #t3-u12:checked ~ .tab-contents #content-t3-u12,
-  #t3-u13:checked ~ .tab-contents #content-t3-u13 {
-    display: block;
-  }
-
-  /* Unit Content Formatting */
-  .unit-title {
-    font-size: 1.2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .subtopic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-  }
-
-  .subtopic-card {
-    background: #f8fafc;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .subtopic-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-    background: #ffffff;
-  }
-
-  .subtopic-code {
-    display: inline-block;
-    background: var(--primary-bg);
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-  }
-
-  .subtopic-name {
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-  }
-
-  /* All clickable subtopic links are underlined by default */
-  .subtopic-name a {
-    color: var(--primary);
-    text-decoration: underline;
-    transition: color 0.2s ease;
-  }
-
-  .subtopic-name a:hover {
-    color: var(--primary-light);
-    text-decoration: underline;
-  }
-
-  .subtopic-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-  }
-
-  .activity-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-    background-color: var(--primary-bg);
-    padding: 4px 10px;
-    border-radius: 4px;
-    transition: background 0.2s ease;
-  }
-
-  .activity-link:hover {
-    background-color: #dbeafe;
-    text-decoration: underline;
-  }
-
-  @media (max-width: 640px) {
-    body {
-      padding: 1rem 0.5rem;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pareja IS - ARAL Math Portal</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    @media print {
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
     }
-    header {
-      padding: 1.5rem 1rem;
-    }
-    header h1 {
-      font-size: 1.6rem;
-    }
-    .tab-nav label {
-      width: 100%;
-      text-align: center;
-      border-radius: 6px;
-    }
-  }
-</style>
+  </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
 
-<div class="container">
-  <header>
-    <h1>ARAL Math Program - Key Stage 3 Syllabus</h1>
-    <p>DepEd Academic Recovery and Accessible Learning (RA 12028) &bull; 3-Term Subtopic Framework</p>
+  <!-- MAIN HEADER -->
+  <header class="bg-indigo-900 text-white shadow-md no-print">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+      <div>
+        <h1 class="text-2xl font-bold flex items-center gap-2">
+          <i class="fas fa-calculator text-amber-400"></i> Pareja IS - ARAL Math Portal
+        </h1>
+        <p class="text-xs text-indigo-200">Grade 7 & Grade 10 Mathematics Program</p>
+      </div>
+      <!-- Author & AI Declaration -->
+      <div class="text-left md:text-right bg-indigo-950/60 p-2.5 rounded-lg border border-indigo-700/50 max-w-md">
+        <p class="text-xs font-semibold text-amber-300">Author: Mary Grace M. Peral</p>
+        <p class="text-[11px] text-indigo-200 leading-tight mt-0.5">
+          <strong>AI Collaboration Declaration:</strong> Developed in collaboration with AI assistance for pedagogical content design and web application structure.
+        </p>
+      </div>
+    </div>
   </header>
 
-  <!-- TERM 1 -->
-  <section class="term-section">
-    <div class="term-header">
-      <h2>Term 1: Number Systems & Algebraic Foundations</h2>
-      <p>Focus: Mastering signed numbers, order of operations, and the transition from arithmetic to algebra.</p>
-    </div>
-    <div class="term-body">
-      <div class="tab-container">
-        <!-- Radio Inputs -->
-        <input type="radio" name="term1-tabs" id="t1-u1" class="tab-toggle" checked>
-        <input type="radio" name="term1-tabs" id="t1-u2" class="tab-toggle">
-        <input type="radio" name="term1-tabs" id="t1-u3" class="tab-toggle">
-
-        <!-- Navigation Tabs -->
-        <div class="tab-nav">
-          <label for="t1-u1">Unit 1: Integers & Rules of Signs</label>
-          <label for="t1-u2">Unit 2: Properties of Real Numbers</label>
-          <label for="t1-u3">Unit 3: Absolute Value & GEMDAS</label>
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+    
+    <!-- DASHBOARD STATS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 no-print">
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+        <div class="p-3 bg-indigo-100 text-indigo-600 rounded-lg"><i class="fas fa-layer-group text-xl"></i></div>
+        <div>
+          <p class="text-xs text-slate-500 font-medium">Total Units</p>
+          <p class="text-lg font-bold text-slate-800">13 Curriculum Units</p>
         </div>
-
-        <!-- Tab Contents -->
-        <div class="tab-contents">
-          <!-- Unit 1 -->
-          <div id="content-t1-u1" class="tab-content">
-            <h3 class="unit-title">Unit 1: Integers & Rules of Signs</h3>
-            <div class="subtopic-grid">
-              
-              <div class="subtopic-card">
-                <span class="subtopic-code">1.1</span>
-                <div class="subtopic-name">
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Signed-Numbers.html" target="_blank">Understanding Signed Numbers</a>
-                </div>
-                <div class="subtopic-desc">The Real Number Line, direct applications (above/below sea level, profit/loss), and comparing/ordering integers.</div>
-                <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Understanding_Signed_Numbers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">1.2</span>
-                <div class="subtopic-name">
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Addition-of-Integers.html" target="_blank">Addition of Integers</a>
-                </div>
-                <div class="subtopic-desc">Visualizing with algebra tiles/number lines, combining same-sign integers, and applying the "subtract and copy sign of larger absolute value" rule.</div>
-                <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Adding-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">1.3</span>
-                <div class="subtopic-name">
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtraction-of-Integers.html" target="_blank">Subtraction of Integers</a>
-                </div>
-                <div class="subtopic-desc">The "Add the Opposite" (KCC: Keep-Change-Change) principle, transforming subtraction to addition, and resolving double negatives.</div>
-                <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtracting-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">1.4</span>
-                <div class="subtopic-name">
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Multiplication-of-Integers.html" target="_blank">Multiplication & Division of Signed Numbers</a>
-                </div>
-                <div class="subtopic-desc">Rules for same signs (positive product/quotient) and different signs (negative product/quotient), including repeated multiplication.</div>
-                <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Multiplying-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">1.5</span>
-                <div class="subtopic-name">
-                  <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Integers-Real-Problems.html" target="_blank">Real-World Signed Number Problems</a>
-                </div>
-                <div class="subtopic-desc">Multi-step word problems involving temperature shifts, bank balances, and elevation changes.</div>
-                <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Solving-Integers-Real-Problems.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 2 -->
-          <div id="content-t1-u2" class="tab-content">
-            <h3 class="unit-title">Unit 2: Properties of Real Numbers</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">2.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Commutative & Associative Properties</a>
-                </div>
-                <div class="subtopic-desc">Rearranging and regrouping addition and multiplication terms to simplify mental math calculations.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">2.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Identity & Inverse Properties</a>
-                </div>
-                <div class="subtopic-desc">Additive/multiplicative identities (0 and 1) and additive/multiplicative inverses (zero pairs and reciprocals).</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">2.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">The Distributive Property</a>
-                </div>
-                <div class="subtopic-desc">Expanding a(b + c) and a(b - c) across positive and negative integers, recognizing distribution as area models.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">2.4</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Property Identification</a>
-                </div>
-                <div class="subtopic-desc">Categorizing mathematical statements by property and leveraging properties to justify algebraic simplification steps.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 3 -->
-          <div id="content-t1-u3" class="tab-content">
-            <h3 class="unit-title">Unit 3: Absolute Value, Exponents & GEMDAS</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">3.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Absolute Value Concepts</a>
-                </div>
-                <div class="subtopic-desc">Defining absolute value as distance from zero on a number line, evaluating |x|, and finding distance between two points.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">3.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Exponent Basics & Signed Bases</a>
-                </div>
-                <div class="subtopic-desc">Expanded notation, zero exponents (x⁰ = 1), negative bases with odd vs. even powers.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">3.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Order of Operations (GEMDAS)</a>
-                </div>
-                <div class="subtopic-desc">Simplifying expressions with nested Grouping symbols, Exponents, Multiplication/Division, and Addition/Subtraction.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">3.4</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Multi-Operation Problem Solving</a>
-                </div>
-                <div class="subtopic-desc">Evaluating complex numerical expressions containing signed bases, fractions, and absolute value expressions.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+        <div class="p-3 bg-emerald-100 text-emerald-600 rounded-lg"><i class="fas fa-book-open text-xl"></i></div>
+        <div>
+          <p class="text-xs text-slate-500 font-medium">Target Level</p>
+          <p class="text-lg font-bold text-slate-800">Grade 7 & Grade 10</p>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+        <div class="p-3 bg-amber-100 text-amber-600 rounded-lg"><i class="fas fa-check-circle text-xl"></i></div>
+        <div>
+          <p class="text-xs text-slate-500 font-medium">Program</p>
+          <p class="text-lg font-bold text-slate-800">ARAL Program Math</p>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- TERM 2 -->
-  <section class="term-section">
-    <div class="term-header">
-      <h2>Term 2: Equations, Inequalities & Polynomials</h2>
-      <p>Focus: Translating real-world situations into math language, solving linear equations, and operating on polynomials.</p>
-    </div>
-    <div class="term-body">
-      <div class="tab-container">
-        <!-- Radio Inputs -->
-        <input type="radio" name="term2-tabs" id="t2-u4" class="tab-toggle" checked>
-        <input type="radio" name="term2-tabs" id="t2-u5" class="tab-toggle">
-        <input type="radio" name="term2-tabs" id="t2-u6" class="tab-toggle">
-        <input type="radio" name="term2-tabs" id="t2-u7" class="tab-toggle">
+    <!-- UNITS & SUBTOPICS GRID -->
+    <section class="space-y-6">
+      <div class="flex justify-between items-center no-print">
+        <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+          <i class="fas fa-list-ol text-indigo-600"></i> Curriculum Units & Lessons
+        </h2>
+        <button onclick="window.print()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-900 text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-sm">
+          <i class="fas fa-print"></i> Print Entire Overview
+        </button>
+      </div>
 
-        <!-- Navigation Tabs -->
-        <div class="tab-nav">
-          <label for="t2-u4">Unit 4: Words to Symbols</label>
-          <label for="t2-u5">Unit 5: Evaluating Expressions</label>
-          <label for="t2-u6">Unit 6: Equations & Inequalities</label>
-          <label for="t2-u7">Unit 7: Polynomials & Factoring</label>
+      <!-- EXAMPLE UNIT CARD (Sample showing structure across 13 units) -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="bg-slate-100 px-5 py-3 border-b border-slate-200 flex justify-between items-center">
+          <h3 class="font-bold text-slate-800 flex items-center gap-2">
+            <span class="bg-indigo-600 text-white text-xs px-2 py-0.5 rounded">Unit 1</span>
+            Number Quantities & Operations
+          </h3>
+          <span class="text-xs text-slate-500 font-medium">Grade 7 Mathematics</span>
         </div>
 
-        <!-- Tab Contents -->
-        <div class="tab-contents">
-          <!-- Unit 4 -->
-          <div id="content-t2-u4" class="tab-content">
-            <h3 class="unit-title">Unit 4: Translating Words to Symbols</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">4.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Mathematical Keywords & Phrases</a>
-                </div>
-                <div class="subtopic-desc">Classifying terms signaling operations (e.g., more than, less than, diminished by, times, quotient of).</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">4.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Translating Verbal Phrases</a>
-                </div>
-                <div class="subtopic-desc">Handling order-sensitive phrasing (e.g., "5 less than a number" → x - 5) and multi-operation phrases.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">4.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Translating Expressions to Words</a>
-                </div>
-                <div class="subtopic-desc">Verbalizing symbolic equations into real-life contextual statements.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">4.4</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Setting Up Equations</a>
-                </div>
-                <div class="subtopic-desc">Identifying variables, constants, and total values in short word problems.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
+        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- SUBTOPIC CARD 1 -->
+          <div class="p-4 border border-slate-200 rounded-lg bg-slate-50/50 hover:bg-white hover:border-indigo-300 transition-all">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">1.1 Real Number System & Subsets</h4>
+            <p class="text-xs text-slate-600 mb-3">Understanding rational, irrational, integer, and natural numbers with practical real-world classification.</p>
+            
+            <!-- ACTION BUTTONS (INCLUDES SAVE/PRINT PDF) -->
+            <div class="flex flex-wrap gap-2 no-print">
+              <button onclick="openLessonPlan('Real Number System')" class="px-2.5 py-1.5 text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 rounded-lg flex items-center gap-1">
+                <i class="fas fa-file-alt"></i> Lesson Plan
+              </button>
+              <button onclick="openPresentationModal('Real Number System', ['Welcome to Real Numbers', 'Objectives & Review', 'Classification Diagram', 'Guided Examples', 'Evaluation'])" class="px-2.5 py-1.5 text-xs font-medium bg-indigo-100 text-indigo-800 hover:bg-indigo-200 rounded-lg flex items-center gap-1">
+                <i class="fas fa-desktop"></i> Presentation
+              </button>
+              <button onclick="openActivitySheet('Real Number System')" class="px-2.5 py-1.5 text-xs font-medium bg-amber-100 text-amber-800 hover:bg-amber-200 rounded-lg flex items-center gap-1">
+                <i class="fas fa-tasks"></i> Activity
+              </button>
+              <button onclick="window.print()" class="px-2.5 py-1.5 text-xs font-medium bg-slate-200 text-slate-800 hover:bg-slate-300 rounded-lg flex items-center gap-1">
+                <i class="fas fa-file-pdf"></i> Save / Print PDF
+              </button>
             </div>
           </div>
 
-          <!-- Unit 5 -->
-          <div id="content-t2-u5" class="tab-content">
-            <h3 class="unit-title">Unit 5: Evaluating & Simplifying Expressions</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">5.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Substitution & Evaluation</a>
-                </div>
-                <div class="subtopic-desc">Replacing variables with positive and negative rational numbers and simplifying using GEMDAS.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">5.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Combining Like Terms</a>
-                </div>
-                <div class="subtopic-desc">Identifying coefficients, variables, and exponents; combining terms with matching variable parts.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">5.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Simplifying Multi-Term Expressions</a>
-                </div>
-                <div class="subtopic-desc">Applying distributive rules and combining like terms in multi-variable expressions.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">5.4</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Modeling Algebraic Expressions</a>
-                </div>
-                <div class="subtopic-desc">Using visual area models and algebra tiles to verify simplified expressions.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 6 -->
-          <div id="content-t2-u6" class="tab-content">
-            <h3 class="unit-title">Unit 6: Linear Equations & Inequalities</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">6.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">One-Step & Two-Step Equations</a>
-                </div>
-                <div class="subtopic-desc">Applying addition, subtraction, multiplication, and division properties of equality.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">6.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Multi-Step Equations with Variables on Both Sides</a>
-                </div>
-                <div class="subtopic-desc">Clearing parentheses and fractions to isolate terms on one side of the equation.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">6.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Linear Inequalities & Number Line Graphs</a>
-                </div>
-                <div class="subtopic-desc">Solving inequalities and flipping inequality signs when multiplying or dividing by negative numbers.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">6.4</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Applications & Word Problems</a>
-                </div>
-                <div class="subtopic-desc">Modeling real-life budget limits, age problems, and speed-distance-time scenarios.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 7 -->
-          <div id="content-t2-u7" class="tab-content">
-            <h3 class="unit-title">Unit 7: Polynomial Operations & Factoring Basics</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">7.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Classifying Polynomials & Degree</a>
-                </div>
-                <div class="subtopic-desc">Distinguishing monomals, binomials, trinomials, and determining expression degree.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">7.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Laws of Exponents for Polynomials</a>
-                </div>
-                <div class="subtopic-desc">Product, quotient, power-of-a-power, and negative exponent rules.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">7.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Adding & Subtracting Polynomials</a>
-                </div>
-                <div class="subtopic-desc">Aligning terms vertically or horizontally and distributing negative signs correctly.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">7.4</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Multiplying Polynomials & FOIL Method</a>
-                </div>
-                <div class="subtopic-desc">Multiplying monomials by polynomials and finding products of binomials.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">7.5</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Greatest Common Factor (GCF) Factoring</a>
-                </div>
-                <div class="subtopic-desc">Extracting monomial GCFs from polynomial terms to rewrite expressions in factored form.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
+          <!-- SUBTOPIC CARD 2 -->
+          <div class="p-4 border border-slate-200 rounded-lg bg-slate-50/50 hover:bg-white hover:border-indigo-300 transition-all">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">1.2 Operations on Integers</h4>
+            <p class="text-xs text-slate-600 mb-3">Mastering rules for addition, subtraction, multiplication, and division of signed numbers.</p>
+            
+            <!-- ACTION BUTTONS (INCLUDES SAVE/PRINT PDF) -->
+            <div class="flex flex-wrap gap-2 no-print">
+              <button onclick="openLessonPlan('Operations on Integers')" class="px-2.5 py-1.5 text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 rounded-lg flex items-center gap-1">
+                <i class="fas fa-file-alt"></i> Lesson Plan
+              </button>
+              <button onclick="openPresentationModal('Operations on Integers', ['Integer Rules Overview', 'Addition & Subtraction', 'Multiplication & Division', 'Word Problems', 'Summary Quiz'])" class="px-2.5 py-1.5 text-xs font-medium bg-indigo-100 text-indigo-800 hover:bg-indigo-200 rounded-lg flex items-center gap-1">
+                <i class="fas fa-desktop"></i> Presentation
+              </button>
+              <button onclick="openActivitySheet('Operations on Integers')" class="px-2.5 py-1.5 text-xs font-medium bg-amber-100 text-amber-800 hover:bg-amber-200 rounded-lg flex items-center gap-1">
+                <i class="fas fa-tasks"></i> Activity
+              </button>
+              <button onclick="window.print()" class="px-2.5 py-1.5 text-xs font-medium bg-slate-200 text-slate-800 hover:bg-slate-300 rounded-lg flex items-center gap-1">
+                <i class="fas fa-file-pdf"></i> Save / Print PDF
+              </button>
             </div>
           </div>
 
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- TERM 3 -->
-  <section class="term-section">
-    <div class="term-header">
-      <h2>Term 3: Geometry, Measurement & Data Handling</h2>
-      <p>Focus: Geometric reasoning, perimeter, area, surface area, volume, and introductory statistics & probability.</p>
-    </div>
-    <div class="term-body">
-      <div class="tab-container">
-        <!-- Radio Inputs -->
-        <input type="radio" name="term3-tabs" id="t3-u8" class="tab-toggle" checked>
-        <input type="radio" name="term3-tabs" id="t3-u9" class="tab-toggle">
-        <input type="radio" name="term3-tabs" id="t3-u10" class="tab-toggle">
-        <input type="radio" name="term3-tabs" id="t3-u11" class="tab-toggle">
-        <input type="radio" name="term3-tabs" id="t3-u12" class="tab-toggle">
-        <input type="radio" name="term3-tabs" id="t3-u13" class="tab-toggle">
+    </section>
+  </main>
 
-        <!-- Navigation Tabs -->
-        <div class="tab-nav">
-          <label for="t3-u8">Unit 8: Lines & Angles</label>
-          <label for="t3-u9">Unit 9: Polygons & Circles</label>
-          <label for="t3-u10">Unit 10: Perimeter & Area</label>
-          <label for="t3-u11">Unit 11: Surface Area & Volume</label>
-          <label for="t3-u12">Unit 12: Statistics</label>
-          <label for="t3-u13">Unit 13: Probability</label>
-        </div>
-
-        <!-- Tab Contents -->
-        <div class="tab-contents">
-          <!-- Unit 8 -->
-          <div id="content-t3-u8" class="tab-content">
-            <h3 class="unit-title">Unit 8: Geometry Foundations – Lines & Angles</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">8.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Points, Lines, Planes & Rays</a>
-                </div>
-                <div class="subtopic-desc">Understanding fundamental undefined terms, segment addition, and collinearity.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">8.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Angle Classification & Measurement</a>
-                </div>
-                <div class="subtopic-desc">Using a protractor, identifying acute, right, obtuse, and straight angles.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">8.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Angle Relationships</a>
-                </div>
-                <div class="subtopic-desc">Complementary, supplementary, vertical, and linear pair angle theorems.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">8.4</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Parallel Lines Cut by a Transversal</a>
-                </div>
-                <div class="subtopic-desc">Alternate interior, alternate exterior, corresponding, and consecutive interior angles.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 9 -->
-          <div id="content-t3-u9" class="tab-content">
-            <h3 class="unit-title">Unit 9: Polygons & Circles</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">9.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Triangle Properties & Angle Sums</a>
-                </div>
-                <div class="subtopic-desc">Triangle Inequality Theorem, sum of interior angles (180°), and exterior angle rules.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">9.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Quadrilaterals & Convex Polygons</a>
-                </div>
-                <div class="subtopic-desc">Classifying parallelograms, trapezoids, kites, and finding interior angle sums, (n-2)×180°.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">9.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Circle Terminology & Fundamentals</a>
-                </div>
-                <div class="subtopic-desc">Radius, diameter, chord, secant, tangent, central angles, and arc measures.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 10 -->
-          <div id="content-t3-u10" class="tab-content">
-            <h3 class="unit-title">Unit 10: Perimeter & Area of 2D Figures</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">10.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Perimeter of Polygons & Circumference of Circles</a>
-                </div>
-                <div class="subtopic-desc">Calculating distance around multi-sided figures and utilizing C = 2πr / C = πd.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">10.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Area of Triangles, Quadrilaterals & Circles</a>
-                </div>
-                <div class="subtopic-desc">Area formulas for triangles, parallelograms, trapezoids, and circles (A = πr²).</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">10.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Area of Composite Figures</a>
-                </div>
-                <div class="subtopic-desc">Decomposing complex, irregular shapes into simpler geometric regions.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 11 -->
-          <div id="content-t3-u11" class="tab-content">
-            <h3 class="unit-title">Unit 11: Surface Area & Volume of 3D Solids</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">11.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">3D Shapes, Nets & Surface Area</a>
-                </div>
-                <div class="subtopic-desc">Prisms, pyramids, cylinders, cones, and finding surface area using 2D nets.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">11.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Volume of Rectangular Prisms & Cylinders</a>
-                </div>
-                <div class="subtopic-desc">Calculating capacity using base area times height (V = B × h).</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">11.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Volume of Pyramids, Cones & Spheres</a>
-                </div>
-                <div class="subtopic-desc">Applying 1/3 scaling relationship formulas and sphere volume (4/3 πr³).</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 12 -->
-          <div id="content-t3-u12" class="tab-content">
-            <h3 class="unit-title">Unit 12: Data Representation & Statistics</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">12.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Data Collection, Frequency Tables & Histograms</a>
-                </div>
-                <div class="subtopic-desc">Organizing raw data into tally charts, grouped frequency tables, and bar charts.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">12.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Measures of Central Tendency</a>
-                </div>
-                <div class="subtopic-desc">Calculating Mean, Median, and Mode for ungrouped datasets.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">12.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Measures of Variability</a>
-                </div>
-                <div class="subtopic-desc">Finding range and interquartile spread to describe dataset dispersion.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Unit 13 -->
-          <div id="content-t3-u13" class="tab-content">
-            <h3 class="unit-title">Unit 13: Basic Probability Concepts</h3>
-            <div class="subtopic-grid">
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">13.1</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Experiments, Outcomes & Sample Space</a>
-                </div>
-                <div class="subtopic-desc">Tree diagrams, counting rules, and defining probability events.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">13.2</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Theoretical vs. Experimental Probability</a>
-                </div>
-                <div class="subtopic-desc">Calculating likelihood of favorable outcomes over total outcomes and conducting experiments.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-              <div class="subtopic-card">
-                <span class="subtopic-code">13.3</span>
-                <div class="subtopic-name">
-                  <a href="#" target="_blank">Simple Probability Applications</a>
-                </div>
-                <div class="subtopic-desc">Solving real-world chance problems involving dice, coins, cards, and spinners.</div>
-                <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
+  <!-- FULL-SCREEN ANIMATED PRESENTATION EXPERIMENTAL MODAL -->
+  <div id="presentationModal" class="fixed inset-0 bg-slate-950/95 hidden z-50 flex flex-col justify-between p-6 text-white no-print">
+    <!-- Top Control Bar -->
+    <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+      <div>
+        <h3 id="presentationTitle" class="text-lg font-bold text-amber-400">Lesson Presentation</h3>
+        <p class="text-xs text-slate-400">Pareja IS ARAL Math Interactive Deck</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="slideCounter" class="text-xs bg-indigo-900/80 border border-indigo-700 px-3 py-1 rounded-full text-indigo-200 font-mono">
+          Slide 1 / 5
+        </span>
+        <button onclick="closePresentationModal()" class="text-slate-400 hover:text-white text-2xl font-bold px-2">&times;</button>
       </div>
     </div>
-  </section>
-</div>
 
+    <!-- Animated Slide Content Body -->
+    <div class="flex-1 flex flex-col items-center justify-center text-center px-6 py-12">
+      <div id="slideCard" class="bg-slate-900 border border-slate-800 rounded-2xl p-10 max-w-2xl w-full shadow-2xl transition-all duration-300 transform scale-100">
+        <span id="slideCategory" class="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2 block">Interactive Learning</span>
+        <h2 id="slideContent" class="text-2xl md:text-3xl font-bold text-slate-100 mb-4">Slide Content Here</h2>
+        <p id="slideSubtitle" class="text-sm text-slate-400">Use arrow keys or buttons below to navigate through lesson slides.</p>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="flex justify-between items-center border-t border-slate-800 pt-4">
+      <button onclick="prevSlide()" class="px-4 py-2 bg-slate-800 hover:bg-indigo-600 rounded-lg font-medium text-xs flex items-center gap-2 transition-colors">
+        <i class="fas fa-arrow-left"></i> Previous
+      </button>
+      <div class="text-xs text-slate-500 hidden md:block">
+        Press <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-300">←</kbd> and <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-300">→</kbd> on your keyboard
+      </div>
+      <button onclick="nextSlide()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg font-medium text-xs flex items-center gap-2 transition-colors">
+        Next <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 mt-12 no-print">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <div>
+        <p class="text-xs font-medium text-slate-300">Pareja IS - ARAL Math Learning Portal</p>
+        <p class="text-[11px] text-slate-500 mt-0.5">Author: Mary Grace M. Peral | Dedicated to Mathematics Excellence</p>
+      </div>
+      <div class="max-w-md">
+        <p class="text-[10px] text-slate-500 leading-normal">
+          <strong>AI Collaboration Declaration:</strong> Content and application frameworks designed in collaboration with artificial intelligence to optimize educational delivery and accessibility.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE SCRIPTS -->
+  <script>
+    let currentSlide = 0;
+    let activeSlides = [];
+
+    function openPresentationModal(title, slideDeck) {
+      document.getElementById('presentationTitle').innerText = title;
+      activeSlides = slideDeck || ["Welcome to the Lesson", "Objectives & Overview", "Key Concepts", "Guided Practice", "Evaluation"];
+      currentSlide = 0;
+      updateSlideDisplay();
+      document.getElementById('presentationModal').classList.remove('hidden');
+    }
+
+    function closePresentationModal() {
+      document.getElementById('presentationModal').classList.add('hidden');
+    }
+
+    function updateSlideDisplay() {
+      const card = document.getElementById('slideCard');
+      card.classList.add('opacity-0', 'scale-95');
+      
+      setTimeout(() => {
+        document.getElementById('slideContent').innerText = activeSlides[currentSlide];
+        document.getElementById('slideCounter').innerText = `Slide ${currentSlide + 1} / ${activeSlides.length}`;
+        card.classList.remove('opacity-0', 'scale-95');
+      }, 150);
+    }
+
+    function nextSlide() {
+      if (currentSlide < activeSlides.length - 1) {
+        currentSlide++;
+        updateSlideDisplay();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlideDisplay();
+      }
+    }
+
+    // Keyboard Navigation (Left/Right Arrows + Escape)
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('presentationModal');
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'Escape') closePresentationModal();
+      }
+    });
+
+    // Mock Functions for Other Buttons
+    function openLessonPlan(topic) {
+      alert(`Opening Lesson Plan for: ${topic}`);
+    }
+
+    function openActivitySheet(topic) {
+      alert(`Opening Activity Sheet for: ${topic}`);
+    }
+  </script>
 </body>
 </html>
