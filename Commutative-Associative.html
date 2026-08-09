@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept Discussion: Commutative & Associative Properties</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid #ef4444;
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Concept Discussion: Commutative & Associative Properties</h1>
+    <p>Topic 2.1: Mathematical Foundations & Mental Computation Strategies</p>
+  </header>
+
+  <!-- Section 1: Conceptual Foundation -->
+  <section>
+    <h2>1. Conceptual Foundation</h2>
+    <p>Mathematical operations obey specific structural laws that govern how numbers interact. When calculating sums or products, the order and grouping of terms can be altered without changing the final result.</p>
+    <p>Understanding these properties provides the algebraic justification for mental math strategies, allowing complex multi-digit calculations to be decomposed into friendly, manageable steps.</p>
+  </section>
+
+  <!-- Section 2: Core Algebraic Properties -->
+  <section>
+    <h2>2. The Core Algebraic Properties</h2>
+    
+    <div class="rule-box">
+      <h3>A. Commutative Property (Order Law)</h3>
+      <p>Changing the order of the terms being added or multiplied does not change the result.</p>
+      <ul>
+        <li><strong>Addition:</strong> <span class="formula">a + b = b + a</span></li>
+        <li><strong>Multiplication:</strong> <span class="formula">a &times; b = b &times; a</span></li>
+      </ul>
+      <p style="margin-bottom: 0;"><em>Core Takeaway:</em> Sequence does not matter.</p>
+    </div>
+
+    <div class="rule-box">
+      <h3>B. Associative Property (Grouping Law)</h3>
+      <p>Changing the grouping (parentheses) of terms being added or multiplied does not change the result.</p>
+      <ul>
+        <li><strong>Addition:</strong> <span class="formula">(a + b) + c = a + (b + c)</span></li>
+        <li><strong>Multiplication:</strong> <span class="formula">(a &times; b) &times; c = a &times; (b &times; c)</span></li>
+      </ul>
+      <p style="margin-bottom: 0;"><em>Core Takeaway:</em> Which pair you calculate first does not matter.</p>
+    </div>
+  </section>
+
+  <!-- Section 3: Operational Limits & Non-Examples -->
+  <section>
+    <h2>3. Operational Limits & Non-Examples</h2>
+    <p>These properties apply <strong>exclusively</strong> to addition and multiplication. They fail completely under subtraction and division:</p>
+
+    <div class="warning-box">
+      <h3>⚠️ Subtraction is Non-Commutative & Non-Associative</h3>
+      <ul>
+        <li><strong>Order Failure:</strong> <span class="formula">15 - 7 = 8</span>, but <span class="formula">7 - 15 = -8</span> (<span class="formula">a - b &ne; b - a</span>).</li>
+        <li><strong>Grouping Failure:</strong> <span class="formula">(10 - 5) - 2 = 3</span>, but <span class="formula">10 - (5 - 2) = 7</span>.</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ Division is Non-Commutative & Non-Associative</h3>
+      <ul>
+        <li><strong>Order Failure:</strong> <span class="formula">20 &divide; 4 = 5</span>, but <span class="formula">4 &divide; 20 = 0.2</span> (<span class="formula">a &divide; b &ne; b &divide; a</span>).</li>
+        <li><strong>Grouping Failure:</strong> <span class="formula">(24 &divide; 6) &divide; 2 = 2</span>, but <span class="formula">24 &divide; (6 &divide; 2) = 8</span>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 4: Strategic Application in Mental Computation -->
+  <section>
+    <h2>4. Strategic Application in Mental Computation</h2>
+    <p>In practice, these two properties are used together to transform rigid left-to-right calculations into flexible pattern matching:</p>
+
+    <div class="step-box">
+      <h3>1. Compatible Addition Pairs (Tens & Hundreds Benchmarks)</h3>
+      <p>Rearrange terms to create sums ending in zero (e.g., 8+2, 7+3, 25+75).</p>
+      <p><strong>Example:</strong> Evaluate <span class="formula">36 + 87 + 64</span></p>
+      <p><strong>Solution:</strong> <span class="formula">(36 + 64) + 87 = 100 + 87 = 187</span></p>
+    </div>
+
+    <div class="step-box">
+      <h3>2. Benchmark Multiplication Factors</h3>
+      <p>Group factors that yield powers of ten (e.g., 2 &times; 5 = 10, 4 &times; 25 = 100, 8 &times; 125 = 1,000).</p>
+      <p><strong>Example:</strong> Evaluate <span class="formula">5 &times; 19 &times; 20</span></p>
+      <p><strong>Solution:</strong> <span class="formula">(5 &times; 20) &times; 19 = 100 &times; 19 = 1,900</span></p>
+    </div>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Concept Discussion PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
