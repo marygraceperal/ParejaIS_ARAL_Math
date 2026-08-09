@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARAL Math Key Stage 3 Curriculum Syllabus</title>
 
-  <!-- === SECTION 1: STYLES (CSS) === -->
+  <!-- ======================================================= -->
+  <!-- START OF PART 1: CSS STYLES                            -->
+  <!-- ======================================================= -->
   <style>
     :root {
       --primary: #1e3a8a;
@@ -325,9 +327,14 @@
       margin-bottom: 0.75rem;
     }
   </style>
+  <!-- ======================================================= -->
+  <!-- END OF PART 1                                          -->
+  <!-- ======================================================= -->
 </head>
 <body>
 
+  <!-- Main Radio Toggles for Terms -->
+  <input type="radio" name="term-tabs" id="tab-tab1" class="term-toggle" checked>
   <input type="radio" name="term-tabs" id="tab-term1" class="term-toggle" checked>
   <input type="radio" name="term-tabs" id="tab-term2" class="term-toggle">
   <input type="radio" name="term-tabs" id="tab-term3" class="term-toggle">
@@ -336,7 +343,6 @@
     <header>
       <h1>ARAL Math Intervention Portal</h1>
       <p>A structured, interactive learning framework for Key Stage 3 Mathematics.</p>
-      <div class="author-badge">Developed by Mary Grace M. Peral | Pareja Integrated School</div>
     </header>
 
     <div class="term-nav">
@@ -345,7 +351,26 @@
       <label for="tab-term3">Term 3</label>
     </div>
 
-    <!-- === TERM 1 === -->
+  <!-- Main Radio Toggles for Terms -->
+  <input type="radio" name="term-tabs" id="tab-term1" class="term-toggle" checked>
+  <input type="radio" name="term-tabs" id="tab-term2" class="term-toggle">
+  <input type="radio" name="term-tabs" id="tab-term3" class="term-toggle">
+
+  <div class="container">
+    <header>
+      <h1>ARAL Math Intervention Portal</h1>
+      <p>A structured, interactive learning framework for Key Stage 3 Mathematics.</p>
+    </header>
+
+    <div class="term-nav">
+      <label for="tab-term1">Term 1</label>
+      <label for="tab-term2">Term 2</label>
+      <label for="tab-term3">Term 3</label>
+    </div>
+
+        <!-- ======================================================= -->
+    <!-- START OF PART 2: TERM 1 CONTENT (UNITS 1 - 3)          -->
+    <!-- ======================================================= -->
     <section id="content-term1" class="term-section">
       <div class="term-header">
         <h2>Term 1: Number Systems & Algebraic Foundations</h2>
@@ -517,12 +542,17 @@
         </div>
       </div>
     </section>
+    <!-- ======================================================= -->
+    <!-- END OF PART 2                                          -->
+    <!-- ======================================================= -->
 
-    <!-- === TERM 2 === -->
+    <!-- ======================================================= -->
+    <!-- START OF PART 3: TERM 2 CONTENT (UNITS 4 - 7)          -->
+    <!-- ======================================================= -->
     <section id="content-term2" class="term-section">
       <div class="term-header">
-        <h2>Term 2: Algebraic Expressions & Linear Equations</h2>
-        <p>Focus: Translating expressions, solving one-step/two-step linear equations, inequalities, and ratios.</p>
+        <h2>Term 2: Algebraic Expressions, Equations & Proportions</h2>
+        <p>Focus: Polynomial operations, solving linear equations and inequalities, and proportional reasoning.</p>
       </div>
       <div class="term-body">
         <div class="tab-container">
@@ -532,20 +562,21 @@
           <input type="radio" name="term2-tabs" id="t2-u7" class="tab-toggle">
 
           <div class="tab-nav">
-            <label for="t2-u4">Unit 4: Expressions</label>
-            <label for="t2-u5">Unit 5: Equations</label>
+            <label for="t2-u4">Unit 4: Polynomials</label>
+            <label for="t2-u5">Unit 5: Linear Equations</label>
             <label for="t2-u6">Unit 6: Inequalities</label>
-            <label for="t2-u7">Unit 7: Ratios</label>
+            <label for="t2-u7">Unit 7: Ratios & Proportions</label>
           </div>
 
           <div class="tab-contents">
+            <!-- UNIT 4 -->
             <div id="content-t2-u4" class="tab-content">
-              <h3 class="unit-title">Unit 4: Algebraic Expressions</h3>
+              <h3 class="unit-title">Unit 4: Algebraic Expressions & Polynomials</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('4.1')">
                   <span class="subtopic-code">4.1</span>
-                  <div class="subtopic-name">Variables & Coefficients 💬</div>
-                  <div class="subtopic-desc">Identifying parts of algebraic terms: numerical coefficients, variables, and constants.</div>
+                  <div class="subtopic-name">Terms, Coefficients & Variables 💬</div>
+                  <div class="subtopic-desc">Identifying variables, numerical and literal coefficients, and constants.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -556,8 +587,20 @@
 
                 <div class="subtopic-card" onclick="openDiscussion('4.2')">
                   <span class="subtopic-code">4.2</span>
-                  <div class="subtopic-name">Translating Words to Algebra 💬</div>
-                  <div class="subtopic-desc">Converting phrase descriptions into operational algebraic symbols.</div>
+                  <div class="subtopic-name">Polynomial Classification & Degree 💬</div>
+                  <div class="subtopic-desc">Monomials, binomials, trinomials, and determining degrees of expressions.</div>
+                  <div class="resource-toolbar" onclick="event.stopPropagation()">
+                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <a href="#" class="res-btn btn-slides">📊 Slides</a>
+                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
+                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                  </div>
+                </div>
+
+                <div class="subtopic-card" onclick="openDiscussion('4.3')">
+                  <span class="subtopic-code">4.3</span>
+                  <div class="subtopic-name">Operations on Polynomials 💬</div>
+                  <div class="subtopic-desc">Addition, subtraction, laws of exponents, and FOIL multiplication.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -568,13 +611,14 @@
               </div>
             </div>
 
+            <!-- UNIT 5 -->
             <div id="content-t2-u5" class="tab-content">
-              <h3 class="unit-title">Unit 5: Linear Equations</h3>
+              <h3 class="unit-title">Unit 5: Linear Equations in One Variable</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('5.1')">
                   <span class="subtopic-code">5.1</span>
-                  <div class="subtopic-name">One-Step Equations 💬</div>
-                  <div class="subtopic-desc">Isolating unknown variables using addition and multiplication properties of equality.</div>
+                  <div class="subtopic-name">One-Step & Two-Step Equations 💬</div>
+                  <div class="subtopic-desc">Applying Addition and Multiplication Properties of Equality (APE/MPE).</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -585,8 +629,20 @@
 
                 <div class="subtopic-card" onclick="openDiscussion('5.2')">
                   <span class="subtopic-code">5.2</span>
-                  <div class="subtopic-name">Two-Step Equations 💬</div>
-                  <div class="subtopic-desc">Solving equations of the form ax + b = c in financial contexts.</div>
+                  <div class="subtopic-name">Multi-Step Linear Equations 💬</div>
+                  <div class="subtopic-desc">Variables on both sides, combining like terms, and removing grouping symbols.</div>
+                  <div class="resource-toolbar" onclick="event.stopPropagation()">
+                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <a href="#" class="res-btn btn-slides">📊 Slides</a>
+                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
+                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                  </div>
+                </div>
+
+                <div class="subtopic-card" onclick="openDiscussion('5.3')">
+                  <span class="subtopic-code">5.3</span>
+                  <div class="subtopic-name">Real-World Equation Applications 💬</div>
+                  <div class="subtopic-desc">Translating word problems to linear equations and solving for unknowns.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -597,13 +653,26 @@
               </div>
             </div>
 
+            <!-- UNIT 6 -->
             <div id="content-t2-u6" class="tab-content">
-              <h3 class="unit-title">Unit 6: Inequalities</h3>
+              <h3 class="unit-title">Unit 6: Linear Inequalities in One Variable</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('6.1')">
                   <span class="subtopic-code">6.1</span>
-                  <div class="subtopic-name">Inequality Symbols & Graphs 💬</div>
-                  <div class="subtopic-desc">Graphing inequality solution sets on number lines.</div>
+                  <div class="subtopic-name">Inequality Symbols & Number Lines 💬</div>
+                  <div class="subtopic-desc">Graphing solution sets (<, >, ≤, ≥) and understanding negative direction rules.</div>
+                  <div class="resource-toolbar" onclick="event.stopPropagation()">
+                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <a href="#" class="res-btn btn-slides">📊 Slides</a>
+                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
+                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                  </div>
+                </div>
+
+                <div class="subtopic-card" onclick="openDiscussion('6.2')">
+                  <span class="subtopic-code">6.2</span>
+                  <div class="subtopic-name">Solving & Applying Inequalities 💬</div>
+                  <div class="subtopic-desc">Solving multi-step inequalities and modeling real-world budget/threshold limits.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -614,13 +683,26 @@
               </div>
             </div>
 
+            <!-- UNIT 7 -->
             <div id="content-t2-u7" class="tab-content">
-              <h3 class="unit-title">Unit 7: Ratios & Proportions</h3>
+              <h3 class="unit-title">Unit 7: Patterns, Ratios & Proportions</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('7.1')">
                   <span class="subtopic-code">7.1</span>
-                  <div class="subtopic-name">Ratios & Direct Proportions 💬</div>
-                  <div class="subtopic-desc">Comparing quantities and applying cross-multiplication.</div>
+                  <div class="subtopic-name">Ratios & Unit Rates 💬</div>
+                  <div class="subtopic-desc">Simplifying ratios, rate conversions, and unit pricing calculations.</div>
+                  <div class="resource-toolbar" onclick="event.stopPropagation()">
+                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <a href="#" class="res-btn btn-slides">📊 Slides</a>
+                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
+                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                  </div>
+                </div>
+
+                <div class="subtopic-card" onclick="openDiscussion('7.2')">
+                  <span class="subtopic-code">7.2</span>
+                  <div class="subtopic-name">Direct, Inverse & Partitive Proportions 💬</div>
+                  <div class="subtopic-desc">Solving proportional relationships and real-world resource sharing problems.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -634,12 +716,17 @@
         </div>
       </div>
     </section>
+    <!-- ======================================================= -->
+    <!-- END OF PART 3                                          -->
+    <!-- ======================================================= -->
 
-    <!-- === TERM 3 === -->
+        <!-- ======================================================= -->
+    <!-- START OF PART 4: TERM 3 CONTENT (UNITS 8 - 13)         -->
+    <!-- ======================================================= -->
     <section id="content-term3" class="term-section">
       <div class="term-header">
-        <h2>Term 3: Geometry, Measurement & Data Analysis</h2>
-        <p>Focus: Geometric reasoning, perimeter and area applications, structural measurement, and introductory statistics.</p>
+        <h2>Term 3: Geometry, Measurement & Statistics</h2>
+        <p>Focus: Geometric relationships, 2D/3D measurements, data analysis, and basic probability.</p>
       </div>
       <div class="term-body">
         <div class="tab-container">
@@ -651,22 +738,23 @@
           <input type="radio" name="term3-tabs" id="t3-u13" class="tab-toggle">
 
           <div class="tab-nav">
-            <label for="t3-u8">Unit 8: Lines & Angles</label>
+            <label for="t3-u8">Unit 8: Points & Lines</label>
             <label for="t3-u9">Unit 9: Polygons</label>
-            <label for="t3-u10">Unit 10: Perimeter & Area</label>
+            <label for="t3-u10">Unit 10: 2D Measurement</label>
             <label for="t3-u11">Unit 11: 3D Solids</label>
             <label for="t3-u12">Unit 12: Statistics</label>
             <label for="t3-u13">Unit 13: Probability</label>
           </div>
 
           <div class="tab-contents">
+            <!-- UNIT 8 -->
             <div id="content-t3-u8" class="tab-content">
-              <h3 class="unit-title">Unit 8: Points, Lines, Angles & Parallelism</h3>
+              <h3 class="unit-title">Unit 8: Points, Lines, Angles & Planes</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('8.1')">
                   <span class="subtopic-code">8.1</span>
                   <div class="subtopic-name">Points, Lines & Planes 💬</div>
-                  <div class="subtopic-desc">Fundamental geometric elements, ray/segment definitions, and coplanar points.</div>
+                  <div class="subtopic-desc">Undefined terms in geometry, collinearity, and coplanar points.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -678,7 +766,7 @@
                 <div class="subtopic-card" onclick="openDiscussion('8.2')">
                   <span class="subtopic-code">8.2</span>
                   <div class="subtopic-name">Angle Relationships 💬</div>
-                  <div class="subtopic-desc">Complementary, supplementary, and vertical angle theorems and measures.</div>
+                  <div class="subtopic-desc">Complementary, supplementary, vertical, and linear pair angles.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -689,13 +777,14 @@
               </div>
             </div>
 
+            <!-- UNIT 9 -->
             <div id="content-t3-u9" class="tab-content">
-              <h3 class="unit-title">Unit 9: Triangles, Quadrilaterals & Polygons</h3>
+              <h3 class="unit-title">Unit 9: Properties of Polygons</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('9.1')">
                   <span class="subtopic-code">9.1</span>
                   <div class="subtopic-name">Classification of Polygons 💬</div>
-                  <div class="subtopic-desc">Properties of acute, right, obtuse, equilateral, and isosceles triangles and quadrilaterals.</div>
+                  <div class="subtopic-desc">Convex vs. non-convex, regular polygons, triangles, and quadrilaterals.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -706,13 +795,14 @@
               </div>
             </div>
 
+            <!-- UNIT 10 -->
             <div id="content-t3-u10" class="tab-content">
-              <h3 class="unit-title">Unit 10: Perimeter, Area & Circumference</h3>
+              <h3 class="unit-title">Unit 10: 2D Measurement & Area</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('10.1')">
                   <span class="subtopic-code">10.1</span>
                   <div class="subtopic-name">Perimeter & Area Formulas 💬</div>
-                  <div class="subtopic-desc">Calculating dimensions for rectangles, triangles, parallelograms, and circles.</div>
+                  <div class="subtopic-desc">Calculating perimeter and area of triangles, parallelograms, and circles.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -723,13 +813,14 @@
               </div>
             </div>
 
+            <!-- UNIT 11 -->
             <div id="content-t3-u11" class="tab-content">
-              <h3 class="unit-title">Unit 11: Surface Area & Volume of 3D Solids</h3>
+              <h3 class="unit-title">Unit 11: 3D Solids & Volume</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('11.1')">
                   <span class="subtopic-code">11.1</span>
-                  <div class="subtopic-name">Prisms & Cylinders 💬</div>
-                  <div class="subtopic-desc">Computing surface area and volume capacities for rectangular prisms and cylinders.</div>
+                  <div class="subtopic-name">Surface Area & Volume 💬</div>
+                  <div class="subtopic-desc">Prisms, cylinders, pyramids, and cones in contextual applications.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -740,13 +831,14 @@
               </div>
             </div>
 
+            <!-- UNIT 12 -->
             <div id="content-t3-u12" class="tab-content">
-              <h3 class="unit-title">Unit 12: Data Organization & Central Tendency</h3>
+              <h3 class="unit-title">Unit 12: Basic Statistics</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('12.1')">
                   <span class="subtopic-code">12.1</span>
-                  <div class="subtopic-name">Mean, Median & Mode 💬</div>
-                  <div class="subtopic-desc">Calculating central tendency measures and range for classroom performance data.</div>
+                  <div class="subtopic-name">Measures of Central Tendency 💬</div>
+                  <div class="subtopic-desc">Calculating and interpreting Mean, Median, and Mode for ungrouped data.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -757,13 +849,14 @@
               </div>
             </div>
 
+            <!-- UNIT 13 -->
             <div id="content-t3-u13" class="tab-content">
-              <h3 class="unit-title">Unit 13: Simple Probability & Experiments</h3>
+              <h3 class="unit-title">Unit 13: Introduction to Probability</h3>
               <div class="subtopic-grid">
                 <div class="subtopic-card" onclick="openDiscussion('13.1')">
                   <span class="subtopic-code">13.1</span>
-                  <div class="subtopic-name">Theoretical vs. Experimental Probability 💬</div>
-                  <div class="subtopic-desc">Determining likelihood, sample spaces, tree diagrams, and event outcomes.</div>
+                  <div class="subtopic-name">Theoretical & Experimental Probability 💬</div>
+                  <div class="subtopic-desc">Sample spaces, simple events, and calculating probabilities of outcomes.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
                     <a href="#" class="res-btn btn-lesson">📘 Plan</a>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
@@ -777,214 +870,279 @@
         </div>
       </div>
     </section>
-  </div>
+  </div><!-- End of .container -->
+  <!-- ======================================================= -->
+  <!-- END OF PART 4                                          -->
+  <!-- ======================================================= -->
 
+  </div><!-- End of .container -->
+
+
+    <!-- ======================================================= -->
+  <!-- START OF PART 5: JAVASCRIPT DATA & LOGIC ENGINE        -->
+  <!-- ======================================================= -->
   <script>
+    // 1. TOPICS DISCUSSION DATA OBJECT
     const discussionData = {
+      // TERM 1
       '1.1': {
-        title: '1.1 Understanding Signed Numbers',
+        title: '1.1 Set of Integers & Absolute Value',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Signed numbers represent directional values relative to a reference point (zero) on a number line. Positive numbers indicate values greater than zero, while negative numbers represent values less than zero.</p>
-          <h4>Philippine Context Example</h4>
-          <p>A sari-sari store owner earns ₱500 (+500) in profit on Monday but pays ₱200 (-200) for supplier delivery fees on Tuesday. The net financial balance change is +₱300.</p>
-          <h4>Key Takeaways</h4>
+          <h4>Core Concepts</h4>
+          <p>Integers comprise whole numbers and their negative opposites: {..., -3, -2, -1, 0, 1, 2, 3, ...}.</p>
           <ul>
-            <li>Zero (0) is neither positive nor negative.</li>
-            <li>Numbers further right on the number line always have a greater value.</li>
+            <li><strong>Absolute Value |x|:</strong> Represents the non-negative distance of a number from zero on a number line (e.g., |-7| = 7, |7| = 7).</li>
+            <li><strong>Number Line Representation:</strong> Positive integers lie to the right of zero; negative integers lie to the left.</li>
           </ul>
+          <h4>Teaching Strategy</h4>
+          <p>Use elevation or bank balances (deposits vs. withdrawals) to ground distance and magnitude in real-world contexts.</p>
         `
       },
       '1.2': {
-        title: '1.2 Addition of Integers',
+        title: '1.2 Addition & Subtraction of Integers',
         content: `
-          <h4>Core Discussion</h4>
-          <p>When adding integers with the same sign, add their absolute values and keep the common sign. When adding integers with different signs, subtract the smaller absolute value from the larger absolute value and copy the sign of the larger absolute value.</p>
-          <h4>Philippine Context Example</h4>
-          <p>If a student borrows ₱50 (-50) on Wednesday and another ₱30 (-30) on Thursday, the total balance owed is represented as (-50) + (-30) = -80 (₱80 total debt).</p>
+          <h4>Core Concepts</h4>
+          <p><strong>Addition:</strong> Same signs—add values and keep the sign. Different signs—subtract smaller absolute value from larger, keep sign of larger absolute value.</p>
+          <p><strong>Subtraction:</strong> Add the additive inverse ($a - b = a + (-b)$).</p>
         `
       },
       '1.3': {
-        title: '1.3 Subtraction of Integers',
+        title: '1.3 Multiplication & Division of Integers',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Subtracting an integer is equivalent to adding its additive inverse: a - b = a + (-b). Change the subtraction sign to addition, invert the sign of the second number, and follow integer addition rules.</p>
-          <h4>Worked Example</h4>
-          <p>Calculate: 15 - (-8) = 15 + 8 = 23.</p>
+          <h4>Core Concepts</h4>
+          <p>Like signs result in a positive product/quotient (+). Unlike signs result in a negative product/quotient (-).</p>
+        `
+      },
+      '1.4': {
+        title: '1.4 Real-World Applications of Integers',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Applying integer operations to financial gains/losses, temperature variations, and elevation changes.</p>
         `
       },
       '2.1': {
-        title: '2.1 Commutative & Associative Properties',
+        title: '2.1 Classification of Real Numbers',
         content: `
-          <h4>Core Discussion</h4>
-          <p><strong>Commutative Property:</strong> Changing the order of addends or factors does not change the result (a + b = b + a and a × b = b × a).</p>
-          <p><strong>Associative Property:</strong> Changing the grouping of addends or factors does not change the result ((a + b) + c = a + (b + c)).</p>
+          <h4>Core Concepts</h4>
+          <p>Real numbers ($\mathbb{R}$) encompass Rational ($\mathbb{Q}$) and Irrational ($\mathbb{Q'}$) numbers.</p>
         `
       },
       '2.2': {
-        title: '2.2 Distributive Property',
+        title: '2.2 Operations on Rational Numbers',
         content: `
-          <h4>Core Discussion</h4>
-          <p>The Distributive Property lets you multiply a sum by multiplying each addend separately: a(b + c) = ab + ac.</p>
-          <h4>Mental Math Example</h4>
-          <p>Multiply 6 × 98 mentally: 6 × (100 - 2) = (6 × 100) - (6 × 2) = 600 - 12 = 588.</p>
+          <h4>Core Concepts</h4>
+          <p>Adding, subtracting, multiplying, and dividing fractions and terminating/repeating decimals using common denominators.</p>
+        `
+      },
+      '2.3': {
+        title: '2.3 Square Roots & Principal Roots',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Evaluating perfect square roots and approximating non-perfect square roots between consecutive integers.</p>
+        `
+      },
+      '2.4': {
+        title: '2.4 Scientific Notation & Base-10',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Writing numbers in $a \times 10^n$ format where $1 \le |a| < 10$ and $n$ is an integer.</p>
         `
       },
       '3.1': {
-        title: '3.1 Order of Operations (GEMDAS)',
+        title: '3.1 Properties of Real Numbers',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Evaluate expressions sequentially:</p>
-          <ul>
-            <li><strong>G</strong>rouping symbols (parentheses, brackets)</li>
-            <li><strong>E</strong>xponents</li>
-            <li><strong>M</strong>ultiplication & <strong>D</strong>ivision (left-to-right)</li>
-            <li><strong>A</strong>ddition & <strong>S</strong>ubtraction (left-to-right)</li>
-          </ul>
+          <h4>Core Concepts</h4>
+          <p>Closure, Commutative, Associative, Distributive, Identity, and Inverse properties across addition and multiplication.</p>
         `
       },
-      '4.1': {
-        title: '4.1 Variables, Constants & Coefficients',
+      '3.2': {
+        title: '3.2 Order of Operations (GEMDAS)',
         content: `
-          <h4>Core Discussion</h4>
-          <p>An algebraic expression consists of variables, constants, and operators. In 5x + 7, 5 is the numerical coefficient, x is the variable, and 7 is the constant.</p>
+          <h4>Core Concepts</h4>
+          <p>Grouping symbols $\rightarrow$ Exponents $\rightarrow$ Multiplication/Division (left to right) $\rightarrow$ Addition/Subtraction (left to right).</p>
+        `
+      },
+      '3.3': {
+        title: '3.3 Intro to Algebraic Terms',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Identifying variables, numerical coefficients, literal coefficients, degrees, and constant terms.</p>
+        `
+      },
+
+      // TERM 2
+      '4.1': {
+        title: '4.1 Terms, Coefficients & Variables',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Algebraic terms consist of numerical factors (coefficients) and variable factors exponentiated to real powers.</p>
         `
       },
       '4.2': {
-        title: '4.2 Translating Words to Algebra',
+        title: '4.2 Polynomial Classification & Degree',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Translating English phrases into mathematical expressions relies on operation keywords ("increased by" means +, "product of" means ×, "less than" means -).</p>
-          <h4>Example</h4>
-          <p>"Five less than twice a number n" translates to 2n - 5.</p>
+          <h4>Core Concepts</h4>
+          <p>Classifying by number of terms (monomial, binomial, trinomial) and finding highest total degree.</p>
+        `
+      },
+      '4.3': {
+        title: '4.3 Operations on Polynomials',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Combining like terms for addition/subtraction; using exponent laws and FOIL/distributive methods for multiplication.</p>
         `
       },
       '5.1': {
-        title: '5.1 One-Step Linear Equations',
+        title: '5.1 One-Step & Two-Step Equations',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Isolate the unknown variable by applying the inverse operation to both sides of the equation.</p>
-          <h4>Example</h4>
-          <p>Solve x - 12 = 35 gives x = 35 + 12 = 47.</p>
+          <h4>Core Concepts</h4>
+          <p>Isolating variables using APE (Addition Property of Equality) and MPE (Multiplication Property of Equality).</p>
         `
       },
       '5.2': {
-        title: '5.2 Two-Step Equations & Financial Applications',
+        title: '5.2 Multi-Step Linear Equations',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Solve two-step equations of the form ax + b = c by undoing addition or subtraction first, then multiplication or division.</p>
-          <h4>Philippine Context Example</h4>
-          <p>A jeepney driver earns ₱800 fixed daily wages plus ₱15 per passenger (p). If total income is ₱1,550: solve 15p + 800 = 1550, so 15p = 750, giving p = 50 passengers.</p>
+          <h4>Core Concepts</h4>
+          <p>Clearing grouping symbols, eliminating fractions by LCD, and collecting variables on one side.</p>
+        `
+      },
+      '5.3': {
+        title: '5.3 Real-World Equation Applications',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Modeling word problems (age, perimeter, uniform motion) into solvable linear equations.</p>
         `
       },
       '6.1': {
-        title: '6.1 Inequality Symbols & Graphs',
+        title: '6.1 Inequality Symbols & Number Lines',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Inequalities use less than, greater than, less than or equal to, and greater than or equal to. Open circles mark strict inequalities on number lines, while filled circles mark inclusive inequalities.</p>
+          <h4>Core Concepts</h4>
+          <p>Graphing open ($<, >$) and closed ($\le, \ge$) boundaries on a real number line.</p>
+        `
+      },
+      '6.2': {
+        title: '6.2 Solving & Applying Inequalities',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Flipping inequality directions when multiplying or dividing by a negative constant.</p>
         `
       },
       '7.1': {
-        title: '7.1 Ratios & Direct Proportions',
+        title: '7.1 Ratios & Unit Rates',
         content: `
-          <h4>Core Discussion</h4>
-          <p>A ratio compares two values. A proportion states two ratios are equal: a/b = c/d. In any valid proportion, cross-products are equal (a × d = b × c).</p>
+          <h4>Core Concepts</h4>
+          <p>Comparing quantities with identical units vs. computing unit rates for differing units.</p>
         `
       },
+      '7.2': {
+        title: '7.2 Direct, Inverse & Partitive Proportions',
+        content: `
+          <h4>Core Concepts</h4>
+          <p>Direct ($y = kx$), Inverse ($xy = k$), and Partitive (partitioning a total into given ratios).</p>
+        `
+      },
+
+      // TERM 3
       '8.1': {
         title: '8.1 Points, Lines & Planes',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Points define specific locations. Lines extend infinitely in two opposite directions. Planes are flat surfaces extending infinitely in two dimensions.</p>
+          <h4>Core Concepts</h4>
+          <p>Fundamental undefined terms: point (position), line (1D infinite length), plane (2D flat surface).</p>
         `
       },
       '8.2': {
         title: '8.2 Angle Relationships',
         content: `
-          <h4>Core Discussion</h4>
-          <ul>
-            <li><strong>Complementary Angles:</strong> Two angles summing to 90 degrees.</li>
-            <li><strong>Supplementary Angles:</strong> Two angles summing to 180 degrees.</li>
-            <li><strong>Vertical Angles:</strong> Equal opposite angles formed by intersecting lines.</li>
-          </ul>
+          <h4>Core Concepts</h4>
+          <p>Complementary ($\sum = 90^\circ$), Supplementary ($\sum = 180^\circ$), and equal Vertical Angles.</p>
         `
       },
       '9.1': {
         title: '9.1 Classification of Polygons',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Triangles are classified by side lengths (equilateral, isosceles, scalene) or interior angles (acute, right, obtuse). Quadrilaterals include rectangles, squares, rhombuses, and trapezoids.</p>
+          <h4>Core Concepts</h4>
+          <p>Classifying closed 2D shapes by side count; calculating interior angle sums $S = (n-2) \times 180^\circ$.</p>
         `
       },
       '10.1': {
         title: '10.1 Perimeter & Area Formulas',
         content: `
-          <h4>Core Discussion</h4>
-          <ul>
-            <li>Rectangle Area = length × width</li>
-            <li>Triangle Area = 0.5 × base × height</li>
-            <li>Circle Circumference = 2 × pi × radius</li>
-            <li>Circle Area = pi × radius squared</li>
-          </ul>
+          <h4>Core Concepts</h4>
+          <p>Perimeter (boundary sum) and Area formulas for regular/irregular polygons and circles ($A = \pi r^2$).</p>
         `
       },
       '11.1': {
-        title: '11.1 Surface Area & Volume of 3D Solids',
+        title: '11.1 Surface Area & Volume',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Volume measures enclosed 3D space (Base Area × height).</p>
-          <ul>
-            <li>Rectangular Prism Volume = length × width × height</li>
-            <li>Cylinder Volume = pi × radius squared × height</li>
-          </ul>
+          <h4>Core Concepts</h4>
+          <p>Surface area of net boundaries and volume space measurements for prisms, cylinders, pyramids, and cones.</p>
         `
       },
       '12.1': {
-        title: '12.1 Mean, Median & Mode',
+        title: '12.1 Measures of Central Tendency',
         content: `
-          <h4>Core Discussion</h4>
-          <ul>
-            <li><strong>Mean:</strong> The arithmetic average of all scores.</li>
-            <li><strong>Median:</strong> The middle number in an ordered dataset.</li>
-            <li><strong>Mode:</strong> The value occurring most frequently.</li>
-          </ul>
+          <h4>Core Concepts</h4>
+          <p>Mean (arithmetic average), Median (middle value), and Mode (most frequent observation).</p>
         `
       },
       '13.1': {
-        title: '13.1 Theoretical vs. Experimental Probability',
+        title: '13.1 Theoretical & Experimental Probability',
         content: `
-          <h4>Core Discussion</h4>
-          <p>Theoretical probability calculates expected likelihood (Favorable Outcomes ÷ Total Outcomes). Experimental probability measures recorded trial results.</p>
+          <h4>Core Concepts</h4>
+          <p>Ratio of favorable outcomes to total sample space size: $P(E) = \frac{n(E)}{n(S)}$.</p>
         `
       }
     };
 
+    // 2. MODAL CONTROL FUNCTIONS
     function openDiscussion(topicCode) {
       const data = discussionData[topicCode];
+      const modal = document.getElementById('discussionModal');
+      const contentContainer = document.getElementById('modalContent');
+
       if (data) {
-        document.getElementById('modalContent').innerHTML = `
-          <div class="modal-title">${data.title}</div>
+        contentContainer.innerHTML = `
+          <h3 class="modal-title">${data.title}</h3>
           ${data.content}
         `;
-        document.getElementById('discussionModal').classList.add('active');
+      } else {
+        contentContainer.innerHTML = `
+          <h3 class="modal-title">Topic ${topicCode}</h3>
+          <p>Detailed discussion material for this subtopic is currently being prepared.</p>
+        `;
       }
+
+      modal.classList.add('active');
     }
 
     function closeDiscussion(event) {
-      if (event.target.id === 'discussionModal') closeDiscussionForce();
+      if (event.target.id === 'discussionModal') {
+        document.getElementById('discussionModal').classList.remove('active');
+      }
     }
 
     function closeDiscussionForce() {
       document.getElementById('discussionModal').classList.remove('active');
     }
   </script>
-</body>
-</html>
+  <!-- ======================================================= -->
+  <!-- END OF PART 5                                          -->
+  <!-- ======================================================= -->
 
-  <!-- Modal Overlay Container -->
+    <!-- ======================================================= -->
+  <!-- START OF PART 6: MODAL POPUP DIALOG UI & CLOSING TAGS  -->
+  <!-- ======================================================= -->
   <div id="discussionModal" class="modal-overlay" onclick="closeDiscussion(event)">
     <div class="modal-card" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeDiscussionForce()">&times;</button>
-      <div id="modalContent" class="modal-body"></div>
+      <div id="modalContent" class="modal-body">
+        <!-- Topic discussion content gets injected dynamically here via JavaScript -->
+      </div>
     </div>
   </div>
+  <!-- ======================================================= -->
+  <!-- END OF PART 6                                          -->
+  <!-- ======================================================= -->
+
+</body>
+</html>
