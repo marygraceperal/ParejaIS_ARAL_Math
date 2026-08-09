@@ -926,7 +926,19 @@
   <!-- ======================================================= -->
   <!-- START OF PART 5: JAVASCRIPT DATA & LOGIC ENGINE        -->
   <!-- ======================================================= -->
-  <script>
+  <script> window.addEventListener('DOMContentLoaded', () => {
+    // 1. Keep only the first hero header and remove all subsequent duplicates
+    const heroes = document.querySelectorAll('header.hero');
+    heroes.forEach((hero, index) => {
+      if (index > 0) hero.remove();
+    });
+
+    // 2. Keep only the first term navigation bar and remove all subsequent duplicates
+    const termNavs = document.querySelectorAll('.term-nav-main');
+    termNavs.forEach((nav, index) => {
+      if (index > 0) nav.remove();
+    });
+  });
     // 1. TOPICS DISCUSSION DATA OBJECT
     const discussionData = {
       // TERM 1
