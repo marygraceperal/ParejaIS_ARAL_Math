@@ -161,10 +161,55 @@
       margin-left: 1.25rem;
     }
 
+    /* Save / Print Button Section */
+    .print-container {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .print-btn:hover {
+      background-color: var(--primary-light);
+    }
+
+    .print-btn:active {
+      transform: scale(0.98);
+    }
+
     @media (max-width: 600px) {
       .container { padding: 1.25rem; }
       .passcode-form { flex-direction: column; }
       .passcode-form input[type="password"] { width: 100%; }
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+      }
+      .answer-key-box, .print-container {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -264,7 +309,7 @@
         <li>2) KCC: <strong>(-12) + (-9)</strong> | Answer: <strong>-21</strong></li>
         <li>3) KCC: <strong>(-20) + 14</strong> | Answer: <strong>-6</strong></li>
       </ul>
-      <p style="margin-top:0.5rem;"><strong>Part 2:</strong></p>
+      <p style="margin-top:0.5rem;"><strong>Part 3:</strong></p>
       <ul>
         <li>1) <strong>+22</strong> or <strong>22</strong> (Double negative becomes 15 + 7)</li>
         <li>2) <strong>0</strong> (Double negative becomes -25 + 25 = 0)</li>
@@ -275,6 +320,18 @@
         <li>2) <strong>25 meters</strong> (Calculation: 10 - (-15) = 10 + 15 = 25m)</li>
       </ul>
     </div>
+  </div>
+
+  <!-- Save / Print PDF Section -->
+  <div class="print-container">
+    <button class="print-btn" onclick="window.print()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      Save / Print PDF
+    </button>
   </div>
 
 </div>
