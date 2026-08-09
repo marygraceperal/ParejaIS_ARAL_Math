@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Sheet: Proof Builders - Property Identification</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-bg: #eff6ff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --accent: #0d9488;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: var(--text-dark);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .worksheet-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-banner {
+      border-bottom: 3px double var(--primary);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .header-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .header-title h1 {
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+
+    .header-title .tag {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .student-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .info-line {
+      border-bottom: 1px solid var(--text-dark);
+      padding-bottom: 0.2rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .info-line strong {
+      color: var(--primary);
+    }
+
+    .section-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      padding: 0.5rem 0.75rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-left: 4px solid var(--primary);
+      margin: 1.5rem 0 1rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .instructions {
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* Part 1 Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: var(--primary);
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      background-color: #f8fafc;
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+    }
+
+    /* Proof Boxes */
+    .proof-box {
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background-color: #ffffff;
+    }
+
+    .proof-title {
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .blank-input {
+      border-bottom: 1.5px dashed var(--primary);
+      display: inline-block;
+      min-width: 180px;
+      height: 1.2rem;
+    }
+
+    .reflection-box {
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1rem;
+      background-color: #f8fafc;
+      min-height: 80px;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .worksheet-container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+      .section-title { background-color: #f1f5f9 !important; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="worksheet-container">
+  <header class="header-banner">
+    <div class="header-title">
+      <h1>Activity Sheet: Proof Builders</h1>
+      <span class="tag">Grade 11 Mathematics</span>
+    </div>
+    <div class="student-info-grid">
+      <div class="info-line"><strong>Student / Group Name:</strong> <span></span></div>
+      <div class="info-line"><strong>Date:</strong> <span></span></div>
+      <div class="info-line"><strong>Grade &amp; Section:</strong> <span></span></div>
+      <div class="info-line"><strong>Score:</strong> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 25</span></div>
+    </div>
+  </header>
+
+  <!-- PART 1 -->
+  <section>
+    <div class="section-title">Part I: Property Identification Match-Up (10 Points)</div>
+    <p class="instructions">Directions: Match each mathematical statement in Column A with its corresponding Real Number Property in Column B. Write the letter of the correct answer on the space provided.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 8%;">Ans.</th>
+          <th style="width: 47%;">Column A (Mathematical Statement)</th>
+          <th style="width: 45%;">Column B (Real Number Property)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>____</td>
+          <td>1. <span class="formula">(3x + 5) + 2y = 3x + (5 + 2y)</span></td>
+          <td><strong>A.</strong> Commutative Property of Addition</td>
+        </tr>
+        <tr>
+          <td>____</td>
+          <td>2. <span class="formula">7(x + 4) = 7x + 28</span></td>
+          <td><strong>B.</strong> Associative Property of Addition</td>
+        </tr>
+        <tr>
+          <td>____</td>
+          <td>3. <span class="formula">4a &middot; (1 / 4a) = 1</span> (where <span class="formula">a &ne; 0</span>)</td>
+          <td><strong>C.</strong> Multiplicative Identity Property</td>
+        </tr>
+        <tr>
+          <td>____</td>
+          <td>4. <span class="formula">9m + 12n = 12n + 9m</span></td>
+          <td><strong>D.</strong> Multiplicative Inverse Property</td>
+        </tr>
+        <tr>
+          <td>____</td>
+          <td>5. <span class="formula">(2 &middot; k) &middot; 8 = 2 &middot; (k &middot; 8)</span></td>
+          <td><strong>E.</strong> Additive Identity Property</td>
+        </tr>
+        <tr>
+          <td>____</td>
+          <td>6. <span class="formula">15p + 0 = 15p</span></td>
+          <td><strong>F.</strong> Distributive Property</td>
+        </tr>
+        <tr>
+          <td>____</td>
+          <td>7. <span class="formula">-6w + 6w = 0</span></td>
+          <td><strong>G.</strong> Associative Property of Multiplication</td>
+        </tr>
+        <tr>
+          <td>____</td>
+          <td>8. <span class="formula">1 &middot; (8x - 3) = 8x - 3</span></td>
+          <td><strong>H.</strong> Additive Inverse Property</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PART 2 -->
+  <section>
+    <div class="section-title">Part II: Completing the Two-Column Algebraic Proof (10 Points)</div>
+    <p class="instructions">Directions: Fill in the missing statements or mathematical justifications to complete the two-column proof for simplifying the expression <span class="formula">5(2x + 3) + 4x</span>.</p>
+
+    <div class="proof-box">
+      <div class="proof-title">Problem: Prove that <span class="formula">5(2x + 3) + 4x = 14x + 15</span></div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 10%;">Step</th>
+            <th style="width: 45%;">Algebraic Expression / Statement</th>
+            <th style="width: 45%;">Mathematical Justification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><span class="formula">5(2x + 3) + 4x</span></td>
+            <td>Given Expression</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span class="formula">(5 &middot; 2x) + (5 &middot; 3) + 4x</span></td>
+            <td>1. <span class="blank-input"></span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><span class="formula">10x + 15 + 4x</span></td>
+            <td>Arithmetic Multiplication</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>2. <span class="blank-input"></span></td>
+            <td>Commutative Property of Addition</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><span class="formula">(10 + 4)x + 15</span></td>
+            <td>3. <span class="blank-input"></span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><span class="formula">14x + 15</span></td>
+            <td>Arithmetic Addition</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PART 3 -->
+  <section>
+    <div class="section-title">Part III: Constructing a Justified Proof &amp; Reflection (5 Points)</div>
+    <p class="instructions">Directions: Construct a complete two-column proof simplifying <span class="formula">3(x + 4) + 2(2x - 1)</span>. Justify every single step.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 50%;">Algebraic Statement</th>
+          <th style="width: 50%;">Reason / Property Applied</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="formula">3(x + 4) + 2(2x - 1)</span></td><td>Given Expression</td></tr>
+        <tr><td style="height: 2rem;"></td><td></td></tr>
+        <tr><td style="height: 2rem;"></td><td></td></tr>
+        <tr><td style="height: 2rem;"></td><td></td></tr>
+        <tr><td style="height: 2rem;"></td><td></td></tr>
+        <tr><td style="height: 2rem;"></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <p class="instructions" style="margin-top: 1rem;"><strong>Reflection Question:</strong> Why is it important to justify every step in an algebraic proof rather than just writing down the final answer? How does this connect to real-life accuracy (e.g., auditing or bookkeeping)?</p>
+    <div class="reflection-box"></div>
+  </section>
+
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">Print Activity Worksheet</button>
+  </div>
+</div>
+
+</body>
+</html>
