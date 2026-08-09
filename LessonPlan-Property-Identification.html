@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Property Identification & Justification</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .ilaw-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ilaw-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ilaw-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .proof-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--success);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .proof-table { font-size: 0.85rem; }
+      .proof-table th, .proof-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: Property Identification & Justification</h1>
+    <p>Topic 2.4: Categorizing Mathematical Statements and Structuring Algebraic Proofs (ILAW Framework)</p>
+  </header>
+
+  <!-- I - ILLUMINATE & INTRODUCE -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">I – ILLUMINATE & INTRODUCE</div>
+    <div class="ilaw-content">
+      <h3>1. Learning Objectives</h3>
+      <div class="rule-box">
+        <ul>
+          <li><strong>Cognitive:</strong> Categorize algebraic statements by their governing property and justify each simplification step in a multi-step algebraic proof.</li>
+          <li><strong>Affective:</strong> Value logical precision and systematic structure when presenting mathematical arguments.</li>
+          <li><strong>Psychomotor:</strong> Construct a complete two-column proof table linking mathematical statements directly to their supporting properties.</li>
+        </ul>
+      </div>
+
+      <h3>2. Initiating Hook</h3>
+      <p>Ask students: <em>"In a court of law, a lawyer cannot just state a conclusion—they must cite the exact legal rule or statute that supports it. Why do you think algebra requires the exact same thing when we simplify an expression like <span class="formula">2(x + 3) - 2x = 6</span>?"</em> Explain that properties are the legal codes of mathematics.</p>
+    </div>
+  </section>
+
+  <!-- L - LEARN -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">L – LEARN</div>
+    <div class="ilaw-content">
+      <h3>1. Core Property Review Reference</h3>
+      
+      <div class="rule-box">
+        <ul>
+          <li><strong>Commutative Property:</strong> Changes the order of terms (<span class="formula">a + b = b + a</span> or <span class="formula">ab = ba</span>).</li>
+          <li><strong>Associative Property:</strong> Changes grouping without changing order (<span class="formula">(a + b) + c = a + (b + c)</span>).</li>
+          <li><strong>Identity Property:</strong> Preserves original value (<span class="formula">a + 0 = a</span> or <span class="formula">a &middot; 1 = a</span>).</li>
+          <li><strong>Inverse Property:</strong> Yields the identity element (<span class="formula">a + (-a) = 0</span> or <span class="formula">a &middot; (1/a) = 1</span>).</li>
+          <li><strong>Distributive Property:</strong> Multiplies a factor across terms (<span class="formula">a(b + c) = ab + ac</span>).</li>
+        </ul>
+      </div>
+
+      <h3>2. Structured Two-Column Proof Format</h3>
+      <p>Demonstrate how every algebraic simplification can be written as a formal two-column proof (Statement vs. Justification).</p>
+
+      <div class="rule-box">
+        <p><strong>Guided Example: Justify the simplification of <span class="formula">4(x + 2) - 8</span> to <span class="formula">4x</span></strong></p>
+        <table class="proof-table">
+          <thead>
+            <tr>
+              <th>Algebraic Statement</th>
+              <th>Mathematical Justification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="formula">4(x + 2) - 8</span></td>
+              <td>Given Expression</td>
+            </tr>
+            <tr>
+              <td><span class="formula">4x + 8 - 8</span></td>
+              <td><strong>Distributive Property</strong></td>
+            </tr>
+            <tr>
+              <td><span class="formula">4x + (8 - 8)</span></td>
+              <td><strong>Associative Property of Addition</strong></td>
+            </tr>
+            <tr>
+              <td><span class="formula">4x + 0</span></td>
+              <td><strong>Additive Inverse Property</strong></td>
+            </tr>
+            <tr>
+              <td><span class="formula">4x</span></td>
+              <td><strong>Additive Identity Property</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warning-box">
+        <p><strong>⚠️ Common Diagnostic Confusion: Order vs. Grouping</strong></p>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          Remind students that <span class="formula">(3 + 5) + 2 = (5 + 3) + 2</span> uses the <strong>Commutative Property</strong> (the order of 3 and 5 changed inside), whereas <span class="formula">(3 + 5) + 2 = 3 + (5 + 2)</span> uses the <strong>Associative Property</strong> (the order stayed 3, 5, 2, but parentheses shifted).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A - APPLY -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">A – APPLY</div>
+    <div class="ilaw-content">
+      <h3>Localized Real-World Applications</h3>
+
+      <div class="rule-box">
+        <p><strong>Application 1: Accounting Audit Trail</strong></p>
+        <p>In business accounting, every line item adjustment must carry an explicit reason code (e.g., Credit Refund, Zero Adjustment). Similarly, algebraic simplification requires an explicit property name for every line of calculation to ensure absolute auditability.</p>
+      </div>
+
+      <div class="rule-box">
+        <p><strong>Application 2: Computer Algorithm Optimization</strong></p>
+        <p>Compilers rearrange code routines like <span class="formula">(A + B) + C</span> to <span class="formula">A + (B + C)</span> using the Associative Property to process operations faster in memory without altering the programmatic outcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- W - WIND-UP -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">W – WIND-UP</div>
+    <div class="ilaw-content">
+      <h3>1. Formative Self-Check Quiz</h3>
+      <div class="quiz-box">
+        <ol>
+          <li>
+            <strong>Identify Property:</strong> <span class="formula">7 &middot; (1/7) = 1</span><br>
+            <span class="answer">Answer: Multiplicative Inverse Property</span>
+          </li>
+          <li>
+            <strong>Identify Property:</strong> <span class="formula">(x + 9) + 0 = x + 9</span><br>
+            <span class="answer">Answer: Additive Identity Property</span>
+          </li>
+          <li>
+            <strong>Supply Missing Justification:</strong> Moving from <span class="formula">3x + 5 + 2x</span> to <span class="formula">3x + 2x + 5</span>.<br>
+            <span class="answer">Answer: Commutative Property of Addition</span>
+          </li>
+        </ol>
+      </div>
+
+      <h3>2. Key Takeaways Summary</h3>
+      <ul>
+        <li><strong>Properties are Proofs:</strong> Every valid step in algebra relies on a fundamental property of real numbers.</li>
+        <li><strong>Order vs. Grouping:</strong> Commutative = moving terms; Associative = moving parentheses.</li>
+        <li><strong>Identity vs. Inverse:</strong> Identity retains the start value; Inverse results in the identity element (<span class="formula">0</span> or <span class="formula">1</span>).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Lesson Plan PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
