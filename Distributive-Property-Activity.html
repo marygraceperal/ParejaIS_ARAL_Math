@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity: The Distributive Property</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .instructions {
+      background-color: var(--primary-bg);
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2rem;
+    }
+
+    .instructions h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid var(--primary-bg);
+    }
+
+    .problem-card {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .problem-card p {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .problem-card .hint {
+      font-weight: normal;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+    }
+
+    .area-table {
+      width: 100%;
+      max-width: 320px;
+      margin: 0.5rem 0;
+      border-collapse: collapse;
+    }
+
+    .area-table td, .area-table th {
+      border: 2px solid var(--primary);
+      padding: 0.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .area-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    /* Passcode & Answer Key Section */
+    .answer-key-section {
+      margin-top: 3rem;
+      border-top: 2px dashed var(--border-color);
+      padding-top: 2rem;
+    }
+
+    .passcode-box {
+      background-color: var(--primary-bg);
+      border: 1px solid var(--primary-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .passcode-box h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    input[type="password"] {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      outline: none;
+      width: 200px;
+    }
+
+    input[type="password"]:focus {
+      border-color: var(--primary-light);
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary-light);
+    }
+
+    .error-msg {
+      color: var(--danger);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .answer-content {
+      display: none;
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .answer-content h3 {
+      color: #166534;
+      margin-bottom: 1rem;
+    }
+
+    .answer-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #dcfce7;
+    }
+
+    .answer-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media print {
+      body { background-color: white; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .answer-key-section, .print-btn-container { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Student Activity: The Distributive Property</h1>
+    <p>Topic 2.3: Algebraic Expansion <span class="formula">a(b + c)</span> & <span class="formula">a(b - c)</span>, Area Models, and Signed Multipliers</p>
+  </header>
+
+  <div class="instructions">
+    <h3>📌 Instructions</h3>
+    <p>Complete each section carefully. Show all expansion steps, pay close attention to integer signs when distributing negative factors, and fill in area model dimensions where required.</p>
+  </div>
+
+  <!-- Part I -->
+  <h2 class="section-title">Part I: Basic & Signed Algebraic Expansion</h2>
+  <div class="problem-card">
+    <p>1. Expand each expression using the Distributive Property:</p>
+    <p class="hint">a) <span class="formula">7(4x + 3)</span></p>
+    <p class="hint">b) <span class="formula">5(2y - 9)</span></p>
+    <p class="hint">c) <span class="formula">-3(6m + 2)</span></p>
+    <p class="hint">d) <span class="formula">-8(-2k - 5)</span></p>
+  </div>
+
+  <!-- Part II -->
+  <h2 class="section-title">Part II: Area Model Analysis</h2>
+  <div class="problem-card">
+    <p>2. Complete the missing sub-areas and write the final expanded expression represented by the model:</p>
+    <table class="area-table">
+      <tr>
+        <th style="border: none; background: transparent;"></th>
+        <th>5x</th>
+        <th>-2</th>
+      </tr>
+      <tr>
+        <th>-4</th>
+        <td>[ ? ]</td>
+        <td>[ ? ]</td>
+      </tr>
+    </table>
+    <p class="hint" style="margin-top: 0.5rem;">a) Sub-area 1: <span class="formula">-4 &times; 5x</span> = ________</p>
+    <p class="hint">b) Sub-area 2: <span class="formula">-4 &times; (-2)</span> = ________</p>
+    <p class="hint">c) Expanded Expression: ________</p>
+  </div>
+
+  <!-- Part III -->
+  <h2 class="section-title">Part III: Mental Math via Distribution</h2>
+  <div class="problem-card">
+    <p>3. Use the Distributive Property to solve mentally by splitting one factor. Show your split expression:</p>
+    <p class="hint">a) <span class="formula">6 &times; 104</span> &rarr; Hint: <span class="formula">6(100 + 4)</span></p>
+    <p class="hint">b) <span class="formula">9 &times; 98</span> &rarr; Hint: <span class="formula">9(100 - 2)</span></p>
+  </div>
+
+  <!-- Part IV -->
+  <h2 class="section-title">Part IV: Word Problem & Real-World Modeling</h2>
+  <div class="problem-card">
+    <p>4. A bakery places an order for 8 supply crates. Each crate contains <span class="formula">x</span> bags of flour and <span class="formula">12</span> packs of yeast. However, <span class="formula">3</span> packs of yeast per crate are marked as damaged and removed before shipping.</p>
+    <p class="hint">a) Write an expression for the total usable items in 8 crates in the form <span class="formula">a(b + c - d)</span>.</p>
+    <p class="hint">b) Expand the expression to find the final total item count in terms of <span class="formula">x</span>.</p>
+  </div>
+
+  <!-- Protected Answer Key Section -->
+  <div class="answer-key-section">
+    <div class="passcode-box" id="passcodeBox">
+      <h3>🔒 Teacher Answer Key Access</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Enter passcode to unlock the step-by-step solutions.</p>
+      <div class="input-group">
+        <input type="password" id="passcodeInput" placeholder="Enter passcode">
+        <button class="btn-submit" onclick="unlockAnswers()">Unlock</button>
+      </div>
+      <p class="error-msg" id="errorMsg">Incorrect passcode. Please try again.</p>
+    </div>
+
+    <div class="answer-content" id="answerContent">
+      <h3>🔑 Official Answer Key & Solutions</h3>
+      
+      <div class="answer-item">
+        <strong>Part I:</strong><br>
+        a) 7(4x) + 7(3) = <strong>28x + 21</strong><br>
+        b) 5(2y) - 5(9) = <strong>10y - 45</strong><br>
+        c) (-3)(6m) + (-3)(2) = <strong>-18m - 6</strong><br>
+        d) (-8)(-2k) + (-8)(-5) = <strong>16k + 40</strong>
+      </div>
+
+      <div class="answer-item">
+        <strong>Part II:</strong><br>
+        a) Sub-area 1: <strong>-20x</strong><br>
+        b) Sub-area 2: <strong>+8</strong><br>
+        c) Expanded Expression: <strong>-20x + 8</strong>
+      </div>
+
+      <div class="answer-item">
+        <strong>Part III:</strong><br>
+        a) 6(100 + 4) = 600 + 24 = <strong>624</strong><br>
+        b) 9(100 - 2) = 900 - 18 = <strong>882</strong>
+      </div>
+
+      <div class="answer-item">
+        <strong>Part IV:</strong><br>
+        a) Expression: 8(x + 12 - 3) = <strong>8(x + 9)</strong><br>
+        b) Expanded: 8(x) + 8(9) = <strong>8x + 72 total items</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Print Activity Sheet
+    </button>
+  </div>
+</div>
+
+<script>
+  function unlockAnswers() {
+    const input = document.getElementById('passcodeInput').value;
+    const errorMsg = document.getElementById('errorMsg');
+    const answerContent = document.getElementById('answerContent');
+    
+    // Default Passcode: teacher123
+    if (input === 'teacher123') {
+      answerContent.style.display = 'block';
+      errorMsg.style.display = 'none';
+      document.getElementById('passcodeInput').style.borderColor = '#10b981';
+    } else {
+      errorMsg.style.display = 'block';
+      answerContent.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>
