@@ -307,17 +307,38 @@
     color: var(--text-muted);
   }
 
-  .activity-link {
-    display: inline-block;
+  /* Action Buttons Container & Styles */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-top: 10px;
-    font-size: 0.85rem;
-    color: var(--accent);
+  }
+
+  .lesson-link, .activity-link {
+    display: inline-block;
+    font-size: 0.82rem;
     font-weight: 600;
     text-decoration: none;
-    background-color: var(--primary-bg);
-    padding: 4px 10px;
+    padding: 4px 8px;
     border-radius: 4px;
     transition: background 0.2s ease;
+  }
+
+  .lesson-link {
+    color: var(--primary);
+    background-color: #e2e8f0;
+    border: 1px solid var(--border-color);
+  }
+
+  .lesson-link:hover {
+    background-color: #cbd5e1;
+    text-decoration: underline;
+  }
+
+  .activity-link {
+    color: var(--accent);
+    background-color: var(--primary-bg);
   }
 
   .activity-link:hover {
@@ -405,31 +426,46 @@
                       <span class="subtopic-code">1.1</span>
                       <div class="subtopic-name"><a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Signed-Numbers.html" target="_blank">Understanding Signed Numbers</a></div>
                       <div class="subtopic-desc">The Real Number Line, direct applications (above/below sea level, profit/loss), and comparing/ordering integers.</div>
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Understanding_Signed_Numbers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Signed-Numbers.html" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Understanding_Signed_Numbers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">1.2</span>
                       <div class="subtopic-name"><a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Addition-of-Integers.html" target="_blank">Addition of Integers</a></div>
                       <div class="subtopic-desc">Visualizing with algebra tiles/number lines, combining same-sign integers, and applying the "subtract and copy sign of larger absolute value" rule.</div>
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Adding-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Addition-of-Integers.html" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Adding-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">1.3</span>
                       <div class="subtopic-name"><a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtraction-of-Integers.html" target="_blank">Subtraction of Integers</a></div>
                       <div class="subtopic-desc">The "Add the Opposite" (KCC: Keep-Change-Change) principle, transforming subtraction to addition, and resolving double negatives.</div>
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtracting-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtraction-of-Integers.html" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Subtracting-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">1.4</span>
                       <div class="subtopic-name"><a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Multiplication-of-Integers.html" target="_blank">Multiplication & Division of Signed Numbers</a></div>
                       <div class="subtopic-desc">Rules for same signs (positive product/quotient) and different signs (negative product/quotient), including repeated multiplication.</div>
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Multiplying-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Multiplication-of-Integers.html" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Multiplying-Integers.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">1.5</span>
                       <div class="subtopic-name"><a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Integers-Real-Problems.html" target="_blank">Real-World Signed Number Problems</a></div>
                       <div class="subtopic-desc">Multi-step word problems involving temperature shifts, bank balances, and elevation changes.</div>
-                      <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Solving-Integers-Real-Problems.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Integers-Real-Problems.html" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="https://marygraceperal.github.io/ParejaIS_ARAL_Math/Solving-Integers-Real-Problems.html" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -442,25 +478,37 @@
                       <span class="subtopic-code">2.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Commutative & Associative Properties</a></div>
                       <div class="subtopic-desc">Rearranging and regrouping addition and multiplication terms to simplify mental math calculations.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">2.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Identity & Inverse Properties</a></div>
                       <div class="subtopic-desc">Additive/multiplicative identities (0 and 1) and additive/multiplicative inverses (zero pairs and reciprocals).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">2.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">The Distributive Property</a></div>
                       <div class="subtopic-desc">Expanding a(b + c) and a(b - c) across positive and negative integers, recognizing distribution as area models.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">2.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Property Identification</a></div>
                       <div class="subtopic-desc">Categorizing mathematical statements by property and leveraging properties to justify algebraic simplification steps.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -473,25 +521,37 @@
                       <span class="subtopic-code">3.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Absolute Value Concepts</a></div>
                       <div class="subtopic-desc">Defining absolute value as distance from zero on a number line, evaluating |x|, and finding distance between two points.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">3.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Exponent Basics & Signed Bases</a></div>
                       <div class="subtopic-desc">Expanded notation, zero exponents (x⁰ = 1), negative bases with odd vs. even powers.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">3.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Order of Operations (GEMDAS)</a></div>
                       <div class="subtopic-desc">Simplifying expressions with nested Grouping symbols, Exponents, Multiplication/Division, and Addition/Subtraction.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">3.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Multi-Operation Problem Solving</a></div>
                       <div class="subtopic-desc">Evaluating complex numerical expressions containing signed bases, fractions, and absolute value expressions.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -531,25 +591,37 @@
                       <span class="subtopic-code">4.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Mathematical Keywords & Phrases</a></div>
                       <div class="subtopic-desc">Classifying terms signaling operations (e.g., more than, less than, diminished by, times, quotient of).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">4.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Translating Verbal Phrases</a></div>
                       <div class="subtopic-desc">Handling order-sensitive phrasing (e.g., "5 less than a number" → x - 5) and multi-operation phrases.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">4.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Translating Expressions to Words</a></div>
                       <div class="subtopic-desc">Verbalizing symbolic equations into real-life contextual statements.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">4.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Setting Up Equations</a></div>
                       <div class="subtopic-desc">Identifying variables, constants, and total values in short word problems.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -562,25 +634,37 @@
                       <span class="subtopic-code">5.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Substitution & Evaluation</a></div>
                       <div class="subtopic-desc">Replacing variables with positive and negative rational numbers and simplifying using GEMDAS.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">5.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Components of Expressions</a></div>
                       <div class="subtopic-desc">Terms, coefficients, constant terms, degrees, and identifying "like terms."</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">5.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Combining Like Terms</a></div>
                       <div class="subtopic-desc">Applying the distributive property in reverse to add/subtract coefficients of identical variable parts.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">5.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Exponent Laws in Expressions</a></div>
                       <div class="subtopic-desc">Product rule (xᵃ · xᵇ = xᵃ⁺ᵇ), Quotient rule (xᵃ / xᵇ = xᵃ⁻ᵇ), and Power of a Power rule ((xᵃ)ᵇ = xᵃᵇ).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -593,31 +677,46 @@
                       <span class="subtopic-code">6.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">One-Step Equations</a></div>
                       <div class="subtopic-desc">Applying Addition/Subtraction Properties of Equality (APE) and Multiplication/Division Properties (MPE).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">6.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Two-Step & Multi-Step Equations</a></div>
                       <div class="subtopic-desc">Isolating variables using reverse operations, clearing parentheses via distribution, and combining like terms.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">6.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Variables on Both Sides</a></div>
                       <div class="subtopic-desc">Transporting variable terms to one side, identifying special cases (No Solution vs. Infinitely Many Solutions).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">6.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Solving & Graphing Inequalities</a></div>
                       <div class="subtopic-desc">Graphing solution sets on a number line, and the flip-the-sign rule when multiplying/dividing by negative numbers.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">6.5</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Linear Word Problems</a></div>
                       <div class="subtopic-desc">Step-by-step problem solving for age problems, perimeter relations, and consecutive integer problems.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -630,31 +729,46 @@
                       <span class="subtopic-code">7.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Classification & Standard Form</a></div>
                       <div class="subtopic-desc">Classifying polynomials by degree and terms (monomial, binomial, trinomial) written in descending power order.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">7.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Addition & Subtraction of Polynomials</a></div>
                       <div class="subtopic-desc">Aligning terms vertically or grouping horizontally to combine like terms while distributing negative signs.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">7.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Multiplication of Polynomials</a></div>
                       <div class="subtopic-desc">Monomial times polynomial, Binomial times Binomial (FOIL method), and Special Products.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">7.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Division of Polynomials</a></div>
                       <div class="subtopic-desc">Dividing a polynomial by a monomial by splitting into individual fractions.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">7.5</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Introductory Factoring</a></div>
                       <div class="subtopic-desc">Factoring out the Greatest Common Monomial Factor (GCMF) and Difference of Two Squares.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -698,25 +812,37 @@
                       <span class="subtopic-code">8.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Cartesian Coordinate System</a></div>
                       <div class="subtopic-desc">Identifying axes, origin, four quadrants, and accurately plotting/reading ordered pairs (x, y).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">8.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Understanding Slope (m)</a></div>
                       <div class="subtopic-desc">Slope as rise over run, calculating slope from two points using m = (y₂ - y₁)/(x₂ - x₁), and classifying slope types.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">8.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Graphing Linear Equations</a></div>
                       <div class="subtopic-desc">Graphing lines using table of values, x- and y-intercepts, and Slope-Intercept Form (y = mx + b).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">8.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Finding Equations of Lines</a></div>
                       <div class="subtopic-desc">Writing equations given a slope and a point, or given two points on a line.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -729,25 +855,37 @@
                       <span class="subtopic-code">9.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Ratios, Rates & Unit Rates</a></div>
                       <div class="subtopic-desc">Writing ratios in simplest form, determining unit rates, and comparing prices using unit values.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">9.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Proportions & Cross-Multiplication</a></div>
                       <div class="subtopic-desc">Solving missing terms in equivalent ratios (a/b = c/d) and checking validity using cross-products.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">9.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Direct Variation</a></div>
                       <div class="subtopic-desc">Constant of variation (k = y/x), equation y = kx, and direct variation graphs through the origin.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">9.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Inverse Variation</a></div>
                       <div class="subtopic-desc">Variables where one increases as other decreases (y = k/x or xy = k), constant of variation (k), and applications.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -760,25 +898,37 @@
                       <span class="subtopic-code">10.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Angle Pair Relationships</a></div>
                       <div class="subtopic-desc">Adjacent, complementary (90°), supplementary (180°), and vertical angles (congruence).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">10.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Interior Angles of Triangles</a></div>
                       <div class="subtopic-desc">Triangle Angle Sum Theorem (180°) and exterior angle properties.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">10.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Perimeter & Area Calculations</a></div>
                       <div class="subtopic-desc">Solving perimeters and areas for triangles, quadrilaterals, and composite geometric shapes.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">10.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">The Pythagorean Theorem</a></div>
                       <div class="subtopic-desc">Identifying legs and hypotenuse (a² + b² = c²), finding missing side lengths of right triangles, and applications.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -791,25 +941,37 @@
                       <span class="subtopic-code">11.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Mean (Average)</a></div>
                       <div class="subtopic-desc">Calculating arithmetic mean for raw data, handling missing values when mean is given, and weighted averages.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">11.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Median</a></div>
                       <div class="subtopic-desc">Arranging data, finding middle value for odd data sets, and averaging two middle values for even data sets.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">11.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Mode & Range</a></div>
                       <div class="subtopic-desc">Identifying unimodal, bimodal, or no-mode data sets, and computing range to measure data spread.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">11.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Grouped Data Foundations</a></div>
                       <div class="subtopic-desc">Estimating mean, median, and modal class from simple frequency distribution tables.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -822,19 +984,28 @@
                       <span class="subtopic-code">12.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Bar Graphs & Histograms</a></div>
                       <div class="subtopic-desc">Reading double bar graphs, constructing histograms, and differentiating continuous vs. discrete data.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">12.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Pie Charts & Line Graphs</a></div>
                       <div class="subtopic-desc">Calculating sector angles and percentages for pie charts, and interpreting trends over time using line graphs.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">12.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Data Analysis & Decision Making</a></div>
                       <div class="subtopic-desc">Detecting misleading graph visual representations, drawing evidence-backed conclusions, and writing summaries.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -847,25 +1018,37 @@
                       <span class="subtopic-code">13.1</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Discounts, Markup & Sales Tax</a></div>
                       <div class="subtopic-desc">Finding sale prices, markup percentages, original prices, and computing final purchase totals.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">13.2</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Unit Pricing & Smart Shopping</a></div>
                       <div class="subtopic-desc">Comparing cost efficiency between different product sizes and brand choices.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">13.3</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Profit, Loss & Simple Budgeting</a></div>
                       <div class="subtopic-desc">Calculating net profit or loss in business transactions, and setting up income-versus-expense budget tables.</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                     <div class="subtopic-card">
                       <span class="subtopic-code">13.4</span>
                       <div class="subtopic-name"><a href="#" target="_blank">Simple Interest Calculations</a></div>
                       <div class="subtopic-desc">Using the formula I = Prt to find Interest, Principal (P), Rate (r), Time (t), and Maturity Value (A = P + I).</div>
-                      <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      <div class="action-buttons">
+                        <a href="#" target="_blank" class="lesson-link">📖 Lesson Plan &rarr;</a>
+                        <a href="#" target="_blank" class="activity-link">📝 Launch Activity &rarr;</a>
+                      </div>
                     </div>
                   </div>
                 </div>
