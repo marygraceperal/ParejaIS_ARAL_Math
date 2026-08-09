@@ -939,22 +939,25 @@
   <!-- END OF PART 4                                          -->
   <!-- ======================================================= -->   
   </div><!-- End of .container -->
-  <!-- ======================================================= -->
+   <!-- ======================================================= -->
   <!-- START OF PART 5: JAVASCRIPT DATA & LOGIC ENGINE        -->
   <!-- ======================================================= -->
-  <script> window.addEventListener('DOMContentLoaded', () => {
-    // 1. Keep only the first hero header and remove all subsequent duplicates
-    const heroes = document.querySelectorAll('header.hero');
-    heroes.forEach((hero, index) => {
-      if (index > 0) hero.remove();
+  <script>
+    // AUTOMATIC DEDUPLICATION SCRIPT
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Keep only the first hero header and remove all subsequent duplicates
+      const heroes = document.querySelectorAll('header.hero');
+      heroes.forEach((hero, index) => {
+        if (index > 0) hero.remove();
+      });
+
+      // 2. Keep only the first term navigation bar and remove all subsequent duplicates
+      const termNavs = document.querySelectorAll('.term-nav-main');
+      termNavs.forEach((nav, index) => {
+        if (index > 0) nav.remove();
+      });
     });
 
-    // 2. Keep only the first term navigation bar and remove all subsequent duplicates
-    const termNavs = document.querySelectorAll('.term-nav-main');
-    termNavs.forEach((nav, index) => {
-      if (index > 0) nav.remove();
-    });
-  });
     // 1. TOPICS DISCUSSION DATA OBJECT
     const discussionData = {
       // TERM 1
@@ -1167,7 +1170,7 @@
       }
     };
 
-    // 2. UNIFIED RESOURCE MODAL CONTROL
+    // 2. UNIFIED RESOURCE MODAL CONTROL (Global Scope)
     function openResource(topicCode, type) {
       const data = discussionData[topicCode];
       const modal = document.getElementById('discussionModal');
@@ -1221,7 +1224,7 @@
       modal.classList.add('active');
     }
 
-    // 3. MODAL CLOSING FUNCTIONS
+    // 3. MODAL CLOSING FUNCTIONS (Global Scope)
     function closeDiscussion(event) {
       if (event.target.id === 'discussionModal') {
         document.getElementById('discussionModal').classList.remove('active');
@@ -1235,7 +1238,8 @@
   <!-- ======================================================= -->
   <!-- END OF PART 5                                          -->
   <!-- ======================================================= -->
-    <!-- ======================================================= -->
+
+  <!-- ======================================================= -->
   <!-- START OF PART 6: MODAL POPUP DIALOG UI & CLOSING TAGS  -->
   <!-- ======================================================= -->
   <div id="discussionModal" class="modal-overlay" onclick="closeDiscussion(event)">
