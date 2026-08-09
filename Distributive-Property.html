@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept Discussion: The Distributive Property</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+    }
+
+    .area-model-box {
+      background: #ffffff;
+      border: 2px dashed var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .area-table {
+      width: 100%;
+      max-width: 450px;
+      margin: 0.75rem auto;
+      border-collapse: collapse;
+    }
+
+    .area-table td, .area-table th {
+      border: 2px solid var(--primary);
+      padding: 0.75rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .area-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Concept Discussion: The Distributive Property</h1>
+    <p>Topic 2.3: Algebraic Expansion, Integer Multiplications, and Area Models</p>
+  </header>
+
+  <!-- Section 1: Core Theoretical Foundation -->
+  <section>
+    <h2>1. Core Theoretical Foundation</h2>
+    <p>The <strong>Distributive Property</strong> connects multiplication and addition (or subtraction). It states that multiplying a sum or difference by a quantity yields the same result as multiplying each term individually and then combining the products.</p>
+    
+    <div class="rule-box">
+      <h3>A. Algebraic Formulation</h3>
+      <ul>
+        <li><strong>Over Addition:</strong> <span class="formula">a(b + c) = ab + ac</span></li>
+        <li><strong>Over Subtraction:</strong> <span class="formula">a(b - c) = ab - ac</span></li>
+      </ul>
+      <p style="font-size: 0.95rem; margin-top: 0.5rem;">Where <span class="formula">a</span>, <span class="formula">b</span>, and <span class="formula">c</span> are real numbers or variable terms.</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Visualizing Distribution via Area Models -->
+  <section>
+    <h2>2. Geometric Representation: Area Models</h2>
+    <p>Area models bridge abstract algebraic rules to concrete geometric visuals. The total area of a large rectangle equals the sum of its smaller split sections.</p>
+
+    <div class="area-model-box">
+      <h3>Area Model for <span class="formula">3(x + 4)</span></h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.25rem;">Width = 3, Length = (x + 4)</p>
+      
+      <table class="area-table">
+        <tr>
+          <th style="border: none; background: transparent;"></th>
+          <th>x</th>
+          <th>+4</th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td style="background-color: #eff6ff;">3 &times; x = <strong>3x</strong></td>
+          <td style="background-color: #f0fdf4;">3 &times; 4 = <strong>12</strong></td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 0.75rem;">Total Area = Section 1 + Section 2 = <span class="formula">3x + 12</span></p>
+    </div>
+  </section>
+
+  <!-- Section 3: Distribution Across Signed Integers -->
+  <section>
+    <h2>3. Distribution Across Signed Integers</h2>
+    <p>When distributing negative multipliers, sign rules must be strictly maintained for every term inside the parentheses.</p>
+
+    <div class="step-box">
+      <h3>Case 1: Distributing a Positive Multiplier</h3>
+      <p>Expand: <span class="formula">6(3x - 5)</span></p>
+      <ul>
+        <li>First term: <span class="formula">6 &times; 3x = 18x</span></li>
+        <li>Second term: <span class="formula">6 &times; (-5) = -30</span></li>
+        <li><strong>Expanded Form:</strong> <span class="formula">18x - 30</span></li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h3>Case 2: Distributing a Negative Multiplier</h3>
+      <p>Expand: <span class="formula">-2(4y - 7)</span></p>
+      <ul>
+        <li>First term: <span class="formula">(-2) &times; 4y = -8y</span></li>
+        <li>Second term: <span class="formula">(-2) &times; (-7) = +14</span></li>
+        <li><strong>Expanded Form:</strong> <span class="formula">-8y + 14</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 4: Common Pitfalls & Misconceptions -->
+  <section>
+    <h2>4. Common Misconceptions to Avoid</h2>
+
+    <div class="warning-box">
+      <h3>⚠️ Partial Distribution (The Half-Distribute Mistake)</h3>
+      <p><strong>Incorrect:</strong> <span class="formula">4(x + 5) = 4x + 5</span> (Only multiplying the first term)</p>
+      <p><strong>Correct:</strong> <span class="formula">4(x + 5) = 4(x) + 4(5) = 4x + 20</span> (The multiplier must reach ALL terms inside)</p>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ Sign Errors with Subtractors</h3>
+      <p><strong>Incorrect:</strong> <span class="formula">-(a - b) = -a - b</span></p>
+      <p><strong>Correct:</strong> <span class="formula">-(a - b) = -1(a - b) = -a + b</span> (Distributing -1 flips every internal sign)</p>
+    </div>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Concept Discussion PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
