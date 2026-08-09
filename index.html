@@ -90,6 +90,22 @@
       <button class="term-btn" onclick="switchTerm('term2')">Term 2</button>
       <button class="term-btn" onclick="switchTerm('term3')">Term 3</button>
     </div>
+<script>
+  // Automatic DOM Deduplication Script
+  document.addEventListener('DOMContentLoaded', () => {
+    // Remove any extra hero headers beyond the first one
+    const heroes = document.querySelectorAll('header.hero');
+    heroes.forEach((hero, index) => {
+      if (index > 0) hero.remove();
+    });
+
+    // Remove any extra term navigation bars beyond the first one
+    const navs = document.querySelectorAll('.term-nav-main');
+    navs.forEach((nav, index) => {
+      if (index > 0) nav.remove();
+    });
+  });
+</script>
   <!-- ======================================================= -->
   <!-- START OF PART 1: CSS STYLES                            -->
   <!-- ======================================================= -->
