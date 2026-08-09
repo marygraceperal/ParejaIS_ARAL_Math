@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan - Topic 3.4 Multi-Operation Problem Solving</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-bg: #eff6ff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --danger-bg: #fef2f2;
+      --danger-border: #ef4444;
+      --accent: #0d9488;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .lesson-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .lesson-header {
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .lesson-header h1 {
+      color: var(--primary);
+      font-size: 1.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .lesson-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      background-color: var(--primary-bg);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .meta-item {
+      font-size: 0.95rem;
+    }
+
+    .meta-item strong {
+      color: var(--primary);
+    }
+
+    .section-block {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .objectives-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .objectives-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .objectives-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .ilaw-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .ilaw-badge {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 0.5rem 1.25rem;
+      font-weight: bold;
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ilaw-badge .time {
+      font-size: 0.85rem;
+      font-weight: normal;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .ilaw-content {
+      padding: 1.25rem;
+    }
+
+    .ilaw-content h4 {
+      color: var(--primary);
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .ilaw-content h4:first-child {
+      margin-top: 0;
+    }
+
+    .ilaw-content p, .ilaw-content ul {
+      margin-bottom: 0.75rem;
+    }
+
+    .ilaw-content ul {
+      padding-left: 1.25rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      background-color: #f1f5f9;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+    }
+
+    .warning-box {
+      background-color: var(--danger-bg);
+      border-left: 4px solid var(--danger-border);
+      padding: 1rem;
+      border-radius: 0 6px 6px 0;
+      margin: 0.75rem 0;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .lesson-container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lesson-container">
+  <header class="lesson-header">
+    <h1>Grade 11 Mathematics Lesson Plan</h1>
+    <p>Topic 3.4: Multi-Operation Problem Solving (Signed Bases, Fractions &amp; Absolute Value)</p>
+
+    <div class="meta-grid">
+      <div class="meta-item"><strong>Grade Level:</strong> Grade 11</div>
+      <div class="meta-item"><strong>Curriculum:</strong> K-12 SHS Curriculum</div>
+      <div class="meta-item"><strong>Framework:</strong> ILAW Framework</div>
+      <div class="meta-item"><strong>Time Allotment:</strong> 60 Minutes</div>
+    </div>
+  </header>
+
+  <!-- OBJECTIVES SECTION -->
+  <section class="section-block">
+    <h2 class="section-title">I. Learning Objectives</h2>
+    <ul class="objectives-list">
+      <li><strong>Cognitive:</strong> Evaluate complex numerical expressions incorporating signed bases, fractions, and absolute values using proper order of operations (GEMDAS).</li>
+      <li><strong>Affective:</strong> Value accuracy, precision, and systematic step-by-step auditing when handling multi-step numerical calculations.</li>
+      <li><strong>Psychomotor:</strong> Construct a structured multi-step evaluation path showing explicit simplification steps and corresponding mathematical rules.</li>
+    </ul>
+  </section>
+
+  <!-- ILAW INSTRUCTIONAL PROCEDURE -->
+  <section class="section-block">
+    <h2 class="section-title">II. Instructional Procedure (ILAW Framework)</h2>
+
+    <!-- INTRODUCE -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>I — INTRODUCE</span>
+        <span class="time">10 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Hook &amp; Practical Context</h4>
+        <p>Present a real-world accounting audit scenario: Correcting an account ledger that contains debits (negative values), net balance checks (absolute value constraints), and fractional share distribution.</p>
+        
+        <h4>Guiding Question</h4>
+        <p><em>"Why does calculating <span class="formula">-4<sup>2</sup></span> versus <span class="formula">(-4)<sup>2</sup></span> yield drastically different financial balances in auditing software?"</em></p>
+        
+        <h4>Lesson Orientation</h4>
+        <p>Establish that mathematical order of operations (GEMDAS) acts as an unbreakable protocol. A single misplaced sign or early evaluation leads to compounding calculation errors.</p>
+      </div>
+    </div>
+
+    <!-- LEARN -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>L — LEARN</span>
+        <span class="time">20 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Direct Instruction &amp; Operational Rules</h4>
+        <ul>
+          <li><strong>Grouping Symbols (G):</strong> Treat absolute value bars <span class="formula">|...|</span> and main fraction bars as primary grouping barriers. Evaluate inside, above, or below first.</li>
+          <li><strong>Signed Bases:</strong> Differentiate <span class="formula">(-a)<sup>n</sup></span> (base is negative) from <span class="formula">-a<sup>n</sup></span> (negation occurs after exponentiation).</li>
+          <li><strong>Absolute Value:</strong> <span class="formula">|x| = x</span> and <span class="formula">|-x| = x</span>. Remind students that <span class="formula">-|-5| = -5</span> because the outer negative remains.</li>
+        </ul>
+
+        <h4>Modeling a Multi-Step Evaluation Path</h4>
+        <p>Demonstrate solving on the board: <span class="formula">E = [ |-4<sup>2</sup> + 7| - (-3)<sup>3</sup> ] / [ 1/2 - (-3/4) ]</span></p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 10%;">Step</th>
+              <th style="width: 45%;">Expression State</th>
+              <th style="width: 45%;">Operation / Rule Applied</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Numerator: <span class="formula">| -16 + 7 | - (-27)</span></td>
+              <td>Evaluate exponent <span class="formula">-4<sup>2</sup> = -16</span> &amp; signed power <span class="formula">(-3)<sup>3</sup> = -27</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Numerator: <span class="formula">| -9 | + 27</span></td>
+              <td>Simplify inner absolute value <span class="formula">-16 + 7 = -9</span>; double negative to positive</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Numerator: <span class="formula">9 + 27 = 36</span></td>
+              <td>Apply absolute value <span class="formula">|-9| = 9</span> and sum numerator</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Denominator: <span class="formula">1/2 + 3/4 = 2/4 + 3/4 = 5/4</span></td>
+              <td>Find common denominator and add fractions</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Final Division: <span class="formula">36 &times; (4/5) = 144/5 = 28.8</span></td>
+              <td>Multiply numerator by denominator reciprocal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- APPLY -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>A — APPLY</span>
+        <span class="time">20 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Collaborative Challenge: "Expression Decoders"</h4>
+        <p>Divide the class into small groups. Distribute multi-operation expression cards containing signed bases, fraction bars, and absolute values.</p>
+        
+        <h4>Group Task</h4>
+        <ul>
+          <li>Construct a complete 5-step evaluation table for <span class="formula">[ -3<sup>2</sup> + |-14 + 2| ] / [ (-2)<sup>3</sup> + 5 ]</span>.</li>
+          <li>Identify and highlight potential trap points (e.g., distinguishing <span class="formula">-3<sup>2</sup></span> from <span class="formula">(-3)<sup>2</sup></span>).</li>
+          <li>Present their solution board to the class for peer verification.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WRAP-UP -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>W — WRAP-UP</span>
+        <span class="time">10 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Synthesis &amp; Misconception Clarification</h4>
+        <div class="warning-box">
+          <strong>Key Traps to Avoid:</strong>
+          <ul>
+            <li>Never distribute coefficients into absolute value bars (e.g., <span class="formula">-2|-5| &ne; |10|</span>). Evaluate inside first.</li>
+            <li>Parentheses dictate whether the negative sign is part of the base being raised to a power.</li>
+          </ul>
+        </div>
+        
+        <h4>Formative Assessment (Exit Ticket)</h4>
+        <ol>
+          <li>Evaluate: <span class="formula">|-12| - (-2)<sup>2</sup></span></li>
+          <li>Evaluate: <span class="formula">(-5<sup>2</sup> + 9) / |-2|</span></li>
+          <li>Explain why <span class="formula">-3<sup>2</sup> &ne; (-3)<sup>2</sup></span> in 1–2 sentences.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">Print / Save Lesson Plan</button>
+  </div>
+</div>
+
+</body>
+</html>
