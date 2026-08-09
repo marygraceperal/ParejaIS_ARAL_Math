@@ -3,7 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARAL Math Key Stage 3 Curriculum Syllabus</title>
+  <title>ARAL Math Intervention Portal</title>
+  <style>
+    /* CSS STYLES */
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg-light); color: var(--text-main); line-height: 1.5; padding: 1rem; }
+    .container { max-width: 1000px; margin: 0 auto; }
+
+    /* Single Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+    .hero h1 { font-size: 1.75rem; margin-bottom: 0.25rem; font-weight: 800; }
+    .hero p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 0.75rem; }
+    
+    /* Authorship & AI Disclosure Badge */
+    .meta-declaration {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .meta-declaration strong { color: #ffffff; }
+
+    /* Term Navigation Buttons */
+    .term-nav-main { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .term-btn { flex: 1; padding: 0.75rem; border: 1px solid var(--border-color); background: var(--card-bg); border-radius: 8px; font-weight: 600; cursor: pointer; text-align: center; color: var(--text-main); }
+    .term-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* Card Layouts */
+    .subtopic-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-top: 1rem; }
+    .subtopic-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; position: relative; cursor: pointer; transition: transform 0.15s ease; }
+    .subtopic-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .subtopic-code { font-size: 0.75rem; font-weight: 700; color: var(--primary); }
+    .subtopic-name { font-weight: 700; font-size: 1rem; margin: 0.25rem 0; }
+    .subtopic-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+    
+    .resource-toolbar { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+    .res-btn { padding: 0.35rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; text-decoration: none; }
+    .btn-lesson { background: #e0f2fe; color: #0369a1; }
+    .btn-slides { background: #fef3c7; color: #92400e; }
+    .btn-activity { background: #dcfce7; color: #15803d; }
+    .btn-pdf { background: #f1f5f9; color: #475569; }
+
+    /* Modal Overlay */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
+    .modal-overlay.active { display: flex; }
+    .modal-card { background: #fff; width: 100%; max-width: 650px; max-height: 90vh; overflow-y: auto; border-radius: 12px; padding: 1.5rem; position: relative; }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- SINGLE HERO BANNER WITH AUTHOR & AI DECLARATION -->
+    <header class="hero">
+      <h1>ARAL Math Intervention Portal</h1>
+      <p>A structured, interactive learning framework for Key Stage 3 Mathematics.</p>
+      
+      <div class="meta-declaration">
+        <div><strong>Author:</strong> Mary Grace M. Peral</div>
+        <div><strong>AI Use Declaration:</strong> Developed with AI assistance for instructional framework structure and code optimization.</div>
+      </div>
+    </header>
+
+    <!-- MAIN TERM NAVIGATION -->
+    <div class="term-nav-main">
+      <button class="term-btn active" onclick="switchTerm('term1')">Term 1</button>
+      <button class="term-btn" onclick="switchTerm('term2')">Term 2</button>
+      <button class="term-btn" onclick="switchTerm('term3')">Term 3</button>
+    </div>
+
 
   <!-- ======================================================= -->
   <!-- START OF PART 1: CSS STYLES                            -->
