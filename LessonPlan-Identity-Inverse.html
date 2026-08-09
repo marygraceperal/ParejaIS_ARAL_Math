@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Identity & Inverse Properties</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .ilaw-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ilaw-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ilaw-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--success);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: Identity & Inverse Properties</h1>
+    <p>Topic 2.2: Additive/Multiplicative Identities (0 & 1) and Inverses (Zero Pairs & Reciprocals) — ILAW Framework</p>
+  </header>
+
+  <!-- I - ILLUMINATE & INTRODUCE -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">I – ILLUMINATE & INTRODUCE</div>
+    <div class="ilaw-content">
+      <h3>1. Learning Objectives</h3>
+      <div class="rule-box">
+        <ul>
+          <li><strong>Cognitive:</strong> Distinguish between Identity and Inverse Properties for addition and multiplication, and apply them to simplify algebraic and numerical expressions.</li>
+          <li><strong>Affective:</strong> Appreciate the concept of balance and neutralization when solving equations and managing financial transactions.</li>
+          <li><strong>Psychomotor:</strong> Construct zero-pair visual models and write reciprocal expressions correctly during guided exercises.</li>
+        </ul>
+      </div>
+
+      <h3>2. Initiating Hook</h3>
+      <p>Ask the class: <em>"What number can you add to a total so it remains completely unchanged? What number can you multiply by to get back to 1, or add to a debt to wipe it out to zero?"</em> Connect these real-life balance concepts to operational identities and inverses in mathematics.</p>
+    </div>
+  </section>
+
+  <!-- L - LEARN -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">L – LEARN</div>
+    <div class="ilaw-content">
+      <h3>1. Core Concepts & Definitions</h3>
+      
+      <div class="rule-box">
+        <h3>A. Identity Properties ("Preserving Value")</h3>
+        <ul>
+          <li>
+            <strong>Additive Identity (0):</strong> Adding zero to any number leaves it unchanged.
+            <br>
+            <span class="formula">a + 0 = a</span> &nbsp;|&nbsp; Example: <span class="formula">15 + 0 = 15</span>
+          </li>
+          <li style="margin-top: 0.75rem;">
+            <strong>Multiplicative Identity (1):</strong> Multiplying any number by one leaves it unchanged.
+            <br>
+            <span class="formula">a &times; 1 = a</span> &nbsp;|&nbsp; Example: <span class="formula">-8 &times; 1 = -8</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rule-box">
+        <h3>B. Inverse Properties ("Neutralizing to Reach the Identity")</h3>
+        <ul>
+          <li>
+            <strong>Additive Inverse (Zero Pairs):</strong> Adding a number to its opposite yields the additive identity, <span class="formula">0</span>.
+            <br>
+            <span class="formula">a + (-a) = 0</span> &nbsp;|&nbsp; Example: <span class="formula">7 + (-7) = 0</span>
+          </li>
+          <li style="margin-top: 0.75rem;">
+            <strong>Multiplicative Inverse (Reciprocals):</strong> Multiplying a non-zero number by its reciprocal yields the multiplicative identity, <span class="formula">1</span>.
+            <br>
+            <span class="formula">a &times; (1 / a) = 1</span> (where <span class="formula">a &ne; 0</span>) &nbsp;|&nbsp; Example: <span class="formula">5 &times; (1 / 5) = 1</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="warning-box">
+        <p><strong>⚠️ Common Pitfall: Zero in Multiplicative Inverses</strong></p>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          Zero has <strong>NO multiplicative inverse</strong> because division by zero (<span class="formula">1 / 0</span>) is undefined. Also, do not confuse the Additive Identity (<span class="formula">0</span>) with the Multiplicative Identity (<span class="formula">1</span>).
+        </p>
+      </div>
+
+      <h3>2. Demonstration Problems</h3>
+
+      <div class="step-box">
+        <p><strong>Example 1: Simplifying with Additive Inverses (Zero Pairs)</strong></p>
+        <p>Evaluate: <span class="formula">14 + 29 + (-14) + 5</span></p>
+        <ol>
+          <li>Group opposites together: <span class="formula">[14 + (-14)] + 29 + 5</span></li>
+          <li>Apply Additive Inverse Law: <span class="formula">0 + 29 + 5</span></li>
+          <li>Apply Additive Identity Law: <span class="formula">29 + 5 = 34</span></li>
+        </ol>
+        <p><strong>Result:</strong> <strong>34</strong></p>
+      </div>
+
+      <div class="step-box">
+        <p><strong>Example 2: Simplifying with Multiplicative Inverses (Reciprocals)</strong></p>
+        <p>Evaluate: <span class="formula">(3 / 7) &times; 12 &times; (7 / 3)</span></p>
+        <ol>
+          <li>Group reciprocals together: <span class="formula">[(3 / 7) &times; (7 / 3)] &times; 12</span></li>
+          <li>Apply Multiplicative Inverse Law: <span class="formula">1 &times; 12</span></li>
+          <li>Apply Multiplicative Identity Law: <span class="formula">12</span></li>
+        </ol>
+        <p><strong>Result:</strong> <strong>12</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A - APPLY -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">A – APPLY</div>
+    <div class="ilaw-content">
+      <h3>Real-World Contextual Applications</h3>
+      
+      <div class="step-box">
+        <p><strong>Context 1: Store Cash Ledger (Additive Inverses)</strong></p>
+        <p>A small retail store records a daily income of <span class="formula">&#8369;450</span> and an unexpected return/refund expense of <span class="formula">-&#8369;450</span>. The net effect on the account balance is <span class="formula">&#8369;450 + (-&#8369;450) = &#8369;0</span> (Zero Pair concept balancing out the transaction).</p>
+      </div>
+
+      <div class="step-box">
+        <p><strong>Context 2: Scaling Recipe Ingredients (Multiplicative Inverses)</strong></p>
+        <p>If a recipe quantity is tripled (<span class="formula">&times; 3</span>) during batch production and later reduced back to a single portion by taking one-third (<span class="formula">&times; 1/3</span>), the net factor multiplier is <span class="formula">3 &times; 1/3 = 1</span>, keeping the single-serving proportions original.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- W - WIND-UP -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">W – WIND-UP</div>
+    <div class="ilaw-content">
+      <h3>1. Formative Assessment Check</h3>
+      <div class="quiz-box">
+        <ol>
+          <li>
+            <strong>Identify Property:</strong> What property is demonstrated by <span class="formula">-12 &times; (-1 / 12) = 1</span>?<br>
+            <span class="answer">Answer: Multiplicative Inverse Property.</span>
+          </li>
+          <li>
+            <strong>Solve Mentally:</strong> Simplify <span class="formula">8.5 + (-8.5) + 0 + 19</span>.<br>
+            <span class="answer">Answer: 19 (Zero pair neutralizes to 0, leaving 0 + 19 = 19).</span>
+          </li>
+          <li>
+            <strong>Find the Inverse:</strong> What is the additive inverse of <span class="formula">-4/5</span>, and what is its multiplicative inverse?<br>
+            <span class="answer">Answer: Additive Inverse = +4/5; Multiplicative Inverse = -5/4.</span>
+          </li>
+        </ol>
+      </div>
+
+      <h3>2. Key Takeaways Summary</h3>
+      <ul>
+        <li><strong>Identities Keep Value:</strong> Add <span class="formula">0</span> or multiply by <span class="formula">1</span> to preserve the number.</li>
+        <li><strong>Inverses Neutralize:</strong> Add the opposite to reach <span class="formula">0</span>; multiply by the reciprocal to reach <span class="formula">1</span>.</li>
+        <li><strong>Solving Utility:</strong> Identity and inverse properties are essential foundation tools for isolating variables in basic algebra.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Lesson Plan PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
