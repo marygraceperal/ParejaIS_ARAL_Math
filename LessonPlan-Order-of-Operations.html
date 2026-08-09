@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Property Identification & Algebraic Justification (ILAW Format)</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --accent: #0d9488;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .lesson-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .lesson-header {
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .lesson-header h1 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      background-color: var(--primary-bg);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .meta-item {
+      font-size: 0.95rem;
+    }
+
+    .meta-item strong {
+      color: var(--primary);
+    }
+
+    .section-block {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .objectives-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .objectives-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .objectives-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .ilaw-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .ilaw-badge {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 0.5rem 1.25rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ilaw-badge .time {
+      font-size: 0.9rem;
+      font-weight: normal;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .ilaw-content {
+      padding: 1.25rem;
+      background: #ffffff;
+    }
+
+    .ilaw-content h4 {
+      color: var(--primary);
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .ilaw-content p, .ilaw-content ul {
+      margin-bottom: 0.75rem;
+    }
+
+    .ilaw-content ul {
+      padding-left: 1.25rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      background-color: #f1f5f9;
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .lesson-container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lesson-container">
+  <header class="lesson-header">
+    <h1>General Mathematics Lesson Plan</h1>
+    <p>Topic 2.4: Property Identification &amp; Algebraic Justification</p>
+
+    <div class="meta-grid">
+      <div class="meta-item"><strong>Grade Level:</strong> Grade 11</div>
+      <div class="meta-item"><strong>Curriculum:</strong> K-12 SHS Curriculum</div>
+      <div class="meta-item"><strong>Framework:</strong> ILAW Format</div>
+      <div class="meta-item"><strong>Time Allotment:</strong> 60 Minutes</div>
+    </div>
+  </header>
+
+  <!-- OBJECTIVES SECTION -->
+  <section class="section-block">
+    <h2 class="section-title">I. Learning Objectives</h2>
+    <ul class="objectives-list">
+      <li><strong>Cognitive:</strong> Categorize algebraic expressions and simplification steps according to the real number properties (Commutative, Associative, Distributive, Identity, Inverse).</li>
+      <li><strong>Affective:</strong> Value the importance of logical order, fairness, and systematic justification when solving multi-step mathematical problems.</li>
+      <li><strong>Psychomotor:</strong> Construct a step-by-step two-column algebraic proof that explicitly justifies every simplification step with its corresponding property.</li>
+    </ul>
+  </section>
+
+  <!-- ILAW INSTRUCTIONAL PROCEDURE -->
+  <section class="section-block">
+    <h2 class="section-title">II. Instructional Procedure (ILAW Framework)</h2>
+
+    <!-- INTRODUCE -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>I — INTRODUCE</span>
+        <span class="time">10 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Hook &amp; Real-World Context</h4>
+        <p>Present a retail transaction scenario: Swapping the order of scanned grocery items vs. grouping items for bundle discounts.</p>
+        
+        <h4>Guiding Question</h4>
+        <p><em>"Does changing the sequence of scanned items change your total bill? Does changing how items are grouped change the discount?"</em></p>
+        
+        <h4>Lesson Orientation</h4>
+        <p>Connect the real-world scenario to mathematical laws: Algebraic manipulations are governed by unbreakable rules (properties) that guarantee consistency, logic, and fairness in mathematical transformations.</p>
+      </div>
+    </div>
+
+    <!-- LEARN -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>L — LEARN</span>
+        <span class="time">20 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Direct Instruction &amp; Visual Tracking</h4>
+        <p>Review the core real number properties emphasizing visual identification strategies:</p>
+        <ul>
+          <li><strong>Commutative:</strong> Order changes, grouping stays identical (<span class="formula">a + b = b + a</span>).</li>
+          <li><strong>Associative:</strong> Grouping changes, order stays identical (<span class="formula">(a + b) + c = a + (b + c)</span>).</li>
+          <li><strong>Distributive:</strong> Multiplication distributes over addition (<span class="formula">a(b + c) = ab + ac</span>).</li>
+        </ul>
+
+        <h4>Modeling Step-by-Step Justification</h4>
+        <p>Demonstrate structuring a formal two-column algebraic proof on the board:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Algebraic Expression / Step</th>
+              <th>Mathematical Justification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="formula">3(2x + 4) + 5x</span></td>
+              <td>Given Expression</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= (3 &middot; 2x) + (3 &middot; 4) + 5x</span></td>
+              <td>Distributive Property</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= 6x + 12 + 5x</span></td>
+              <td>Arithmetic Multiplication</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= 6x + 5x + 12</span></td>
+              <td>Commutative Property of Addition</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= (6 + 5)x + 12</span></td>
+              <td>Distributive Property (Factoring)</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= 11x + 12</span></td>
+              <td>Arithmetic Addition</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- APPLY -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>A — APPLY</span>
+        <span class="time">20 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Collaborative Activity: "Proof Builders"</h4>
+        <p>Divide the class into small groups. Distribute envelope sets containing scrambled expression cards and property cards for a complex problem (e.g., <span class="formula">4(x + 3) + 2(3x - 1)</span>).</p>
+        
+        <h4>Group Task</h4>
+        <ul>
+          <li>Sequence the algebraic steps in logical order on a mini-whiteboard.</li>
+          <li>Match each step with its correct governing property.</li>
+          <li>Present the completed two-column proof to the class.</li>
+        </ul>
+
+        <h4>Real-World Reflection</h4>
+        <p>Briefly highlight how explicit step-by-step justification mirrors auditing, inventory logging, and transparent accounting practice.</p>
+      </div>
+    </div>
+
+    <!-- WRAP-UP -->
+    <div class="ilaw-card">
+      <div class="ilaw-badge">
+        <span>W — WRAP-UP</span>
+        <span class="time">10 Minutes</span>
+      </div>
+      <div class="ilaw-content">
+        <h4>Synthesis &amp; Misconception Clarification</h4>
+        <p>Summarize the distinction between Commutative (order) and Associative (grouping) properties. Remind students that these properties do not apply directly to subtraction or division.</p>
+        
+        <h4>Formative Assessment (Exit Ticket)</h4>
+        <ol>
+          <li>Identify the property: <span class="formula">8 + (x + 3) = 8 + (3 + x)</span></li>
+          <li>Identify the property: <span class="formula">6 &middot; (1/6) = 1</span></li>
+          <li>Provide the missing property: <span class="formula">4x + 9 + 3x &rarr; 4x + 3x + 9</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">Print / Save Lesson Plan</button>
+  </div>
+</div>
+
+</body>
+</html>
