@@ -368,13 +368,13 @@
       <label for="tab-term3">Term 3</label>
     </div>
 
-        <!-- ======================================================= -->
+               <!-- ======================================================= -->
     <!-- START OF PART 2: TERM 1 CONTENT (UNITS 1 - 3)          -->
     <!-- ======================================================= -->
-    <section id="content-term1" class="term-section">
+    <section id="content-term1" class="term-section active">
       <div class="term-header">
-        <h2>Term 1: Number Systems & Algebraic Foundations</h2>
-        <p>Focus: Mastering signed numbers, rational numbers, real number properties, and order of operations.</p>
+        <h2>Term 1: Number Sense & Operations</h2>
+        <p>Focus: Deepening understanding of integers, rational numbers, exponents, and basic algebraic terms.</p>
       </div>
       <div class="term-body">
         <div class="tab-container">
@@ -383,61 +383,61 @@
           <input type="radio" name="term1-tabs" id="t1-u3" class="tab-toggle">
 
           <div class="tab-nav">
-            <label for="t1-u1">Unit 1: Integers & Operations</label>
-            <label for="t1-u2">Unit 2: Rational & Real Numbers</label>
-            <label for="t1-u3">Unit 3: Properties & GEMDAS</label>
+            <label for="t1-u1">Unit 1: Integers</label>
+            <label for="t1-u2">Unit 2: Real Numbers</label>
+            <label for="t1-u3">Unit 3: Order of Operations</label>
           </div>
 
           <div class="tab-contents">
             <!-- UNIT 1 -->
             <div id="content-t1-u1" class="tab-content">
-              <h3 class="unit-title">Unit 1: Integers & Fundamental Operations</h3>
+              <h3 class="unit-title">Unit 1: Integers & Integer Operations</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('1.1')">
+                <div class="subtopic-card" onclick="openResource('1.1', 'discussion')">
                   <span class="subtopic-code">1.1</span>
                   <div class="subtopic-name">Set of Integers & Absolute Value 💬</div>
-                  <div class="subtopic-desc">Representation on a number line, magnitude, and distance from zero (|x|).</div>
+                  <div class="subtopic-desc">Understanding positive/negative values, number line representation, and distance from zero.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('1.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('1.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('1.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('1.2')">
+                <div class="subtopic-card" onclick="openResource('1.2', 'discussion')">
                   <span class="subtopic-code">1.2</span>
                   <div class="subtopic-name">Addition & Subtraction of Integers 💬</div>
-                  <div class="subtopic-desc">Combining like and unlike signs, additive inverses, and debt/gain models.</div>
+                  <div class="subtopic-desc">Rules for combining integers with same and different signs, additive inverse.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('1.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('1.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('1.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('1.3')">
+                <div class="subtopic-card" onclick="openResource('1.3', 'discussion')">
                   <span class="subtopic-code">1.3</span>
                   <div class="subtopic-name">Multiplication & Division of Integers 💬</div>
-                  <div class="subtopic-desc">Signed rules, repeated addition models, and quotient relationships.</div>
+                  <div class="subtopic-desc">Sign rules for multiplying and dividing integers, zero property, and undefined division.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('1.3', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('1.3', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('1.3', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('1.4')">
+                <div class="subtopic-card" onclick="openResource('1.4', 'discussion')">
                   <span class="subtopic-code">1.4</span>
                   <div class="subtopic-name">Real-World Applications of Integers 💬</div>
-                  <div class="subtopic-desc">Solving contextual problems involving profit/loss, temperature, and elevation.</div>
+                  <div class="subtopic-desc">Solving contextual word problems involving temperature, debt, elevation, and sports scores.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('1.4', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('1.4', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('1.4', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -445,53 +445,53 @@
 
             <!-- UNIT 2 -->
             <div id="content-t1-u2" class="tab-content">
-              <h3 class="unit-title">Unit 2: Rational Numbers & The Real Number System</h3>
+              <h3 class="unit-title">Unit 2: Rational Numbers & Real Number System</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('2.1')">
+                <div class="subtopic-card" onclick="openResource('2.1', 'discussion')">
                   <span class="subtopic-code">2.1</span>
                   <div class="subtopic-name">Classification of Real Numbers 💬</div>
-                  <div class="subtopic-desc">Subsets of real numbers: Natural, Whole, Integers, Rational, and Irrational.</div>
+                  <div class="subtopic-desc">Subsets of real numbers: Natural, Whole, Integers, Rational, and Irrational numbers.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('2.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('2.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('2.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('2.2')">
+                <div class="subtopic-card" onclick="openResource('2.2', 'discussion')">
                   <span class="subtopic-code">2.2</span>
                   <div class="subtopic-name">Operations on Rational Numbers 💬</div>
-                  <div class="subtopic-desc">Performing operations on fractions, decimals, and mixed numbers.</div>
+                  <div class="subtopic-desc">Converting between fractions and decimals, performing basic operations on fractions.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('2.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('2.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('2.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('2.3')">
+                <div class="subtopic-card" onclick="openResource('2.3', 'discussion')">
                   <span class="subtopic-code">2.3</span>
                   <div class="subtopic-name">Square Roots & Principal Roots 💬</div>
-                  <div class="subtopic-desc">Estimating irrational square roots and locating them on a number line.</div>
+                  <div class="subtopic-desc">Evaluating principal square roots, estimating non-perfect square roots on a number line.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('2.3', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('2.3', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('2.3', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('2.4')">
+                <div class="subtopic-card" onclick="openResource('2.4', 'discussion')">
                   <span class="subtopic-code">2.4</span>
                   <div class="subtopic-name">Scientific Notation & Base-10 💬</div>
-                  <div class="subtopic-desc">Expressing large and small numbers using positive/negative powers of 10.</div>
+                  <div class="subtopic-desc">Expressing very large and very small numbers using powers of 10.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('2.4', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('2.4', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('2.4', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -499,41 +499,41 @@
 
             <!-- UNIT 3 -->
             <div id="content-t1-u3" class="tab-content">
-              <h3 class="unit-title">Unit 3: Properties & Algebraic Readiness</h3>
+              <h3 class="unit-title">Unit 3: Algebraic Expressions & Order of Operations</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('3.1')">
+                <div class="subtopic-card" onclick="openResource('3.1', 'discussion')">
                   <span class="subtopic-code">3.1</span>
                   <div class="subtopic-name">Properties of Real Numbers 💬</div>
-                  <div class="subtopic-desc">Closure, Commutative, Associative, Distributive, Identity, and Inverse rules.</div>
+                  <div class="subtopic-desc">Commutative, Associative, Distributive, Identity, and Inverse properties.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('3.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('3.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('3.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('3.2')">
+                <div class="subtopic-card" onclick="openResource('3.2', 'discussion')">
                   <span class="subtopic-code">3.2</span>
                   <div class="subtopic-name">Order of Operations (GEMDAS) 💬</div>
-                  <div class="subtopic-desc">Evaluating expressions with nested grouping, exponents, and absolute values.</div>
+                  <div class="subtopic-desc">Simplifying numerical expressions using Grouping, Exponents, Multiplication/Division, Addition/Subtraction.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('3.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('3.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('3.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('3.3')">
+                <div class="subtopic-card" onclick="openResource('3.3', 'discussion')">
                   <span class="subtopic-code">3.3</span>
                   <div class="subtopic-name">Intro to Algebraic Terms 💬</div>
-                  <div class="subtopic-desc">Identifying variables, numerical coefficients, degree, and constants.</div>
+                  <div class="subtopic-desc">Variables, numerical/literal coefficients, constants, and translating verbal phrases to expressions.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('3.3', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('3.3', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('3.3', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -546,13 +546,14 @@
     <!-- END OF PART 2                                          -->
     <!-- ======================================================= -->
 
+
     <!-- ======================================================= -->
     <!-- START OF PART 3: TERM 2 CONTENT (UNITS 4 - 7)          -->
     <!-- ======================================================= -->
     <section id="content-term2" class="term-section">
       <div class="term-header">
         <h2>Term 2: Algebraic Expressions, Equations & Proportions</h2>
-        <p>Focus: Polynomial operations, solving linear equations and inequalities, and proportional reasoning.</p>
+        <p>Focus: Manipulating polynomials, solving linear equations and inequalities, and applying proportional reasoning.</p>
       </div>
       <div class="term-body">
         <div class="tab-container">
@@ -564,7 +565,7 @@
           <div class="tab-nav">
             <label for="t2-u4">Unit 4: Polynomials</label>
             <label for="t2-u5">Unit 5: Linear Equations</label>
-            <label for="t2-u6">Unit 6: Inequalities</label>
+            <label for="t2-u6">Unit 6: Linear Inequalities</label>
             <label for="t2-u7">Unit 7: Ratios & Proportions</label>
           </div>
 
@@ -573,39 +574,39 @@
             <div id="content-t2-u4" class="tab-content">
               <h3 class="unit-title">Unit 4: Algebraic Expressions & Polynomials</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('4.1')">
+                <div class="subtopic-card" onclick="openResource('4.1', 'discussion')">
                   <span class="subtopic-code">4.1</span>
                   <div class="subtopic-name">Terms, Coefficients & Variables 💬</div>
-                  <div class="subtopic-desc">Identifying variables, numerical and literal coefficients, and constants.</div>
+                  <div class="subtopic-desc">Identifying parts of an algebraic expression, combining like terms.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('4.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('4.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('4.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('4.2')">
+                <div class="subtopic-card" onclick="openResource('4.2', 'discussion')">
                   <span class="subtopic-code">4.2</span>
                   <div class="subtopic-name">Polynomial Classification & Degree 💬</div>
-                  <div class="subtopic-desc">Monomials, binomials, trinomials, and determining degrees of expressions.</div>
+                  <div class="subtopic-desc">Monomials, binomials, trinomials, polynomials, and finding degrees of terms.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('4.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('4.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('4.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('4.3')">
+                <div class="subtopic-card" onclick="openResource('4.3', 'discussion')">
                   <span class="subtopic-code">4.3</span>
                   <div class="subtopic-name">Operations on Polynomials 💬</div>
-                  <div class="subtopic-desc">Addition, subtraction, laws of exponents, and FOIL multiplication.</div>
+                  <div class="subtopic-desc">Adding, subtracting, and multiplying polynomials (distributive property and FOIL).</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('4.3', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('4.3', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('4.3', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -615,39 +616,39 @@
             <div id="content-t2-u5" class="tab-content">
               <h3 class="unit-title">Unit 5: Linear Equations in One Variable</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('5.1')">
+                <div class="subtopic-card" onclick="openResource('5.1', 'discussion')">
                   <span class="subtopic-code">5.1</span>
                   <div class="subtopic-name">One-Step & Two-Step Equations 💬</div>
-                  <div class="subtopic-desc">Applying Addition and Multiplication Properties of Equality (APE/MPE).</div>
+                  <div class="subtopic-desc">Properties of equality (APE, MPE) and isolating variables in single and multi-step terms.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('5.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('5.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('5.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('5.2')">
+                <div class="subtopic-card" onclick="openResource('5.2', 'discussion')">
                   <span class="subtopic-code">5.2</span>
                   <div class="subtopic-name">Multi-Step Linear Equations 💬</div>
-                  <div class="subtopic-desc">Variables on both sides, combining like terms, and removing grouping symbols.</div>
+                  <div class="subtopic-desc">Clearing parentheses, combining like terms on both sides, and dealing with fractional coefficients.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('5.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('5.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('5.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('5.3')">
+                <div class="subtopic-card" onclick="openResource('5.3', 'discussion')">
                   <span class="subtopic-code">5.3</span>
                   <div class="subtopic-name">Real-World Equation Applications 💬</div>
-                  <div class="subtopic-desc">Translating word problems to linear equations and solving for unknowns.</div>
+                  <div class="subtopic-desc">Translating word problems into algebraic equations and verifying solutions in context.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('5.3', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('5.3', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('5.3', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -657,27 +658,27 @@
             <div id="content-t2-u6" class="tab-content">
               <h3 class="unit-title">Unit 6: Linear Inequalities in One Variable</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('6.1')">
+                <div class="subtopic-card" onclick="openResource('6.1', 'discussion')">
                   <span class="subtopic-code">6.1</span>
                   <div class="subtopic-name">Inequality Symbols & Number Lines 💬</div>
-                  <div class="subtopic-desc">Graphing solution sets (<, >, ≤, ≥) and understanding negative direction rules.</div>
+                  <div class="subtopic-desc">Representing inequality statements on a number line with open and closed boundaries.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('6.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('6.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('6.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('6.2')">
+                <div class="subtopic-card" onclick="openResource('6.2', 'discussion')">
                   <span class="subtopic-code">6.2</span>
                   <div class="subtopic-name">Solving & Applying Inequalities 💬</div>
-                  <div class="subtopic-desc">Solving multi-step inequalities and modeling real-world budget/threshold limits.</div>
+                  <div class="subtopic-desc">Solving linear inequalities, flipping inequality signs when multiplying/dividing by negative numbers.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('6.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('6.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('6.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -685,29 +686,29 @@
 
             <!-- UNIT 7 -->
             <div id="content-t2-u7" class="tab-content">
-              <h3 class="unit-title">Unit 7: Patterns, Ratios & Proportions</h3>
+              <h3 class="unit-title">Unit 7: Ratios, Rates & Proportions</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('7.1')">
+                <div class="subtopic-card" onclick="openResource('7.1', 'discussion')">
                   <span class="subtopic-code">7.1</span>
                   <div class="subtopic-name">Ratios & Unit Rates 💬</div>
-                  <div class="subtopic-desc">Simplifying ratios, rate conversions, and unit pricing calculations.</div>
+                  <div class="subtopic-desc">Comparing quantities, writing ratios in simplest form, calculating unit prices and rates.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('7.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('7.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('7.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('7.2')">
+                <div class="subtopic-card" onclick="openResource('7.2', 'discussion')">
                   <span class="subtopic-code">7.2</span>
                   <div class="subtopic-name">Direct, Inverse & Partitive Proportions 💬</div>
-                  <div class="subtopic-desc">Solving proportional relationships and real-world resource sharing problems.</div>
+                  <div class="subtopic-desc">Distinguishing between proportion types, solving contextual word problems.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('7.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('7.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('7.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -720,7 +721,8 @@
     <!-- END OF PART 3                                          -->
     <!-- ======================================================= -->
 
-        <!-- ======================================================= -->
+
+    <!-- ======================================================= -->
     <!-- START OF PART 4: TERM 3 CONTENT (UNITS 8 - 13)         -->
     <!-- ======================================================= -->
     <section id="content-term3" class="term-section">
@@ -751,27 +753,27 @@
             <div id="content-t3-u8" class="tab-content">
               <h3 class="unit-title">Unit 8: Points, Lines, Angles & Planes</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('8.1')">
+                <div class="subtopic-card" onclick="openResource('8.1', 'discussion')">
                   <span class="subtopic-code">8.1</span>
                   <div class="subtopic-name">Points, Lines & Planes 💬</div>
                   <div class="subtopic-desc">Undefined terms in geometry, collinearity, and coplanar points.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('8.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('8.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('8.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
 
-                <div class="subtopic-card" onclick="openDiscussion('8.2')">
+                <div class="subtopic-card" onclick="openResource('8.2', 'discussion')">
                   <span class="subtopic-code">8.2</span>
                   <div class="subtopic-name">Angle Relationships 💬</div>
                   <div class="subtopic-desc">Complementary, supplementary, vertical, and linear pair angles.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('8.2', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('8.2', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('8.2', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -781,15 +783,15 @@
             <div id="content-t3-u9" class="tab-content">
               <h3 class="unit-title">Unit 9: Properties of Polygons</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('9.1')">
+                <div class="subtopic-card" onclick="openResource('9.1', 'discussion')">
                   <span class="subtopic-code">9.1</span>
                   <div class="subtopic-name">Classification of Polygons 💬</div>
                   <div class="subtopic-desc">Convex vs. non-convex, regular polygons, triangles, and quadrilaterals.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('9.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('9.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('9.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -799,15 +801,15 @@
             <div id="content-t3-u10" class="tab-content">
               <h3 class="unit-title">Unit 10: 2D Measurement & Area</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('10.1')">
+                <div class="subtopic-card" onclick="openResource('10.1', 'discussion')">
                   <span class="subtopic-code">10.1</span>
                   <div class="subtopic-name">Perimeter & Area Formulas 💬</div>
                   <div class="subtopic-desc">Calculating perimeter and area of triangles, parallelograms, and circles.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('10.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('10.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('10.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -817,15 +819,15 @@
             <div id="content-t3-u11" class="tab-content">
               <h3 class="unit-title">Unit 11: 3D Solids & Volume</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('11.1')">
+                <div class="subtopic-card" onclick="openResource('11.1', 'discussion')">
                   <span class="subtopic-code">11.1</span>
                   <div class="subtopic-name">Surface Area & Volume 💬</div>
                   <div class="subtopic-desc">Prisms, cylinders, pyramids, and cones in contextual applications.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('11.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('11.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('11.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -835,15 +837,15 @@
             <div id="content-t3-u12" class="tab-content">
               <h3 class="unit-title">Unit 12: Basic Statistics</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('12.1')">
+                <div class="subtopic-card" onclick="openResource('12.1', 'discussion')">
                   <span class="subtopic-code">12.1</span>
                   <div class="subtopic-name">Measures of Central Tendency 💬</div>
                   <div class="subtopic-desc">Calculating and interpreting Mean, Median, and Mode for ungrouped data.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('12.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('12.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('12.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -853,15 +855,15 @@
             <div id="content-t3-u13" class="tab-content">
               <h3 class="unit-title">Unit 13: Introduction to Probability</h3>
               <div class="subtopic-grid">
-                <div class="subtopic-card" onclick="openDiscussion('13.1')">
+                <div class="subtopic-card" onclick="openResource('13.1', 'discussion')">
                   <span class="subtopic-code">13.1</span>
                   <div class="subtopic-name">Theoretical & Experimental Probability 💬</div>
                   <div class="subtopic-desc">Sample spaces, simple events, and calculating probabilities of outcomes.</div>
                   <div class="resource-toolbar" onclick="event.stopPropagation()">
-                    <a href="#" class="res-btn btn-lesson">📘 Plan</a>
+                    <button class="res-btn btn-lesson" onclick="openResource('13.1', 'plan')">📘 Plan</button>
                     <a href="#" class="res-btn btn-slides">📊 Slides</a>
-                    <a href="#" class="res-btn btn-activity">📝 Activity</a>
-                    <a href="#" onclick="window.print()" class="res-btn btn-pdf">🖨️ PDF</a>
+                    <button class="res-btn btn-activity" onclick="openResource('13.1', 'activity')">📝 Activity</button>
+                    <button class="res-btn btn-pdf" onclick="openResource('13.1', 'discussion')">💬 Discussion</button>
                   </div>
                 </div>
               </div>
@@ -873,12 +875,13 @@
   </div><!-- End of .container -->
   <!-- ======================================================= -->
   <!-- END OF PART 4                                          -->
-  <!-- ======================================================= -->
+  <!-- ======================================================= -->   
+       
 
   </div><!-- End of .container -->
 
 
-    <!-- ======================================================= -->
+  <!-- ======================================================= -->
   <!-- START OF PART 5: JAVASCRIPT DATA & LOGIC ENGINE        -->
   <!-- ======================================================= -->
   <script>
@@ -1094,27 +1097,61 @@
       }
     };
 
-    // 2. MODAL CONTROL FUNCTIONS
-    function openDiscussion(topicCode) {
+    // 2. UNIFIED RESOURCE MODAL CONTROL
+    function openResource(topicCode, type) {
       const data = discussionData[topicCode];
       const modal = document.getElementById('discussionModal');
       const contentContainer = document.getElementById('modalContent');
 
-      if (data) {
-        contentContainer.innerHTML = `
-          <h3 class="modal-title">${data.title}</h3>
-          ${data.content}
+      let titlePrefix = "💬 Discussion Guide";
+      let bodyContent = data ? data.content : "<p>Discussion content coming soon.</p>";
+
+      if (type === 'plan') {
+        titlePrefix = "📘 Lesson Plan";
+        bodyContent = `
+          <h4>Lesson Objectives</h4>
+          <ul>
+            <li>Understand foundational principles for Topic ${topicCode}.</li>
+            <li>Apply mathematical rules through guided classroom practice.</li>
+            <li>Evaluate problem solutions for mathematical accuracy.</li>
+          </ul>
+          <h4>Instructional Sequence</h4>
+          <p><strong>1. Hook & Review (10 mins):</strong> Revisit prior knowledge required for this unit.</p>
+          <p><strong>2. Direct Instruction (15 mins):</strong> Present core definitions and worked examples.</p>
+          <p><strong>3. Guided Practice (15 mins):</strong> Students complete paired activity sheets.</p>
+          <p><strong>4. Closure (10 mins):</strong> Exit ticket assessment to gauge mastery.</p>
         `;
-      } else {
-        contentContainer.innerHTML = `
-          <h3 class="modal-title">Topic ${topicCode}</h3>
-          <p>Detailed discussion material for this subtopic is currently being prepared.</p>
+      } else if (type === 'activity') {
+        titlePrefix = "📝 Activity Worksheet";
+        bodyContent = `
+          <h4>Student Practice Exercises — Topic ${topicCode}</h4>
+          <p><strong>Part 1: Concept Warm-Up</strong></p>
+          <p>Identify key terms, apply rules, and solve introductory exercises.</p>
+          <p><strong>Part 2: Skill Application</strong></p>
+          <p>Work through multi-step computational problems independently.</p>
+          <p><strong>Part 3: Real-World Scenario</strong></p>
+          <p>Translate situational statements into mathematical models and solve.</p>
         `;
       }
+
+      const topicTitle = data ? data.title : `Topic ${topicCode}`;
+
+      contentContainer.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #0284c7; text-transform: uppercase;">${titlePrefix}</span>
+            <h3 class="modal-title" style="margin-bottom: 0;">${topicTitle}</h3>
+          </div>
+          <button onclick="window.print()" class="res-btn btn-pdf" style="cursor: pointer; padding: 0.5rem 0.8rem;">🖨️ Export PDF</button>
+        </div>
+        <hr style="border: none; border-top: 1px solid #e2e8f0; margin-bottom: 1rem;">
+        ${bodyContent}
+      `;
 
       modal.classList.add('active');
     }
 
+    // 3. MODAL CLOSING FUNCTIONS
     function closeDiscussion(event) {
       if (event.target.id === 'discussionModal') {
         document.getElementById('discussionModal').classList.remove('active');
@@ -1128,7 +1165,8 @@
   <!-- ======================================================= -->
   <!-- END OF PART 5                                          -->
   <!-- ======================================================= -->
-
+  
+ 
     <!-- ======================================================= -->
   <!-- START OF PART 6: MODAL POPUP DIALOG UI & CLOSING TAGS  -->
   <!-- ======================================================= -->
