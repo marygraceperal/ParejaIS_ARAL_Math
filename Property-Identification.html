@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept Discussion: Property Identification & Justification</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+    }
+
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1rem;
+      text-align: left;
+    }
+
+    .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .proof-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .proof-table { font-size: 0.85rem; }
+      .proof-table th, .proof-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Concept Discussion: Property Identification & Justification</h1>
+    <p>Topic 2.4: Categorizing Mathematical Statements and Structural Proofs</p>
+  </header>
+
+  <!-- Section 1: Overview & Theoretical Role -->
+  <section>
+    <h2>1. The Role of Properties in Algebra</h2>
+    <p>In algebra, mathematical properties are not merely rules to memorize—they are the formal justifications that guarantee every algebraic step is valid and mathematically sound.</p>
+    <p>Identifying properties allows students to move beyond algorithmic calculation and gain structural fluency, transforming informal simplification into logical mathematical proof.</p>
+  </section>
+
+  <!-- Section 2: Comprehensive Property Matrix -->
+  <section>
+    <h2>2. Summary Matrix of Real Number Properties</h2>
+    <p>Every simplification step in elementary and advanced algebra relies on one or more of these fundamental properties:</p>
+
+    <table class="proof-table">
+      <thead>
+        <tr>
+          <th>Property Name</th>
+          <th>Addition Form</th>
+          <th>Multiplication Form</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Commutative</strong> <em>(Order)</em></td>
+          <td><span class="formula">a + b = b + a</span></td>
+          <td><span class="formula">a &middot; b = b &middot; a</span></td>
+        </tr>
+        <tr>
+          <td><strong>Associative</strong> <em>(Grouping)</em></td>
+          <td><span class="formula">(a + b) + c = a + (b + c)</span></td>
+          <td><span class="formula">(a &middot; b)c = a(b &middot; c)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Identity</strong> <em>(Preservation)</em></td>
+          <td><span class="formula">a + 0 = a</span></td>
+          <td><span class="formula">a &middot; 1 = a</span></td>
+        </tr>
+        <tr>
+          <td><strong>Inverse</strong> <em>(Neutralization)</em></td>
+          <td><span class="formula">a + (-a) = 0</span></td>
+          <td><span class="formula">a &middot; (1/a) = 1</span> <small>(a &ne; 0)</small></td>
+        </tr>
+        <tr>
+          <td><strong>Distributive</strong> <em>(Combination)</em></td>
+          <td colspan="2" style="text-align: center;"><span class="formula">a(b + c) = ab + ac</span> &nbsp;and&nbsp; <span class="formula">a(b - c) = ab - ac</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 3: Two-Column Algebraic Justifications -->
+  <section>
+    <h2>3. Formal Justification in Algebraic Proofs</h2>
+    <p>When simplifying expressions, each line of work represents a transformation that must be justified by an exact property.</p>
+
+    <div class="rule-box">
+      <h3>Example 1: Justifying <span class="formula">3(x + 4) + 2x = 5x + 12</span></h3>
+      <table class="proof-table">
+        <thead>
+          <tr>
+            <th>Algebraic Statement / Step</th>
+            <th>Mathematical Justification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="formula">3(x + 4) + 2x</span></td>
+            <td>Given Expression</td>
+          </tr>
+          <tr>
+            <td><span class="formula">(3x + 12) + 2x</span></td>
+            <td><strong>Distributive Property</strong></td>
+          </tr>
+          <tr>
+            <td><span class="formula">(12 + 3x) + 2x</span></td>
+            <td><strong>Commutative Property of Addition</strong></td>
+          </tr>
+          <tr>
+            <td><span class="formula">12 + (3x + 2x)</span></td>
+            <td><strong>Associative Property of Addition</strong></td>
+          </tr>
+          <tr>
+            <td><span class="formula">12 + (3 + 2)x</span></td>
+            <td><strong>Distributive Property</strong> (Factoring out x)</td>
+          </tr>
+          <tr>
+            <td><span class="formula">12 + 5x</span></td>
+            <td>Arithmetic Addition (<span class="formula">3 + 2 = 5</span>)</td>
+          </tr>
+          <tr>
+            <td><span class="formula">5x + 12</span></td>
+            <td><strong>Commutative Property of Addition</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box">
+      <h3>Example 2: Justifying <span class="formula">4x + (0 &middot; y) - 4x = 0</span></h3>
+      <table class="proof-table">
+        <thead>
+          <tr>
+            <th>Algebraic Statement / Step</th>
+            <th>Mathematical Justification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="formula">4x + (0 &middot; y) - 4x</span></td>
+            <td>Given Expression</td>
+          </tr>
+          <tr>
+            <td><span class="formula">4x + 0 - 4x</span></td>
+            <td><strong>Multiplicative Property of Zero</strong></td>
+          </tr>
+          <tr>
+            <td><span class="formula">4x - 4x</span></td>
+            <td><strong>Additive Identity Property</strong></td>
+          </tr>
+          <tr>
+            <td><span class="formula">0</span></td>
+            <td><strong>Additive Inverse Property</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4: Critical Diagnostic Distinctions -->
+  <section>
+    <h2>4. Critical Diagnostic Distinctions</h2>
+
+    <div class="warning-box">
+      <h3>⚠️ Commutative vs. Associative Property</h3>
+      <ul>
+        <li><strong>Commutative Property:</strong> The <em>order</em> of terms changes (<span class="formula">x + y &rarr; y + x</span>).</li>
+        <li><strong>Associative Property:</strong> The <em>grouping (parentheses)</em> changes while the sequential order remains identical (<span class="formula">(x + y) + z &rarr; x + (y + z)</span>).</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ Identity vs. Inverse Property</h3>
+      <ul>
+        <li><strong>Identity Property:</strong> Leaves the target term unchanged (<span class="formula">x + 0 = x</span> or <span class="formula">x &middot; 1 = x</span>).</li>
+        <li><strong>Inverse Property:</strong> Yields the identity element (<span class="formula">x + (-x) = 0</span> or <span class="formula">x &middot; 1/x = 1</span>).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Concept Discussion PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
