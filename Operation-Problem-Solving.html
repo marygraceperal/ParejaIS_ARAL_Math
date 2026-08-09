@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 3.4: Multi-Operation Problem Solving</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-bg: #eff6ff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --danger-bg: #fef2f2;
+      --danger-border: #ef4444;
+      --success-bg: #f0fdf4;
+      --success-border: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .discussion-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .topic-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .topic-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .topic-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin: 1.2rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      background-color: #f1f5f9;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+    }
+
+    .warning-box {
+      background-color: var(--danger-bg);
+      border-left: 4px solid var(--danger-border);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .tip-box {
+      background-color: var(--primary-bg);
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .proof-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .quiz-box {
+      background-color: var(--success-bg);
+      border-left: 4px solid var(--success-border);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .discussion-container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .discussion-container { padding: 1.25rem; }
+      header h1 { font-size: 1.6rem; }
+      .proof-table th, .proof-table td { padding: 0.5rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="discussion-container">
+  <header>
+    <h1>Topic 3.4: Multi-Operation Problem Solving</h1>
+    <p>Discussion Guide: Evaluating Complex Expressions with Signed Bases, Fractions, and Absolute Value</p>
+  </header>
+
+  <!-- SECTION 1: CORE OPERATIONAL RULES -->
+  <section class="topic-section">
+    <div class="topic-title">1. Order of Operations & Critical Component Rules</div>
+    <div class="topic-content">
+      <p>Evaluating multi-operation numerical expressions requires strict adherence to the Order of Operations (<strong>PEMDAS/GEMDAS</strong>) while correctly applying sign and grouping rules:</p>
+      
+      <ul>
+        <li><strong>Grouping Symbols (G):</strong> Treat absolute value bars <span class="formula">|...|</span> and main fraction bars as grouping symbols. Evaluate everything inside or on the top/bottom before proceeding outside.</li>
+        <li><strong>Absolute Value Rules:</strong> <span class="formula">|x| = x</span> and <span class="formula">|-x| = x</span>. Absolute value measures distance from zero (always non-negative). Note that a negative sign <em>outside</em> absolute value bars remains negative: <span class="formula">-| -5 | = -5</span>.</li>
+        <li><strong>Signed Bases with Exponents:</strong>
+          <ul>
+            <li><span class="formula">(-a)<sup>n</sup></span>: The base is negative. An even power yields a positive result, e.g., <span class="formula">(-3)<sup>2</sup> = 9</span>.</li>
+            <li><span class="formula">-a<sup>n</sup></span>: The base is positive; the negative sign is applied <em>after</em> exponentiation, e.g., <span class="formula">-3<sup>2</sup> = -9</span>.</li>
+          </ul>
+        </li>
+        <li><strong>Complex Fraction Bars:</strong> Evaluate the entire numerator and denominator separately before performing the final division.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 2: STEP-BY-STEP WORKED EXAMPLE -->
+  <section class="topic-section">
+    <div class="topic-title">2. Model Demonstration & Detailed Solution Path</div>
+    <div class="topic-content">
+      <p>Consider the complex numerical expression:</p>
+      <div style="text-align: center; margin: 1.2rem 0;">
+        <span class="formula" style="font-size: 1.1rem; padding: 0.5rem 1rem;">
+          \frac{| -4^2 + 7 | - (-3)^3}{\frac{1}{2} - \left(-\frac{3}{4}\right)}
+        </span>
+      </div>
+
+      <div class="tip-box">
+        <h3>Step-by-Step Evaluation Walkthrough</h3>
+        <table class="proof-table">
+          <thead>
+            <tr>
+              <th style="width: 10%;">Step</th>
+              <th style="width: 45%;">Expression State</th>
+              <th style="width: 45%;">Operation / Justification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Numerator: <span class="formula">| -16 + 7 | - (-27)</span></td>
+              <td>Evaluate exponent <span class="formula">-4<sup>2</sup> = -16</span> inside absolute value and evaluate signed power <span class="formula">(-3)<sup>3</sup> = -27</span>.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Numerator: <span class="formula">| -9 | + 27</span></td>
+              <td>Simplify inside absolute value: <span class="formula">-16 + 7 = -9</span>. Change subtracting a negative to adding positive: <span class="formula">- (-27) = + 27</span>.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Numerator: <span class="formula">9 + 27 = 36</span></td>
+              <td>Apply absolute value: <span class="formula">|-9| = 9</span>. Add to complete numerator.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Denominator: <span class="formula">\frac{1}{2} + \frac{3}{4} = \frac{2}{4} + \frac{3}{4} = \frac{5}{4}</span></td>
+              <td>Change double negative to positive, find common denominator (4), and add fractions.</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Final Division: <span class="formula">36 &divide; \frac{5}{4} = 36 &middot; \frac{4}{5}</span></td>
+              <td>Multiply numerator by the reciprocal of the denominator.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Final Result: <span class="formula">\frac{144}{5} = 28.8</span></td>
+              <td>Perform multiplication: <span class="formula">36 &middot; 4 = 144</span>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: COMMON MISCONCEPTIONS & PITFALLS -->
+  <section class="topic-section">
+    <div class="topic-title">3. Diagnostic Misconceptions & Classroom Pitfalls</div>
+    <div class="topic-content">
+      <div class="warning-box">
+        <h3>⚠️ Pitfall 1: Distributing Over Absolute Value Bars</h3>
+        <p><strong>Incorrect:</strong> <span class="formula">-2 | 3 - 8 | &rarr; |-6 + 16| = 10</span></p>
+        <p><strong>Correct:</strong> Absolute value acts as a strict grouping barrier. Evaluate inside first: <span class="formula">-2 | -5 | = -2(5) = -10</span>.</p>
+      </div>
+
+      <div class="warning-box">
+        <h3>⚠️ Pitfall 2: Negating the Base vs. Negating the Power</h3>
+        <p><strong>Incorrect:</strong> Treating <span class="formula">-5<sup>2</sup></span> as <span class="formula">(-5) &middot; (-5) = 25</span>.</p>
+        <p><strong>Correct:</strong> <span class="formula">-5<sup>2</sup> = -(5 &middot; 5) = -25</span>. Parentheses explicitly dictate if the negative sign belongs to the base.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FORMATIVE CHECK -->
+  <section class="topic-section">
+    <div class="topic-title">4. Formative Check & Discussion Wrap-Up</div>
+    <div class="topic-content">
+      <div class="quiz-box">
+        <h3>Quick Discussion Prompts:</h3>
+        <ol>
+          <li>
+            Evaluate: <span class="formula">|-12| - (-2)^2</span><br>
+            <span class="answer">Answer: 12 - 4 = 8</span>
+          </li>
+          <li>
+            Evaluate: <span class="formula">\frac{-3^2 + 5}{|-2|}</span><br>
+            <span class="answer">Answer: \frac{-9 + 5}{2} = \frac{-4}{2} = -2</span>
+          </li>
+          <li>
+            Why is the main fraction bar considered a grouping symbol in order of operations?<br>
+            <span class="answer">Answer: It separates the problem into an independent numerator expression and denominator expression that must both be simplified completely before carrying out division.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Print / Save Discussion Guide
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
