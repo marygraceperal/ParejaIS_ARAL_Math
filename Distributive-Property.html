@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: The Distributive Property</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .ilaw-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ilaw-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ilaw-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+    }
+
+    .area-model-box {
+      background: #ffffff;
+      border: 2px dashed var(--primary-light);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .area-table {
+      width: 100%;
+      max-width: 400px;
+      margin: 0.5rem auto;
+      border-collapse: collapse;
+    }
+
+    .area-table td, .area-table th {
+      border: 2px solid var(--primary);
+      padding: 0.75rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .area-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--success);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: The Distributive Property</h1>
+    <p>Topic 2.3: Expanding a(b + c) and a(b - c) Across Signed Integers & Area Model Visualization (ILAW Framework)</p>
+  </header>
+
+  <!-- I - ILLUMINATE & INTRODUCE -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">I – ILLUMINATE & INTRODUCE</div>
+    <div class="ilaw-content">
+      <h3>1. Learning Objectives</h3>
+      <div class="rule-box">
+        <ul>
+          <li><strong>Cognitive:</strong> Apply the Distributive Property to expand expressions of the form <span class="formula">a(b + c)</span> and <span class="formula">a(b - c)</span> involving positive and negative integers.</li>
+          <li><strong>Affective:</strong> Appreciate how geometric models bridge abstract algebraic rules to concrete physical representations.</li>
+          <li><strong>Psychomotor:</strong> Sketch and label grid area models to visually demonstrate expanded multiplication terms.</li>
+        </ul>
+      </div>
+
+      <h3>2. Initiating Hook</h3>
+      <p>Ask students: <em>"If you buy 6 packs of supplies containing 10 notebooks and 2 pens each, how do you find the total items? Do you calculate 6 &times; 12, or do you calculate (6 &times; 10) + (6 &times; 2)? Notice how both give 72 items!"</em> Introduce this as the core principle of distribution.</p>
+    </div>
+  </section>
+
+  <!-- L - LEARN -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">L – LEARN</div>
+    <div class="ilaw-content">
+      <h3>1. Core Algebraic Definitions</h3>
+      
+      <div class="rule-box">
+        <ul>
+          <li>
+            <strong>Distributive Property of Multiplication over Addition:</strong>
+            <br>
+            <span class="formula">a(b + c) = ab + ac</span>
+          </li>
+          <li style="margin-top: 0.75rem;">
+            <strong>Distributive Property of Multiplication over Subtraction:</strong>
+            <br>
+            <span class="formula">a(b - c) = ab - ac</span>
+          </li>
+        </ul>
+      </div>
+
+      <h3>2. Area Model Representation</h3>
+      <p>Multiplication can be visualized as finding the area of a rectangle. When a length is split into two parts, the total area equals the sum of the sub-areas.</p>
+
+      <div class="area-model-box">
+        <p><strong>Visualizing <span class="formula">4(10 + 3) = 4(10) + 4(3)</span></strong></p>
+        <table class="area-table">
+          <tr>
+            <th style="border: none; background: transparent;"></th>
+            <th>10</th>
+            <th>+3</th>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td style="background-color: #eff6ff;">Area = 40</td>
+            <td style="background-color: #f0fdf4;">Area = 12</td>
+          </tr>
+        </table>
+        <p style="font-size: 0.95rem; margin-top: 0.5rem;">Total Area = <span class="formula">40 + 12 = 52</span></p>
+      </div>
+
+      <div class="warning-box">
+        <p><strong>⚠️ Crucial Pitfall Warning: Distributing Negative Signs</strong></p>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          When the factor outside the parentheses is negative, it must be distributed to <strong>EVERY</strong> term inside, remembering that <em>a negative times a negative produces a positive</em>:
+          <br>
+          <span class="formula">-3(x - 5) = -3(x) - (-3)(5) = -3x + 15</span> (NOT <span class="formula">-3x - 15</span>!)
+        </p>
+      </div>
+
+      <h3>3. Guided Step-by-Step Examples</h3>
+
+      <div class="step-box">
+        <p><strong>Example 1: Expanding with Positive Factors</strong></p>
+        <p>Expand: <span class="formula">5(2x - 7)</span></p>
+        <ol>
+          <li>Distribute 5 to the first term: <span class="formula">5 &times; 2x = 10x</span></li>
+          <li>Distribute 5 to the second term: <span class="formula">5 &times; (-7) = -35</span></li>
+          <li>Combine terms: <span class="formula">10x - 35</span></li>
+        </ol>
+        <p><strong>Result:</strong> <span class="formula">10x - 35</span></p>
+      </div>
+
+      <div class="step-box">
+        <p><strong>Example 2: Expanding with Negative Factors</strong></p>
+        <p>Expand: <span class="formula">-4(-3a + 6)</span></p>
+        <ol>
+          <li>Distribute -4 to first term: <span class="formula">(-4) &times; (-3a) = +12a</span></li>
+          <li>Distribute -4 to second term: <span class="formula">(-4) &times; (+6) = -24</span></li>
+          <li>Combine terms: <span class="formula">12a - 24</span></li>
+        </ol>
+        <p><strong>Result:</strong> <span class="formula">12a - 24</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A - APPLY -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">A – APPLY</div>
+    <div class="ilaw-content">
+      <h3>Localized Real-World Applications</h3>
+
+      <div class="step-box">
+        <p><strong>Application 1: Fast Mental Calculation (Retail Pricing)</strong></p>
+        <p>A bakery sells 7 specialty cake boxes at <span class="formula">&#8369;198</span> each.</p>
+        <p><strong>Mental Shortcut using Distribution:</strong> Think of <span class="formula">&#8369;198</span> as <span class="formula">(200 - 2)</span>.</p>
+        <p><span class="formula">7 &times; (200 - 2) = (7 &times; 200) - (7 &times; 2) = 1,400 - 14 = &#8369;1,386</span></p>
+      </div>
+
+      <div class="step-box">
+        <p><strong>Application 2: Multi-Item Budgeting</strong></p>
+        <p>An office buys 5 employee care packages. Each package contains an item costing <span class="formula">&#8369;x</span> minus a promotional discount of <span class="formula">&#8369;15</span>.</p>
+        <p><strong>Total Cost Expression:</strong> <span class="formula">5(x - 15) = 5x - 75</span> pesos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- W - WIND-UP -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">W – WIND-UP</div>
+    <div class="ilaw-content">
+      <h3>1. Formative Self-Check Quiz</h3>
+      <div class="quiz-box">
+        <ol>
+          <li>
+            <strong>Expand:</strong> <span class="formula">-6(2m - 5)</span><br>
+            <span class="answer">Answer: -12m + 30</span>
+          </li>
+          <li>
+            <strong>Calculate Mentally:</strong> <span class="formula">8 &times; 99</span> using distribution.<br>
+            <span class="answer">Answer: 8(100 - 1) = 800 - 8 = 792</span>
+          </li>
+          <li>
+            <strong>Area Model Check:</strong> A rectangle has a height of 3 and a length split into <span class="formula">x</span> and <span class="formula">4</span>. What is its expanded area?<br>
+            <span class="answer">Answer: 3x + 12</span>
+          </li>
+        </ol>
+      </div>
+
+      <h3>2. Key Takeaways Summary</h3>
+      <ul>
+        <li><strong>Distribution Means Sharing:</strong> Multiply the outer term by <em>every</em> term inside the parentheses.</li>
+        <li><strong>Sign Rules Apply:</strong> Pay special attention when distributing negative numbers (<span class="formula">(-) &times; (-) = (+)</span>).</li>
+        <li><strong>Area Models:</strong> Provide a visual layout to verify that <span class="formula">a(b + c)</span> equals the sum of individual sub-areas (<span class="formula">ab + ac</span>).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Lesson Plan PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
