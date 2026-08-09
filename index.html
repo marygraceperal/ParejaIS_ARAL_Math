@@ -521,7 +521,7 @@ input[type="radio"].tab-toggle {
   </div>
 </section>
 
-<!-- === SECTION 2 (CONTINUED): TERM 2 HTML CONTENT === -->
+!-- === SECTION 2 (CONTINUED): TERM 2 HTML CONTENT === -->
 <!-- TERM 2 CONTAINER -->
 <section id="content-term2" class="term-section">
   <div class="term-header">
@@ -818,5 +818,219 @@ input[type="radio"].tab-toggle {
     </div>
   </div>
 </section>
+<<!-- === SECTION 3: MODAL HTML CONTAINER === -->
+<div id="discussionModal" class="modal-overlay" onclick="closeDiscussion(event)">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeDiscussionForce()">&times;</button>
+    <div id="modalContent" class="modal-body"></div>
+  </div>
+</div>
+
+<!-- === SECTION 4: JAVASCRIPT CONTROLLER === -->
+<script>
+  const discussionData = {
+    // --- TERM 1 ---
+    '1.1': {
+      title: '1.1 Understanding Signed Numbers',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Signed numbers represent directional values relative to a reference point (zero) on a number line. Positive numbers indicate values greater than zero, while negative numbers represent values less than zero.</p>
+        <h4>Philippine Context Example</h4>
+        <p>A sari-sari store owner earns ₱500 (+500) in profit on Monday but pays ₱200 (-200) for supplier delivery fees on Tuesday. The net financial balance change is +₱300.</p>
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li>Zero ($0$) is neither positive nor negative.</li>
+          <li>Numbers further right on the number line always have a greater value.</li>
+        </ul>
+      `
+    },
+    '1.2': {
+      title: '1.2 Addition of Integers',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>When adding integers with the same sign, add their absolute values and keep the common sign. When adding integers with different signs, subtract the smaller absolute value from the larger absolute value and copy the sign of the larger absolute value.</p>
+        <h4>Philippine Context Example</h4>
+        <p>If a student borrows ₱50 ($-50$) on Wednesday and another ₱30 ($-30$) on Thursday, the total balance owed is represented as $(-50) + (-30) = -80$ (₱80 total debt).</p>
+      `
+    },
+    '1.3': {
+      title: '1.3 Subtraction of Integers',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Subtracting an integer is equivalent to adding its additive inverse: $a - b = a + (-b)$. To subtract, change the sign of the subtrahend and follow the addition rules.</p>
+        <h4>Worked Example</h4>
+        <p>Calculate: $15 - (-8) = 15 + 8 = 23$.</p>
+      `
+    },
+    '2.1': {
+      title: '2.1 Commutative & Associative Properties',
+      content: `
+        <h4>Core Discussion</h4>
+        <p><strong>Commutative Property:</strong> Changing the order of terms does not change the result ($a + b = b + a$ and $a \cdot b = b \cdot a$).</p>
+        <p><strong>Associative Property:</strong> Changing the grouping of terms does not change the result ($(a + b) + c = a + (b + c)$).</p>
+      `
+    },
+    '2.2': {
+      title: '2.2 Distributive Property',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>The Distributive Property allows multiplying a single term by two or more terms inside a set of parentheses: $a(b + c) = ab + ac$.</p>
+        <h4>Mental Math Example</h4>
+        <p>Multiply $6 \times 98$ mentally: $6 \times (100 - 2) = (6 \times 100) - (6 \times 2) = 600 - 12 = 588$.</p>
+      `
+    },
+    '3.1': {
+      title: '3.1 Order of Operations (GEMDAS)',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Evaluate mathematical expressions in strict sequence:</p>
+        <ul>
+          <li><strong>G</strong>rouping symbols (parentheses, brackets, braces)</li>
+          <li><strong>E</strong>xponents</li>
+          <li><strong>M</strong>ultiplication & <strong>D</strong>ivision (left-to-right)</li>
+          <li><strong>A</strong>ddition & <strong>S</strong>ubtraction (left-to-right)</li>
+        </ul>
+      `
+    },
+
+    // --- TERM 2 ---
+    '4.1': {
+      title: '4.1 Variables, Constants & Coefficients',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>An algebraic expression is built from variables, constants, and operators. In the expression $5x + 7$, $5$ is the numerical coefficient, $x$ is the variable, and $7$ is the constant.</p>
+      `
+    },
+    '4.2': {
+      title: '4.2 Translating Words to Algebra',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Translating English phrases into mathematical symbols requires identifying key operational keywords (e.g., "increased by" $\rightarrow +$, "product of" $\rightarrow \times$, "less than" $\rightarrow -$).</p>
+        <h4>Example</h4>
+        <p>"Five less than twice a number $n$" translates to $2n - 5$.</p>
+      `
+    },
+    '5.1': {
+      title: '5.1 One-Step Linear Equations',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Isolate the variable by applying the inverse operation to both sides of the equality using the Addition or Multiplication Property of Equality.</p>
+        <h4>Example</h4>
+        <p>Solve $x - 12 = 35 \implies x = 35 + 12 = 47$.</p>
+      `
+    },
+    '5.2': {
+      title: '5.2 Two-Step Equations & Financial Applications',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Solve two-step equations of the form $ax + b = c$ by undoing addition/subtraction first, then multiplication/division.</p>
+        <h4>Philippine Context Example</h4>
+        <p>A jeepney driver earns ₱800 fixed daily wages plus ₱15 per passenger ($p$). If total income for the day is ₱1,550, solve $15p + 800 = 1550 \implies 15p = 750 \implies p = 50$ passengers.</p>
+      `
+    },
+    '6.1': {
+      title: '6.1 Inequality Symbols & Number Line Graphs',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Inequalities use $<$, $>$, $\le$, and $\ge$. When graphing, an open circle is used for $<$ or $>$, while a closed circle is used for $\le$ or $\ge$.</p>
+        <p><em>Important Rule:</em> Reversing or multiplying/dividing an inequality by a negative number flips the inequality symbol.</p>
+      `
+    },
+    '7.1': {
+      title: '7.1 Ratios & Direct Proportions',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>A ratio compares two quantities. A proportion states that two ratios are equal: $\frac{a}{b} = \frac{c}{d}$. In any valid proportion, cross-products are equal ($ad = bc$).</p>
+      `
+    },
+
+    // --- TERM 3 ---
+    '8.1': {
+      title: '8.1 Points, Lines & Planes',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Points represent location without size. Lines extend infinitely in two directions. Planes are flat, two-dimensional surfaces extending infinitely.</p>
+      `
+    },
+    '8.2': {
+      title: '8.2 Angle Relationships',
+      content: `
+        <h4>Core Discussion</h4>
+        <ul>
+          <li><strong>Complementary Angles:</strong> Two angles whose sum is $90^\circ$.</li>
+          <li><strong>Supplementary Angles:</strong> Two angles whose sum is $180^\circ$.</li>
+          <li><strong>Vertical Angles:</strong> Opposite angles formed by intersecting lines (always equal in measure).</li>
+        </ul>
+      `
+    },
+    '9.1': {
+      title: '9.1 Classification of Triangles & Quadrilaterals',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Triangles are classified by sides (equilateral, isosceles, scalene) or by interior angles (acute, right, obtuse). Quadrilaterals include parallelograms, rectangles, rhombuses, squares, and trapezoids.</p>
+      `
+    },
+    '10.1': {
+      title: '10.1 Perimeter & Area Formulas',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Perimeter measures total outer boundary length, while Area measures enclosed surface square units.</p>
+        <ul>
+          <li>Rectangle Area: $A = l \times w$</li>
+          <li>Triangle Area: $A = \frac{1}{2} b h$</li>
+          <li>Circle Circumference: $C = 2\pi r$, Circle Area: $A = \pi r^2$</li>
+        </ul>
+      `
+    },
+    '11.1': {
+      title: '11.1 Prisms & Cylinders',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Volume of a 3D solid equals base area times height ($V = B \times h$).</p>
+        <ul>
+          <li>Rectangular Prism Volume: $V = l \cdot w \cdot h$</li>
+          <li>Cylinder Volume: $V = \pi r^2 h$</li>
+        </ul>
+      `
+    },
+    '12.1': {
+      title: '12.1 Mean, Median & Mode',
+      content: `
+        <h4>Core Discussion</h4>
+        <ul>
+          <li><strong>Mean:</strong> The arithmetic average ($\frac{\sum x}{n}$).</li>
+          <li><strong>Median:</strong> The middle value when data is ordered sequentially.</li>
+          <li><strong>Mode:</strong> The most frequently occurring score in a dataset.</li>
+        </ul>
+      `
+    },
+    '13.1': {
+      title: '13.1 Theoretical vs. Experimental Probability',
+      content: `
+        <h4>Core Discussion</h4>
+        <p>Theoretical Probability is calculated as $\frac{\text{Number of Favorable Outcomes}}{\text{Total Possible Outcomes}}$. Experimental Probability is based on actual recorded trial data.</p>
+      `
+    }
+  };
+
+  function openDiscussion(topicCode) {
+    const data = discussionData[topicCode];
+    if (data) {
+      document.getElementById('modalContent').innerHTML = `
+        <div class="modal-title">${data.title}</div>
+        ${data.content}
+      `;
+      document.getElementById('discussionModal').classList.add('active');
+    }
+  }
+
+  function closeDiscussion(event) {
+    if (event.target.id === 'discussionModal') closeDiscussionForce();
+  }
+
+  function closeDiscussionForce() {
+    document.getElementById('discussionModal').classList.remove('active');
+  }
+</script>
 </body>
 </html>
