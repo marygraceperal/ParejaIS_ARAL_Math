@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Activity Sheets - Topic 3.4 Multi-Operation Problem Solving</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-bg: #eff6ff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --accent: #0d9488;
+      --warning-bg: #fffbebf5;
+      --warning-border: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .sheet-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .sheet-header {
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sheet-header h1 {
+      color: var(--primary);
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sheet-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .student-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background-color: #f8fafc;
+    }
+
+    .info-field {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .info-line {
+      display: inline-block;
+      border-bottom: 1px solid var(--text-dark);
+      width: 65%;
+      margin-left: 0.25rem;
+    }
+
+    .activity-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .activity-title-bar {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 0.6rem 1.25rem;
+      font-weight: bold;
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .activity-title-bar .points {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .activity-body {
+      padding: 1.25rem;
+    }
+
+    .instructions {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      background-color: #f1f5f9;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem;
+      text-align: left;
+      font-size: 0.95rem;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+    }
+
+    .answer-space {
+      min-height: 80px;
+      background-color: #fafafa;
+      border: 1px dashed #cbd5e1;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .problem-box {
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .problem-box header {
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .sheet-container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+      .answer-space { border: 1px solid var(--border-color); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sheet-container">
+  <header class="sheet-header">
+    <h1>Grade 11 General Mathematics — Learning Activity Sheets</h1>
+    <p>Topic 3.4: Multi-Operation Problem Solving (Signed Bases, Fractions &amp; Absolute Value)</p>
+  </header>
+
+  <div class="student-info-grid">
+    <div>
+      <div class="info-field" style="margin-bottom: 0.5rem;">Student Name: <span class="info-line"></span></div>
+      <div class="info-field">Grade &amp; Section: <span class="info-line"></span></div>
+    </div>
+    <div>
+      <div class="info-field" style="margin-bottom: 0.5rem;">Date: <span class="info-line" style="width: 50%;"></span></div>
+      <div class="info-field">Score: <span class="info-line" style="width: 50%;"></span></div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1 -->
+  <div class="activity-card">
+    <div class="activity-title-bar">
+      <span>Activity 1: Error Audit Challenge (Spot the Mistake)</span>
+      <span class="points">10 Points</span>
+    </div>
+    <div class="activity-body">
+      <p class="instructions">Analyze the incorrect evaluation below. Identify the specific step where the mistake occurred, explain the mathematical rule violated, and provide the correct solution.</p>
+
+      <div class="problem-box">
+        <p><strong>Given Expression:</strong> <span class="formula">E = -5<sup>2</sup> + |-18 + 6| &divide; (-3)</span></p>
+        <p style="margin-top: 0.5rem;"><strong>Student's Incorrect Work:</strong></p>
+        <p>Step 1: <span class="formula">25 + |-12| &divide; (-3)</span></p>
+        <p>Step 2: <span class="formula">25 + 12 &divide; (-3)</span></p>
+        <p>Step 3: <span class="formula">37 &divide; (-3) = -37/3</span></p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 50%;">Error Analysis &amp; Rule Violated</th>
+            <th style="width: 50%;">Correct Step-by-Step Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="answer-space">
+                <p style="color: #94a3b8; font-size: 0.85rem;">(Write which step was wrong and why...)</p>
+              </div>
+            </td>
+            <td>
+              <div class="answer-space">
+                <p style="color: #94a3b8; font-size: 0.85rem;">(Provide complete correct steps...)</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2 -->
+  <div class="activity-card">
+    <div class="activity-title-bar">
+      <span>Activity 2: Guided Multi-Step Evaluation</span>
+      <span class="points">15 Points</span>
+    </div>
+    <div class="activity-body">
+      <p class="instructions">Evaluate the given complex expression by completing the step-by-step auditing table below. Show all fraction and sign simplifications explicitly.</p>
+
+      <div class="problem-box">
+        <p><strong>Target Expression:</strong></p>
+        <p style="text-align: center; font-size: 1.1rem; margin: 0.5rem 0;">
+          <span class="formula">E = [ |-3<sup>2</sup> + 5| - (-2)<sup>3</sup> ] / [ 3/4 - (-1/2) ]</span>
+        </p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%;">Phase</th>
+            <th style="width: 50%;">Simplification Work</th>
+            <th style="width: 35%;">GEMDAS Rule Applied</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Step 1</strong></td>
+            <td>Evaluate Exponent <span class="formula">-3<sup>2</sup></span> and Power <span class="formula">(-2)<sup>3</sup></span>:</td>
+            <td>Signed Base vs. Negated Exponent Rule</td>
+          </tr>
+          <tr>
+            <td><strong>Step 2</strong></td>
+            <td>Simplify Numerator Absolute Value <span class="formula">|...|</span>:</td>
+            <td>Grouping Symbol Protocol</td>
+          </tr>
+          <tr>
+            <td><strong>Step 3</strong></td>
+            <td>Simplify Denominator Fractions:</td>
+            <td>Common Denominator &amp; Sign Rule</td>
+          </tr>
+          <tr>
+            <td><strong>Step 4</strong></td>
+            <td>Final Division (Numerator &divide; Denominator):</td>
+            <td>Fraction Division (Reciprocal Rule)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3 -->
+  <div class="activity-card">
+    <div class="activity-title-bar">
+      <span>Activity 3: Independent Mastery &amp; Application</span>
+      <span class="points">15 Points</span>
+    </div>
+    <div class="activity-body">
+      <p class="instructions">Solve each problem completely. Box your final answer in simplified fraction or integer form.</p>
+
+      <div class="problem-box">
+        <header>Problem 1 (5 Points)</header>
+        <p>Evaluate: <span class="formula">|-15 + 3| &times; (-2)<sup>2</sup> - (-4<sup>2</sup>)</span></p>
+        <div class="answer-space" style="min-height: 100px;"></div>
+      </div>
+
+      <div class="problem-box">
+        <header>Problem 2 (5 Points)</header>
+        <p>Evaluate: <span class="formula">[ -2<sup>4</sup> - |-10| ] / [ (-1/3) - 1/6 ]</span></p>
+        <div class="answer-space" style="min-height: 100px;"></div>
+      </div>
+
+      <div class="problem-box">
+        <header>Problem 3: Applied Context (5 Points)</header>
+        <p>An account ledger records a initial balance of <span class="formula">-₱450</span>. Over three trading cycles, the account value scales according to <span class="formula">B = | -2<sup>3</sup> &times; 50 | - (-150)</span>. Calculate the final balance <span class="formula">B</span> and state whether the account is in net profit or debt.</p>
+        <div class="answer-space" style="min-height: 100px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">Print / Save Student Activity Sheet</button>
+  </div>
+</div>
+
+</body>
+</html>
