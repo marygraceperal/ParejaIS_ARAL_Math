@@ -190,6 +190,37 @@
             margin-top: 0;
         }
 
+        /* Save / Print Button Section */
+        .print-container {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .print-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .print-btn:active {
+            transform: scale(0.98);
+        }
+
         @media print {
             body {
                 background: none;
@@ -199,8 +230,8 @@
                 box-shadow: none;
                 border: none;
             }
-            .passcode-wrapper {
-                display: none;
+            .passcode-wrapper, .print-container {
+                display: none !important;
             }
         }
     </style>
@@ -323,6 +354,18 @@
         <p><strong>Part 3A:</strong> 1) &lt;, 2) &lt;, 3) &gt;, 4) &gt;</p>
         <p><strong>Part 3B:</strong> -850, -500, -250, 0, +12, +1,500</p>
         <p><strong>Part 4 Key Concept:</strong> Wednesday had the <em>greater loss</em> (magnitude/absolute value of 850), but Wednesday's financial state is the <em>smaller integer</em> (-850 &lt; -500) because it is further to the left on the number line.</p>
+    </div>
+
+    <!-- Save / Print PDF Section -->
+    <div class="print-container">
+        <button class="print-btn" onclick="window.print()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Save / Print PDF
+        </button>
     </div>
 </div>
 
