@@ -42,7 +42,7 @@
     color: white;
     padding: 2.5rem 2rem;
     border-radius: 12px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     box-shadow: var(--shadow);
   }
 
@@ -56,6 +56,31 @@
   header p {
     font-size: 1.05rem;
     opacity: 0.9;
+  }
+
+  /* Author & AI Declaration Box */
+  .meta-declaration {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-light);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+  }
+
+  .meta-declaration .author-line {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+  }
+
+  .meta-declaration .ai-notice {
+    color: var(--text-muted);
+    font-style: italic;
   }
 
   /* Main Term CSS Tabs */
@@ -327,6 +352,12 @@
     <h1>ARAL Math Program - Key Stage 3 Syllabus</h1>
     <p>DepEd Academic Recovery and Accessible Learning (RA 12028) &bull; 3-Term Subtopic Framework</p>
   </header>
+
+  <!-- AUTHOR & AI DECLARATION -->
+  <div class="meta-declaration">
+    <div class="author-line">Author: Mary Grace Peral</div>
+    <div class="ai-notice">🤖 <strong>AI Declaration:</strong> This syllabus layout and code structure were organized with the assistance of Artificial Intelligence (Gemini AI) to enhance user interface design and interactive navigation.</div>
+  </div>
 
   <!-- MAIN TERM TABS CONTAINER -->
   <div class="main-tab-wrapper">
