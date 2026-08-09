@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept Discussion: Absolute Value Concepts</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+    }
+
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1rem;
+      text-align: left;
+    }
+
+    .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .proof-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .number-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--primary-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .proof-table { font-size: 0.85rem; }
+      .proof-table th, .proof-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Concept Discussion: Absolute Value Concepts</h1>
+    <p>Topic 3.1: Distance on a Number Line, Evaluating |x|, and Distance Between Points</p>
+  </header>
+
+  <!-- Section 1: Definition as Distance -->
+  <section>
+    <h2>1. Absolute Value as Distance from Zero</h2>
+    <p>The <strong>absolute value</strong> of a real number <span class="formula">x</span>, denoted by <span class="formula">|x|</span>, represents its geometric distance from zero on a real number line.</p>
+    <p>Because distance measures spatial separation, absolute value is <em>always non-negative</em> (<span class="formula">|x| &ge; 0</span>).</p>
+
+    <div class="number-line">
+      <span>&larr; -5</span>
+      <span>| -5 | = 5 units</span>
+      <span>0 (Origin)</span>
+      <span>| +5 | = 5 units</span>
+      <span>+5 &rarr;</span>
+    </div>
+
+    <div class="rule-box">
+      <h3>Formal Piecewise Definition</h3>
+      <p>For any real number <span class="formula">x</span>:</p>
+      <p><span class="formula">|x| = x</span> if <span class="formula">x &ge; 0</span></p>
+      <p><span class="formula">|x| = -x</span> if <span class="formula">x &lt; 0</span></p>
+      <p><em>Note:</em> When <span class="formula">x &lt; 0</span>, the expression <span class="formula">-x</span> negates a negative number, resulting in a positive value (e.g., if <span class="formula">x = -4</span>, then <span class="formula">-x = -(-4) = 4</span>).</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Evaluating Expressions -->
+  <section>
+    <h2>2. Evaluating Absolute Value Expressions</h2>
+    <p>Treat absolute value bars <span class="formula">| |</span> as grouping symbols. Evaluate all operations inside the bars first before applying the absolute value non-negativity property.</p>
+
+    <table class="proof-table">
+      <thead>
+        <tr>
+          <th>Expression</th>
+          <th>Inner Evaluation</th>
+          <th>Absolute Value Applied</th>
+          <th>Final Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="formula">| -12 |</span></td>
+          <td><span class="formula">-12</span></td>
+          <td><span class="formula">-(-12)</span></td>
+          <td><strong>12</strong></td>
+        </tr>
+        <tr>
+          <td><span class="formula">| 7 - 15 |</span></td>
+          <td><span class="formula">-8</span></td>
+          <td><span class="formula">-(-8)</span></td>
+          <td><strong>8</strong></td>
+        </tr>
+        <tr>
+          <td><span class="formula">-| -9 |</span></td>
+          <td><span class="formula">-9</span></td>
+          <td><span class="formula">-(9)</span></td>
+          <td><strong>-9</strong></td>
+        </tr>
+        <tr>
+          <td><span class="formula">| -3 | + | -5 |</span></td>
+          <td><span class="formula">-3</span> and <span class="formula">-5</span></td>
+          <td><span class="formula">3 + 5</span></td>
+          <td><strong>8</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 3: Distance Between Two Points -->
+  <section>
+    <h2>3. Distance Between Two Points on a Number Line</h2>
+    <p>The distance <span class="formula">d</span> between two points with coordinates <span class="formula">a</span> and <span class="formula">b</span> on a number line is given by the formula:</p>
+    
+    <div class="rule-box">
+      <p style="text-align: center; font-size: 1.1rem;"><span class="formula">d(a, b) = |a - b| = |b - a|</span></p>
+      <p>Because <span class="formula">|a - b| = |b - a|</span>, the order in which you subtract coordinates does not change the physical distance.</p>
+    </div>
+
+    <div class="rule-box">
+      <h3>Example: Find distance between <span class="formula">a = -7</span> and <span class="formula">b = 5</span></h3>
+      <p><strong>Method 1:</strong> <span class="formula">|a - b| = | -7 - 5 | = | -12 | = 12 units</span></p>
+      <p><strong>Method 2:</strong> <span class="formula">|b - a| = | 5 - (-7) | = | 5 + 7 | = | 12 | = 12 units</span></p>
+    </div>
+  </section>
+
+  <!-- Section 4: Critical Misconceptions -->
+  <section>
+    <h2>4. Diagnostic Misconception Alerts</h2>
+
+    <div class="warning-box">
+      <h3>⚠️ Misconception 1: "Absolute Value Just Means Change the Sign"</h3>
+      <p>Absolute value does not mean "flip the sign." It forces a distance to be non-negative. Positive values stay positive (<span class="formula">|6| = 6</span>); only negative values flip to positive (<span class="formula">|-6| = 6</span>).</p>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ Misconception 2: Negation Outside the Bars</h3>
+      <p>Absolute value bars cannot make an outside negative sign positive. In <span class="formula">-| -4 |</span>, the inner part evaluates to <span class="formula">|-4| = 4</span>, then the outer negative sign applies, yielding <span class="formula">-4</span>.</p>
+    </div>
+  </section>
+
+  <!-- Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Concept Discussion PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
