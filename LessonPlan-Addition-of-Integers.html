@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson Plan: Addition of Integers</title>
+  <title>Lesson Plan: Addition of Integers (ILAW Format)</title>
   <style>
     :root {
       --primary: #1e3a8a;
@@ -15,8 +15,6 @@
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
       --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --pos-tile: #22c55e;
-      --neg-tile: #ef4444;
     }
 
     * {
@@ -60,16 +58,34 @@
       font-size: 1.05rem;
     }
 
-    section {
+    .ilaw-section {
       margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
     }
 
-    h2 {
+    .ilaw-title {
+      background-color: var(--primary-bg);
       color: var(--primary);
       font-size: 1.35rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--primary-bg);
-      padding-bottom: 0.3rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ilaw-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
     }
 
     p {
@@ -97,15 +113,15 @@
       background: #f1f5f9;
       padding: 1.25rem;
       border-radius: 8px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .quiz-box {
       background-color: #f1f5f9;
       border-left: 4px solid #10b981;
-      padding: 1.5rem;
+      padding: 1.25rem;
       border-radius: 0 8px 8px 0;
-      margin-top: 1.5rem;
+      margin: 1rem 0;
     }
 
     .answer {
@@ -115,7 +131,7 @@
 
     .print-btn-container {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       padding-top: 1.5rem;
       border-top: 2px solid var(--border-color);
     }
@@ -124,12 +140,15 @@
       background-color: var(--primary);
       color: white;
       border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
       font-weight: 600;
       border-radius: 8px;
       cursor: pointer;
       box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       transition: background-color 0.2s ease, transform 0.1s ease;
     }
 
@@ -146,7 +165,7 @@
       .container {
         border: none;
         box-shadow: none;
-        padding: 1rem;
+        padding: 0;
         max-width: 100%;
       }
       .print-btn-container {
@@ -165,100 +184,118 @@
 <div class="container">
   <header>
     <h1>Lesson Plan: Addition of Integers</h1>
-    <p>Topic 1.2: Visualizing with Algebra Tiles and Number Lines, Combining Same-Sign Integers, and Applying Rules for Different Signs.</p>
+    <p>Topic 1.2: Visualizing with Algebra Tiles and Number Lines, Combining Same-Sign Integers, and Applying Rules for Different Signs (ILAW Framework)</p>
   </header>
 
-  <!-- Section 1: Objectives -->
-  <section>
-    <h2>1. Learning Objectives</h2>
-    <div class="rule-box">
+  <!-- I - ILLUMINATE & INTRODUCE -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">I – ILLUMINATE & INTRODUCE</div>
+    <div class="ilaw-content">
+      <h3>1. Learning Objectives</h3>
+      <div class="rule-box">
+        <ul>
+          <li><strong>Cognitive:</strong> Illustrate and calculate the sum of signed integers using algebra tiles, number lines, and mathematical rules.</li>
+          <li><strong>Affective:</strong> Appreciate the precision and logic of signed numbers in modeling real-world economic and environmental quantities.</li>
+          <li><strong>Psychomotor:</strong> Construct visual models (number lines and tile groupings) to correctly demonstrate integer addition steps.</li>
+        </ul>
+      </div>
+
+      <h3>2. Initiating Hook</h3>
+      <p>Introduce the concept of financial gain (deposits/sales) and loss (debts/credits). Ask students: <em>"If you owe a store owner money and then earn cash, how do you determine your actual remaining balance?"</em></p>
+    </div>
+  </section>
+
+  <!-- L - LEARN -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">L – LEARN</div>
+    <div class="ilaw-content">
+      <h3>1. Visualizing Integer Addition</h3>
+      <div class="step-box">
+        <p><strong>A. Algebra Tiles & Zero Pairs:</strong> Positive counters (+) represent positive values, while negative counters (−) represent negative values. When a positive counter is paired with a negative counter, they form a <em>zero pair</em> (canceling each other out to equal zero).</p>
+        <p><strong>B. Number Lines:</strong> Start at the first addend on the number line. Move to the right if the second addend is positive, or move to the left if the second addend is negative.</p>
+      </div>
+
+      <h3>2. Core Rule 1: Adding Same-Sign Integers</h3>
+      <div class="rule-box">
+        <strong>Rule:</strong> Add their absolute values (disregarding the signs), and <strong>keep the common sign</strong> for the result.
+      </div>
+
+      <div class="step-box">
+        <p><strong>Example 1 (Negative + Negative):</strong> <code style="font-size: 1.1rem;">(-7) + (-4) = ?</code></p>
+        <ol>
+          <li>Find absolute values: <code style="font-size: 1rem;">|-7| = 7</code> and <code style="font-size: 1rem;">|-4| = 4</code>.</li>
+          <li>Add values: <code style="font-size: 1rem;">7 + 4 = 11</code>.</li>
+          <li>Keep the shared negative sign: <code style="font-size: 1rem;">-11</code>.</li>
+        </ol>
+        <p><strong>Result:</strong> <code style="font-size: 1.1rem;">(-7) + (-4) = -11</code></p>
+      </div>
+
+      <h3>3. Core Rule 2: Adding Different-Sign Integers</h3>
+      <div class="rule-box">
+        <strong>Rule:</strong> <strong>Subtract</strong> the smaller absolute value from the larger absolute value, and <strong>copy the sign of the number with the larger absolute value</strong>.
+      </div>
+
+      <div class="step-box">
+        <p><strong>Example 2 (Different Signs):</strong> <code style="font-size: 1.1rem;">(-12) + 5 = ?</code></p>
+        <ol>
+          <li>Find absolute values: <code style="font-size: 1rem;">|-12| = 12</code> and <code style="font-size: 1rem;">|5| = 5</code>.</li>
+          <li>Subtract smaller from larger: <code style="font-size: 1rem;">12 - 5 = 7</code>.</li>
+          <li>Identify the sign of the larger absolute value: <code style="font-size: 1rem;">-12</code> has a larger absolute value than <code style="font-size: 1rem;">5</code>, so keep the negative sign.</li>
+        </ol>
+        <p><strong>Result:</strong> <code style="font-size: 1.1rem;">(-12) + 5 = -7</code></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A - APPLY -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">A – APPLY</div>
+    <div class="ilaw-content">
+      <h3>Localized Real-World Application</h3>
+      <div class="step-box">
+        <p><strong>Sari-Sari Store Cash Flow:</strong> A local micro-enterprise owner starts the morning with a deficit or credit balance. Suppose a ledger notes an initial credit adjustment of <code style="font-size: 1.05rem;">-&#8369;250</code> due to a supplier advance, followed by a profitable cash injection of <code style="font-size: 1.05rem;">+&#8369;400</code>.</p>
+        <p><strong>Expression:</strong> <code style="font-size: 1.05rem;">(-250) + 400</code></p>
+        <p><strong>Application:</strong> Since the signs differ, subtract <code style="font-size: 1.05rem;">400 - 250 = 150</code> and copy the sign of the larger absolute value (<code style="font-size: 1.05rem;">+400</code> is larger, so it is positive). The resulting net balance is <strong>+&#8369;150</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- W - WIND-UP -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">W – WIND-UP</div>
+    <div class="ilaw-content">
+      <h3>1. Formative Self-Check Quiz</h3>
+      <div class="quiz-box">
+        <ol>
+          <li>
+            <strong>Evaluate:</strong> <code style="font-size: 1rem;">(-15) + (-8)</code><br>
+            <span class="answer">Answer: -23 (Same sign rule: add 15 + 8 and keep the negative sign).</span>
+          </li>
+          <li>
+            <strong>Evaluate:</strong> <code style="font-size: 1rem;">22 + (-9)</code><br>
+            <span class="answer">Answer: +13 (Different sign rule: 22 - 9 = 13, copy positive sign of 22).</span>
+          </li>
+        </ol>
+      </div>
+
+      <h3>2. Synthesis & Key Takeaways</h3>
       <ul>
-        <li><strong>Cognitive:</strong> Illustrate and calculate the sum of signed integers using algebra tiles, number lines, and mathematical rules.</li>
-        <li><strong>Affective:</strong> Appreciate the precision and logic of signed numbers in modeling real-world economic and environmental quantities.</li>
-        <li><strong>Psychomotor:</strong> Construct visual models (number lines and tile groupings) to correctly demonstrate integer addition steps.</li>
+        <li><strong>Same signs:</strong> Add absolute values and <em>keep</em> the sign.</li>
+        <li><strong>Different signs:</strong> Subtract absolute values and <em>take</em> the sign of the larger absolute value.</li>
       </ul>
     </div>
   </section>
 
-  <!-- Section 2: Visualizing Integer Addition -->
-  <section>
-    <h2>2. Visualizing Integer Addition</h2>
-    <p>Before using abstract algorithms, integer addition can be deeply understood through visual representation:</p>
-    
-    <div class="step-box">
-      <p><strong>A. Algebra Tiles & Zero Pairs:</strong> Positive counters (+) represent positive values, while negative counters (−) represent negative values. When a positive counter is paired with a negative counter, they form a <em>zero pair</em> (canceling each other out to equal zero).</p>
-      <p><strong>B. Number Lines:</strong> Start at the first addend on the number line. Move to the right if the second addend is positive, or move to the left if the second addend is negative.</p>
-    </div>
-  </section>
-
-  <!-- Section 3: Rule 1 -->
-  <section>
-    <h2>3. Core Rule 1: Adding Same-Sign Integers</h2>
-    <p>When adding two integers that share the same sign (either both positive or both negative):</p>
-    
-    <div class="rule-box">
-      <strong>Rule:</strong> Add their absolute values (disregarding the signs), and <strong>keep the common sign</strong> for the result.
-    </div>
-
-    <div class="step-box">
-      <p><strong>Example 1 (Negative + Negative):</strong> <code style="font-size: 1.1rem;">(-7) + (-4) = ?</code></p>
-      <ol>
-        <li>Find absolute values: <code style="font-size: 1rem;">|-7| = 7</code> and <code style="font-size: 1rem;">|-4| = 4</code>.</li>
-        <li>Add values: <code style="font-size: 1rem;">7 + 4 = 11</code>.</li>
-        <li>Keep the shared negative sign: <code style="font-size: 1rem;">-11</code>.</li>
-      </ol>
-      <p><strong>Result:</strong> <code style="font-size: 1.1rem;">(-7) + (-4) = -11</code></p>
-    </div>
-  </section>
-
-  <!-- Section 4: Rule 2 -->
-  <section>
-    <h2>4. Core Rule 2: Adding Different-Sign Integers</h2>
-    <p>When adding integers with different signs (one positive, one negative):</p>
-    
-    <div class="rule-box">
-      <strong>Rule:</strong> <strong>Subtract</strong> the smaller absolute value from the larger absolute value, and <strong>copy the sign of the number with the larger absolute value</strong>.
-    </div>
-
-    <div class="step-box">
-      <p><strong>Example 2 (Different Signs):</strong> <code style="font-size: 1.1rem;">(-12) + 5 = ?</code></p>
-      <ol>
-        <li>Find absolute values: <code style="font-size: 1rem;">|-12| = 12</code> and <code style="font-size: 1rem;">|5| = 5</code>.</li>
-        <li>Subtract smaller from larger: <code style="font-size: 1rem;">12 - 5 = 7</code>.</li>
-        <li>Identify the sign of the larger absolute value: <code style="font-size: 1rem;">-12</code> has a larger absolute value than <code style="font-size: 1rem;">5</code>, so keep the negative sign.</li>
-      </ol>
-      <p><strong>Result:</strong> <code style="font-size: 1.1rem;">(-12) + 5 = -7</code></p>
-    </div>
-  </section>
-
-  <!-- Section 5: Real-World Applications -->
-  <section>
-    <h2>5. Localized Real-World Application</h2>
-    <div class="step-box">
-      <p><strong>Sari-Sari Store Cash Flow:</strong> A local micro-enterprise owner starts the morning with a deficit or credit balance. Suppose a ledger notes an initial credit adjustment of <code style="font-size: 1.05rem;">-&#8369;250</code> due to a supplier advance, followed by a profitable cash injection of <code style="font-size: 1.05rem;">+&#8369;400</code>.</p>
-      <p><strong>Expression:</strong> <code style="font-size: 1.05rem;">(-250) + 400</code></p>
-      <p><strong>Application:</strong> Since the signs differ, subtract <code style="font-size: 1.05rem;">400 - 250 = 150</code> and copy the sign of the larger absolute value (<code style="font-size: 1.05rem;">+400</code> is larger, so it is positive). The resulting balance is <strong>+&#8369;150</strong>.</p>
-    </div>
-  </section>
-
-  <!-- Section 6: Self-Check -->
-  <section class="quiz-box">
-    <h2>💡 Formative Self-Check Quiz</h2>
-    <ol>
-      <li>
-        <strong>Evaluate:</strong> <code style="font-size: 1rem;">(-15) + (-8)</code><br>
-        <span class="answer">Answer: -23 (Same sign rule: add 15 + 8 and keep the negative sign).</span>
-      </li>
-      <li>
-        <strong>Evaluate:</strong> <code style="font-size: 1rem;">22 + (-9)</code><br>
-        <span class="answer">Answer: +13 (Different sign rule: 22 - 9 = 13, copy positive sign of 22).</span>
-      </li>
-    </ol>
-  </section>
-
   <!-- Save / Print PDF Button -->
   <div class="print-btn-container">
-    <button class="btn-print" onclick="window.print()">📥 Save / Print Lesson Plan PDF</button>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Lesson Plan PDF
+    </button>
   </div>
 
 </div>
