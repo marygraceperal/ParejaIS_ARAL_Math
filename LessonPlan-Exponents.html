@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Exponent Basics & Signed Bases</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .ilaw-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .ilaw-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ilaw-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .proof-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--success);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body { background-color: white; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .proof-table { font-size: 0.85rem; }
+      .proof-table th, .proof-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: Exponent Basics & Signed Bases</h1>
+    <p>Topic 3.2: Expanded Form, Zero Exponents (x⁰ = 1), and Even vs. Odd Signed Powers (ILAW Framework)</p>
+  </header>
+
+  <!-- I - ILLUMINATE & INTRODUCE -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">I – ILLUMINATE & INTRODUCE</div>
+    <div class="ilaw-content">
+      <h3>1. Learning Objectives</h3>
+      <div class="rule-box">
+        <ul>
+          <li><strong>Cognitive:</strong> Formulate rules for evaluating expressions involving zero exponents (<span class="formula">x<sup>0</sup> = 1</span>) and negative bases raised to even or odd powers.</li>
+          <li><strong>Affective:</strong> Appreciate the precision required when using grouping symbols (parentheses) to avoid common algebraic errors in real-world calculations.</li>
+          <li><strong>Psychomotor:</strong> Expand exponential terms into repeated multiplication factors and compute evaluated expressions accurately.</li>
+        </ul>
+      </div>
+
+      <h3>2. Initiating Hook</h3>
+      <p>Write on the board: <span class="formula">(-2)<sup>4</sup></span> and <span class="formula">-2<sup>4</sup></span>. Ask the class: <em>"Are these two expressions identical, or will they give different results?"</em> Conduct a quick hand vote before revealing that one equals <span class="formula">+16</span> while the other equals <span class="formula">-16</span>. Explain that understanding how signs interact with exponents prevents costly errors in mathematics and science.</p>
+    </div>
+  </section>
+
+  <!-- L - LEARN -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">L – LEARN</div>
+    <div class="ilaw-content">
+      <h3>1. Exponential Rules & Mathematical Foundations</h3>
+      
+      <div class="rule-box">
+        <p><strong>Definition of Exponent:</strong> <span class="formula">b<sup>n</sup> = b &times; b &times; ... &times; b</span> (<span class="formula">n</span> factors of base <span class="formula">b</span>).</p>
+        <p style="margin-top: 0.5rem;"><strong>Zero Exponent Rule:</strong> For any non-zero real number <span class="formula">x &ne; 0</span>, <span class="formula">x<sup>0</sup> = 1</span>.</p>
+      </div>
+
+      <h3>2. Signed Bases: Parity Rule</h3>
+      <table class="proof-table">
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Rule</th>
+            <th>Example</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Negative Base, Even Exponent</td>
+            <td><span class="formula">(-a)<sup>even</sup> = +a<sup>n</sup></span></td>
+            <td><span class="formula">(-3)<sup>2</sup> = (-3)(-3)</span></td>
+            <td><span class="formula">+9</span></td>
+          </tr>
+          <tr>
+            <td>Negative Base, Odd Exponent</td>
+            <td><span class="formula">(-a)<sup>odd</sup> = -a<sup>n</sup></span></td>
+            <td><span class="formula">(-3)<sup>3</sup> = (-3)(-3)(-3)</span></td>
+            <td><span class="formula">-27</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3. Worked Examples</h3>
+      <div class="rule-box">
+        <p>a) Evaluate <span class="formula">(-5)<sup>3</sup> = (-5) &times; (-5) &times; (-5) = -125</span></p>
+        <p>b) Evaluate <span class="formula">7<sup>0</sup> + (-12)<sup>0</sup> = 1 + 1 = 2</span></p>
+        <p>c) Evaluate <span class="formula">(-1)<sup>42</sup> - (-1)<sup>17</sup> = 1 - (-1) = 1 + 1 = 2</span></p>
+      </div>
+
+      <div class="warning-box">
+        <p><strong>⚠️ Common Diagnostic Misconception: The Negation Distinction</strong></p>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          Remind students that <span class="formula">(-x)<sup>n</sup></span> includes the negative sign in repeated multiplication, whereas <span class="formula">-x<sup>n</sup></span> applies the exponent ONLY to <span class="formula">x</span>, making the outer negative sign apply last. <br>
+          Example: <span class="formula">-4<sup>2</sup> = -(4 &times; 4) = -16</span>, but <span class="formula">(-4)<sup>2</sup> = (-4) &times; (-4) = +16</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A - APPLY -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">A – APPLY</div>
+    <div class="ilaw-content">
+      <h3>Contextualized Real-World Applications</h3>
+
+      <div class="rule-box">
+        <p><strong>Application 1: Population and Cell Growth Modeling</strong></p>
+        <p>Bacterial cultures double every hour following <span class="formula">P(t) = P<sub>0</sub> &times; 2<sup>t</sup></span>. At time <span class="formula">t = 0</span> hours (initial start), <span class="formula">P(0) = P<sub>0</sub> &times; 2<sup>0</sup> = P<sub>0</sub> &times; 1 = P<sub>0</sub></span>. The zero exponent rule guarantees the initial count remains unchanged before time elapses.</p>
+      </div>
+
+      <div class="rule-box">
+        <p><strong>Application 2: Financial Compounding & Accounting Adjustment Factors</strong></p>
+        <p>In financial formulas using growth factor expressions like <span class="formula">(1 + r)<sup>t</sup></span>, if the period compounding factor is zero (<span class="formula">t = 0</span>), <span class="formula">(1 + r)<sup>0</sup> = 1</span>, representing the principal amount prior to earning interest.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- W - WIND-UP -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">W – WIND-UP</div>
+    <div class="ilaw-content">
+      <h3>1. Formative Assessment Quiz</h3>
+      <div class="quiz-box">
+        <ol>
+          <li>
+            <strong>Evaluate:</strong> <span class="formula">(-2)<sup>5</sup></span><br>
+            <span class="answer">Answer: (-2)(-2)(-2)(-2)(-2) = -32</span>
+          </li>
+          <li>
+            <strong>Evaluate:</strong> <span class="formula">-6<sup>2</sup> + (-6)<sup>2</sup></span><br>
+            <span class="answer">Answer: -36 + 36 = 0</span>
+          </li>
+          <li>
+            <strong>Simplify:</strong> <span class="formula">(15x<sup>3</sup>)<sup>0</sup></span> where <span class="formula">x &ne; 0</span><br>
+            <span class="answer">Answer: 1</span>
+          </li>
+        </ol>
+      </div>
+
+      <h3>2. Key Takeaways Summary</h3>
+      <ul>
+        <li><strong>Zero Exponents:</strong> Any non-zero base raised to power <span class="formula">0</span> equals <span class="formula">1</span> (<span class="formula">x<sup>0</sup> = 1</span>).</li>
+        <li><strong>Even vs. Odd Powers:</strong> Negative bases inside parentheses become positive with even powers and stay negative with odd powers.</li>
+        <li><strong>Order of Operations:</strong> Parentheses dictate whether a negative sign is part of the base or an operation performed after exponentiation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Print / Save Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Lesson Plan PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
