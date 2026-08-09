@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Activities: Exponent Basics & Signed Bases</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+      --accent: #8b5cf6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .activity-card {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .activity-header {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 12px;
+      background-color: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+
+    .activity-body {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body { background-color: white; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .activity-header { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Classroom Activities: Exponent Basics & Signed Bases</h1>
+    <p>Interactive Activities for Topic 3.2 (ILAW Framework Alignment)</p>
+  </header>
+
+  <!-- ACTIVITY 1 -->
+  <div class="activity-card">
+    <div class="activity-header">
+      <span>Activity 1: "Sign Sorting" Relay Game</span>
+      <span class="badge">A – APPLY / Group Competition</span>
+    </div>
+    <div class="activity-body">
+      <h3>Objective</h3>
+      <p>Master the structural difference between <span class="formula">(-x)<sup>n</sup></span> and <span class="formula">-x<sup>n</sup></span>, as well as the impact of even vs. odd powers on signed bases.</p>
+
+      <h3>Materials Needed</h3>
+      <p>Flashcards with expressions (e.g., <span class="formula">(-3)<sup>2</sup></span>, <span class="formula">-3<sup>2</sup></span>, <span class="formula">(-2)<sup>3</sup></span>, <span class="formula">-2<sup>0</sup></span>, <span class="formula">(-5)<sup>0</sup></span>, <span class="formula">(-1)<sup>101</sup></span>), two sorting buckets labeled <strong>"POSITIVE RESULT"</strong> and <strong>"NEGATIVE RESULT"</strong>.</p>
+
+      <h3>Procedure</h3>
+      <ol>
+        <li>Divide the class into 2–4 teams lined up at the back of the classroom.</li>
+        <li>Place a stack of shuffled flashcards at the front of each line.</li>
+        <li>On "GO!", the first student picks up a card, evaluates the final sign mentally or on scratch paper, runs to the front, and drops it into the correct bucket (Positive or Negative).</li>
+        <li>The team with the most correctly categorized cards in 3 minutes wins the round.</li>
+        <li><strong>Debrief:</strong> Pull out cards that students frequently misclassified (e.g., <span class="formula">-4<sup>2</sup></span> vs <span class="formula">(-4)<sup>2</sup></span>) and discuss as a whole class.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2 -->
+  <div class="activity-card">
+    <div class="activity-header">
+      <span>Activity 2: "Pattern Detective" Discovery Grid</span>
+      <span class="badge">L – LEARN / Pair Work</span>
+    </div>
+    <div class="activity-body">
+      <h3>Objective</h3>
+      <p>Derive the zero exponent rule (<span class="formula">x<sup>0</sup> = 1</span>) and discover the sign alternation rule for negative bases through guided pattern completion.</p>
+
+      <h3>Materials Needed</h3>
+      <p>Printed "Pattern Detective" activity sheets.</p>
+
+      <div class="box">
+        <h3>Sample Worktable: Pattern 1 (Zero Exponent)</h3>
+        <p><span class="formula">3<sup>3</sup> = 27</span> &nbsp;&rarr;&nbsp; <em>Divide by 3</em></p>
+        <p><span class="formula">3<sup>2</sup> = 9</span> &nbsp;&rarr;&nbsp; <em>Divide by 3</em></p>
+        <p><span class="formula">3<sup>1</sup> = 3</span> &nbsp;&rarr;&nbsp; <em>Divide by 3</em></p>
+        <p><span class="formula">3<sup>0</sup> = ?</span> &nbsp;&rarr;&nbsp; <strong>(3 &divide; 3 = 1)</strong></p>
+      </div>
+
+      <div class="box">
+        <h3>Sample Worktable: Pattern 2 (Negative Base Parity)</h3>
+        <p><span class="formula">(-2)<sup>1</sup> = -2</span> (1 negative factor &rarr; Negative)</p>
+        <p><span class="formula">(-2)<sup>2</sup> = (-2)(-2) = +4</span> (2 negative factors &rarr; Positive)</p>
+        <p><span class="formula">(-2)<sup>3</sup> = (-2)(-2)(-2) = -8</span> (3 negative factors &rarr; Negative)</p>
+        <p><span class="formula">(-2)<sup>4</sup> = (-2)(-2)(-2)(-2) = +16</span> (4 negative factors &rarr; Positive)</p>
+      </div>
+
+      <h3>Guiding Questions for Partners</h3>
+      <ul>
+        <li>What happens to the sign every time the exponent increases by 1 for a negative base?</li>
+        <li>What single rule can you summarize for any <span class="formula">(-a)<sup>n</sup></span> when <span class="formula">n</span> is an even number versus when <span class="formula">n</span> is an odd number?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3 -->
+  <div class="activity-card">
+    <div class="activity-header">
+      <span>Activity 3: Exponent Truth & Lie Worksheet Challenge</span>
+      <span class="badge">W – WIND-UP / Formative Assessment</span>
+    </div>
+    <div class="activity-body">
+      <h3>Objective</h3>
+      <p>Critique and correct common mathematical statements involving exponents and signed bases to solidify procedural accuracy.</p>
+
+      <div class="box">
+        <h3>Task: Two Truths and a Lie</h3>
+        <p>For each set below, identify the <strong>LIE</strong> and write the corrected version on your whiteboard/paper.</p>
+        
+        <ol style="margin-top: 0.75rem;">
+          <li>
+            <strong>Set A:</strong><br>
+            a) <span class="formula">(-4)<sup>2</sup> = 16</span><br>
+            b) <span class="formula">-4<sup>2</sup> = 16</span><br>
+            c) <span class="formula">(-4)<sup>0</sup> = 1</span><br>
+            <em>(Lie: b &rarr; Correct Value: -16)</em>
+          </li>
+          <li style="margin-top: 0.5rem;">
+            <strong>Set B:</strong><br>
+            a) <span class="formula">(-1)<sup>50</sup> = 1</span><br>
+            b) <span class="formula">(-1)<sup>51</sup> = -1</span><br>
+            c) <span class="formula">-1<sup>50</sup> = 1</span><br>
+            <em>(Lie: c &rarr; Correct Value: -1)</em>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Print Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Activities PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
