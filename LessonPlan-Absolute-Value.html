@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Absolute Value Concepts</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .ilaw-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ilaw-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ilaw-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .proof-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--success);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .proof-table { font-size: 0.85rem; }
+      .proof-table th, .proof-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: Absolute Value Concepts</h1>
+    <p>Topic 3.1: Distance on a Number Line, Evaluating |x|, and Distance Between Points (ILAW Framework)</p>
+  </header>
+
+  <!-- I - ILLUMINATE & INTRODUCE -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">I – ILLUMINATE & INTRODUCE</div>
+    <div class="ilaw-content">
+      <h3>1. Learning Objectives</h3>
+      <div class="rule-box">
+        <ul>
+          <li><strong>Cognitive:</strong> Define absolute value as a geometric distance from zero on a number line and compute the distance between any two real numbers using <span class="formula">d(a,b) = |a - b|</span>.</li>
+          <li><strong>Affective:</strong> Appreciate the concept of magnitude regardless of direction in real-world contextual measurements.</li>
+          <li><strong>Psychomotor:</strong> Plot real numbers on a number line to construct visual distance models for evaluated expressions.</li>
+        </ul>
+      </div>
+
+      <h3>2. Initiating Hook</h3>
+      <p>Ask students: <em>"If you walk 5 blocks north to a store, your distance is 5 blocks. If you walk 5 blocks south back home, is your distance walked -5 blocks or 5 blocks?"</em> Emphasize that while direction can be negative (vector position), physical distance (magnitude) is always non-negative.</p>
+    </div>
+  </section>
+
+  <!-- L - LEARN -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">L – LEARN</div>
+    <div class="ilaw-content">
+      <h3>1. Mathematical Foundation</h3>
+      <p>Define absolute value as distance from zero on a number line:</p>
+      
+      <div class="rule-box">
+        <p><strong>Piecewise Definition:</strong></p>
+        <p><span class="formula">|x| = x</span> if <span class="formula">x &ge; 0</span></p>
+        <p><span class="formula">|x| = -x</span> if <span class="formula">x &lt; 0</span></p>
+      </div>
+
+      <h3>2. Evaluating Expressions & Distance Between Points</h3>
+      <p>Demonstrate evaluating numerical expressions with absolute value bars acting as grouping symbols, followed by calculating distance between two points <span class="formula">a</span> and <span class="formula">b</span> using <span class="formula">d = |a - b|</span>.</p>
+
+      <div class="rule-box">
+        <p><strong>Worked Examples:</strong></p>
+        <p>a) Evaluate <span class="formula">|3 - 9| + 2 = |-6| + 2 = 6 + 2 = 8</span></p>
+        <p>b) Distance between <span class="formula">a = -8</span> and <span class="formula">b = 4</span>:</p>
+        <p><span class="formula">d = |-8 - 4| = |-12| = 12 units</span></p>
+      </div>
+
+      <div class="warning-box">
+        <p><strong>⚠️ Common Diagnostic Misconception: Outer Negation</strong></p>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          Warn students that absolute value bars do not neutralize negative signs located <em>outside</em> the bars. For example, <span class="formula">-|-5| = -(5) = -5</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A - APPLY -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">A – APPLY</div>
+    <div class="ilaw-content">
+      <h3>Localized Real-World Applications</h3>
+
+      <div class="rule-box">
+        <p><strong>Application 1: Elevation and Sea Level Differences</strong></p>
+        <p>If a coastal town's mountain peak is at <span class="formula">+450</span> meters above sea level and a nearby submarine trench is at <span class="formula">-120</span> meters below sea level, the total vertical distance between them is <span class="formula">|450 - (-120)| = |570| = 570</span> meters.</p>
+      </div>
+
+      <div class="rule-box">
+        <p><strong>Application 2: Financial Margin of Error & Variance</strong></p>
+        <p>In business auditing, stock variance is measured by absolute value deviation: <span class="formula">| Actual Stock - Expected Stock |</span>. Whether inventory is over or under, variance magnitude measures reporting accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- W - WIND-UP -->
+  <section class="ilaw-section">
+    <div class="ilaw-title">W – WIND-UP</div>
+    <div class="ilaw-content">
+      <h3>1. Formative Self-Check Quiz</h3>
+      <div class="quiz-box">
+        <ol>
+          <li>
+            <strong>Evaluate:</strong> <span class="formula">|-14| - |6|</span><br>
+            <span class="answer">Answer: 14 - 6 = 8</span>
+          </li>
+          <li>
+            <strong>Evaluate:</strong> <span class="formula">-| -18 |</span><br>
+            <span class="answer">Answer: -18</span>
+          </li>
+          <li>
+            <strong>Find Distance:</strong> Find the distance between <span class="formula">x = -15</span> and <span class="formula">y = -3</span> on a number line.<br>
+            <span class="answer">Answer: |-15 - (-3)| = |-12| = 12 units</span>
+          </li>
+        </ol>
+      </div>
+
+      <h3>2. Key Takeaways Summary</h3>
+      <ul>
+        <li><strong>Distance is Positive:</strong> Absolute value measures distance from origin or between points, which is always non-negative (<span class="formula">|x| &ge; 0</span>).</li>
+        <li><strong>Grouping Priority:</strong> Always evaluate expressions inside <span class="formula">| |</span> before taking the absolute value.</li>
+        <li><strong>Distance Formula:</strong> Distance between points <span class="formula">a</span> and <span class="formula">b</span> is <span class="formula">|a - b| = |b - a|</span>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Lesson Plan PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
