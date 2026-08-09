@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Subtraction of Integers</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid #10b981;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.5rem;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 1rem;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: Subtraction of Integers</h1>
+    <p>Topic: The "Add the Opposite" (KCC: Keep-Change-Change) Principle, Transforming Subtraction to Addition, and Resolving Double Negatives.</p>
+  </header>
+
+  <!-- Section 1: Objectives -->
+  <section>
+    <h2>1. Learning Objectives</h2>
+    <div class="rule-box">
+      <ul>
+        <li><strong>Cognitive:</strong> Explain and apply the Keep-Change-Change (KCC) principle to correctly transform integer subtraction expressions into equivalent addition forms.</li>
+        <li><strong>Affective:</strong> Appreciate the efficiency of mathematical rules in simplifying complex signed-number expressions.</li>
+        <li><strong>Psychomotor:</strong> Construct step-by-step written transformations for subtraction of integers, correctly resolving double negatives.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 2: The Core Principle (KCC) -->
+  <section>
+    <h2>2. The Core Principle: Keep-Change-Change (KCC)</h2>
+    <p>Directly subtracting signed numbers can be confusing. Instead, we convert every subtraction problem into an addition problem using the <strong>Keep-Change-Change (KCC)</strong> rule, also known as "adding the opposite":</p>
+    
+    <div class="step-box">
+      <ul>
+        <li><strong>KEEP</strong> the first number (the minuend) exactly as it is.</li>
+        <li><strong>CHANGE</strong> the subtraction sign (-) to an addition sign (+).</li>
+        <li><strong>CHANGE</strong> the second number (the subtrahend) to its opposite sign (its additive inverse).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 3: Step-by-Step Examples -->
+  <section>
+    <h2>3. Applying KCC & Resolving Double Negatives</h2>
+    
+    <div class="step-box">
+      <p><strong>Example 1 (Standard Subtraction):</strong> <code style="font-size: 1.1rem;">5 - 12 = ?</code></p>
+      <ol>
+        <li><strong>Keep</strong> the first number: <code style="font-size: 1rem;">5</code></li>
+        <li><strong>Change</strong> minus to plus: <code style="font-size: 1rem;">+</code></li>
+        <li><strong>Change</strong> 12 to its opposite: <code style="font-size: 1rem;">-12</code></li>
+        <li><strong>New Expression:</strong> <code style="font-size: 1rem;">5 + (-12)</code></li>
+        <li><strong>Solve using addition rules:</strong> Different signs, so subtract absolute values (<code style="font-size: 1rem;">12 - 5 = 7</code>) and keep the sign of the larger absolute value (<code style="font-size: 1rem;">-12</code>).</li>
+      </ol>
+      <p><strong>Result:</strong> <code style="font-size: 1.1rem;">5 - 12 = -7</code></p>
+    </div>
+
+    <div class="step-box">
+      <p><strong>Example 2 (Resolving Double Negatives):</strong> <code style="font-size: 1.1rem;">(-8) - (-3) = ?</code></p>
+      <ol>
+        <li><strong>Keep</strong> the first number: <code style="font-size: 1rem;">-8</code></li>
+        <li><strong>Change</strong> minus to plus: <code style="font-size: 1rem;">+</code></li>
+        <li><strong>Change</strong> -3 to its opposite: <code style="font-size: 1rem;">+3</code> (Note how subtracting a negative becomes adding a positive).</li>
+        <li><strong>New Expression:</strong> <code style="font-size: 1rem;">(-8) + 3</code></li>
+        <li><strong>Solve:</strong> <code style="font-size: 1rem;">8 - 3 = 5</code>, keeping the negative sign of the larger absolute value.</li>
+      </ol>
+      <p><strong>Result:</strong> <code style="font-size: 1.1rem;">(-8) - (-3) = -5</code></p>
+    </div>
+  </section>
+
+  <!-- Section 4: Real-World Application -->
+  <section>
+    <h2>4. Localized Real-World Application</h2>
+    <div class="step-box">
+      <p><strong>Temperature Drop Difference:</strong> Suppose the afternoon high temperature in a highland region was <code style="font-size: 1.05rem;">+4°C</code>, and by late evening it dropped significantly to <code style="font-size: 1.05rem;">-5°C</code>. To find the total change or difference between the high and low points:</p>
+      <p><strong>Expression:</strong> <code style="font-size: 1.05rem;">(+4) - (-5)</code></p>
+      <p><strong>Applying KCC:</strong> <code style="font-size: 1.05rem;">4 + (+5) = 9</code>. The total temperature interval span is <strong>9 degrees</strong>.</p>
+    </div>
+  </section>
+
+  <!-- Section 5: Formative Self-Check -->
+  <section class="quiz-box">
+    <h2>💡 Formative Self-Check Quiz</h2>
+    <ol>
+      <li>
+        <strong>Evaluate using KCC:</strong> <code style="font-size: 1rem;">10 - (-6)</code><br>
+        <span class="answer">Answer: 16 (Transforms to 10 + 6 = 16)</span>
+      </li>
+      <li>
+        <strong>Evaluate using KCC:</strong> <code style="font-size: 1rem;">(-14) - 5</code><br>
+        <span class="answer">Answer: -19 (Transforms to (-14) + (-5) = -19)</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">📥 Save / Print Lesson Plan PDF</button>
+  </div>
+
+</div>
+
+</body>
+</html>
