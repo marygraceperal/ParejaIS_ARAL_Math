@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 3.2: Exponent Basics & Signed Bases</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning-bg: #fff5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .topic-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .topic-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .topic-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1.2rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: var(--warning-bg);
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .comparison-table th, .comparison-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .comparison-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--success);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body { background-color: white; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .comparison-table { font-size: 0.85rem; }
+      .comparison-table th, .comparison-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Topic 3.2: Exponent Basics & Signed Bases</h1>
+    <p>Discussion Guide: Expanded Form, Zero Exponents, and Negation Rules</p>
+  </header>
+
+  <!-- SECTION 1: EXPANDED FORM -->
+  <section class="topic-section">
+    <div class="topic-title">1. Exponent Fundamentals & Expanded Notation</div>
+    <div class="topic-content">
+      <p>An exponential expression consists of two key components: a <strong>base</strong> (<span class="formula">b</span>) and an <strong>exponent</strong> (<span class="formula">n</span>), written in the form <span class="formula">b<sup>n</sup></span>.</p>
+      
+      <div class="rule-box">
+        <p><strong>Definition:</strong> For any positive integer <span class="formula">n</span>, <span class="formula">b<sup>n</sup></span> represents repeated multiplication of the base <span class="formula">b</span> by itself <span class="formula">n</span> times.</p>
+        <p style="margin-top: 0.5rem;"><span class="formula">b<sup>n</sup> = b &times; b &times; b &times; ... &times; b</span> (n factors)</p>
+      </div>
+
+      <h3>Examples of Expanded Form:</h3>
+      <ul>
+        <li><span class="formula">5<sup>3</sup> = 5 &times; 5 &times; 5 = 125</span></li>
+        <li><span class="formula">2<sup>5</sup> = 2 &times; 2 &times; 2 &times; 2 &times; 2 = 32</span></li>
+        <li><span class="formula">(x)<sup>4</sup> = x &times; x &times; x &times; x</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ZERO EXPONENT -->
+  <section class="topic-section">
+    <div class="topic-title">2. The Zero Exponent Rule (x⁰ = 1)</div>
+    <div class="topic-content">
+      <p>A common point of confusion for students is why any non-zero number raised to the power of zero equals 1.</p>
+
+      <div class="rule-box">
+        <p><strong>Zero Exponent Rule:</strong> For any real number <span class="formula">x &ne; 0</span>,</p>
+        <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0;"><span class="formula">x<sup>0</sup> = 1</span></p>
+        <p><em>Note: <span class="formula">0<sup>0</sup></span> is an indeterminate form (undefined in elementary algebra).</em></p>
+      </div>
+
+      <h3>Conceptual Proof via Pattern Analysis:</h3>
+      <p>Consider powers of 2 decreasing sequentially:</p>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Expression</th>
+            <th>Value</th>
+            <th>Pattern / Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="formula">2<sup>4</sup></span></td>
+            <td>16</td>
+            <td>Initial value</td>
+          </tr>
+          <tr>
+            <td><span class="formula">2<sup>3</sup></span></td>
+            <td>8</td>
+            <td>Divide by 2</td>
+          </tr>
+          <tr>
+            <td><span class="formula">2<sup>2</sup></span></td>
+            <td>4</td>
+            <td>Divide by 2</td>
+          </tr>
+          <tr>
+            <td><span class="formula">2<sup>1</sup></span></td>
+            <td>2</td>
+            <td>Divide by 2</td>
+          </tr>
+          <tr>
+            <td><strong><span class="formula">2<sup>0</sup></span></strong></td>
+            <td><strong>1</strong></td>
+            <td><strong>2 &divide; 2 = 1</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 3: SIGNED BASES -->
+  <section class="topic-section">
+    <div class="topic-title">3. Signed Bases: Odd vs. Even Powers</div>
+    <div class="topic-content">
+      <p>When the base of an exponential term is negative and enclosed in parentheses, the parity (even or odd) of the exponent dictates the sign of the final product.</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Exponent Parity</th>
+            <th>Rule Formula</th>
+            <th>Expanded Example</th>
+            <th>Final Sign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Even Power</strong></td>
+            <td><span class="formula">(-a)<sup>even</sup> = +a<sup>n</sup></span></td>
+            <td><span class="formula">(-3)<sup>4</sup> = (-3)(-3)(-3)(-3)</span></td>
+            <td><strong style="color: var(--success);">Positive (+81)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Odd Power</strong></td>
+            <td><span class="formula">(-a)<sup>odd</sup> = -a<sup>n</sup></span></td>
+            <td><span class="formula">(-3)<sup>3</sup> = (-3)(-3)(-3)</span></td>
+            <td><strong style="color: var(--danger);">Negative (-27)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><em>Why?</em> Negative signs pair up in multiples of two to produce positive values (<span class="formula">- &times; - = +</span>). An odd exponent leaves one unpaired negative factor.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MISCONCEPTION WARNING -->
+  <section class="topic-section">
+    <div class="topic-title">4. Critical Diagnostic Pitfall: Parentheses Matter!</div>
+    <div class="topic-content">
+      <div class="warning-box">
+        <h3>⚠️ Parentheses vs. No Parentheses</h3>
+        <p>Students frequently confuse <span class="formula">(-x)<sup>n</sup></span> with <span class="formula">-x<sup>n</sup></span>. The order of operations (PEMDAS) treats them completely differently:</p>
+        
+        <ul style="margin-bottom: 0;">
+          <li><strong><span class="formula">(-2)<sup>4</sup></span>:</strong> The base is <span class="formula">-2</span>. Multiply <span class="formula">-2</span> four times: <br><span class="formula">(-2) &times; (-2) &times; (-2) &times; (-2) = +16</span></li>
+          <li><strong><span class="formula">-2<sup>4</sup></span>:</strong> The base is <span class="formula">2</span>, NOT <span class="formula">-2</span>. Exponents apply BEFORE negation! <br><span class="formula">-(2 &times; 2 &times; 2 &times; 2) = -16</span></li>
+        </ul>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Expression</th>
+            <th>Base</th>
+            <th>Interpretation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="formula">(-5)<sup>2</sup></span></td>
+            <td><span class="formula">-5</span></td>
+            <td>Negative 5 squared</td>
+            <td><span class="formula">25</span></td>
+          </tr>
+          <tr>
+            <td><span class="formula">-5<sup>2</sup></span></td>
+            <td><span class="formula">5</span></td>
+            <td>Opposite of (5 squared)</td>
+            <td><span class="formula">-25</span></td>
+          </tr>
+          <tr>
+            <td><span class="formula">(-1)<sup>100</sup></span></td>
+            <td><span class="formula">-1</span></td>
+            <td>Even power of negative base</td>
+            <td><span class="formula">1</span></td>
+          </tr>
+          <tr>
+            <td><span class="formula">-1<sup>100</sup></span></td>
+            <td><span class="formula">1</span></td>
+            <td>Opposite of (1 to power 100)</td>
+            <td><span class="formula">-1</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FORMATIVE SELF-CHECK -->
+  <section class="topic-section">
+    <div class="topic-title">5. Formative Check & Discussion Wrap-Up</div>
+    <div class="topic-content">
+      <div class="quiz-box">
+        <h3>Quick Practice Questions:</h3>
+        <ol>
+          <li>
+            Evaluate <span class="formula">(-4)<sup>3</sup></span><br>
+            <span class="answer">Answer: (-4)(-4)(-4) = -64</span>
+          </li>
+          <li>
+            Evaluate <span class="formula">-3<sup>0</sup> + (-3)<sup>0</sup></span><br>
+            <span class="answer">Answer: -(1) + (1) = -1 + 1 = 0</span>
+          </li>
+          <li>
+            Evaluate <span class="formula">(-2)<sup>4</sup> - 2<sup>4</sup></span><br>
+            <span class="answer">Answer: 16 - 16 = 0</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print / Save Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Discussion Guide PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
