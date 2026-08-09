@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Real-World Signed Number Problems</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1.0rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid #10b981;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.5rem;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 1rem;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: Real-World Signed Number Problems</h1>
+    <p>Topic: Multi-Step Word Problems Involving Temperature Shifts, Bank Balances, and Elevation Changes.</p>
+  </header>
+
+  <!-- Section 1: Objectives -->
+  <section>
+    <h2>1. Learning Objectives</h2>
+    <div class="rule-box">
+      <ul>
+        <li><strong>Cognitive:</strong> Formulate and solve multi-step word problems involving temperature shifts, bank balances, and elevation changes using signed numbers.</li>
+        <li><strong>Affective:</strong> Appreciate the practical utility of mathematics in making informed financial and environmental decisions in everyday life.</li>
+        <li><strong>Psychomotor:</strong> Construct a clear, chronological math model (equation translation) from a complex word problem text.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 2: Problem-Solving Strategy -->
+  <section>
+    <h2>2. Strategy for Multi-Step Word Problems</h2>
+    <p>Real-world problems rarely happen in a single operation. To tackle multi-step problems successfully, follow a structured framework:</p>
+    
+    <div class="step-box">
+      <ol>
+        <li><strong>Identify Key Terms:</strong> Look for directional keywords (e.g., <em>above/below</em> zero, <em>deposit/withdraw</em>, <em>rise/drop</em>, <em>ascent/descent</em>).</li>
+        <li><strong>Translate into Expressions:</strong> Write out the sequence of operations step-by-step using correct signs.</li>
+        <li><strong>Execute Following Order of Operations (PEMDAS/GMDAS):</strong> Perform calculations carefully, keeping track of sign rules for addition, subtraction, multiplication, and division.</li>
+        <li><strong>Evaluate Context:</strong> Check if the final numerical sign and units make sense within the real-world scenario.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Section 3: Comprehensive Examples -->
+  <section>
+    <h2>3. Step-by-Step Worked Examples</h2>
+    
+    <div class="step-box">
+      <p><strong>Example 1 (Bank Balance & Micro-Business Ledger):</strong></p>
+      <p>A small cooperative savings account starts the week with a balance of <code style="font-size: 1rem;">+&#8369;1,250</code>. On Tuesday, a member makes a withdrawal of <code style="font-size: 1rem;">&#8369;450</code>. On Thursday, an emergency operational fee charge of <code style="font-size: 1rem;">&#8369;300</code> is debited. Finally, on Friday, a cooperative dividend bonus equal to twice the current remaining balance is deposited. What is the final ending balance?</p>
+      <ol>
+        <li><strong>Start:</strong> <code style="font-size: 0.95rem;">+1250</code></li>
+        <li><strong>Withdrawal on Tuesday:</strong> <code style="font-size: 0.95rem;">1250 - 450 = 800</code></li>
+        <li><strong>Fee on Thursday:</strong> <code style="font-size: 0.95rem;">800 - 300 = 500</code></li>
+        <li><strong>Deposit on Friday (twice the balance):</strong> <code style="font-size: 0.95rem;">500 + 2(500) = 500 + 1000 = 1500</code></li>
+      </ol>
+      <p><strong>Result:</strong> Final balance is <strong>+&#8369;1,500</strong></p>
+    </div>
+
+    <div class="step-box">
+      <p><strong>Example 2 (Elevation & Temperature Shift):</strong></p>
+      <p>A weather research team starts at a base camp located at an elevation of <code style="font-size: 1rem;">+300 meters</code> where the temperature is <code style="font-size: 1rem;">+24°C</code>. They hike up to a ridge at <code style="font-size: 1rem;">+1,200 meters</code>. For every 200-meter increase in elevation, the temperature drops by <code style="font-size: 1.5rem;">1.5°C</code>. What is the temperature at the ridge?</p>
+      <ol>
+        <li><strong>Calculate total elevation change:</strong> <code style="font-size: 0.95rem;">1200 - 300 = 900 meters</code> ascent.</li>
+        <li><strong>Determine number of 200-meter increments:</strong> <code style="font-size: 0.95rem;">900 &divide; 200 = 4.5 increments</code>.</li>
+        <li><strong>Calculate total temperature drop:</strong> <code style="font-size: 0.95rem;">4.5 &times; (-1.5°C) = -6.75°C</code>.</li>
+        <li><strong>Apply drop to starting temperature:</strong> <code style="font-size: 0.95rem;">24 + (-6.75) = 17.25°C</code>.</li>
+      </ol>
+      <p><strong>Result:</strong> The temperature at the ridge is <strong>+17.25°C</strong></p>
+    </div>
+  </section>
+
+  <!-- Section 4: Formative Self-Check -->
+  <section class="quiz-box">
+    <h2>💡 Formative Self-Check Quiz</h2>
+    <ol>
+      <li>
+        <strong>Problem:</strong> An airplane cruising at an altitude of <code style="font-size: 0.95rem;">+8,500 feet</code> descends <code style="font-size: 0.95rem;">3,200 feet</code>, encounters turbulence forcing a sudden drop of <code style="font-size: 0.95rem;">800 feet</code>, and then climbs <code style="font-size: 0.95rem;">1,500 feet</code>. What is the final aircraft altitude?<br>
+        <span class="answer">Answer: +6,000 feet (8500 - 3200 - 800 + 1500 = 6000)</span>
+      </li>
+      <li>
+        <strong>Problem:</strong> A frozen food storage locker starts at <code style="font-size: 0.95rem;">-4°C</code>. Due to a power fluctuation, the temperature rises by <code style="font-size: 0.95rem;">11°C</code> over two hours, and then backup generators kick in, cooling it down by <code style="font-size: 0.95rem;">7°C</code>. What is the final temperature?<br>
+        <span class="answer">Answer: 0°C (-4 + 11 - 7 = 0)</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">📥 Save / Print Lesson Plan PDF</button>
+  </div>
+
+</div>
+
+</body>
+</html>
