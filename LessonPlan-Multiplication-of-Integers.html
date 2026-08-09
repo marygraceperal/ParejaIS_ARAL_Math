@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Plan: Multiplication & Division of Signed Numbers</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-bg);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid #10b981;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.5rem;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 1rem;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Lesson Plan: Multiplication & Division of Signed Numbers</h1>
+    <p>Topic 1.4: Rules for Same Signs, Different Signs, and Repeated Multiplication / Powers of Signed Numbers.</p>
+  </header>
+
+  <!-- Section 1: Objectives -->
+  <section>
+    <h2>1. Learning Objectives</h2>
+    <div class="rule-box">
+      <ul>
+        <li><strong>Cognitive:</strong> Determine the product and quotient of signed numbers using core sign rules, and evaluate repeated multiplication expressions.</li>
+        <li><strong>Affective:</strong> Value accuracy and logical consistency when scaling positive and negative quantities in problem-solving.</li>
+        <li><strong>Psychomotor:</strong> Write and compute multi-step signed multiplication and exponentiation problems correctly.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 2: Core Rules -->
+  <section>
+    <h2>2. Core Rules for Multiplication & Division</h2>
+    <p>Unlike addition and subtraction, multiplication and division rely heavily on the agreement or disagreement of signs:</p>
+    
+    <div class="rule-box">
+      <ul>
+        <li><strong>Same Signs = Positive:</strong> The product or quotient of two numbers with the same sign (Positive &times; Positive, or Negative &times; Negative) is always <strong>positive</strong>.</li>
+        <li><strong>Different Signs = Negative:</strong> The product or quotient of two numbers with different signs (Positive &times; Negative, or Negative &times; Positive) is always <strong>negative</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <p><strong>Quick Reference Table:</strong></p>
+      <ul>
+        <li><code style="font-size: 1rem;">(+) &times; (+) = (+)</code> &nbsp;|&nbsp; <code style="font-size: 1rem;">(+) &divide; (+) = (+)</code></li>
+        <li><code style="font-size: 1rem;">(-) &times; (-) = (+)</code> &nbsp;|&nbsp; <code style="font-size: 1rem;">(-) &divide; (-) = (+)</code></li>
+        <li><code style="font-size: 1rem;">(+) &times; (-) = (-)</code> &nbsp;|&nbsp; <code style="font-size: 1rem;">(+) &divide; (-) = (-)</code></li>
+        <li><code style="font-size: 1rem;">(-) &times; (+) = (-)</code> &nbsp;|&nbsp; <code style="font-size: 1rem;">(-) &divide; (+) = (-)</code></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 3: Examples -->
+  <section>
+    <h2>3. Step-by-Step Examples</h2>
+    
+    <div class="step-box">
+      <p><strong>Example 1 (Multiplication - Different Signs):</strong> <code style="font-size: 1.1rem;">(-8) &times; 6 = ?</code></p>
+      <ol>
+        <li>Multiply the absolute values: <code style="font-size: 1rem;">8 &times; 6 = 48</code>.</li>
+        <li>Check the signs: A negative times a positive results in a negative sign.</li>
+      </ol>
+      <p><strong>Result:</strong> <code style="font-size: 1.1rem;">(-8) &times; 6 = -48</code></p>
+    </div>
+
+    <div class="step-box">
+      <p><strong>Example 2 (Division - Same Signs):</strong> <code style="font-size: 1.1rem;">(-54) &divide; (-9) = ?</code></p>
+      <ol>
+        <li>Divide the absolute values: <code style="font-size: 1rem;">54 &divide; 9 = 6</code>.</li>
+        <li>Check the signs: A negative divided by a negative results in a positive sign.</li>
+      </ol>
+      <p><strong>Result:</strong> <code style="font-size: 1.1rem;">(-54) &divide; (-9) = +6</code></p>
+    </div>
+  </section>
+
+  <!-- Section 4: Repeated Multiplication & Exponents -->
+  <section>
+    <h2>4. Repeated Multiplication & Powers of Signed Numbers</h2>
+    <p>When a negative number is multiplied repeatedly (exponentiation), the final sign depends on whether the exponent is even or odd:</p>
+    
+    <div class="rule-box">
+      <ul>
+        <li><strong>Even Exponent:</strong> Results in a <strong>positive</strong> product because pairs of negative signs cancel out. (e.g., <code style="font-size: 1rem;">(-2)^4 = (-2) &times; (-2) &times; (-2) &times; (-2) = +16</code>)</li>
+        <li><strong>Odd Exponent:</strong> Results in a <strong>negative</strong> product because one negative sign remains unpaired. (e.g., <code style="font-size: 1rem;">(-2)^3 = (-2) &times; (-2) &times; (-2) = -8</code>)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 5: Real-World Application -->
+  <section>
+    <h2>5. Localized Real-World Application</h2>
+    <div class="step-box">
+      <p><strong>Micro-Enterprise Inventory Scaling:</strong> Suppose a small bakery cooperative incurs a daily operational loss adjustment of <code style="font-size: 1.05rem;">-&#8369;150</code> over a 5-day audit period.</p>
+      <p><strong>Expression:</strong> <code style="font-size: 1.05rem;">5 &times; (-150)</code></p>
+      <p><strong>Application:</strong> Multiplying a positive number of days by a negative daily adjustment yields a total net impact of <strong>-&#8369;750</strong> (a total deficit of 750 pesos).</p>
+    </div>
+  </section>
+
+  <!-- Section 6: Formative Self-Check -->
+  <section class="quiz-box">
+    <h2>💡 Formative Self-Check Quiz</h2>
+    <ol>
+      <li>
+        <strong>Evaluate:</strong> <code style="font-size: 1rem;">(-7) &times; (-8)</code><br>
+        <span class="answer">Answer: +56 (Same signs yield a positive product).</span>
+      </li>
+      <li>
+        <strong>Evaluate:</strong> <code style="font-size: 1rem;">(-3)^4</code><br>
+        <span class="answer">Answer: +81 (Even exponent with a negative base yields a positive result).</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">📥 Save / Print Lesson Plan PDF</button>
+  </div>
+
+</div>
+
+</body>
+</html>
