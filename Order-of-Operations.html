@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 2.4: Property Identification & Algebraic Justification</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning-bg: #fff5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .topic-section {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .topic-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .topic-content {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin: 1.2rem 0 0.5rem 0;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background-color: var(--warning-bg);
+      border-left: 4px solid var(--danger);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .property-table, .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .property-table th, .property-table td,
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .property-table th, .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .property-table tr:nth-child(even), .proof-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .quiz-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--success);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+
+    .answer {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body { background-color: white; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .print-btn-container { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem; }
+      header h1 { font-size: 1.75rem; }
+      .property-table, .proof-table { font-size: 0.85rem; }
+      .property-table th, .property-table td,
+      .proof-table th, .proof-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Topic 2.4: Property Identification & Algebraic Justification</h1>
+    <p>Discussion Guide: Categorizing Real Number Properties and Applying Step-by-Step Mathematical Proofs</p>
+  </header>
+
+  <!-- SECTION 1: CORE REAL NUMBER PROPERTIES -->
+  <section class="topic-section">
+    <div class="topic-title">1. Core Axioms & Properties of Real Numbers</div>
+    <div class="topic-content">
+      <p>Algebraic manipulation is governed by strict mathematical axioms. Categorizing statements by property allows us to verify whether an algebraic step is mathematically valid.</p>
+      
+      <table class="property-table">
+        <thead>
+          <tr>
+            <th>Property Name</th>
+            <th>Addition Rule</th>
+            <th>Multiplication Rule</th>
+            <th>Key Visual Identifier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Commutative</strong></td>
+            <td><span class="formula">a + b = b + a</span></td>
+            <td><span class="formula">a &middot; b = b &middot; a</span></td>
+            <td><em>Order changes</em>, grouping stays fixed</td>
+          </tr>
+          <tr>
+            <td><strong>Associative</strong></td>
+            <td><span class="formula">(a + b) + c = a + (b + c)</span></td>
+            <td><span class="formula">(a &middot; b) &middot; c = a &middot; (b &middot; c)</span></td>
+            <td><em>Grouping changes</em>, order stays fixed</td>
+          </tr>
+          <tr>
+            <td><strong>Distributive</strong></td>
+            <td colspan="2" style="text-align: center;"><span class="formula">a(b + c) = ab + ac</span></td>
+            <td>Combines multiplication over addition/subtraction</td>
+          </tr>
+          <tr>
+            <td><strong>Identity</strong></td>
+            <td><span class="formula">a + 0 = a</span></td>
+            <td><span class="formula">a &middot; 1 = a</span></td>
+            <td>Value remains <em>identical</em></td>
+          </tr>
+          <tr>
+            <td><strong>Inverse</strong></td>
+            <td><span class="formula">a + (-a) = 0</span></td>
+            <td><span class="formula">a &middot; (1/a) = 1</span> (<span class="formula">a &ne; 0</span>)</td>
+            <td>Results in the identity element</td>
+          </tr>
+          <tr>
+            <td><strong>Zero Product</strong></td>
+            <td>—</td>
+            <td><span class="formula">a &middot; 0 = 0</span></td>
+            <td>Multiplication by zero yields zero</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 2: JUSTIFYING ALGEBRAIC STEPS -->
+  <section class="topic-section">
+    <div class="topic-title">2. Step-by-Step Proofs & Algebraic Justifications</div>
+    <div class="topic-content">
+      <p>In formal algebra, every step in simplifying an expression must be explicitly paired with a mathematical property. This transitions students from "doing steps by memory" to rigorous mathematical reasoning.</p>
+
+      <div class="rule-box">
+        <h3>Example 1: Simplify <span class="formula">3(2x + 5) + 4x</span></h3>
+        <table class="proof-table">
+          <thead>
+            <tr>
+              <th>Algebraic Expression / Step</th>
+              <th>Mathematical Justification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="formula">3(2x + 5) + 4x</span></td>
+              <td>Given Expression</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= (3 &middot; 2x) + (3 &middot; 5) + 4x</span></td>
+              <td>Distributive Property</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= 6x + 15 + 4x</span></td>
+              <td>Arithmetic Multiplication</td>
+            </tr>
+            <tr>
+              <td><span class="formula">= 6x + 4x + 15</span></td>
+              <td><strong>Commutative Property of Addition</strong></td>
+            </tr>
+            <tr>
+              <td><span class="formula">= (6 + 4)x + 15</span></td>
+              <td><strong>Distributive Property (Factoring)</strong></td>
+            </tr>
+            <tr>
+              <td><span class="formula">= 10x + 15</span></td>
+              <td>Arithmetic Addition / Substitution</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: COMMON DIAGNOSTIC PITFALLS -->
+  <section class="topic-section">
+    <div class="topic-title">3. Critical Diagnostic Pitfalls & Confusion Points</div>
+    <div class="topic-content">
+      <div class="warning-box">
+        <h3>⚠️ Commutative vs. Associative Confusion</h3>
+        <p>Students often misidentify properties when parentheses are involved. Emphasize tracking the sequence of terms:</p>
+        <ul style="margin-bottom: 0;">
+          <li><strong>Commutative:</strong> <span class="formula">(x + y) + z = (y + x) + z</span> &rarr; The order of <span class="formula">x</span> and <span class="formula">y</span> reversed inside the parentheses.</li>
+          <li><strong>Associative:</strong> <span class="formula">(x + y) + z = x + (y + z)</span> &rarr; The order <span class="formula">x, y, z</span> stays identical, but the parentheses regrouped.</li>
+        </ul>
+      </div>
+
+      <div class="warning-box">
+        <h3>⚠️ Non-Applicability to Subtraction and Division</h3>
+        <p>Remind students that neither the Commutative nor Associative properties hold true for subtraction or division:</p>
+        <ul style="margin-bottom: 0;">
+          <li><span class="formula">5 - 3 &ne; 3 - 5</span> (Subtraction is NOT Commutative)</li>
+          <li><span class="formula">(12 &divide; 4) &divide; 2 &ne; 12 &divide; (4 &divide; 2)</span> (Division is NOT Associative)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FORMATIVE SELF-CHECK -->
+  <section class="topic-section">
+    <div class="topic-title">4. Formative Check & Discussion Wrap-Up</div>
+    <div class="topic-content">
+      <div class="quiz-box">
+        <h3>Quick Practice Questions:</h3>
+        <ol>
+          <li>
+            Identify the property: <span class="formula">7 + (x + 3) = 7 + (3 + x)</span><br>
+            <span class="answer">Answer: Commutative Property of Addition (order of x and 3 changed inside grouping)</span>
+          </li>
+          <li>
+            Identify the property: <span class="formula">4(1/4) = 1</span><br>
+            <span class="answer">Answer: Multiplicative Inverse Property</span>
+          </li>
+          <li>
+            What property justifies changing <span class="formula">5x + 0</span> to <span class="formula">5x</span>?<br>
+            <span class="answer">Answer: Additive Identity Property</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print / Save Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Save / Print Discussion Guide PDF
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
