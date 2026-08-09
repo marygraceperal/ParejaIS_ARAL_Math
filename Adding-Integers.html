@@ -161,6 +161,48 @@
       margin-left: 1.25rem;
     }
 
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 1rem;
+        max-width: 100%;
+      }
+      .print-btn-container,
+      .answer-key-box {
+        display: none;
+      }
+    }
+
     @media (max-width: 600px) {
       .container { padding: 1.25rem; }
       .passcode-form { flex-direction: column; }
@@ -289,6 +331,11 @@
         <li>2) <strong>-6°C</strong></li>
       </ul>
     </div>
+  </div>
+
+  <!-- Save / Print PDF Button -->
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">📥 Save / Print as PDF</button>
   </div>
 
 </div>
