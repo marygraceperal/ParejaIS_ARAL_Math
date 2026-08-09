@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity: Property Identification & Justification</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .instructions {
+      background-color: var(--primary-bg);
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2rem;
+    }
+
+    .instructions h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid var(--primary-bg);
+    }
+
+    .problem-card {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .problem-card p {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .problem-card .hint {
+      font-weight: normal;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #e2e8f0;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+    }
+
+    .proof-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0;
+    }
+
+    .proof-table th, .proof-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.6rem 0.85rem;
+      text-align: left;
+    }
+
+    .proof-table th {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    /* Passcode & Answer Key Section */
+    .answer-key-section {
+      margin-top: 3rem;
+      border-top: 2px dashed var(--border-color);
+      padding-top: 2rem;
+    }
+
+    .passcode-box {
+      background-color: var(--primary-bg);
+      border: 1px solid var(--primary-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .passcode-box h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    input[type="password"] {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      outline: none;
+      width: 200px;
+    }
+
+    input[type="password"]:focus {
+      border-color: var(--primary-light);
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary-light);
+    }
+
+    .error-msg {
+      color: var(--danger);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .answer-content {
+      display: none;
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .answer-content h3 {
+      color: #166534;
+      margin-bottom: 1rem;
+    }
+
+    .answer-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #dcfce7;
+    }
+
+    .answer-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media print {
+      body { background-color: white; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .answer-key-section, .print-btn-container { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Student Activity: Property Identification & Justification</h1>
+    <p>Topic 2.4: Categorizing Mathematical Statements and Structuring Algebraic Proofs</p>
+  </header>
+
+  <div class="instructions">
+    <h3>📌 Instructions</h3>
+    <p>Read each section carefully. Name the precise mathematical property illustrated in Part I, complete the two-column proof table in Part II, identify diagnostic errors in Part III, and analyze real-world scenarios in Part IV.</p>
+  </div>
+
+  <!-- Part I -->
+  <h2 class="section-title">Part I: Property Identification</h2>
+  <div class="problem-card">
+    <p>1. Identify the mathematical property illustrated by each equation:</p>
+    <p class="hint">a) <span class="formula">(4x + 7) + 3y = 4x + (7 + 3y)</span> &rarr; __________________________________</p>
+    <p class="hint">b) <span class="formula">15m &middot; 1 = 15m</span> &rarr; __________________________________</p>
+    <p class="hint">c) <span class="formula">8k + (-8k) = 0</span> &rarr; __________________________________</p>
+    <p class="hint">d) <span class="formula">6(2a + 5) = 12a + 30</span> &rarr; __________________________________</p>
+    <p class="hint">e) <span class="formula">9w &middot; 4 = 4 &middot; 9w</span> &rarr; __________________________________</p>
+  </div>
+
+  <!-- Part II -->
+  <h2 class="section-title">Part II: Two-Column Algebraic Proof</h2>
+  <div class="problem-card">
+    <p>2. Complete the missing mathematical justifications for the simplification of <span class="formula">5(x + 2) - 5x + 3</span>:</p>
+    <table class="proof-table">
+      <thead>
+        <tr>
+          <th>Step / Algebraic Statement</th>
+          <th>Mathematical Justification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="formula">5(x + 2) - 5x + 3</span></td>
+          <td>Given Expression</td>
+        </tr>
+        <tr>
+          <td><span class="formula">5x + 10 - 5x + 3</span></td>
+          <td>a) __________________________________</td>
+        </tr>
+        <tr>
+          <td><span class="formula">5x - 5x + 10 + 3</span></td>
+          <td>b) __________________________________</td>
+        </tr>
+        <tr>
+          <td><span class="formula">(5x - 5x) + (10 + 3)</span></td>
+          <td>c) __________________________________</td>
+        </tr>
+        <tr>
+          <td><span class="formula">0 + 13</span></td>
+          <td>d) Additive Inverse / Arithmetic Addition</td>
+        </tr>
+        <tr>
+          <td><span class="formula">13</span></td>
+          <td>e) __________________________________</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Part III -->
+  <h2 class="section-title">Part III: Diagnostic Misconception Analysis</h2>
+  <div class="problem-card">
+    <p>3. A student claims that <span class="formula">(2 + 3) + 4 = 2 + (3 + 4)</span> demonstrates the Commutative Property of Addition because the parentheses changed position.</p>
+    <p class="hint">a) Is the student correct or incorrect?</p>
+    <p class="hint">b) Explain why, clearly distinguishing between the Commutative Property and the Associative Property.</p>
+  </div>
+
+  <!-- Part IV -->
+  <h2 class="section-title">Part IV: Applied Justification in Accounting</h2>
+  <div class="problem-card">
+    <p>4. An inventory audit equation records stock movements as <span class="formula">P + (Q - Q) = P</span>, where <span class="formula">P</span> is current store stock and <span class="formula">Q</span> represents reserved items returned to inventory.</p>
+    <p class="hint">a) Name the property that justifies <span class="formula">Q - Q = 0</span>.</p>
+    <p class="hint">b) Name the property that justifies <span class="formula">P + 0 = P</span>.</p>
+  </div>
+
+  <!-- Protected Answer Key Section -->
+  <div class="answer-key-section">
+    <div class="passcode-box" id="passcodeBox">
+      <h3>🔒 Teacher Answer Key Access</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Enter passcode to unlock the step-by-step solutions.</p>
+      <div class="input-group">
+        <input type="password" id="passcodeInput" placeholder="Enter passcode">
+        <button class="btn-submit" onclick="unlockAnswers()">Unlock</button>
+      </div>
+      <p class="error-msg" id="errorMsg">Incorrect passcode. Please try again.</p>
+    </div>
+
+    <div class="answer-content" id="answerContent">
+      <h3>🔑 Official Answer Key & Solutions</h3>
+      
+      <div class="answer-item">
+        <strong>Part I:</strong><br>
+        a) <strong>Associative Property of Addition</strong> (Grouping changed, order preserved)<br>
+        b) <strong>Multiplicative Identity Property</strong> (Value remains unchanged)<br>
+        c) <strong>Additive Inverse Property</strong> (Sum yields zero)<br>
+        d) <strong>Distributive Property</strong> (Expanded across addition)<br>
+        e) <strong>Commutative Property of Multiplication</strong> (Order reversed)
+      </div>
+
+      <div class="answer-item">
+        <strong>Part II:</strong><br>
+        a) <strong>Distributive Property</strong><br>
+        b) <strong>Commutative Property of Addition</strong><br>
+        c) <strong>Associative Property of Addition</strong><br>
+        d) Given step<br>
+        e) <strong>Additive Identity Property</strong>
+      </div>
+
+      <div class="answer-item">
+        <strong>Part III:</strong><br>
+        a) <strong>Incorrect.</strong><br>
+        b) The statement demonstrates the <strong>Associative Property of Addition</strong> because the sequential order of numbers (2, 3, 4) remained unchanged; only the grouping (parentheses) shifted. The Commutative Property requires a change in the physical order of terms.
+      </div>
+
+      <div class="answer-item">
+        <strong>Part IV:</strong><br>
+        a) <strong>Additive Inverse Property</strong> (<span class="formula">Q + (-Q) = 0</span>)<br>
+        b) <strong>Additive Identity Property</strong> (<span class="formula">P + 0 = P</span>)
+      </div>
+    </div>
+  </div>
+
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Print Activity Sheet
+    </button>
+  </div>
+</div>
+
+<script>
+  function unlockAnswers() {
+    const input = document.getElementById('passcodeInput').value;
+    const errorMsg = document.getElementById('errorMsg');
+    const answerContent = document.getElementById('answerContent');
+    
+    // Default Passcode: teacher123
+    if (input === 'teacher123') {
+      answerContent.style.display = 'block';
+      errorMsg.style.display = 'none';
+      document.getElementById('passcodeInput').style.borderColor = '#10b981';
+    } else {
+      errorMsg.style.display = 'block';
+      answerContent.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>
