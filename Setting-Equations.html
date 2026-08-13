@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Sheet: Setting Up Equations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #eef2ff;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --amber-bg: #fffbeb;
+            --amber-border: #fde68a;
+            --amber-text: #b45309;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border: 1px solid var(--border);
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        .badge-accent {
+            background-color: #e0f2fe;
+            color: var(--accent);
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Student Metadata Bar */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+            background: #f1f5f9;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+        }
+
+        .meta-field {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-field span {
+            border-bottom: 1px solid #94a3b8;
+            flex-grow: 1;
+            display: inline-block;
+            height: 1.2rem;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.4rem;
+        }
+
+        /* Lists */
+        .concept-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.25rem;
+        }
+
+        .concept-list li {
+            font-size: 0.925rem;
+            margin-bottom: 0.75rem;
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .concept-list strong {
+            color: var(--primary);
+        }
+
+        /* Formula Box */
+        .formula-card {
+            background-color: var(--primary-light);
+            border: 1px solid #c7d2fe;
+            border-radius: 10px;
+            padding: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .formula-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .math-expr {
+            font-family: 'Georgia', serif;
+            font-weight: 700;
+            color: var(--primary-hover);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* Table */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        td {
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            vertical-align: middle;
+        }
+
+        /* Practice Cards */
+        .practice-card {
+            background-color: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .practice-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .practice-quote {
+            font-style: italic;
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .blank-line {
+            border-bottom: 2px solid #94a3b8;
+            display: inline-block;
+            min-width: 200px;
+            height: 1.2rem;
+            margin-left: 0.25rem;
+        }
+
+        .fill-list {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .fill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Reflection Questions */
+        .reflection-list {
+            padding-left: 1.25rem;
+            font-size: 0.925rem;
+        }
+
+        .reflection-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Action Bar */
+        .action-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+            .action-bar { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="badge-group">
+                <span class="badge">Discussion Sheet</span>
+                <span class="badge badge-accent">Grade 11 Mathematics — Algebra</span>
+            </div>
+            <h1 class="title">Setting Up Equations</h1>
+            <p class="subtitle">Topic: Identifying Variables, Constants, and Total Values in Short Word Problems</p>
+            
+            <!-- Student Information Fields -->
+            <div class="meta-grid">
+                <div class="meta-field">Name: <span></span></div>
+                <div class="meta-field">Date: <span></span></div>
+            </div>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <h2 class="section-title">1. Key Concepts: The Building Blocks of an Equation</h2>
+            <p style="font-size: 0.925rem; margin-bottom: 0.75rem; color: var(--text-muted);">
+                An equation is like a balanced scale. It uses mathematical symbols to represent real-life situations. Every algebraic equation has four main component parts:
+            </p>
+
+            <ul class="concept-list">
+                <li>
+                    <strong>Variable (<span class="math-expr">x, y, h, k</span>):</strong> The <em>unknown</em> or changing quantity. It represents "how many" or "how much" of something depends on the situation.
+                </li>
+                <li>
+                    <strong>Coefficient (<span class="math-expr">m</span>):</strong> The <em>unit rate</em> attached to the variable. It tells you the cost, rate, or value per item or per unit of time.
+                </li>
+                <li>
+                    <strong>Constant (<span class="math-expr">b</span>):</strong> The <em>fixed amount</em> or starting value. It does not change, no matter how much the variable increases or decreases (e.g., base fees, starting balance, minimum charges).
+                </li>
+                <li>
+                    <strong>Total Value (<span class="math-expr">y</span> or <span class="math-expr">T</span>):</strong> The <em>final result</em> or accumulated outcome after combining the fixed amount and the changing amounts.
+                </li>
+            </ul>
+
+            <div class="formula-card">
+                <div class="formula-title">Linear Equation Standard Form</div>
+                <div class="math-expr" style="font-size: 1.25rem; margin-bottom: 0.25rem;">y = mx + b</div>
+                <div class="math-expr" style="font-size: 0.9rem; color: var(--text-muted);">Total Value = (Unit Rate &times; Variable) + Fixed Constant</div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <h2 class="section-title">2. Guide Words for Setting Up Equations</h2>
+            <p style="font-size: 0.925rem; margin-bottom: 0.75rem; color: var(--text-muted);">
+                Use this reference table to help you identify components in word problems:
+            </p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Component</th>
+                            <th style="width: 45%;">Common Keywords / Phrases</th>
+                            <th style="width: 35%;">Example in Context</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Variable</strong></td>
+                            <td><em>"number of..."</em>, <em>"hours worked"</em>, <em>"distance in km"</em></td>
+                            <td><span class="math-expr">h</span> = number of hours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coefficient</strong></td>
+                            <td><em>"per"</em>, <em>"each"</em>, <em>"every"</em>, <em>"rate of"</em></td>
+                            <td>₱50 <em>per</em> hour &rarr; <span class="math-expr">50h</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Constant</strong></td>
+                            <td><em>"fixed fee"</em>, <em>"initial fee"</em>, <em>"deposit"</em>, <em>"base charge"</em></td>
+                            <td>₱100 fixed transport allowance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Value</strong></td>
+                            <td><em>"total cost"</em>, <em>"final amount"</em>, <em>"overall earnings"</em></td>
+                            <td><span class="math-expr">T</span> = total earnings</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <h2 class="section-title">3. Worked Example</h2>
+            <div class="practice-card" style="background-color: #f0fdf4; border-color: #bbf7d0;">
+                <p style="font-size: 0.925rem; margin-bottom: 0.75rem; color: #166534;">
+                    <strong>Problem:</strong> A worker earns a fixed daily transport allowance of <strong>₱100</strong> plus <strong>₱50 per hour</strong> worked (<span class="math-expr">h</span>). Write an equation representing their total daily earnings (<span class="math-expr">E</span>).
+                </p>
+                <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #15803d; margin-bottom: 0.75rem;">
+                    <li><strong>Total Value (<span class="math-expr">E</span>):</strong> Total daily earnings</li>
+                    <li><strong>Variable (<span class="math-expr">h</span>):</strong> Number of hours worked</li>
+                    <li><strong>Coefficient (50):</strong> Rate per hour (₱50/hr)</li>
+                    <li><strong>Constant (100):</strong> Fixed transport allowance (₱100)</li>
+                </ul>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #14532d; text-align: center; background: #dcfce7; padding: 0.5rem; border-radius: 6px;">
+                    Equation: <span class="math-expr">E = 50h + 100</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <h2 class="section-title">4. Guided Practice: Fill in the Blanks</h2>
+            <p style="font-size: 0.925rem; margin-bottom: 0.75rem; color: var(--text-muted);">
+                Complete each scenario below by identifying its key parts:
+            </p>
+
+            <div class="practice-card">
+                <div class="practice-title">Scenario A: Tricycle Fare</div>
+                <div class="practice-quote">
+                    "A tricycle driver charges a base rate of ₱15 plus ₱2.50 per kilometer (k) traveled to calculate the total fare (C)."
+                </div>
+                <ul class="fill-list">
+                    <li><strong>Variable:</strong> <span class="blank-line" style="min-width: 250px;"></span></li>
+                    <li><strong>Coefficient (Unit Rate):</strong> <span class="blank-line" style="min-width: 200px;"></span></li>
+                    <li><strong>Constant (Fixed Amount):</strong> <span class="blank-line" style="min-width: 200px;"></span></li>
+                    <li style="margin-top: 0.5rem;"><strong>Equation:</strong> &nbsp; <span class="math-expr">C = </span> <span class="blank-line" style="min-width: 80px;"></span> <span class="math-expr">+</span> <span class="blank-line" style="min-width: 80px;"></span></li>
+                </ul>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-title">Scenario B: Remaining Budget</div>
+                <div class="practice-quote">
+                    "Maria starts with a total budget of ₱500. She spends ₱45 for each notebook (x) she buys. Write an equation for her remaining budget (B)."
+                </div>
+                <ul class="fill-list">
+                    <li><strong>Total Value:</strong> <span class="math-expr">B</span> (Remaining budget)</li>
+                    <li><strong>Variable (<span class="math-expr">x</span>):</strong> <span class="blank-line" style="min-width: 250px;"></span></li>
+                    <li><strong>Unit Rate / Coefficient:</strong> <span class="blank-line" style="min-width: 200px;"></span></li>
+                    <li><strong>Initial Constant:</strong> <span class="blank-line" style="min-width: 200px;"></span></li>
+                    <li style="margin-top: 0.5rem;"><strong>Equation:</strong> &nbsp; <span class="math-expr">B = 500 − </span> <span class="blank-line" style="min-width: 100px;"></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <h2 class="section-title">5. Summary Questions for Reflection</h2>
+            <ol class="reflection-list">
+                <li>How do you decide whether a number in a word problem is a <strong>coefficient</strong> or a <strong>constant</strong>?</li>
+                <li>Why is the operation <strong>subtraction</strong> used instead of addition in budget scenarios like Scenario B?</li>
+            </ol>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print Discussion Sheet
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
