@@ -3,384 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ILAW Lesson Plan - 4.1 Discussion & Activity Flow</title>
+    <title>Teacher Discussion Guide: Topic 4.1</title>
     <style>
-        :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-green: #2e7d32;
-            --accent-orange: #d97706;
-            --bg-light: #f7fafc;
-            --text-dark: #2d3748;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            margin: 0;
-            padding: 20px;
+            margin: 20px;
+            color: #333;
         }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
+        h1, h2, h3 {
+            color: #1a365d;
         }
-
-        header {
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .header-title-box {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        header h1 {
-            color: var(--primary-color);
-            margin: 0 0 5px 0;
-            font-size: 1.8em;
-        }
-
-        header p {
-            margin: 0;
-            color: #4a5568;
-            font-size: 0.95em;
-        }
-
-        .download-btn {
-            background-color: var(--accent-green);
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 0.9em;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-            transition: background 0.2s, transform 0.1s;
-        }
-
-        .download-btn:hover {
-            background-color: #1b5e20;
-            transform: translateY(-1px);
-        }
-
-        /* Information Table */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 25px;
-        }
-
-        .info-table td {
-            padding: 8px 12px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .info-table td.label {
-            font-weight: bold;
-            background-color: #edf2f7;
-            width: 25%;
-            color: var(--primary-color);
-        }
-
-        /* ILAW Sections */
-        .ilaw-section {
-            margin-bottom: 30px;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-left: 5px solid var(--secondary-color);
-            border-radius: 6px;
-            padding: 20px;
-        }
-
-        .ilaw-section h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.3em;
-            border-bottom: 1px solid #e2e8f0;
+        h1 {
+            border-bottom: 2px solid #1a365d;
             padding-bottom: 8px;
         }
-
-        /* Reference Table */
-        .kw-table {
+        h2 {
+            margin-top: 24px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 4px;
+        }
+        .prompt {
+            background-color: #f7fafc;
+            border-left: 4px solid #3182ce;
+            padding: 12px;
+            margin: 12px 0;
+            font-style: italic;
+        }
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
+            margin: 16px 0;
         }
-
-        .kw-table th, .kw-table td {
+        th, td {
             border: 1px solid #cbd5e0;
             padding: 10px;
             text-align: left;
         }
-
-        .kw-table th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .kw-table tr:nth-child(even) {
-            background-color: #f7fafc;
-        }
-
-        /* Activity Flow Blocks */
-        .activity-block {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 18px;
-            margin-bottom: 20px;
-        }
-
-        .activity-block h3 {
-            margin-top: 0;
-            color: var(--secondary-color);
-            font-size: 1.1em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .time-badge {
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 0.8em;
-            padding: 3px 8px;
-            border-radius: 12px;
-        }
-
-        .discussion-box {
-            background-color: #ebf8ff;
-            border-left: 4px solid var(--secondary-color);
-            padding: 12px 15px;
-            margin: 12px 0;
-            border-radius: 0 6px 6px 0;
-        }
-
-        .discussion-box strong {
-            color: #2b6cb0;
-        }
-
-        .warning-box {
-            background-color: #fffaf0;
-            border-left: 4px solid var(--accent-orange);
-            padding: 12px 15px;
-            margin: 12px 0;
-            border-radius: 0 6px 6px 0;
-        }
-
-        code {
+        th {
             background-color: #edf2f7;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: Consolas, monospace;
-            color: #c53030;
         }
-
-        ol.activity-steps li {
-            margin-bottom: 10px;
+        .correct {
+            font-weight: bold;
+            color: #276749;
         }
-
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            .container { padding: 20px; }
-            header { flex-direction: column; }
-            .download-btn { width: 100%; justify-content: center; }
+        ul, ol {
+            margin-top: 8px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .var {
+            font-family: "Georgia", serif;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="header-title-box">
-            <h1>ILAW Lesson Plan: Mathematics</h1>
-            <p>Topic 4.1: Discussion &amp; Guided Activity Framework</p>
-        </div>
-        <button class="download-btn" onclick="downloadHTMLFile()">
-            📥 Download for Offline Use
-        </button>
-    </header>
+    <h1>Teacher Discussion Guide: Classifying Terms Signaling Operations</h1>
+    <p><strong>Topic 4.1 Discussion Sheet</strong></p>
 
-    <table class="info-table">
-        <tr>
-            <td class="label">Lesson Title</td>
-            <td>4.1 Classifying Terms Signaling Operations</td>
-            <td class="label">Grade / Quarter</td>
-            <td>Grade 7 / Grade 11 — Term 1</td>
-        </tr>
-        <tr>
-            <td class="label">Subject</td>
-            <td>General Mathematics / Algebra</td>
-            <td class="label">Duration</td>
-            <td>1 Session (60 Minutes)</td>
-        </tr>
+    <hr>
+
+    <h2>1. Core Discussion Framework</h2>
+    <ul>
+        <li><strong>Primary Goal:</strong> Help students shift from reading word problems as passive sentences to actively translating them into mathematical expressions.</li>
+        <li><strong>Key Concept Breakdown:</strong>
+            <ul>
+                <li><strong>Direct Translation Keywords:</strong> Phrases where the order of numbers and symbols stays in the exact sequence as the English text.</li>
+                <li><strong>"Turn-Around" Phrases:</strong> Phrases where the order of terms must be reversed when written mathematically.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>2. Step-by-Step Discussion Script &amp; Flow</h2>
+
+    <h3>Phase A: Direct Mapping (10 Minutes)</h3>
+    <div class="prompt">
+        <strong>Teacher Prompt:</strong> "When we translate English into Math, basic operations have trigger words. Let's look at direct order phrases first—these are straightforward because they follow the exact order of the words."
+    </div>
+
+    <ul>
+        <li><strong>Addition (+)</strong>
+            <ul>
+                <li><strong>Verbal Phrase:</strong> "A number <span class="var">x</span> increased by 9" &rarr; <strong>Math:</strong> <span class="var">x</span> + 9</li>
+                <li><strong>Key Words:</strong> sum, increased by, plus, added to</li>
+            </ul>
+        </li>
+        <li><strong>Multiplication (&times; or juxtaposition)</strong>
+            <ul>
+                <li><strong>Verbal Phrase:</strong> "Thrice a number <span class="var">n</span>" &rarr; <strong>Math:</strong> 3<span class="var">n</span></li>
+                <li><strong>Key Words:</strong> product, times, multiplied by, twice (2<span class="var">x</span>), double (2<span class="var">x</span>)</li>
+            </ul>
+        </li>
+        <li><strong>Division (&divide; or fraction)</strong>
+            <ul>
+                <li><strong>Verbal Phrase:</strong> "The ratio of <span class="var">k</span> and 5" &rarr; <strong>Math:</strong> <span class="var">k</span> / 5</li>
+                <li><strong>Key Words:</strong> quotient, divided by, ratio of, per</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Phase B: Addressing Common Misconceptions &amp; "Turn-Around" Phrases (10 Minutes)</h3>
+    <div class="prompt">
+        <strong>Teacher Prompt:</strong> "Now, pay close attention to Subtraction. Subtraction is where most errors happen because word order matters."
+    </div>
+
+    <p><strong>Misconception Focus: Order Matters in Subtraction</strong><br>
+    Write these two phrases on the board side-by-side and discuss:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Verbal Phrase</th>
+                <th>Common Mistake</th>
+                <th>Correct Translation</th>
+                <th>Why?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>"10 less <span class="var">x</span>"</strong></td>
+                <td><span class="var">x</span> &minus; 10</td>
+                <td class="correct">10 &minus; <span class="var">x</span></td>
+                <td><strong>Direct order:</strong> Start with 10, take away <span class="var">x</span>.</td>
+            </tr>
+            <tr>
+                <td><strong>"10 less than <span class="var">x</span>"</strong></td>
+                <td>10 &minus; <span class="var">x</span></td>
+                <td class="correct"><span class="var">x</span> &minus; 10</td>
+                <td><strong>Turn-around phrase:</strong> Start with <span class="var">x</span>, and take 10 away from it.</td>
+            </tr>
+        </tbody>
     </table>
 
-    <div class="ilaw-section">
-        <h2>I. INTENTIONS</h2>
-        <ul>
-            <li><strong>Learning Competency:</strong> Translates English phrases to mathematical expressions and vice versa.</li>
-            <li><strong>Learning Objectives:</strong>
-                <ol>
-                    <li>Categorize key verbal phrases into basic mathematical operations (<code>+</code>, <code>-</code>, <code>&times;</code>, <code>&divide;</code>).</li>
-                    <li>Differentiate direct order phrases from "turn-around" phrases that alter variable placement.</li>
-                    <li>Collaboratively convert verbal problems into algebraic expressions through guided group discussions.</li>
-                </ol>
-            </li>
-        </ul>
+    <p><strong>The "Turn-Around" Rule</strong><br>
+    Whenever students see these specific trigger phrases, they must <strong>flip the order</strong> of the terms:</p>
+    <ul>
+        <li><strong>"less than"</strong> &rarr; "5 less than <span class="var">y</span>" &rarr; <strong><span class="var">y</span> &minus; 5</strong></li>
+        <li><strong>"subtracted from"</strong> &rarr; "7 subtracted from <span class="var">w</span>" &rarr; <strong><span class="var">w</span> &minus; 7</strong></li>
+    </ul>
+
+    <p><strong>Comparing "Subtracted By" vs. "Subtracted From":</strong></p>
+    <ul>
+        <li><span class="var">a</span> subtracted by <span class="var">b</span> = <strong><span class="var">a</span> &minus; <span class="var">b</span></strong></li>
+        <li><span class="var">a</span> subtracted from <span class="var">b</span> = <strong><span class="var">b</span> &minus; <span class="var">a</span></strong></li>
+    </ul>
+
+    <h3>Phase C: Grouping Symbols &amp; Parentheses (5 Minutes)</h3>
+    <div class="prompt">
+        <strong>Teacher Prompt:</strong> "What happens when an operation applies to a whole group instead of just one number?"
     </div>
 
-    <div class="ilaw-section">
-        <h2>L. LEARNING CONTEXT</h2>
-        <ul>
-            <li><strong>Target Misconception:</strong> Assuming that word order in English always reflects the left-to-right order of terms in algebraic expressions (e.g., writing <code>5 - x</code> for <em>"5 less than x"</em>).</li>
-            <li><strong>Instructional Strategy:</strong> Guided inquiry and error-analysis discussion before individual execution.</li>
-        </ul>
-    </div>
+    <p>Compare these two examples on the board:</p>
+    <ol>
+        <li><strong>"5 times a number <span class="var">x</span> plus 2"</strong>
+            <ul>
+                <li><strong>Translation:</strong> 5<span class="var">x</span> + 2</li>
+                <li><strong>Explanation:</strong> 5 is multiplied by <span class="var">x</span> only.</li>
+            </ul>
+        </li>
+        <li><strong>"5 times the sum of <span class="var">x</span> and 2"</strong>
+            <ul>
+                <li><strong>Translation:</strong> 5(<span class="var">x</span> + 2)</li>
+                <li><strong>Explanation:</strong> The word "sum" acts as a container grouping <span class="var">x</span> and 2 together before multiplying by 5.</li>
+            </ul>
+        </li>
+    </ol>
 
-    <div class="ilaw-section">
-        <h2>A. ACTIVITY FLOW (60 Minutes)</h2>
-
-        <div class="activity-block">
-            <h3>
-                <span>1. Warm-Up & Hook: Rapid Term Sorting</span>
-                <span class="time-badge">10 Mins</span>
-            </h3>
-            <p><strong>Teacher Action:</strong> Displays 8 flashcards on the board (e.g., <em>"increased by"</em>, <em>"ratio of"</em>, <em>"diminished by"</em>, <em>"product of"</em>).</p>
-            <p><strong>Student Action:</strong> Working in pairs, students quickly classify each card into four operation columns on their mini-whiteboards.</p>
-        </div>
-
-        <div class="activity-block">
-            <h3>
-                <span>2. Interactive Discussion: Decoding Mathematical Keywords</span>
-                <span class="time-badge">20 Mins</span>
-            </h3>
-            
-            <p>Teacher facilitates an interactive lecture using the reference matrix below:</p>
-
-            <table class="kw-table">
-                <thead>
-                    <tr>
-                        <th>Operation</th>
-                        <th>Keywords / Signal Phrases</th>
-                        <th>Verbal Phrase</th>
-                        <th>Algebraic Translation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Addition (+)</strong></td>
-                        <td>sum, increased by, more than, added to</td>
-                        <td><em>"a number x increased by 9"</em></td>
-                        <td><code>x + 9</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Subtraction (-)</strong></td>
-                        <td>difference, diminished by, less than, subtracted from</td>
-                        <td><em>"y diminished by 4"</em></td>
-                        <td><code>y - 4</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Multiplication (&times;)</strong></td>
-                        <td>product, times, multiplied by, twice, double</td>
-                        <td><em>"thrice a number n"</em></td>
-                        <td><code>3n</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Division (&divide;)</strong></td>
-                        <td>quotient, divided by, ratio of, split into</td>
-                        <td><em>"ratio of k and 5"</em></td>
-                        <td><code>k / 5</code></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="discussion-box">
-                <strong>💬 Discussion Prompt (Guided Inquiry):</strong>
-                <p><em>Teacher:</em> "Compare the two phrases: <strong>'10 less x'</strong> and <strong>'10 less than x'</strong>. Do they produce the same mathematical expression?"</p>
-                <p><em>Student Response &amp; Analysis:</em> No. <em>'10 less x'</em> means start with 10 and subtract x (<code>10 - x</code>). <em>'10 less than x'</em> means start with x and decrease it by 10 (<code>x - 10</code>).</p>
-            </div>
-
-            <div class="warning-box">
-                <strong>⚠️ "Turn-Around" Rules Highlight:</strong>
-                Phrases like <em>"less than"</em>, <em>"subtracted from"</em>, and <em>"more than"</em> flip the order of the terms.
-            </div>
-        </div>
-
-        <div class="activity-block">
-            <h3>
-                <span>3. Collaborative Discussion Activity: "Fix the Translation!"</span>
-                <span class="time-badge">18 Mins</span>
-            </h3>
-            <p>Divide the class into small groups of 3 or 4. Hand each group a card containing common translation errors. Groups must identify the mistake, explain why it occurred, and write the correct expression.</p>
-
-            <ol class="activity-steps">
-                <li>
-                    <strong>Case 1:</strong> <em>"7 subtracted from w"</em> was translated as <code>7 - w</code>.
-                    <br><em>Group Task:</em> Correct the expression and explain the phrase order rule.
-                </li>
-                <li>
-                    <strong>Case 2:</strong> <em>"The quotient of 8 and a number p"</em> was translated as <code>p / 8</code>.
-                    <br><em>Group Task:</em> Correct the expression and discuss the role of word placement in division phrases.
-                </li>
-                <li>
-                    <strong>Case 3:</strong> <em>"5 times the sum of x and 2"</em> was translated as <code>5x + 2</code>.
-                    <br><em>Group Task:</em> Identify where parentheses are required and present the revised answer.
-                </li>
-            </ol>
-        </div>
-
-        <div class="activity-block">
-            <h3>
-                <span>4. Wrap-Up & Exit Slip</span>
-                <span class="time-badge">12 Mins</span>
-            </h3>
-            <p>Students individually complete a 3-question exit ticket to verify mastery before moving to multi-step equations in the next session.</p>
-        </div>
-
-    </div>
-
-    <div class="ilaw-section">
-        <h2>W. WAYS FORWARD</h2>
-        <ul>
-            <li><strong>Assessment Check:</strong> If group discussion reveals ongoing confusion on parenthesis placement (Case 3), open Topic 4.2 with a dedicated grouping-symbol activity. [cite: 164]</li>
-            <li><strong>Targeted Support:</strong> Distribute quick-reference vocabulary pocket-cards to struggling learners. [cite: 164]</li>
-        </ul>
-    </div>
-</div>
-
-<script>
-    function downloadHTMLFile() {
-        const docHTML = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-        const blob = new Blob([docHTML], { type: "text/html;charset=utf-8" });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "Lesson_Plan_4.1_Discussion_Activity.html";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(link.href);
-    }
-</script>
+    <h2>3. Formative Check / Discussion Wrap-Up Questions</h2>
+    <p>Close the discussion with these quick-fire conceptual check questions:</p>
+    <ul>
+        <li>
+            <strong>Question:</strong> "If I say 'The quotient of <span class="var">a</span> and <span class="var">b</span>', which variable goes in the numerator?"
+            <ul>
+                <li><strong>Answer:</strong> <span class="var">a</span> goes in the numerator (<span class="var">a</span> / <span class="var">b</span>) because in "quotient of <span class="var">a</span> and <span class="var">b</span>", the first term listed is the dividend.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Question:</strong> "How would you translate '8 decreased by double a number <span class="var">m</span>'?"
+            <ul>
+                <li><strong>Answer:</strong> 8 &minus; 2<span class="var">m</span></li>
+            </ul>
+        </li>
+        <li>
+            <strong>Question:</strong> "How would you translate '8 less than double a number <span class="var">m</span>'?"
+            <ul>
+                <li><strong>Answer:</strong> 2<span class="var">m</span> &minus; 8 <em>(Point out how "less than" flips the 8 to the end).</em></li>
+            </ul>
+        </li>
+    </ul>
 
 </body>
 </html>
