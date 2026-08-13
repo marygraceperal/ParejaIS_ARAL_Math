@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Mathematical Keywords & Phrases (ILAW Framework)</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-green: #2e7d32;
+            --accent-green-bg: #e8f5e9;
+            --bg-light: #f7fafc;
+            --text-dark: #2d3748;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-title-box {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            font-size: 1.8em;
+        }
+
+        header p {
+            margin: 0;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+
+        .download-btn {
+            background-color: var(--accent-green);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .download-btn:hover {
+            background-color: #1b5e20;
+            transform: translateY(-1px);
+        }
+
+        /* General Info Table */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .info-table td {
+            padding: 8px 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-table td.label {
+            font-weight: bold;
+            background-color: #edf2f7;
+            width: 25%;
+            color: var(--primary-color);
+        }
+
+        /* ILAW Sections */
+        .ilaw-section {
+            margin-bottom: 30px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .ilaw-section h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.3em;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        /* Reference Table */
+        .kw-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .kw-table th, .kw-table td {
+            border: 1px solid #cbd5e0;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .kw-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .kw-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        /* Flow Timeline */
+        .flow-step {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .flow-step h3 {
+            margin: 0 0 5px 0;
+            color: var(--secondary-color);
+            font-size: 1.05em;
+        }
+
+        /* Note Box */
+        .alert-box {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        code {
+            background-color: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            color: #c53030;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 20px; }
+            header { flex-direction: column; }
+            .download-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-title-box">
+            <h1>ILAW Lesson Plan: Mathematics</h1>
+            <p>Topic 4.1: Mathematical Keywords &amp; Phrases</p>
+        </div>
+        <button class="download-btn" onclick="downloadHTMLFile()">
+            📥 Download for Offline Use
+        </button>
+    </header>
+
+    <table class="info-table">
+        <tr>
+            <td class="label">Lesson Title</td>
+            <td>4.1 Classifying Terms Signaling Operations</td>
+            <td class="label">Grade / Quarter</td>
+            <td>Grade 7 / Grade 11 — Term 1</td>
+        </tr>
+        <tr>
+            <td class="label">Subject</td>
+            <td>General Mathematics / Algebra</td>
+            <td class="label">Duration</td>
+            <td>1 Session (60 Minutes)</td>
+        </tr>
+    </table>
+
+    <div class="ilaw-section">
+        <h2>I. INTENTIONS</h2>
+        <ul>
+            <li><strong>Learning Competency:</strong> Translates English phrases to mathematical expressions and vice versa.</li>
+            <li><strong>Learning Objectives:</strong>
+                <ol>
+                    <li>Identify and classify key verbal phrases into their corresponding basic mathematical operations (<code>+</code>, <code>-</code>, <code>×</code>, <code>÷</code>).</li>
+                    <li>Recognize "turn-around" phrases (e.g., <em>less than</em>, <em>subtracted from</em>) that reverse the order of terms.</li>
+                    <li>Translate short English phrases into algebraic expressions with 100% accuracy in structured practice.</li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ilaw-section">
+        <h2>L. LEARNING CONTEXT</h2>
+        <ul>
+            <li><strong>Learner Prior Knowledge:</strong> Students are familiar with basic arithmetic operations but often struggle with word problems due to vocabulary barriers and phrase order reversal.</li>
+            <li><strong>Key Misconceptions to Address:</strong>
+                <ul>
+                    <li>Confusing <em>"5 less than x"</em> (<code>x - 5</code>) with <em>"5 less x"</em> (<code>5 - x</code>).</li>
+                    <li>Assuming the word order in English always matches the order of terms in the mathematical expression.</li>
+                </ul>
+            </li>
+            <li><strong>Learning Resources:</strong>
+                <ul>
+                    <li>Operation Signal Word Classification Matrix</li>
+                    <li>Student Activity Worksheet / Whiteboard Cards</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ilaw-section">
+        <h2>A. ACTIVITY FLOW (60 Minutes)</h2>
+
+        <div class="flow-step">
+            <h3>1. Hook & Warm-Up: Word-to-Symbol Sorting (10 Minutes)</h3>
+            <p>Distribute rapid-sort flashcards containing phrases like <em>"increased by"</em>, <em>"diminished by"</em>, <em>"product of"</em>, and <em>"quotient of"</em>. Students categorize them into four columns: <strong>Addition</strong>, <strong>Subtraction</strong>, <strong>Multiplication</strong>, and <strong>Division</strong>.</p>
+        </div>
+
+        <div class="flow-step">
+            <h3>2. Direct Instruction: Operation Signal Words (15 Minutes)</h3>
+            <p>Discuss the key signal phrases using the summary reference guide below:</p>
+            
+            <table class="kw-table">
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Signal Keywords &amp; Phrases</th>
+                        <th>Algebraic Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Addition (+)</strong></td>
+                        <td>sum of, increased by, more than, added to, total, plus</td>
+                        <td><em>"5 more than x"</em> &rarr; <code>x + 5</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subtraction (-)</strong></td>
+                        <td>difference of, decreased by, diminished by, less than, subtracted from, minus</td>
+                        <td><em>"y diminished by 8"</em> &rarr; <code>y - 8</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Multiplication (&times;)</strong></td>
+                        <td>product of, times, multiplied by, twice, double, thrice, fraction of</td>
+                        <td><em>"twice a number n"</em> &rarr; <code>2n</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Division (&divide;)</strong></td>
+                        <td>quotient of, divided by, ratio of, split equally into</td>
+                        <td><em>"quotient of k and 4"</em> &rarr; <code>k / 4</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-box">
+                <strong>⚠️ Critical Concept ("Turn-Around" Phrases):</strong> Phrases such as <em>"less than"</em> and <em>"subtracted from"</em> require changing the order of the terms. 
+                <br>Example: <em>"10 subtracted from x"</em> translates to <code>x - 10</code> (NOT <code>10 - x</code>).
+            </div>
+        </div>
+
+        <div class="flow-step">
+            <h3>3. Guided & Independent Practice (20 Minutes)</h3>
+            <p>Students work in pairs to convert verbal phrases into algebraic expressions:</p>
+            <ul>
+                <li>The quotient of a number $x$ and $7$ &rarr; <code>x / 7</code></li>
+                <li>$12$ diminished by $m$ &rarr; <code>12 - m</code></li>
+                <li>$6$ less than three times $y$ &rarr; <code>3y - 6</code></li>
+            </ul>
+        </div>
+
+        <div class="flow-step">
+            <h3>4. Synthesis & Check for Understanding (15 Minutes)</h3>
+            <p>Students complete a 5-item exit slip classifying operation keywords and writing expressions for two short word problems.</p>
+        </div>
+    </div>
+
+    <div class="ilaw-section">
+        <h2>W. WAYS FORWARD</h2>
+        <ul>
+            <li><strong>For Instruction:</strong> Review exit slip results. If over 30% of students make errors on "turn-around" phrases, start the next session with a 5-minute dedicated drill on <em>"less than"</em> vs <em>"less"</em>.</li>
+            <li><strong>Intervention:</strong> Provide remedial flashcards for learners struggling with vocabulary recognition.</li>
+            <li><strong>Next Topic Link:</strong> Transition to Topic 4.2: <em>Translating Two-Step Algebraic Equations and Inequalities.</em></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function downloadHTMLFile() {
+        // Clone the document element to avoid modifying the active view
+        const docHTML = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+        const blob = new Blob([docHTML], { type: "text/html;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "Lesson_Plan_4.1_Math_Keywords_ILAW.html";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+    }
+</script>
+
+</body>
+</html>
