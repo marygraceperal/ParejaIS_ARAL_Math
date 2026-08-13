@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notes: Topic 4.3 Translating Expressions to Words</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #eef2ff;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --warning-bg: #fffbeb;
+            --warning-border: #fde68a;
+            --warning-text: #b45309;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border: 1px solid var(--border);
+        }
+
+        /* Header Styling */
+        .header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        .badge-accent {
+            background-color: #e0f2fe;
+            color: var(--accent);
+        }
+
+        .title {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Key Concept Callout */
+        .callout {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #0369a1;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Note Cards */
+        .note-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .note-card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Math Display Styling */
+        .math-expr {
+            font-family: 'Georgia', serif;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        .var {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        td {
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Key Takeaway Boxes */
+        .takeaway-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .takeaway-title {
+            font-weight: 700;
+            color: var(--success);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .takeaway-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .takeaway-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #166534;
+        }
+
+        .takeaway-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--success);
+        }
+
+        /* Action Bar */
+        .action-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+            .action-bar { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="badge-group">
+                <span class="badge">Student Study Notes</span>
+                <span class="badge badge-accent">Topic 4.3</span>
+            </div>
+            <h1 class="title">Translating Expressions &amp; Equations to Words</h1>
+            <p class="subtitle">Verbalizing symbolic math into meaningful, real-life contextual statements</p>
+        </div>
+
+        <!-- Big Picture Concept -->
+        <div class="callout">
+            <strong>The Core Idea:</strong> Mathematics is a universal language. Translating symbolic expressions like <span class="math-expr">C = 15 + 2k</span> into real-world statements (e.g., tricycle fares) allows us to communicate real-life rules, transactions, and relationships clearly.
+        </div>
+
+        <!-- Section 1: Literal vs. Contextual Translation -->
+        <div class="section">
+            <h2 class="section-title">1. Literal Translation vs. Contextual Verbalization</h2>
+            
+            <p style="font-size: 0.925rem; color: var(--text-muted); margin-bottom: 1rem;">
+                There are two ways to describe a mathematical expression or equation in words:
+            </p>
+
+            <div class="note-card">
+                <div class="note-card-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    A. Literal Word-for-Word Translation
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-main);">
+                    Translates operations and variables directly without describing what the variables represent in real life.
+                </p>
+                <ul style="padding-left: 1.25rem; font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    <li><span class="math-expr">2x + 5</span> &rarr; "Twice a number <span class="var">x</span> increased by 5."</li>
+                    <li><span class="math-expr">3(n − 4) = 18</span> &rarr; "Three times the difference of a number <span class="var">n</span> and 4 is equal to 18."</li>
+                </ul>
+            </div>
+
+            <div class="note-card">
+                <div class="note-card-title" style="color: var(--accent);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    B. Real-Life Contextual Verbalization
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-main);">
+                    Assigns real-world meaning to variables (money, distance, items, speed) to tell a narrative or describe a system.
+                </p>
+                <ul style="padding-left: 1.25rem; font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    <li><span class="math-expr">2x + 5</span> &rarr; "The total cost of buying 2 notebooks at <span class="var">x</span> pesos each plus a ₱5 fee."</li>
+                    <li><span class="math-expr">3(n − 4) = 18</span> &rarr; "Three times the discounted price of a shirt (reduced by ₱4) equals ₱18."</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2: Building Blocks of Real-Life Contexts -->
+        <div class="section">
+            <h2 class="section-title">2. Deconstructing Equations into Story Elements</h2>
+            
+            <p style="font-size: 0.925rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                When verbalizing an equation, every mathematical component plays a specific role in the context:
+            </p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol Component</th>
+                            <th>Mathematical Role</th>
+                            <th>Real-Life Context Equivalent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Variable (<span class="var">x</span>, <span class="var">k</span>, <span class="var">h</span>)</strong></td>
+                            <td>Unknown quantity / input</td>
+                            <td>Kilometers traveled, hours worked, quantity of items purchased</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coefficient (<span class="math-expr">2x</span>, <span class="math-expr">50h</span>)</strong></td>
+                            <td>Rate / Multiplier</td>
+                            <td>Hourly wage (₱50/hr), fare rate (₱2/km), price per item</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Constant (<span class="math-expr">+ 15</span>, <span class="math-expr">− 100</span>)</strong></td>
+                            <td>Fixed starting point</td>
+                            <td>Base fare, entry fee, flat delivery charge, fixed discount</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equals Sign (<span class="math-expr">=</span>)</strong></td>
+                            <td>Equality / Outcome</td>
+                            <td>"Results in", "amounts to", "is total to", "yields"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3: Contextual Case Studies -->
+        <div class="section">
+            <h2 class="section-title">3. Real-Life Translation Case Studies</h2>
+
+            <!-- Case 1 -->
+            <div class="note-card">
+                <div class="note-card-title">Case Study 1: Transport &amp; Fare Structure</div>
+                <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+                    <strong>Symbolic Equation:</strong> <span class="math-expr">F = 15 + 2k.5</span>
+                </p>
+                <div style="background-color: #f8fafc; padding: 0.85rem; border-radius: 8px; font-size: 0.875rem;">
+                    <p><strong>Variable Definitions:</strong> <span class="var">F</span> = Total Fare (₱), <span class="var">k</span> = Distance (km)</p>
+                    <p style="margin-top: 0.35rem;"><strong>Contextual Verbal Statement:</strong></p>
+                    <p style="color: var(--primary); font-weight: 500;">
+                        "The tricycle fare <span class="var">F</span> consists of a base flag-down rate of ₱15 plus an additional charge of ₱2.50 for every kilometer <span class="var">k</span> traveled."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="note-card">
+                <div class="note-card-title">Case Study 2: Daily Earnings &amp; Suki Discounts</div>
+                <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+                    <strong>Symbolic Equation:</strong> <span class="math-expr">P = 0.90s − 150</span>
+                </p>
+                <div style="background-color: #f8fafc; padding: 0.85rem; border-radius: 8px; font-size: 0.875rem;">
+                    <p><strong>Variable Definitions:</strong> <span class="var">P</span> = Daily Net Profit (₱), <span class="var">s</span> = Gross Sales (₱)</p>
+                    <p style="margin-top: 0.35rem;"><strong>Contextual Verbal Statement:</strong></p>
+                    <p style="color: var(--primary); font-weight: 500;">
+                        "A store owner's net profit <span class="var">P</span> equals 90% of total sales <span class="var">s</span> (after giving a 10% <em>suki</em> discount), minus a fixed daily stall rental fee of ₱150."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Key Summary Rules -->
+        <div class="section">
+            <h2 class="section-title">4. Summary Rules for Note Review</h2>
+            
+            <div class="takeaway-box">
+                <div class="takeaway-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Student Checklist for Verbalizing Math
+                </div>
+                <ul class="takeaway-list">
+                    <li><strong>Define Variable Meaning First:</strong> Always declare what the letters represent before telling the story (e.g., Let <span class="var">x</span> = number of items).</li>
+                    <li><strong>Identify Constants as Base Values:</strong> Treat numbers standing alone as fixed starting points, fees, or baseline values.</li>
+                    <li><strong>Identify Coefficients as Rates:</strong> Treat numbers attached to variables as unit rates (per kilometer, per hour, per piece).</li>
+                    <li><strong>Use Active Verbs for the Equals Sign:</strong> Replace <span class="math-expr">=</span> with situational phrases like <em>"gives a total of"</em>, <em>"amounts to"</em>, or <em>"results in"</em>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar no-print">
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print / Save Student Notes
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
