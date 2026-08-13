@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Sheet: Classifying Terms Signaling Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #eeef2e;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --danger: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border: 1px solid var(--border);
+        }
+
+        /* Header Section */
+        .header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .student-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: #f1f5f9;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+        }
+
+        .info-field {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-field span {
+            border-bottom: 1px solid #94a3b8;
+            flex-grow: 1;
+            display: inline-block;
+            height: 1.2rem;
+        }
+
+        /* Learning Objective */
+        .objective-card {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #0369a1;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .word-bank {
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Table Styling */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            font-size: 0.825rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            text-align: center;
+        }
+
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+
+        td {
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            padding: 0.75rem;
+            height: 48px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Lists and Blanks */
+        .questions-list {
+            list-style: none;
+            counter-reset: q-counter;
+        }
+
+        .questions-list li {
+            counter-increment: q-counter;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            background: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .questions-list li::before {
+            content: counter(q-counter) ".";
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .q-text {
+            flex-grow: 1;
+        }
+
+        .blank-space {
+            border-bottom: 2px solid #94a3b8;
+            min-width: 160px;
+            display: inline-block;
+            height: 1.5rem;
+        }
+
+        /* Error Analysis Cards */
+        .error-card {
+            background-color: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .error-card-header {
+            font-weight: 600;
+            color: var(--danger);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-body {
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .status-options {
+            margin: 0.5rem 0;
+            display: flex;
+            gap: 1.5rem;
+            font-weight: 500;
+        }
+
+        .checkbox-custom {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .var {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: #1e1b4b;
+        }
+
+        /* Action Bar */
+        .action-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-1px);
+        }
+
+        /* Answer Key Section (Hidden by Default) */
+        .answer-key {
+            display: none;
+            margin-top: 2rem;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+
+        .answer-key-title {
+            color: var(--success);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .answer-key h4 {
+            color: #15803d;
+            font-size: 0.95rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .answer-key ul, .answer-key ol {
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+            color: #166534;
+        }
+
+        .answer-key li {
+            margin-bottom: 0.35rem;
+        }
+
+        /* Print Formatting Rules */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .questions-list li {
+                border: none;
+                border-bottom: 1px solid #e2e8f0;
+                border-radius: 0;
+                padding: 0.5rem 0;
+            }
+
+            .error-card {
+                box-shadow: none;
+                border: 1px solid #cbd5e1;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <span class="badge">Topic 4.1 Activity Sheet</span>
+            <h1 class="title">Classifying Terms Signaling Operations</h1>
+            
+            <div class="student-info">
+                <div class="info-field">Name: <span></span></div>
+                <div class="info-field">Date: <span></span></div>
+                <div class="info-field">Grade &amp; Section: <span></span></div>
+                <div class="info-field">Score: <span></span></div>
+            </div>
+        </div>
+
+        <!-- Objective -->
+        <div class="objective-card">
+            <strong>Learning Objective:</strong> Translate English verbal phrases into algebraic expressions accurately by identifying direct-order keywords, "turn-around" phrases, and grouping symbols.
+        </div>
+
+        <!-- Part I -->
+        <div class="section">
+            <h2 class="section-title">Part I: Keyword Classification Warm-Up</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Categorize the operational keywords/phrases from the word bank into their correct mathematical operation column below.
+            </p>
+            
+            <div class="word-bank">
+                sum, subtracted from, twice, ratio of, decreased by, multiplied by, less than, quotient of, increased by, product of, per, subtracted by
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Addition (+)</th>
+                            <th>Subtraction<br>(Direct Order)</th>
+                            <th>Subtraction<br>("Turn-Around")</th>
+                            <th>Multiplication (&times;)</th>
+                            <th>Division (&divide;)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Part II -->
+        <div class="section">
+            <h2 class="section-title">Part II: Direct Translation vs. "Turn-Around" Practice</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Translate each verbal phrase into an algebraic expression. Pay extra attention to subtraction phrases!
+            </p>
+
+            <ol class="questions-list">
+                <li><span class="q-text">A number <span class="var">x</span> increased by 12</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">15 less <span class="var">y</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">15 less than <span class="var">y</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">The product of 6 and a number <span class="var">n</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">8 subtracted from <span class="var">w</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">8 subtracted by <span class="var">w</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">The ratio of <span class="var">p</span> and 4</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">Thrice a number <span class="var">m</span> decreased by 5</span> &rarr; <span class="blank-space"></span></li>
+            </ol>
+        </div>
+
+        <!-- Part III -->
+        <div class="section">
+            <h2 class="section-title">Part III: Spot the Error! (Error Analysis)</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Read each translation. Decide if it is <strong>Correct</strong> or <strong>Incorrect</strong>. If incorrect, write the correct expression and state why.
+            </p>
+
+            <div class="error-card">
+                <div class="error-card-header">Item 1: "7 less than a number x"</div>
+                <div class="error-body">
+                    <p><strong>Student's Translation:</strong> 7 &minus; <span class="var">x</span></p>
+                    <div class="status-options">
+                        <span class="checkbox-custom">[ &nbsp; ] Correct</span>
+                        <span class="checkbox-custom">[ &nbsp; ] Incorrect</span>
+                    </div>
+                    <p><strong>Correction (if incorrect):</strong> <span class="blank-space" style="min-width: 200px;"></span></p>
+                    <p style="margin-top: 0.35rem;"><strong>Reason:</strong> <span class="blank-space" style="width: 100%;"></span></p>
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-card-header">Item 2: "The quotient of 12 and b"</div>
+                <div class="error-body">
+                    <p><strong>Student's Translation:</strong> <span class="var">b</span> / 12</p>
+                    <div class="status-options">
+                        <span class="checkbox-custom">[ &nbsp; ] Correct</span>
+                        <span class="checkbox-custom">[ &nbsp; ] Incorrect</span>
+                    </div>
+                    <p><strong>Correction (if incorrect):</strong> <span class="blank-space" style="min-width: 200px;"></span></p>
+                    <p style="margin-top: 0.35rem;"><strong>Reason:</strong> <span class="blank-space" style="width: 100%;"></span></p>
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-card-header">Item 3: "4 times the sum of x and 9"</div>
+                <div class="error-body">
+                    <p><strong>Student's Translation:</strong> 4<span class="var">x</span> + 9</p>
+                    <div class="status-options">
+                        <span class="checkbox-custom">[ &nbsp; ] Correct</span>
+                        <span class="checkbox-custom">[ &nbsp; ] Incorrect</span>
+                    </div>
+                    <p><strong>Correction (if incorrect):</strong> <span class="blank-space" style="min-width: 200px;"></span></p>
+                    <p style="margin-top: 0.35rem;"><strong>Reason:</strong> <span class="blank-space" style="width: 100%;"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Part IV -->
+        <div class="section">
+            <h2 class="section-title">Part IV: Grouping Symbols &amp; Multi-Step Challenge</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Translate the following complex verbal phrases into algebraic expressions using parentheses where needed.
+            </p>
+
+            <ol class="questions-list">
+                <li><span class="q-text">6 times the difference of <span class="var">k</span> and 3</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">The sum of twice a number <span class="var">n</span> and 11</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">10 less than four times a number <span class="var">y</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">Half of the sum of <span class="var">a</span> and <span class="var">b</span></span> &rarr; <span class="blank-space"></span></li>
+            </ol>
+        </div>
+
+        <!-- Bottom Action Bar -->
+        <div class="action-bar no-print">
+            <button class="btn btn-secondary" onclick="toggleAnswerKey()" id="toggleBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                Show Answer Key
+            </button>
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Save / Print PDF
+            </button>
+        </div>
+
+        <!-- Answer Key (Hidden by Default) -->
+        <div id="answerKey" class="answer-key page-break">
+            <div class="answer-key-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Teacher Answer Key
+            </div>
+
+            <h4>Part I: Keyword Classification</h4>
+            <ul>
+                <li><strong>Addition (+):</strong> sum, increased by</li>
+                <li><strong>Subtraction (Direct Order):</strong> decreased by, subtracted by</li>
+                <li><strong>Subtraction ("Turn-Around"):</strong> subtracted from, less than</li>
+                <li><strong>Multiplication (&times;):</strong> twice, multiplied by, product of</li>
+                <li><strong>Division (&divide;):</strong> ratio of, quotient of, per</li>
+            </ul>
+
+            <h4>Part II: Direct Translation vs. "Turn-Around"</h4>
+            <ol>
+                <li><span class="var">x</span> + 12</li>
+                <li>15 &minus; <span class="var">y</span></li>
+                <li><span class="var">y</span> &minus; 15</li>
+                <li>6<span class="var">n</span></li>
+                <li><span class="var">w</span> &minus; 8</li>
+                <li>8 &minus; <span class="var">w</span></li>
+                <li><span class="var">p</span> / 4</li>
+                <li>3<span class="var">m</span> &minus; 5</li>
+            </ol>
+
+            <h4>Part III: Spot the Error!</h4>
+            <ol>
+                <li><strong>Incorrect.</strong> Correction: <span class="var">x</span> &minus; 7.<br><em>Reason:</em> "Less than" is a turn-around phrase, so 7 is subtracted from <span class="var">x</span>.</li>
+                <li><strong>Incorrect.</strong> Correction: 12 / <span class="var">b</span>.<br><em>Reason:</em> In "quotient of 12 and <span class="var">b</span>", the first variable listed (12) is the dividend (numerator).</li>
+                <li><strong>Incorrect.</strong> Correction: 4(<span class="var">x</span> + 9).<br><em>Reason:</em> The word "sum" acts as a container, grouping (<span class="var">x</span> + 9) inside parentheses before multiplying by 4.</li>
+            </ol>
+
+            <h4>Part IV: Grouping Symbols &amp; Multi-Step Challenge</h4>
+            <ol>
+                <li>6(<span class="var">k</span> &minus; 3)</li>
+                <li>2<span class="var">n</span> + 11</li>
+                <li>4<span class="var">y</span> &minus; 10</li>
+                <li>(<span class="var">a</span> + <span class="var">b</span>) / 2 &nbsp;or&nbsp; &frac12;(<span class="var">a</span> + <span class="var">b</span>)</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswerKey() {
+            const key = document.getElementById('answerKey');
+            const btn = document.getElementById('toggleBtn');
+            
+            if (key.style.display === 'none' || key.style.display === '') {
+                key.style.display = 'block';
+                btn.innerHTML = `
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+                    Hide Answer Key
+                `;
+            } else {
+                key.style.display = 'none';
+                btn.innerHTML = `
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Show Answer Key
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
