@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Guide: Topic 4.2 Translating Verbal Phrases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --warning-bg: #fffbeeb;
+            --warning-border: #fde68a;
+            --warning-text: #b45309;
+            --success: #16a34a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border: 1px solid var(--border);
+        }
+
+        /* Header Styling */
+        .header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        /* Callout Box */
+        .callout {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #0369a1;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Script / Prompt Styling */
+        .teacher-prompt {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #334155;
+            margin: 1rem 0;
+        }
+
+        /* Grid / Comparison Boxes */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin: 1.25rem 0;
+        }
+
+        .comp-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .comp-card.warning {
+            border-color: #fde68a;
+            background-color: #fffbeb;
+        }
+
+        .comp-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .comp-card.warning h4 {
+            color: var(--warning-text);
+        }
+
+        .var {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: #1e1b4b;
+        }
+
+        .math-expr {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        td {
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            font-size: 0.925rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Key takeaways list */
+        .rule-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .rule-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .rule-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Action Bar */
+        .action-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+            .action-bar { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <span class="badge">Teacher Discussion Guide</span>
+            <h1 class="title">Topic 4.2: Translating Verbal Phrases</h1>
+            <p class="subtitle">Handling order-sensitive phrasing and multi-operation expressions</p>
+        </div>
+
+        <!-- Core Purpose -->
+        <div class="callout">
+            <strong>Discussion Objective:</strong> Train students to recognize order-sensitive subtraction/division phrases (e.g., "5 less than a number" → <span class="math-expr">x − 5</span>) and systematically parse multi-operation phrases using grouping symbols.
+        </div>
+
+        <!-- Section 1: Order Sensitivity -->
+        <div class="section">
+            <h2 class="section-title">1. Handling Order-Sensitive Phrasing</h2>
+            
+            <p style="font-size: 0.95rem; color: var(--text-muted);">
+                In addition and multiplication, order does not alter the result due to the commutative property. However, <strong>subtraction and division are order-sensitive</strong>.
+            </p>
+
+            <div class="teacher-prompt">
+                <strong>Teacher Prompt:</strong> "If you have 10 apples and I take 3 away, do you have the same amount as if you had 3 apples and I took 10 away? No! Order matters in subtraction. When translating words to math, we must watch out for 'turn-around' phrases."
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comp-card">
+                    <h4>Direct Order Phrases</h4>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                        The terms stay in the exact sequence as stated in English.
+                    </p>
+                    <ul style="padding-left: 1.25rem; font-size: 0.9rem;">
+                        <li>"10 decreased by <span class="var">x</span>" &rarr; <span class="math-expr">10 − x</span></li>
+                        <li>"The difference of 10 and <span class="var">x</span>" &rarr; <span class="math-expr">10 − x</span></li>
+                        <li>"10 subtracted by <span class="var">x</span>" &rarr; <span class="math-expr">10 − x</span></li>
+                    </ul>
+                </div>
+
+                <div class="comp-card warning">
+                    <h4>"Turn-Around" Phrases (Order-Sensitive)</h4>
+                    <p style="font-size: 0.875rem; color: var(--warning-text); margin-bottom: 0.5rem;">
+                        Flip the order of terms! The starting amount comes second.
+                    </p>
+                    <ul style="padding-left: 1.25rem; font-size: 0.9rem;">
+                        <li>"5 less than a number <span class="var">x</span>" &rarr; <span class="math-expr">x − 5</span></li>
+                        <li>"5 subtracted from <span class="var">x</span>" &rarr; <span class="math-expr">x − 5</span></li>
+                        <li>"5 reduced from <span class="var">x</span>" &rarr; <span class="math-expr">x − 5</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Multi-Operation Phrases -->
+        <div class="section">
+            <h2 class="section-title">2. Navigating Multi-Operation Phrases</h2>
+            
+            <p style="font-size: 0.95rem; color: var(--text-muted);">
+                When phrases contain multiple operational signals, students must identify whether operations apply to individual terms or grouped quantities.
+            </p>
+
+            <div class="teacher-prompt">
+                <strong>Teacher Prompt:</strong> "Look for 'container words' like <em>sum</em>, <em>difference</em>, or <em>quantity</em>. These signal that an entire operation must be completed first inside parentheses before applying the next operation."
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Verbal Phrase</th>
+                            <th>Mathematical Expression</th>
+                            <th>Key Breakdown</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"3 times a number <span class="var">x</span>, increased by 7"</td>
+                            <td><span class="math-expr">3x + 7</span></td>
+                            <td>Multiplication applies only to <span class="var">x</span>; then add 7.</td>
+                        </tr>
+                        <tr>
+                            <td>"3 times the sum of a number <span class="var">x</span> and 7"</td>
+                            <td><span class="math-expr">3(x + 7)</span></td>
+                            <td>"Sum of" groups <span class="var">x</span> and 7 together inside parentheses first.</td>
+                        </tr>
+                        <tr>
+                            <td>"4 less than twice a number <span class="var">n</span>"</td>
+                            <td><span class="math-expr">2n − 4</span></td>
+                            <td>Combines "twice" (<span class="math-expr">2n</span>) and "less than" (swaps 4 to the end).</td>
+                        </tr>
+                        <tr>
+                            <td>"The quotient of 5 and the difference of <span class="var">y</span> and 2"</td>
+                            <td><span class="math-expr">5 / (y − 2)</span></td>
+                            <td>"Difference of" places <span class="math-expr">(y − 2)</span> together in the denominator.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3: Summary / Anchor Rules -->
+        <div class="section">
+            <h2 class="section-title">3. Essential Takeaways for Students</h2>
+            
+            <ul class="rule-list">
+                <li><strong>Circle the Action Words:</strong> Always identify the operation keywords first before writing any numbers or variables.</li>
+                <li><strong>Watch for "Than" and "From":</strong> Phrases ending in <em>"than"</em> or <em>"from"</em> require flipping the order of terms.</li>
+                <li><strong>Parentheses Protect Groups:</strong> Words like <em>"the sum of..."</em> or <em>"the difference of..."</em> demand parentheses around that operation before performing subsequent operations.</li>
+            </ul>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print / Save Guide
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
