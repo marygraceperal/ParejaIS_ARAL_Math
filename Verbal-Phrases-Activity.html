@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Sheet: Translating Verbal Phrases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #eef2ff;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --danger: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border: 1px solid var(--border);
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .student-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: #f1f5f9;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+        }
+
+        .info-field {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-field span {
+            border-bottom: 1px solid #94a3b8;
+            flex-grow: 1;
+            display: inline-block;
+            height: 1.2rem;
+        }
+
+        /* Learning Objective Box */
+        .objective-card {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #0369a1;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.4rem;
+        }
+
+        /* Questions & Blanks */
+        .questions-list {
+            list-style: none;
+            counter-reset: q-counter;
+        }
+
+        .questions-list li {
+            counter-increment: q-counter;
+            margin-bottom: 0.85rem;
+            font-size: 0.925rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            background: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .questions-list li::before {
+            content: counter(q-counter) ".";
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .q-text {
+            flex-grow: 1;
+        }
+
+        .blank-space {
+            border-bottom: 2px solid #94a3b8;
+            min-width: 170px;
+            display: inline-block;
+            height: 1.5rem;
+        }
+
+        .var {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: #1e1b4b;
+        }
+
+        /* Error Analysis Cards */
+        .error-card {
+            background-color: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.15rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-card-header {
+            font-weight: 600;
+            color: var(--danger);
+            font-size: 0.925rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-body {
+            font-size: 0.9rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 1.5rem;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        /* Scenario Cards */
+        .scenario-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.925rem;
+        }
+
+        .scenario-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+        }
+
+        /* Action Bar */
+        .action-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-1px);
+        }
+
+        /* Answer Key Section (Hidden by Default) */
+        .answer-key {
+            display: none;
+            margin-top: 2rem;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+
+        .answer-key-title {
+            color: var(--success);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .answer-key h4 {
+            color: #15803d;
+            font-size: 0.95rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .answer-key ul, .answer-key ol {
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+            color: #166534;
+        }
+
+        .answer-key li {
+            margin-bottom: 0.35rem;
+        }
+
+        /* Print Settings */
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+            .action-bar { display: none !important; }
+            .questions-list li { border: none; border-bottom: 1px solid #e2e8f0; border-radius: 0; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <span class="badge">Topic 4.2 Activity Sheet</span>
+            <h1 class="title">Translating Verbal Phrases into Algebraic Expressions</h1>
+            
+            <div class="student-info">
+                <div class="info-field">Name: <span></span></div>
+                <div class="info-field">Date: <span></span></div>
+                <div class="info-field">Grade &amp; Section: <span></span></div>
+                <div class="info-field">Score: <span></span></div>
+            </div>
+        </div>
+
+        <!-- Learning Objective -->
+        <div class="objective-card">
+            <strong>Learning Objective:</strong> Accurately translate order-sensitive verbal phrases (e.g., "less than", "subtracted from") and multi-operation statements into algebraic expressions with correct grouping symbols.
+        </div>
+
+        <!-- Part I -->
+        <div class="section">
+            <h2 class="section-title">Part I: Direct Order vs. "Turn-Around" Subtraction</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Translate each verbal phrase into an algebraic expression. Watch out for phrases that flip the sequence!
+            </p>
+
+            <ol class="questions-list">
+                <li><span class="q-text">10 decreased by a number <span class="var">x</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">10 less than a number <span class="var">x</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">A number <span class="var">y</span> subtracted by 14</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">A number <span class="var">y</span> subtracted from 14</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">6 reduced by twice a number <span class="var">m</span></span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">6 reduced from twice a number <span class="var">m</span></span> &rarr; <span class="blank-space"></span></li>
+            </ol>
+        </div>
+
+        <!-- Part II -->
+        <div class="section">
+            <h2 class="section-title">Part II: Multi-Operation &amp; Grouping Challenge</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Translate the following phrases using parentheses where container words (like <em>sum</em> or <em>difference</em>) appear.
+            </p>
+
+            <ol class="questions-list">
+                <li><span class="q-text">5 times a number <span class="var">n</span>, increased by 8</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">5 times the sum of a number <span class="var">n</span> and 8</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">The difference of thrice a number <span class="var">p</span> and 4</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">Thrice the difference of a number <span class="var">p</span> and 4</span> &rarr; <span class="blank-space"></span></li>
+                <li><span class="q-text">The quotient of 12 and the sum of <span class="var">a</span> and 3</span> &rarr; <span class="blank-space"></span></li>
+            </ol>
+        </div>
+
+        <!-- Part III -->
+        <div class="section">
+            <h2 class="section-title">Part III: Spot the Error! (Error Analysis)</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Evaluate the student's translation. Mark <strong>Correct</strong> or <strong>Incorrect</strong>. If incorrect, write the correct expression and state why.
+            </p>
+
+            <div class="error-card">
+                <div class="error-card-header">Item 1: "8 less than twice a number k"</div>
+                <div class="error-body">
+                    <p><strong>Student's Translation:</strong> 8 &minus; 2<span class="var">k</span></p>
+                    <div class="checkbox-group">
+                        <span>[ &nbsp; ] Correct</span>
+                        <span>[ &nbsp; ] Incorrect</span>
+                    </div>
+                    <p><strong>Correction:</strong> <span class="blank-space" style="min-width: 200px;"></span></p>
+                    <p style="margin-top: 0.35rem;"><strong>Reason:</strong> <span class="blank-space" style="width: 100%;"></span></p>
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-card-header">Item 2: "3 times the quantity x minus 7"</div>
+                <div class="error-body">
+                    <p><strong>Student's Translation:</strong> 3<span class="var">x</span> &minus; 7</p>
+                    <div class="checkbox-group">
+                        <span>[ &nbsp; ] Correct</span>
+                        <span>[ &nbsp; ] Incorrect</span>
+                    </div>
+                    <p><strong>Correction:</strong> <span class="blank-space" style="min-width: 200px;"></span></p>
+                    <p style="margin-top: 0.35rem;"><strong>Reason:</strong> <span class="blank-space" style="width: 100%;"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Part IV -->
+        <div class="section">
+            <h2 class="section-title">Part IV: Localized Real-World Scenarios</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Write an algebraic expression for each situation.
+            </p>
+
+            <div class="scenario-card">
+                <div class="scenario-title">Scenario A: Tricycle Fare</div>
+                <p>A driver charges a base fare of ₱15 plus ₱2 per kilometer <span class="var">k</span> traveled.</p>
+                <p style="margin-top: 0.5rem;"><strong>Expression:</strong> <span class="blank-space" style="min-width: 200px;"></span></p>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title">Scenario B: Suki Store Discount</div>
+                <p>Aling Nena grants a discount of ₱20 less than half of a customer's total purchase amount <span class="var">p</span>.</p>
+                <p style="margin-top: 0.5rem;"><strong>Expression:</strong> <span class="blank-space" style="min-width: 200px;"></span></p>
+            </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar no-print">
+            <button class="btn btn-secondary" onclick="toggleAnswerKey()" id="toggleBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                Show Answer Key
+            </button>
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Save / Print PDF
+            </button>
+        </div>
+
+        <!-- Answer Key (Hidden by Default) -->
+        <div id="answerKey" class="answer-key page-break">
+            <div class="answer-key-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Teacher Answer Key
+            </div>
+
+            <h4>Part I: Direct Order vs. "Turn-Around"</h4>
+            <ol>
+                <li>10 &minus; <span class="var">x</span></li>
+                <li><span class="var">x</span> &minus; 10</li>
+                <li><span class="var">y</span> &minus; 14</li>
+                <li>14 &minus; <span class="var">y</span></li>
+                <li>6 &minus; 2<span class="var">m</span></li>
+                <li>2<span class="var">m</span> &minus; 6</li>
+            </ol>
+
+            <h4>Part II: Multi-Operation &amp; Grouping Challenge</h4>
+            <ol>
+                <li>5<span class="var">n</span> + 8</li>
+                <li>5(<span class="var">n</span> + 8)</li>
+                <li>3<span class="var">p</span> &minus; 4</li>
+                <li>3(<span class="var">p</span> &minus; 4)</li>
+                <li>12 / (<span class="var">a</span> + 3) &nbsp;or&nbsp; &frac12; fraction form</li>
+            </ol>
+
+            <h4>Part III: Spot the Error!</h4>
+            <ol>
+                <li><strong>Incorrect.</strong> Correction: 2<span class="var">k</span> &minus; 8.<br><em>Reason:</em> "Less than" requires flipping the terms so 8 is subtracted at the end.</li>
+                <li><strong>Incorrect.</strong> Correction: 3(<span class="var">x</span> &minus; 7).<br><em>Reason:</em> "The quantity" indicates that (<span class="var">x</span> &minus; 7) must be enclosed in parentheses before multiplying by 3.</li>
+            </ol>
+
+            <h4>Part IV: Localized Real-World Scenarios</h4>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><strong>Scenario A:</strong> 15 + 2<span class="var">k</span></li>
+                <li><strong>Scenario B:</strong> &frac12;<span class="var">p</span> &minus; 20 &nbsp;or&nbsp; (<span class="var">p</span> / 2) &minus; 20</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswerKey() {
+            const key = document.getElementById('answerKey');
+            const btn = document.getElementById('toggleBtn');
+            
+            if (key.style.display === 'none' || key.style.display === '') {
+                key.style.display = 'block';
+                btn.innerHTML = `
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+                    Hide Answer Key
+                `;
+            } else {
+                key.style.display = 'none';
+                btn.innerHTML = `
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Show Answer Key
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
